@@ -1,0 +1,6 @@
+{
+  "processes": [ "server.js" ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
