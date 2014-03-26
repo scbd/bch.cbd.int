@@ -24,12 +24,12 @@ Technical oversight and advice regarding the Informal Advisory Committee (BCH-IA
 Obligations of partner organizations regarding specific interoperability guidelines;
 Reports on activities regarding Quarterly Reports and feedback from BCH Users; and
 Periodic review of the BCH.
-Go to the top of the page
+
 Multi-year Programme of Work for the Operation of the BCH
+---------------------------------------------------------
 
 The current Multi-year Programme of Work for the Operation of the BCH was adopted in June 2005 in paragraph 1 of decision BS-II/2 on "Operations and activities of the Biosafety Clearing-House" at the Second Meeting of the Parties to the Cartagena Protocol on Biosafety in Montreal Canada. It is set out in the annex to the decision and is comprised of 5 programme elements as follows:
 Structure and function of the central portal, the objective of which is to improve ease of reporting and accessing information in the BCH in response to identified needs of users.
 Information content and management, the objective of which is to increase the amount of information that is currently being reported to the BCH, and ensure it is provided in a timely manner
 Sharing information on and experience with LMOs, the objective of which is to make a broader range of biosafety information accessible to users of the BCH.
 Capacity-building and non-Internet accessibility, the objective of which is to ensure that countries have the necessary capabilities to access the Internet-based central Portal and are able to access information through the BCH in a timely manner.
-Review of activities
