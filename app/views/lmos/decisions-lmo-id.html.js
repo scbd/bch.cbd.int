@@ -11,7 +11,7 @@ define(["app", "underscore"], function(app, _) {
 		//
 		//
 		//============================================================
-		$http.get('http://bilodeau:8000/api/v2013/countries').then(function(r) {
+		$http.get('https://api.cbd.int/api/v2013/countries').then(function(r) {
 
 			_.each(r.data, function(c) { countries[c.code.toLowerCase()] = c.name.en; });
 
@@ -25,7 +25,7 @@ define(["app", "underscore"], function(app, _) {
 		//
 		//
 		//============================================================
-		$http.get('http://bilodeau:8000/api/v2013/lmos/' + bchStorageIdToObjectId(documentID) + '/decisions').then(function(r) {
+		$http.get('https://api.cbd.int/api/v2013/lmos/' + bchStorageIdToObjectId(documentID) + '/decisions').then(function(r) {
 
 			$scope.lmo = r.data;
 
