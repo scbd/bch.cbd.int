@@ -37,41 +37,12 @@ define(['app', 'underscore'], function(app, _) {
 		//
 		//
 		//============================================================
-		$scope.$watch('showBiostradestatus', function(_new){
-			$cookies.showBiostradestatus = _new ? 'true' : undefined;
+		$scope.$watch('showDatabase', function(_new){
+			$cookies.showDatabase = _new;
 		});
 		
-		$scope.showBiostradestatus = $cookies.showBiostradestatus == 'true';
+		$scope.showDatabase = $cookies.showDatabase || "";
 
-		//============================================================
-		//
-		//
-		//============================================================
-		$scope.isOn = function(decision, field) {
-			return decision && decision[field] && !$scope.isProhibited(decision);
-		};
-
-		//============================================================
-		//
-		//
-		//============================================================
-		$scope.isOff = function(decision, field) {
-			return (decision && !decision[field]) ||
-				   (decision &&  decision[field] && $scope.isProhibited(decision));
-		};
-
-		//============================================================
-		//
-		//
-		//============================================================
-		$scope.isProhibited = function(decision, field) {
-
-			if(field)
-				return decision && decision[field] && decision.decision=='prohibited';
-
-			return decision && decision.decision=='prohibited';
-		};
-	
 		//============================================================
 		//
 		//
