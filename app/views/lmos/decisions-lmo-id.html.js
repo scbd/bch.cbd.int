@@ -1,10 +1,10 @@
-﻿"use strict";
+﻿'use strict';
 
-define(["app", "underscore"], function(app, _) {
+define(['app', 'underscore'], function(app, _) {
 
-	app.controller("LmoDecisionsController", ["$scope", "$http", "$route", "$cookies", function($scope, $http, $route, $cookies) {
+	return ['$scope', '$http', '$route', '$cookies', function($scope, $http, $route, $cookies) {
 
-		var documentID = parseInt($route.current.params.documentid || "");
+		var documentID = parseInt($route.current.params.documentid || '');
 		var countries  = {};
 
 		//============================================================
@@ -15,11 +15,11 @@ define(["app", "underscore"], function(app, _) {
 
 			_.each(r.data, function(c) { countries[c.code.toLowerCase()] = c.name.en; });
 
-			countries["eur"] = countries["eur"] || countries["eu"];
+			countries.eur = countries.eur || countries.eu;
 
 		}).catch(function(error) {
-			console.log("ERROR:", error);
-		})
+			console.log('ERROR:', error);
+		});
 
 		//============================================================
 		//
@@ -30,18 +30,18 @@ define(["app", "underscore"], function(app, _) {
 			$scope.lmo = r.data;
 
 		}).catch(function(error) {
-			console.log("ERROR:", error);
-		})
+			console.log('ERROR:', error);
+		});
 
 		//============================================================
 		//
 		//
 		//============================================================
-		$scope.$watch("showBiostradestatus", function(_new, _old){
+		$scope.$watch('showBiostradestatus', function(_new){
 			$cookies.showBiostradestatus = _new ? 'true' : undefined;
 		});
 		
-		$scope.showBiostradestatus = $cookies.showBiostradestatus == "true";
+		$scope.showBiostradestatus = $cookies.showBiostradestatus == 'true';
 
 		//============================================================
 		//
@@ -56,7 +56,7 @@ define(["app", "underscore"], function(app, _) {
 		//
 		//============================================================
 		$scope.isOff = function(decision, field) {
-			return (decision && !decision[field]) || 
+			return (decision && !decision[field]) ||
 				   (decision &&  decision[field] && $scope.isProhibited(decision));
 		};
 
@@ -67,9 +67,9 @@ define(["app", "underscore"], function(app, _) {
 		$scope.isProhibited = function(decision, field) {
 
 			if(field)
-				return decision && decision[field] && decision.decision=="prohibited";
+				return decision && decision[field] && decision.decision=='prohibited';
 
-			return decision && decision.decision=="prohibited";
+			return decision && decision.decision=='prohibited';
 		};
 	
 		//============================================================
@@ -78,8 +78,8 @@ define(["app", "underscore"], function(app, _) {
 		//============================================================
 		$scope.isCountryVisible = function(country) {
 			return (country.bch && country.bch.length) ||
-			       (country.biotrade && country.biotrade.length && $scope.showBiostradestatus) 
-		}
+			       (country.biotrade && country.biotrade.length && $scope.showBiostradestatus);
+		};
 
 		//============================================================
 		//
@@ -96,7 +96,7 @@ define(["app", "underscore"], function(app, _) {
 		function bchStorageIdToObjectId(d) {
 			var hex = Number(d).toString(16);
 
-			return "52000000CBD0900000000000".substr(0, 24 - hex.length) + hex;
+			return '52000000CBD0900000000000'.substr(0, 24 - hex.length) + hex;
 		}
-	}]);
+	}];
 });

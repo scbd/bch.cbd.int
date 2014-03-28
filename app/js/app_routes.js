@@ -1,31 +1,13 @@
 'use strict';
 
-define(['app'], function(app) {
-	
-	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+define(['app', 'extended-route-provider'], function(app) {
+
+	app.config(['extendedRouteProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
 		$locationProvider.html5Mode(true);
 		$locationProvider.hashPrefix('!');
 
 		$routeProvider.
-			when('/database/lmo/decisions.shtml', { templateUrl: '/app/views/lmos/decisions-lmo-id.html', resolve: { dependencies: resolveDependencies() } });
+			when('/database/lmo/decisions.shtml', { templateUrl: '/app/views/lmos/decisions-lmo-id.html', resolveController: true, resolveUser: false });
 	}]);
-
-	//==================================================
-	//
-	//
-	//==================================================
-	function resolveDependencies() {
-
-		return ['$q', '$route', function($q, $route) {
-
-			var deferred = $q.defer();
-
-			require([$route.current.$$route.templateUrl + ".js"], function() {
-				deferred.resolve();
-			});
-
-			return deferred.promise;
-		}];
-	}	
 });

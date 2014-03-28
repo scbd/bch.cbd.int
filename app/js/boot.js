@@ -20,8 +20,8 @@ require.config({
     }
 });
 
-if (!require.defined("jquery") && $) { //HACK: jquery is loaded in the template without define/AMD :-(
-	define("jquery", [], function() {  
+if (!require.defined('jquery') && window.$) { //HACK: jquery is loaded in the template without define/AMD :-(
+	define('jquery', [], function() {
 		return window.$;
 	});
 }
