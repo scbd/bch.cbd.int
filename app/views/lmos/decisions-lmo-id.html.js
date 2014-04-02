@@ -49,7 +49,7 @@ define(['app', 'underscore'], function(app, _) {
 		//============================================================
 		$scope.isCountryVisible = function(country) {
 			return (country.bch && country.bch.length) ||
-			       (country.biotrade && country.biotrade.length && $scope.showBiostradestatus);
+			       ($scope.showDatabase=='showBiostradestatus' && country.biotrade && country.biotrade.length);
 		};
 
 		//============================================================
