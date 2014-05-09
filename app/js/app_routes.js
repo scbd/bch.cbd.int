@@ -8,6 +8,7 @@ define(['app', 'extended-route-provider'], function(app) {
 		$locationProvider.hashPrefix('!');
 
 		$routeProvider.
-			when('/database/lmo/decisions.shtml', { templateUrl: '/app/views/lmos/decisions-lmo-id.html', resolveController: true, resolveUser: false });
+			when('/database/lmo/decisions.shtml',     { templateUrl: '/app/views/lmos/decisions-lmo-id.html', resolveController: true, resolveUser: false }).
+			when('/database/lmo/new-decisions.shtml', { templateUrl: '/app/views/lmos/decisions-lmo-id.html', resolveController: true, resolveUser: false });
 	}]);
 });

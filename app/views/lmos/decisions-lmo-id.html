@@ -34,6 +34,7 @@
 	} 
 
 	div.icon > img.icon    {  }
+	div.icon > img.icon-overlay    { width:22px; }
 	div.icon > img.svg     {  }
 	div.icon > img.off.svg { opacity: 0.25; }
 
@@ -56,19 +57,30 @@
 
 </style>
 <div>
-	<div style="text-align:right;padding-bottom:5px">
+	<div style="text-align:right;margin-bottom:5px">
 
-		Display additional database(s): <select ng-model="showDatabase">
+		Display cross-references with external database(s): <select ng-model="showDatabase">
 			<option value="">None</option>
 			<option value="showBiostradestatus">Biotradestatus</option>
 		</select>
 	</div>
+
+	<div style="margin-bottom:5px" ng-show="showDatabase">
+		<em>
+			For further information about the external database click on the database name below;
+			to visit the original database page containing information on this LMO click on the <img border="0" src="/bch/images/micon-link.gif" alt="arrow">
+			icon beside the database name
+		</em>
+	</div>
+
 	<table cellpadding="0" cellspacing="0" id="E8509" style="border-top: solid 1px #888; width: 100%;">
 		<tr>
 			<th class="tableHeaderTop tableHeaderBottom back80 countryName">Country</th>
 			<th class="tableHeaderTop tableHeaderBottom">BCH Decisions</th>
 			<th class="tableHeaderTop tableHeaderBottom left-border" ng-show="showDatabase=='showBiostradestatus'">
-				<a target="showBiostradestatus" href="http://www.biotradestatus.com/results.cfm?eventID={{lmo.biotradeEventID}}">Biostradestatus</a>
+				<a target="showBiostradestatus" href="/database/info_biotradestatus.shtml">Biostradestatus</a>
+				<a target="showBiostradestatus" href="http://www.biotradestatus.com/results.cfm?eventID={{lmo.biotradeEventID}}"><img border="0" src="/bch/images/micon-link.gif"></a>
+
 			</th>
 		</tr>
 
@@ -90,21 +102,21 @@
 							<div class="icon">
 								<img ng-show="decision.food" class="icon" ng-src="/bch/images/indicators/ind-food-on.png" title="Direct use as food"/>
 								<img ng-hide="decision.food" class="icon" ng-src="/bch/images/indicators/ind-food-off.png" title="Direct use as food"/>
-								<div ng-show="decision.food && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon" ng-src="/app/views/lmos/icons/ban.png" title="Direct use as food"/></div>
+								<div ng-show="decision.food && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon-overlay" ng-src="/app/views/lmos/icons/ban.png" title="Direct use as food"/></div>
 							</div>
 						</td>
 						<td class="bch-icon">
 							<div class="icon">
 								<img ng-show="decision.feed" class="icon" ng-src="/bch/images/indicators/ind-feed-on.png" title="Direct use as feed"/>
 								<img ng-hide="decision.feed" class="icon" ng-src="/bch/images/indicators/ind-feed-off.png" title="Direct use as feed"/>
-								<div ng-show="decision.feed && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon" ng-src="/app/views/lmos/icons/ban.png" title="Direct use as feed"/></div>
+								<div ng-show="decision.feed && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon-overlay" ng-src="/app/views/lmos/icons/ban.png" title="Direct use as feed"/></div>
 							</div>
 						</td>
 						<td class="bch-icon">
 							<div class="icon">
 								<img ng-show="decision.processing" class="icon" ng-src="/bch/images/indicators/ind-transform-on.png" title="Processing"/>
 								<img ng-hide="decision.processing" class="icon" ng-src="/bch/images/indicators/ind-transform-off.png" title="Processing"/>
-								<div ng-show="decision.processing && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon" ng-src="/app/views/lmos/icons/ban.png" title="Processing"/></div>
+								<div ng-show="decision.processing && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon-overlay" ng-src="/app/views/lmos/icons/ban.png" title="Processing"/></div>
 							</div>
 						</td>
 						<td class="bch-icon">
@@ -118,28 +130,28 @@
 							<div class="icon">
 								<img ng-show="decision.containedUse" class="icon" ng-src="/bch/images/indicators/ind-confined-on.png" title="Contained Use"/>
 								<img ng-hide="decision.containedUse" class="icon" ng-src="/bch/images/indicators/ind-confined-off.png" title="Contained Use"/>
-								<div ng-show="decision.containedUse && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon" ng-src="/app/views/lmos/icons/ban.png" title="Prohibite direct use as food"/></div>
+								<div ng-show="decision.containedUse && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon-overlay" ng-src="/app/views/lmos/icons/ban.png" title="Prohibite direct use as food"/></div>
 							</div>
 						</td>
 						<td class="bch-icon">
 							<div class="icon">
 								<img ng-show="decision.pharmaceutical" class="icon" ng-src="/bch/images/indicators/ind-pharma-on.png" title="Pharmaceutical"/>
 								<img ng-hide="decision.pharmaceutical" class="icon" ng-src="/bch/images/indicators/ind-pharma-off.png" title="Pharmaceutical"/>
-								<div ng-show="decision.pharmaceutical && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon" ng-src="/app/views/lmos/icons/ban.png" title="Pharmaceutical"/></div>
+								<div ng-show="decision.pharmaceutical && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon-overlay" ng-src="/app/views/lmos/icons/ban.png" title="Pharmaceutical"/></div>
 							</div>
 						</td>
 						<td class="bch-icon">
 							<div class="icon">
 								<img ng-show="decision.transit" class="icon" ng-src="/bch/images/indicators/ind-transit-on.png" title="Transit"/>
 								<img ng-hide="decision.transit" class="icon" ng-src="/bch/images/indicators/ind-transit-off.png" title="Transit"/>
-								<div ng-show="decision.transit && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon" ng-src="/app/views/lmos/icons/ban.png" title="Transit"/></div>
+								<div ng-show="decision.transit && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon-overlay" ng-src="/app/views/lmos/icons/ban.png" title="Transit"/></div>
 							</div>
 						</td>
 						<td class="bch-icon">
 							<div class="icon">
 								<img ng-show="decision.other" class="icon" ng-src="/bch/images/indicators/ind-other-on.png" title="Other" />
 								<img ng-hide="decision.other" class="icon" ng-src="/bch/images/indicators/ind-other-off.png" title="Other" />
-								<div ng-show="decision.other && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon" ng-src="/app/views/lmos/icons/ban.png" title="Other"/></div>
+								<div ng-show="decision.other && decision.decision=='prohibited'" class="overlay prohibited"><img class="icon-overlay" ng-src="/app/views/lmos/icons/ban.png" title="Other"/></div>
 							</div>
 						</td>
 				</table>
