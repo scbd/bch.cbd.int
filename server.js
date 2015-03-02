@@ -24,6 +24,10 @@ app.use(express.compress());
 // Configure routes
 
 app.use('/app', express.static(__dirname + '/app'));
+
+var apiProxy = require('http-proxy').createProxyServer({}); app.all('/api', function(req, res) { apiProxy.web(req, res, {target : 'https://api.cbd.int:443'}); } );
+//var bchProxy = require('http-proxy').createProxyServer({}); app.all('*',    function(req, res) { bchProxy.web(req, res, {target : 'http://172.16.228.187:80'}); } );
+
 app.all('*', function(req, res) { res.send('404', 404); } );
 
 // Start server

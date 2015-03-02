@@ -1,6 +1,4 @@
-'use strict';
-
-define(['app'], function (app) {
+define(['app'], function (app) { 'use strict';
 
 	app.factory('authentication', ['$http', '$browser', function($http, $browser) {
 
@@ -51,7 +49,7 @@ define(['app'], function (app) {
 	app.factory('authHttp', ['$http', '$browser', function($http, $browser) {
 
 		function addAuthentication(config) {
-		
+
 			if(!config)         config         = {};
 			if(!config.headers) config.headers = {};
 

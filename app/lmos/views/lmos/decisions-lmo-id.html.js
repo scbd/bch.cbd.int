@@ -1,6 +1,4 @@
-﻿'use strict';
-
-define(['app', 'underscore'], function(app, _) {
+define(['app', 'underscore', 'angular-cookies'], function(app, _) { 'use strict';
 
 	return ['$scope', '$http', '$route', '$cookies', function($scope, $http, $route, $cookies) {
 
@@ -40,7 +38,7 @@ define(['app', 'underscore'], function(app, _) {
 		$scope.$watch('showDatabase', function(_new){
 			$cookies.showDatabase = _new;
 		});
-		
+
 		$scope.showDatabase = $cookies.showDatabase || "";
 
 		//============================================================

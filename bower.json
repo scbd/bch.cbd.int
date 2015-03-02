@@ -4,10 +4,9 @@
     "angular": "1.2.x",
     "angular-route": "1.2.x",
     "angular-cookies": "1.2.x",
-    "font-awesome": "4.0.x",
     "requirejs": "2.1.x",
-    "requirejs-domready": "2.0.x",
     "underscore": "1.6.x",
-    "jquery": "2.1.x"
+    "jquery": "2.1.x",
+    "requirejs-domready": "~2.0.1"
   }
 }

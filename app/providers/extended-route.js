@@ -1,7 +1,5 @@
-'use strict';
+define(['app', 'angular', 'angular-route', 'services/authentication'], function(app, angular) { 'use strict';
 
-define(['app', 'angular', 'authentication'], function(app, angular) {
-    
     app.provider('extendedRoute', ['$routeProvider', function($routeProvider) {
 
         var __when = $routeProvider.when.bind($routeProvider);
@@ -38,7 +36,7 @@ define(['app', 'angular', 'authentication'], function(app, angular) {
         //
         //============================================================
         function proxy($injector, $scope, $route, controller) {
-            
+
             if(!controller)
                 return;
 
@@ -66,15 +64,15 @@ define(['app', 'angular', 'authentication'], function(app, angular) {
         //
         //============================================================
         function resolveController() {
-            
+
             return ['$q', '$route', function($q, $route) {
-     
+
                 var deferred = $q.defer();
-     
+
                 require([$route.current.$$route.templateUrl + '.js'], function (module) {
                     deferred.resolve(module);
                 });
-     
+
                 return deferred.promise;
             }];
         }
