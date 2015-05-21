@@ -2,19 +2,14 @@
   "name": "bch.cbd.int",
   "description": "Biosafety Clearing-House",
   "dependencies": {
+    "bower": "^1.4.1",
     "console-stamp": "^0.1.3",
-    "http-proxy": "~1.0.2",
-    "grunt": "~0.4.2",
-    "grunt-bower-task": "0.4.x",
-    "grunt-cli": "~0.1.13",
-    "load-grunt-tasks": "0.4.x",
-    "express": "3.15.x"
-  },
-  "devDependencies": {
-    "awsbox": "0.6.x"
+    "express": "3.15.x",
+    "http-proxy": "~1.0.2"
   },
   "engine": "node >= 0.10.18",
   "scripts": {
-    "postinstall": "node ./node_modules/grunt-cli/bin/grunt bower"
+    "postinstall": "./node_modules/.bin/bower install --config.interactive=false",
+    "start": "node server"
   }
 }
