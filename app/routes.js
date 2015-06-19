@@ -15,9 +15,5 @@ define(['app', 'jquery', 'lodash', 'providers/extended-route'], function(app, $,
 		else {
 			throw "Unhandled base:" + baseHref;
 		}
-
-		$routeProvider.otherwise('/?documentid=14750');
-
-
 	}]);
 });
