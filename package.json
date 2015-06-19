@@ -17,7 +17,6 @@
   },
   "engine": "node >= 0.10.18",
   "scripts": {
-    "postinstall": "node ./node_modules/.bin/grunt",
-    "start": "node server"
+    "postinstall": "node ./node_modules/.bin/grunt"
   }
 }
