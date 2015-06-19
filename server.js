@@ -1,38 +1,52 @@
+/* jshint node: true, browser: false */
 'use strict';
-/* jshint node:true */
 
-require('console-stamp')(console, 'HH:MM:ss.l');
+require("console-stamp")(console, "HH:MM:ss.l");
 
 // LOG UNHANDLED EXCEPTION AND EXIT
 process.on('uncaughtException', function (err) {
   console.error('uncaughtException:', err.message);
   console.error(err.stack);
-  process.exit(1);
 });
 
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
-var express = require('express');
-var app     = express();
-var server  = require('http').createServer(app);
 
-app.set('port', process.env.PORT || 2050);
-app.use(express.logger('dev'));
-app.use(express.compress());
+// CREATE HTTP SERVER AND PROXY
+
+var app     = require('express')();
+var proxy   = require('http-proxy').createProxyServer({});
+
+// LOAD CONFIGURATION
+
+app.use(require('morgan')('dev'));
+app.use(require('compression')());
+
+app.use('/app',         require('serve-static')(__dirname + '/app_build'));
+app.use('/app',         require('serve-static')(__dirname + '/app'));
+app.all('/app/*',       function(req, res) { res.status(404).send(); } );
 
 // Configure routes
 
-app.use('/app', express.static(__dirname + '/app'));
+app.get   ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ); } );
+app.put   ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ); } );
+app.post  ('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ); } );
+app.delete('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ); } );
 
-var apiProxy = require('http-proxy').createProxyServer({}); app.all('/api', function(req, res) { apiProxy.web(req, res, {target : 'https://api.cbd.int:443'}); } );
-//var bchProxy = require('http-proxy').createProxyServer({}); app.all('*',    function(req, res) { bchProxy.web(req, res, {target : 'http://172.16.228.187:80'}); } );
-
-app.all('*', function(req, res) { res.send('404', 404); } );
+// FOR DEV:
+// app.all('/*', function(req, res) { proxy.web(req, res, { target: 'https://bch.cbd.int:443', secure: false } ); } );
 
 // Start server
 
-server.listen(app.get('port'), '0.0.0.0');
-server.on('listening', function () {
-    console.info('info: BCH started. Listening on %j', this.address());
+app.listen(process.env.PORT || 2050, function () {
+	console.log('Server listening on %j', this.address());
+});
+
+// LOG PROXY ERROR & RETURN http:500
+
+proxy.on('error', function (e, req, res) {
+    console.error('error proxying: '+req.url);
+    console.error('proxy error:', e);
+    res.send( { code: 500, source:'chm/proxy', message : 'proxy error', proxyError: e }, 500);
 });

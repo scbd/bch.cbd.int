@@ -5,89 +5,35 @@ window.name = 'NG_DEFER_BOOTSTRAP!';
 require.config({
     waitSeconds: 120,
     paths: {
-//        'angular'         : 'libs/angular/angular.min',
-        'angular-route'   : 'libs/angular-route/angular-route',
-        'angular-cookies' : 'libs/angular-cookies/angular-cookies',
+        'angular'         : 'libs/angular-flex/angular-flex',
+        'ngRoute'         : 'libs/angular-route/angular-route',
+        'ngCookies'       : 'libs/angular-cookies/angular-cookies',
         'domReady'        : 'libs/requirejs-domready/domReady',
-        'underscore'      : 'libs/underscore/underscore'
-//      'jquery'          : 'libs/jquery/dist/jquery.min'   //define in BCH template!
+        'lodash'          : 'libs/lodash/lodash',
+        'jquery'          : 'libs/jquery/jquery',
+        'authentication'  : 'services/authentication'
     },
     shim: {
-        'libs/angular/angular.min' : { 'deps': ['jquery'], 'exports': 'angular' },
-        'angular-route'   : { 'deps': ['angular'] },
-        'angular-cookies' : { 'deps': ['angular'] }
+        'angular'              : { deps: ['libs/angular/angular'] },
+        'libs/angular/angular' : { deps: ['jquery'] },
+        'ngRoute'              : { deps: ['angular'] },
+        'ngCookies'            : { deps: ['angular'] }
     }
 });
 
-if (!require.defined('jquery') && window.$) { //HACK: jquery is loaded in the template without define/AMD :-(
+//HACK: jquery is loaded in the BCH template without define/AMD :-(
+if (!require.defined('jquery') && window.$) {
 	define('jquery', [], function() {
 		return window.$;
 	});
 }
 
-define('angular', ['libs/angular/angular.min'], function (ng) { 'use strict';
+// BOOT
 
-    var ng_module = ng.module.bind(ng);
-
-    ng.module = function(moduleName, deps) {
-
-        if(deps===undefined)
-            return ng_module(moduleName)
-
-        var module = null;
-
-        try
-        {
-            module = ng_module(moduleName);
-        }
-        catch(e)
-        {
-            module = ng_module(moduleName, deps);
-
-            (function(module) {
-
-                module.config(['$controllerProvider', '$compileProvider', '$provide', '$filterProvider',
-                       function($controllerProvider,   $compileProvider,   $provide,   $filterProvider) {
-
-                        // Allow dynamic registration
-
-                        module.filter     = $filterProvider.register;
-                        module.provider   = $provide.provider;
-                        module.factory    = $provide.factory;
-                        module.value      = $provide.value;
-                        module.controller = $controllerProvider.register;
-                        module.directive  = $compileProvider.directive;
-                    }
-                ]);
-
-            })(module);
-        }
-
-        return module;
-    }
-
-    return ng;
-
+require(['angular', 'domReady!', 'app', 'routes'], function(ng, doc){
+    ng.bootstrap(doc, ['app']);
+    ng.resumeBootstrap();
 });
-
-
-define(['module'], function (module) { 'use strict';
-
-
-    var config  = module.config();
-    var modules = ['domReady!', 'angular', 'app'];
-
-    for(var i in config.modules)
-        modules.push(config.modules[i]);
-
-    require(modules, function (doc, ng) {
-
-        ng.bootstrap(doc, ['app']);
-        ng.resumeBootstrap();
-
-    });
-});
-
 
 //==================================================
 // Protect window.console method calls, e.g. console is not defined on IE

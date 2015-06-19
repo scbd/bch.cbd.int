@@ -45,31 +45,4 @@ define(['app'], function (app) { 'use strict';
 		return { getUser: getUser, signOut: signOut, reset: reset };
 
 	}]);
-
-	app.factory('authHttp', ['$http', '$browser', function($http, $browser) {
-
-		function addAuthentication(config) {
-
-			if(!config)         config         = {};
-			if(!config.headers) config.headers = {};
-
-			if($browser.cookies().authenticationToken) config.headers.Authorization = 'Ticket '+$browser.cookies().authenticationToken;
-			else                                       config.headers.Authorization = undefined;
-
-			return config;
-		}
-
-		function authHttp(config) {
-			return $http(addAuthentication(config));
-		}
-
-		authHttp['get'   ] = function(url,       config) { return authHttp(angular.extend(config||{}, { 'method' : 'GET'   , 'url' : url })); };
-		authHttp['head'  ] = function(url,       config) { return authHttp(angular.extend(config||{}, { 'method' : 'HEAD'  , 'url' : url })); };
-		authHttp['delete'] = function(url,       config) { return authHttp(angular.extend(config||{}, { 'method' : 'DELETE', 'url' : url })); };
-		authHttp['jsonp' ] = function(url,       config) { return authHttp(angular.extend(config||{}, { 'method' : 'JSONP' , 'url' : url })); };
-		authHttp['post'  ] = function(url, data, config) { return authHttp(angular.extend(config||{}, { 'method' : 'POST'  , 'url' : url, 'data' : data })); };
-		authHttp['put'   ] = function(url, data, config) { return authHttp(angular.extend(config||{}, { 'method' : 'PUT'   , 'url' : url, 'data' : data })); };
-
-		return authHttp;
-	}]);
 });

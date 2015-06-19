@@ -1,4 +1,4 @@
-define(['app', 'underscore', 'angular-cookies'], function(app, _) { 'use strict';
+define(['app', 'lodash', 'ngCookies'], function(app, _) { 'use strict';
 
 	return ['$scope', '$http', '$route', '$cookies', function($scope, $http, $route, $cookies) {
 
@@ -9,7 +9,7 @@ define(['app', 'underscore', 'angular-cookies'], function(app, _) { 'use strict'
 		//
 		//
 		//============================================================
-		$http.get('https://api.cbd.int/api/v2013/countries').then(function(r) {
+		$http.get('/api/v2013/countries').then(function(r) {
 
 			_.each(r.data, function(c) { countries[c.code.toLowerCase()] = c.name.en; });
 
@@ -23,7 +23,7 @@ define(['app', 'underscore', 'angular-cookies'], function(app, _) { 'use strict'
 		//
 		//
 		//============================================================
-		$http.get('https://api.cbd.int/api/v2013/lmos/' + bchStorageIdToObjectId(documentID) + '/decisions').then(function(r) {
+		$http.get('/api/v2013/lmos/' + bchStorageIdToObjectId(documentID) + '/decisions').then(function(r) {
 
 			$scope.lmo = r.data;
 
