@@ -1,4 +1,4 @@
 {
     "interactive" : false,
-    "json": "bower.json"
+    "directory": "app/libs"
 }

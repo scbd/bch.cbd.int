@@ -1,4 +1,4 @@
-define(['require', 'app', 'angular', 'ngRoute', 'authentication'], function(require, app, angular) { 'use strict';
+define(['require', 'app', 'angular', 'ngRoute'], function(require, app, angular) { 'use strict';
 
     var baseUrl = require.toUrl('');
 
@@ -36,10 +36,6 @@ define(['require', 'app', 'angular', 'ngRoute', 'authentication'], function(requ
                 ext.resolve.controller = resolveController(templateModule);
             }
 
-            if(route.resolveUser) {
-                ext.resolve.user = resolveUser();
-            }
-
             return __when(path, angular.extend(route, ext));
         }
 
@@ -73,19 +69,6 @@ define(['require', 'app', 'angular', 'ngRoute', 'authentication'], function(requ
         //
         //
         //============================================================
-        function resolveUser() {
-            return ['$q', '$rootScope', 'authentication', function($q, $rootScope, authentication) {
-                return $q.when(authentication.getUser()).then(function (user) {
-                    $rootScope.user = user;
-                    return user;
-                });
-            }];
-        }
-
-        //============================================================
-        //
-        //
-        //============================================================
         function resolveController(controllerModule) {
 
             return ['$q', function($q) {
@@ -94,7 +77,9 @@ define(['require', 'app', 'angular', 'ngRoute', 'authentication'], function(requ
 
                 require([controllerModule], function (module) {
                     deferred.resolve(module);
-                }, function(){
+                }, function(error){
+                    console.error  (error);
+                    console.error  ("controller not found: " + controllerModule);
                     deferred.reject("controller not found: " + controllerModule);
                 });
 

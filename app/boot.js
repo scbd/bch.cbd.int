@@ -1,17 +1,15 @@
-fixIEConsole();
-
-window.name = 'NG_DEFER_BOOTSTRAP!';
+(function(window, document) { 'use strict';
 
 require.config({
-    waitSeconds: 120,
+    waitSeconds: 30,
+    baseUrl : '/app/',
     paths: {
-        'angular'         : 'libs/angular-flex/angular-flex',
-        'ngRoute'         : 'libs/angular-route/angular-route',
-        'ngCookies'       : 'libs/angular-cookies/angular-cookies',
-        'domReady'        : 'libs/requirejs-domready/domReady',
-        'lodash'          : 'libs/lodash/lodash',
-        'jquery'          : 'libs/jquery/jquery',
-        'authentication'  : 'services/authentication'
+        'angular'   : 'libs/angular-flex/angular-flex',
+        'ngRoute'   : 'libs/angular-route/angular-route.min',
+        'ngCookies' : 'libs/angular-cookies/angular-cookies.min',
+        'lodash'    : 'libs/lodash/lodash.min',
+        'text'      : 'libs/requirejs-text/text',
+        'jquery'    : 'libs/jquery/dist/jquery.min',
     },
     shim: {
         'angular'              : { deps: ['libs/angular/angular'] },
@@ -27,19 +25,23 @@ if (!require.defined('jquery') && window.$) {
 		return window.$;
 	});
 }
-
 // BOOT
+require(['angular', 'app', 'routes'], function(ng, app) {
 
-require(['angular', 'domReady!', 'app', 'routes'], function(ng, doc){
-    ng.bootstrap(doc, ['app']);
-    ng.resumeBootstrap();
+    ng.element(document).ready(function(){
+        ng.bootstrap(document, [app.name]);
+    });
+
 });
+})(window, document);
+
+// MISC
 
 //==================================================
 // Protect window.console method calls, e.g. console is not defined on IE
 // unless dev tools are open, and IE doesn't define console.debug
 //==================================================
-function fixIEConsole() { 'use strict';
+(function fixIEConsole() { 'use strict';
 
     if (!window.console) {
         window.console = {};
@@ -52,4 +54,4 @@ function fixIEConsole() { 'use strict';
         if (!window.console[methods[i]])
             window.console[methods[i]] = noop;
     }
-}
+})();

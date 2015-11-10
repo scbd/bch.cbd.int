@@ -18,8 +18,17 @@ app.all('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://ap
 // FOR DEV:
 // app.all('/*', function(req, res) { proxy.web(req, res, { target: 'https://bch.cbd.int:443', secure: false } ); } );
 
-// Start server
+// START HTTP SERVER
 
-app.listen(process.env.PORT || 2050, function () {
-	console.log('Server listening on %j', this.address());
+app.listen(process.env.PORT || 2000, '0.0.0.0', function(){
+    console.log('Server listening on %j', this.address());
 });
+
+// Handle proxy errors ignore
+
+proxy.on('error', function (e,req, res) {
+    console.error('proxy error:', e);
+    res.status(502).send();
+});
+
+process.on('SIGTERM', ()=>process.exit());
