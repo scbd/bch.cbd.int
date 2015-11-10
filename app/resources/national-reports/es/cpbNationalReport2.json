@@ -1,0 +1,3853 @@
+[
+  {
+    "section": "General",
+    "text": "Parte en el Protocolo de Cartagena sobre Seguridad de la Biotecnología",
+    "questions": [
+      {
+        "key": "party",
+        "section": "General",
+        "number": "12",
+        "type": "option",
+        "text": "¿Es su país Parte en el Protocolo de Cartagena sobre Seguridad de la Biotecnología (CPB)?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q013",
+        "section": "General",
+        "number": "13",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 12 es No, ¿hay establecido algún proceso nacional para llegar a ser una Parte?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q014",
+        "section": "General",
+        "number": "14",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles"
+      }
+    ]
+  },
+  {
+    "section": "Article2",
+    "text": "Artículo 2 – Disposiciones generales",
+    "questions": [
+      {
+        "key": "Q015",
+        "section": "Article2",
+        "number": "15",
+        "type": "option",
+        "text": "¿Ha introducido su país medidas jurídicas, administrativas y de otra clase, necesarias para la aplicación del Protocolo?",
+        "values": [
+          {
+            "value": "implementation.fullFramwork",
+            "text": "Hay plenamente establecido un marco normativo nacional"
+          },
+          {
+            "value": "implementation.partialFramwork",
+            "text": "Hay parcialmente establecido un marco normativo nacional"
+          },
+          {
+            "value": "implementation.temporaryMeasures",
+            "text": "Solo han sido introducidas medidas temporales"
+          },
+          {
+            "value": "implementation.draftFramwork",
+            "text": "Solo existe un proyecto de marco"
+          },
+          {
+            "value": "implementation.none",
+            "text": "No se ha adoptado ninguna clase de medidas"
+          }
+        ]
+      },
+      {
+        "key": "Q016",
+        "section": "Article2",
+        "number": "16",
+        "type": "option",
+        "text": "¿Cuáles son los instrumentos jurídicos establecidos para la aplicación de su marco nacional de seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "instrument.nationalBiosafetyLaws",
+            "text": "Una o más leyes nacionales en seguridad de la biotecnología"
+          },
+          {
+            "value": "instrument.nationalBiosafetyRegulations",
+            "text": "Una o más reglamentaciones nacionales en seguridad de la biotecnología"
+          },
+          {
+            "value": "instrument.biosafetyGuidelines",
+            "text": "Uno o más conjuntos de directrices sobre seguridad de la biotecnología"
+          },
+          {
+            "value": "instrument.indirectLaws",
+            "text": "Otras leyes, reglamentos o directrices que se aplican de manera indirecta a la seguridad de la biotecnología"
+          },
+          {
+            "value": "instrument.none",
+            "text": "Ninguna clase de instrumentos establecidos"
+          }
+        ]
+      },
+      {
+        "key": "Q017",
+        "section": "Article2",
+        "number": "17",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo de asignaciones presupuestarias de fondos para el funcionamiento de su marco nacional de seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q018",
+        "section": "Article2",
+        "number": "18",
+        "type": "option",
+        "text": "¿Dispone su país de personal permanente para administrar las funciones directamente relacionadas con el marco nacional de seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q019",
+        "section": "Article2",
+        "number": "19",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 18 es Sí, ¿cuántos miembros de personal permanente han sido establecidos cuyas funciones están directamente relacionadas con el marco nacional de seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "1",
+            "text": "Uno"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q020",
+        "section": "Article2",
+        "number": "20",
+        "type": "option",
+        "text": "¿Tiene su país un marco de seguridad de la biotecnología / leyes / reglamentación / directrices que hayan sido presentadas al Centro de Intercambio de Información sobre Seguridad de la Biotecnología (CIISB)?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Parcialmente"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q021",
+        "section": "Article2",
+        "number": "21",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 2 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article5",
+    "text": "Artículo 5 – Productos farmacéuticos",
+    "questions": [
+      {
+        "key": "Q022",
+        "section": "Article5",
+        "number": "22",
+        "type": "option",
+        "text": "¿Regula su país el movimiento transfronterizo, la manipulación y la utilización de organismos vivos modificados (OVM) que son productos farmacéuticos?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q023",
+        "section": "Article5",
+        "number": "23",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 22 es Sí, ¿ha sido presentada esta información al CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Parcialmente"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q024",
+        "section": "Article5",
+        "number": "24",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 5 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article6",
+    "text": "Artículo 6 – Tránsito y uso confinado",
+    "questions": [
+      {
+        "key": "Q025",
+        "section": "Article6",
+        "number": "25",
+        "type": "option",
+        "text": "¿Regula su país el tránsito de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q026",
+        "section": "Article6",
+        "number": "26",
+        "type": "option",
+        "text": "¿Regula su país el uso confinado de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q027",
+        "section": "Article6",
+        "number": "27",
+        "type": "option",
+        "text": "Si su respuesta a las preguntas 25 o 26 es Sí, ¿ha sido presentada esta información al CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Parcialmente"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q028",
+        "section": "Article6",
+        "number": "28",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 6 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Articles7-10",
+    "text": "Artículo 7 a 10 – Acuerdo fundamentado previo e\u2028introducción deliberada de OVM en el medio ambiente",
+    "questions": [
+      {
+        "key": "Q029",
+        "section": "Articles7-10",
+        "number": "29",
+        "type": "option",
+        "text": "¿Ha adoptado su país leyes / reglamentación / medidas administrativas para el funcionamiento del procedimiento de acuerdo fundamentado previo del Protocolo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q030",
+        "section": "Articles7-10",
+        "number": "30",
+        "type": "option",
+        "text": "¿Ha adoptado su país un marco reglamentario nacional de conformidad con el Protocolo relativo al movimiento transfronterizo de OVM destinados a la introducción deliberada en el medio ambiente?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q031",
+        "section": "Articles7-10",
+        "number": "31",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para adoptar decisiones relativas al primer movimiento transfronterizo intencional de los OVM para la introducción deliberada de los OVM en el medio ambiente?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q032",
+        "section": "Articles7-10",
+        "number": "32",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 31 es Sí, ¿se aplica también el mecanismo a casos de introducción deliberada de OVM en el medio ambiente que no hubieran sido objeto de un movimiento transfronterizo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q033",
+        "section": "Articles7-10",
+        "number": "33",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo de vigilancia de los posibles efectos de los OVM que hayan sido liberados al medio ambiente?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q034",
+        "section": "Articles7-10",
+        "number": "34",
+        "type": "option",
+        "text": "¿Tiene su país la capacidad de detectar e identificar los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q035",
+        "section": "Articles7-10",
+        "number": "35",
+        "type": "option",
+        "text": "¿Ha establecido su país requisitos legales para los exportadores bajo su jurisdicción de notificar por escrito a la autoridad nacional competente de la Parte de importación antes del movimiento transfronterizo intencional de un OVM que cae bajo el alcance del procedimiento de consentimiento fundamentado previo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q036",
+        "section": "Articles7-10",
+        "number": "36",
+        "type": "option",
+        "text": "¿Ha establecido su país requisitos legales en cuanto a la exactitud de la información que figura en la notificación?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q037",
+        "section": "Articles7-10",
+        "number": "37",
+        "type": "option",
+        "text": "¿Ha recibido su país alguna vez una solicitud / notificación relativa a movimientos transfronterizos deliberados de los OVM para su introducción deliberada en el medio ambiente?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q038",
+        "section": "Articles7-10",
+        "number": "38",
+        "type": "option",
+        "text": "¿Ha adoptado su país alguna vez una decisión sobre una solicitud / notificación relativa a movimientos transfronterizos deliberados de los OVM para su introducción deliberada en el medio ambiente?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q039",
+        "section": "Articles7-10",
+        "number": "39",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 38 es Sí, ¿para cuántos OVM ha sido aprobada la importación en su país hasta la fecha actual para su introducción deliberada en el medio ambiente?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q040",
+        "section": "Articles7-10",
+        "number": "40",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 38 es Sí, ¿cuántos OVM, no importados, han sido aprobados en su país hasta la fecha actual para su introducción deliberada en el medio ambiente?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q041",
+        "section": "Articles7-10",
+        "number": "41",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿cuántas solicitudes/notificaciones ha recibido su país en relación con movimientos transfronterizos deliberados de OVM para su introducción deliberada en el medio ambiente?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q042",
+        "section": "Articles7-10",
+        "number": "42",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿cuántas decisiones ha adoptado su país en relación con movimientos transfronterizos deliberados de OVM para su introducción deliberada en el medio ambiente?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q043",
+        "section": "Articles7-10",
+        "number": "43",
+        "type": "option",
+        "text": "Por referencia a las decisiones adoptadas sobre movimientos transfronterizos deliberados de OVM para su introducción deliberada en el medio ambiente, ¿ha recibido su país notificación de las Partes de exportación y de los exportadores antes del movimiento transfronterizo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q044",
+        "section": "Articles7-10",
+        "number": "44",
+        "type": "option",
+        "text": "¿Se incluía en las notificaciones información completa (como mínimo la información especificada en el Anexo I del Protocolo de Cartagena sobre Seguridad de la Biotecnología)?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q045",
+        "section": "Articles7-10",
+        "number": "45",
+        "type": "option",
+        "text": "¿Ha acusado recibo su país al notificador de las notificaciones en un plazo de 90 días desde su recibo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q046",
+        "section": "Articles7-10",
+        "number": "46",
+        "type": "option",
+        "text": "¿Ha informado su país al notificador y al CIISB acerca de su decisión?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "true.some.notifier",
+            "text": "Solo en algunos casos al notificador"
+          },
+          {
+            "value": "true.some.bch",
+            "text": "Solo en algunos casos al CIISB"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q047",
+        "section": "Articles7-10",
+        "number": "47",
+        "type": "option",
+        "text": "¿Ha informado su país al notificador y al CIISB acerca de su decisión a su debido tiempo (en un plazo de 270 días o en el período especificado en su comunicación al notificador)?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q048",
+        "section": "Articles7-10",
+        "number": "48",
+        "type": "term",
+        "text": "¿Qué porcentaje de las decisiones de su país cae dentro de las siguientes categorías?",
+        "values": [
+          {
+            "value": "3B9ECE67-B35C-40FF-8C06-4EA5FF762899",
+            "text": "Aprobación de la importación/uso del OVM(s) sin condiciones"
+          },
+          {
+            "value": "3EFF4792-A896-4DC7-9945-04FE9C8B5B4F",
+            "text": "Aprobación de la importación/uso del OVM(s) con condiciones"
+          },
+          {
+            "value": "6DD1B161-4CDB-4900-BD31-DBB97E86B2AE",
+            "text": "Prohibición de la importación/uso del OVM(s)"
+          },
+          {
+            "value": "8D91ACEE-C6B3-4204-8FE6-00AE424013FF",
+            "text": "Solicitud de información adicional pertinente"
+          },
+          {
+            "value": "19F9F13E-195E-45B5-88DD-058A07E0D6F6",
+            "text": "Informar al notificador que se ha prorrogado el plazo para comunicar la decisión"
+          }
+        ]
+      },
+      {
+        "key": "Q049",
+        "section": "Articles7-10",
+        "number": "49",
+        "type": "option",
+        "text": "En los casos en los que su país aprobó una importación con condiciones o prohibió una importación, ¿expuso los motivos en los que se basaban sus decisiones al notificador o al CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "true.some.notifier",
+            "text": "Solo en algunos casos al notificador"
+          },
+          {
+            "value": "true.some.bch",
+            "text": "Solo en algunos casos al CIISB"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q050",
+        "section": "Articles7-10",
+        "number": "50",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación de los artículos 7 a 10 en su país, incluidas medidas en el caso de que no hubiese certidumbre científica acerca de los posibles efectos adversos de los OVM para introducción deliberada en el medio ambiente:"
+      }
+    ]
+  },
+  {
+    "section": "Article11",
+    "text": "Artículo 11 – Procedimiento para organismos vivos modificados\u2028destinados para uso directo como alimento humano o animal o para procesamiento (OVM-AHAP)",
+    "questions": [
+      {
+        "key": "Q051",
+        "section": "Article11",
+        "number": "51",
+        "type": "option",
+        "text": "¿Ha adoptado su país leyes o reglamentación específicas para la adopción de decisiones relativas al uso nacional, incluida su colocación en el mercado, de los OVM-AHAP?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q052",
+        "section": "Article11",
+        "number": "52",
+        "type": "option",
+        "text": "¿Ha establecido su país requisitos legales respecto a la precisión de la información proporcionada por el solicitante?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q053",
+        "section": "Article11",
+        "number": "53",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para asegurar que las decisiones relativas a los OVM-AHAP que pudieran ser objeto de un movimiento transfronterizo sean comunicadas a las Partes por conducto del CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q054",
+        "section": "Article11",
+        "number": "54",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para la adopción de decisiones sobre la importación de OVM-AHAP?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q055",
+        "section": "Article11",
+        "number": "55",
+        "type": "option",
+        "text": "¿Ha declarado su país por conducto del CIISB que en ausencia del marco reglamentario sus decisiones anteriores a la primera importación de un organismo vivo modificado destinado para uso directo como alimento humano o animal o para procesamiento, se adoptarán de conformidad con el artículo 11.6 del Protocolo de Cartagena sobre Seguridad de la Biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q056",
+        "section": "Article11",
+        "number": "56",
+        "type": "option",
+        "text": "¿Ha indicado su país sus necesidades de asistencia financiera y técnica y de creación de capacidad respecto a los OVM-AHAP?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q057",
+        "section": "Article11",
+        "number": "57",
+        "type": "option",
+        "text": "¿Ha adoptado alguna vez su país una decisión sobre los OVM-AHAP (ya sea para importación o para uso nacional)?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q058",
+        "section": "Article11",
+        "number": "58",
+        "type": "option",
+        "text": "¿Cuántos OVM-AHAP han sido aprobados hasta ahora por su país?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q059",
+        "section": "Article11",
+        "number": "59",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿cuántas decisiones ha adoptado su país respecto a la importación de OVM-AHAP?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q060",
+        "section": "Article11",
+        "number": "60",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿cuántas decisiones ha adoptado su país respecto al uso nacional, incluida su colocación en el mercado, de los OVM-AHAP?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q061",
+        "section": "Article11",
+        "number": "61",
+        "type": "option",
+        "text": "¿Ha informado su país a las Partes por conducto del CIISB acerca de sus decisiones relativas a la importación de los OVM-AHAP?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q062",
+        "section": "Article11",
+        "number": "62",
+        "type": "option",
+        "text": "¿Ha informado su país a las Partes por conducto del CIISB acerca de sus decisiones relativas al uso nacional, incluida su colocación en el mercado, de los OVM-AHAP en un plazo de 15 días?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "true.delay",
+            "text": "Sí, pero con demoras (es decir, después de más de 15 días)"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q063",
+        "section": "Article11",
+        "number": "63",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 11 en su país, incluidas medidas en el caso de que no hubiese certidumbre científica acerca de los posibles efectos adversos de los OVM-AHAP:"
+      }
+    ]
+  },
+  {
+    "section": "Article12",
+    "text": "Artículo 12 – Revisión de las decisiones",
+    "questions": [
+      {
+        "key": "Q064",
+        "section": "Article12",
+        "number": "64",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para la revisión y cambio de una decisión relativa a un movimiento transfronterizo intencional de OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q065",
+        "section": "Article12",
+        "number": "65",
+        "type": "option",
+        "text": "¿Ha recibido alguna vez su país una solicitud de revisión de una decisión?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q066",
+        "section": "Article12",
+        "number": "66",
+        "type": "option",
+        "text": "Ha revisado/modificado alguna vez su país una decisión relativa a un movimiento transfronterizo intencional de OVM?",
+        "values": [
+          {
+            "value": "true.reviewed",
+            "text": "Sí, decisión revisada"
+          },
+          {
+            "value": "true.changed",
+            "text": "Sí, decisión revisada y modificada"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q067",
+        "section": "Article12",
+        "number": "67",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿cuántas decisiones fueron revisadas y/o modificadas respecto a un movimiento transfronterizo intencional de un OVM?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "5+",
+            "text": "Más de 5"
+          }
+        ]
+      },
+      {
+        "key": "Q068",
+        "section": "Article12",
+        "number": "68",
+        "type": "option",
+        "text": "¿Ha informado su país al notificador y al CIISB acerca de la revisión y/o modificaciones de la decisión?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "true.some.notifier",
+            "text": "Solo en algunos casos al notificador"
+          },
+          {
+            "value": "true.some.bch",
+            "text": "Solo en algunos casos al CIISB"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q069",
+        "section": "Article12",
+        "number": "69",
+        "type": "option",
+        "text": "¿Ha informado su país al notificador y al CIISB acerca de la revisión y modificaciones de la decisión en un plazo de 30 días?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "true.delay",
+            "text": "Sí, pero con demoras (es decir, después de más de 30 días)"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q070",
+        "section": "Article12",
+        "number": "70",
+        "type": "option",
+        "text": "¿Ha expuesto su país al notificador y al CIISB los motivos de la revisión y/o de modificaciones de la decisión?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "true.some.notifier",
+            "text": "Solo en algunos casos al notificador"
+          },
+          {
+            "value": "true.some.bch",
+            "text": "Solo en algunos casos al CIISB"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q071",
+        "section": "Article12",
+        "number": "71",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 12 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article13",
+    "text": "Artículo 13 –Procedimiento simplificado",
+    "questions": [
+      {
+        "key": "Q072",
+        "section": "Article13",
+        "number": "72",
+        "type": "option",
+        "text": "¿Ha establecido su país un sistema para la aplicación del procedimiento simplificado en lo que atañe a un movimiento transfronterizo intencional de OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q073",
+        "section": "Article13",
+        "number": "73",
+        "type": "option",
+        "text": "¿Ha aplicado alguna vez su país el procedimiento simplificado?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q074",
+        "section": "Article13",
+        "number": "74",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 73 es Sí, ¿ha informado su país a las Partes por conducto del CIISB acerca de casos en los que se aplica el procedimiento simplificado?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q075",
+        "section": "Article13",
+        "number": "75",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿con relación a cuántos OVM ha aplicado su país el procedimiento simplificado?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "5+",
+            "text": "Más de 5"
+          }
+        ]
+      },
+      {
+        "key": "Q076",
+        "section": "Article13",
+        "number": "76",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 13 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article14",
+    "text": "Artículo 14 – Acuerdos y arreglos bilaterales, regionales y multilaterales",
+    "questions": [
+      {
+        "key": "Q077",
+        "section": "Article14",
+        "number": "77",
+        "type": "option",
+        "text": "¿Ha concertado su país acuerdos o arreglos bilaterales, regionales o multilaterales?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q078",
+        "section": "Article14",
+        "number": "78",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 77 es Sí, ¿ha informado su país a las Partes por conducto del CIISB acerca de acuerdos o arreglos?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q079",
+        "section": "Article14",
+        "number": "79",
+        "type": "text",
+        "text": "Si su respuesta a la pregunta 77 es Sí, describa brevemente el alcance y objetivo de los acuerdos o arreglos concertados:"
+      },
+      {
+        "key": "Q080",
+        "section": "Article14",
+        "number": "80",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 14 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article15",
+    "text": "Artículo 15 –Evaluación del riesgo",
+    "questions": [
+      {
+        "key": "Q081",
+        "section": "Article15",
+        "number": "81",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para realizar evaluaciones del riesgo antes de adoptar decisiones relativas a los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q082",
+        "section": "Article15",
+        "number": "82",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 81 es Sí, ¿se incluyen en este mecanismo procedimientos para averiguar quiénes serían los expertos que realicen las evaluaciones del riesgo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q083",
+        "section": "Article15",
+        "number": "83",
+        "type": "option",
+        "text": "¿Ha establecido su país directrices sobre la forma de realizar las evaluaciones del riesgo antes de adoptar decisiones relativas a los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084",
+        "section": "Article15",
+        "number": "84",
+        "type": "option",
+        "text": "¿Ha adquirido su país la capacidad nacional necesaria para realizar evaluaciones del riesgo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q085",
+        "section": "Article15",
+        "number": "85",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para capacitar a expertos nacionales que realicen evaluaciones del riesgo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q086",
+        "section": "Article15",
+        "number": "86",
+        "type": "option",
+        "text": "¿Ha realizado su país alguna vez una evaluación del riesgo de un OVM para su introducción deliberada en el medio ambiente?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q087",
+        "section": "Article15",
+        "number": "87",
+        "type": "option",
+        "text": "¿Ha realizado su país alguna vez una evaluación del riesgo de un OVM destinado para uso directo como alimento humano o animal o para procesamiento?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q088",
+        "section": "Article15",
+        "number": "88",
+        "type": "option",
+        "text": "Si su país hubiera adoptado decisiones sobre OVM para su introducción deliberada en el medio ambiente o para uso nacional de esos OVM-AHAP, ¿se realizaron evaluaciones del riesgo respecto a todas las decisiones adoptadas?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q089",
+        "section": "Article15",
+        "number": "89",
+        "type": "option",
+        "text": "¿Ha presentado su país informes sumarios de las evaluaciones del riesgo al CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q090",
+        "section": "Article15",
+        "number": "90",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, si su país hubiera adoptado decisiones relativas a los OVM, ¿cuántas evaluaciones del riesgo fueron realizadas en el contexto de estas decisiones?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q091",
+        "section": "Article15",
+        "number": "91",
+        "type": "option",
+        "text": "¿Ha exigido alguna vez su país al exportador que realice evaluaciones del riesgo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q092",
+        "section": "Article15",
+        "number": "92",
+        "type": "option",
+        "text": "¿Ha exigido alguna vez su país al notificador que se haga cargo del costo de las evaluaciones del riesgo de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q093",
+        "section": "Article15",
+        "number": "93",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 15 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article16",
+    "text": "Artículo 16 –Gestión del riesgo",
+    "questions": [
+      {
+        "key": "Q095",
+        "section": "Article16",
+        "number": "95",
+        "type": "option",
+        "text": "¿Ha establecido y mantenido su país medidas adecuadas para prevenir movimientos transfronterizos involuntarios de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q096",
+        "section": "Article16",
+        "number": "96",
+        "type": "option",
+        "text": "¿Ha adoptado su país medidas para asegurar que cualquier organismo vivo modificado, ya sea importado o desarrollado en el país, haya pasado por un período de observación apropiado a su ciclo vital o a su tiempo de generación antes de que se le dé su uso previsto?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q097",
+        "section": "Article16",
+        "number": "97",
+        "type": "option",
+        "text": "¿Ha cooperado su país con otras Partes con miras a determinar los OVM o los rasgos específicos que puedan tener efectos adversos para la conservación y la utilización sostenible de la diversidad biológica?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q098",
+        "section": "Article16",
+        "number": "98",
+        "type": "option",
+        "text": "¿Ha cooperado su país con otras Partes con miras a adoptar medidas para el tratamiento de los OVM o los rasgos específicos que puedan tener efectos adversos para la conservación y la utilización sostenible de la diversidad biológica?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q099",
+        "section": "Article16",
+        "number": "99",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 16 en su país, incluidos detalles respecto a estrategias de gestión del riesgo, también en el caso de que no hubiese certidumbre científica acerca de los posibles efectos adversos de los OVM:"
+      },
+      {
+        "key": "Q94_1",
+        "section": "Article16",
+        "number": "94.1",
+        "type": "option",
+        "text": "¿OVMs para su introducción intencional en el medio ambiente?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q94_2",
+        "section": "Article16",
+        "number": "94.2",
+        "type": "option",
+        "text": "OVM destinados a uso directo como alimento humano o animal o para procesamiento?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Article17",
+    "text": "Artículo 17 – Movimientos transfronterizos involuntarios y medidas de emergencia",
+    "questions": [
+      {
+        "key": "Q100",
+        "section": "Article17",
+        "number": "100",
+        "type": "option",
+        "text": "¿Ha puesto su país a disposición del CIISB los detalles pertinentes del punto de contacto, a fines de recibir notificaciones según lo dispuesto en el artículo 17?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q101",
+        "section": "Article17",
+        "number": "101",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para instaurar medidas de emergencia en el caso de movimientos transfronterizos involuntarios de OVM que probablemente tengan efectos adversos significativos en la diversidad biológica?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q102",
+        "section": "Article17",
+        "number": "102",
+        "type": "option",
+        "text": "¿Ha puesto en práctica su país medidas de emergencia en respuesta a información sobre liberaciones que conduzcan o puedan conducir a movimientos transfronterizos involuntarios de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q103",
+        "section": "Article17",
+        "number": "103",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿cuántas veces ha recibido su país información relativa a situaciones que conduzcan o que puedan conducir a un movimiento transfronterizo involuntario de uno o más OVM hacia o desde territorios bajo su jurisdicción?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Nunca"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q104",
+        "section": "Article17",
+        "number": "104",
+        "type": "option",
+        "text": "¿Ha notificado su país a Estados afectados o que puedan resultar afectados, al CIISB y, cuando proceda, a las organizaciones internacionales pertinentes, acerca de la liberación mencionada?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, de cada situación"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, de algunas situaciones"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q105",
+        "section": "Article17",
+        "number": "105",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 104 es Sí, ¿a quien lo notificó su país?",
+        "values": [
+          {
+            "value": "affectedStates",
+            "text": "El Estado afectado o que pueda resultar afectado"
+          },
+          {
+            "value": "bch",
+            "text": "El CIISB"
+          },
+          {
+            "value": "organizations",
+            "text": "Organizaciones internacionales pertinentes"
+          }
+        ]
+      },
+      {
+        "key": "Q106",
+        "section": "Article17",
+        "number": "106",
+        "type": "option",
+        "text": "¿Ha consultado inmediatamente su país a los Estados afectados o que puedan resultar afectados para que éstos puedan determinar las respuestas apropiadas y poner en marcha las actividades necesarias, incluidas medidas de emergencia?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, en algunos casos"
+          },
+          {
+            "value": "false.later",
+            "text": "No, se entablaron consultas, pero no inmediatamente"
+          },
+          {
+            "value": "false",
+            "text": "No, nunca se entablaron consultas"
+          }
+        ]
+      },
+      {
+        "key": "Q107",
+        "section": "Article17",
+        "number": "107",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 17 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article18",
+    "text": "Artículo 18 – Manipulación, trasporte, envasado e identificación",
+    "questions": [
+      {
+        "key": "Q108",
+        "section": "Article18",
+        "number": "108",
+        "type": "option",
+        "text": "¿Ha adoptado su país medidas para requerir que los organismos vivos modificados objeto de movimientos transfronterizos sean manipulados, envasados y transportados en condiciones de seguridad, teniendo en cuenta las normas y los estándares internacionales pertinentes?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q109",
+        "section": "Article18",
+        "number": "109",
+        "type": "option",
+        "text": "¿Ha adoptado su país medidas para requerir que la documentación que acompaña a los OVM-AHAP indique claramente que, en los casos en los que la identidad de los OVM no es conocida por medios tales como los sistemas de preservación de la identidad, pueden llegar a contener organismos vivos modificados y que no están destinados para su introducción intencional en el medio, así como un punto de contacto para solicitar información adicional?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q110",
+        "section": "Article18",
+        "number": "110",
+        "type": "option",
+        "text": "¿Ha adoptado su país medidas para requerir que la documentación que acompaña a los OVM-AHAP identifique claramente que, en los casos en los que la identidad de los OVM es conocida por medios tales como los sistemas de preservación de la identidad, contienen organismos vivos modificados y que no están destinados para su introducción intencional en el medio, así como un punto de contacto para solicitar información adicional?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q111",
+        "section": "Article18",
+        "number": "111",
+        "type": "option",
+        "text": "¿Ha adoptado su país medidas para requerir que la documentación que acompaña a los organismos vivos modificados destinados para uso confinado los identifique claramente como organismos vivos modificados y especifique los requisitos para su manipulación, almacenamiento, transporte y uso seguros, el punto de contacto para obtener información adicional, incluidos el nombre y las señas de la persona y la institución a quienes se envían los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q112",
+        "section": "Article18",
+        "number": "112",
+        "type": "option",
+        "text": "¿Ha adoptado su país medidas para requerir que la documentación que acompaña a los organismos vivos modificados destinados para su introducción deliberada al medio ambiente de la Parte de importación, los identifique claramente como organismos vivos modificados; especifique la identidad y los rasgos/características pertinentes, los requisitos para su manipulación, almacenamiento, transporte y uso seguros, el punto de contacto para obtener información adicional y, según proceda, el nombre y las señas del importador y del exportador; y contenga una declaración de que el movimiento se efectúa de conformidad con las disposiciones de este Protocolo aplicables al exportador?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q113",
+        "section": "Article18",
+        "number": "113",
+        "type": "option",
+        "text": "¿Tiene su país la capacidad para hacer cumplir los requisitos de identificación y documentación de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q114",
+        "section": "Article18",
+        "number": "114",
+        "type": "option",
+        "text": "¿Ha establecido su país procedimientos para muestreo y detección de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q115",
+        "section": "Article18",
+        "number": "115",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 18 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article19",
+    "text": "Artículo 19 – Autoridades nacionales competentes y puntos focales nacionales",
+    "questions": [
+      {
+        "key": "Q116",
+        "section": "Article19",
+        "number": "116",
+        "type": "option",
+        "text": "¿Ha designado su país a un punto focal nacional para el Protocolo de Cartagena que será responsable del enlace con la Secretaría?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q117",
+        "section": "Article19",
+        "number": "117",
+        "type": "option",
+        "text": "¿Ha designado su país a un punto focal nacional para el CIISB para el enlace con la Secretaría respecto a cuestiones pertinentes al desarrollo y puesta en práctica del CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q118",
+        "section": "Article19",
+        "number": "118",
+        "type": "option",
+        "text": "¿Ha designado su país a una o más autoridades nacionales competentes, quienes serán responsables de desempeñar las funciones administrativas requeridas por el Protocolo de Cartagena sobre Seguridad de la Biotecnología y estarán autorizadas para actuar en nombre de su país respecto a esas funciones?",
+        "values": [
+          {
+            "value": "1",
+            "text": "Sí, una"
+          },
+          {
+            "value": "1+",
+            "text": "Sí, más de una"
+          },
+          {
+            "value": "0",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q119",
+        "section": "Article19",
+        "number": "119",
+        "type": "option",
+        "text": "En el caso de que su país haya designado a más de una autoridad nacional competente, ha transmitido su país a la Secretaría las respectivas responsabilidades de esas autoridades?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q120",
+        "section": "Article19",
+        "number": "120",
+        "type": "option",
+        "text": "¿Ha puesto su país a disposición del CIISB la información requerida a la que hacen mención las preguntas 116-119?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, toda la información"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, alguna información"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q121",
+        "section": "Article19",
+        "number": "121",
+        "type": "option",
+        "text": "En el caso de que su país haya designado a más de una autoridad nacional competente, ¿ha establecido su país un mecanismo para la coordinación de sus actuaciones antes de adoptar decisiones relativas a los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q122",
+        "section": "Article19",
+        "number": "122",
+        "type": "option",
+        "text": "¿Ha establecido su país capacidad institucional adecuada para que las autoridades nacionales competentes puedan desempeñar las funciones administrativas requeridas por el Protocolo de Cartagena sobre Seguridad de la Biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q123",
+        "section": "Article19",
+        "number": "123",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 19 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article20",
+    "text": "Artículo 20 – Intercambio de información\u2028y el Centro de Intercambio de Información sobre Seguridad de la Biotecnología (CIISB)",
+    "questions": [
+      {
+        "key": "Q124_a",
+        "section": "Article20",
+        "number": "124.a",
+        "type": "option",
+        "text": "Leyes, reglamentos y directrices nacionales existentes para la aplicación del Protocolo, así como la información requerida por las Partes para el procedimiento de acuerdo fundamentado previo (párrafo 3 a) del artículo 20)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_b",
+        "section": "Article20",
+        "number": "124.b",
+        "type": "option",
+        "text": "Leyes, reglamentaciones y directrices nacionales aplicables a la importación de los OVM destinados para uso directo como alimento humano o animal o para procesamiento (párrafo 5 del artículo 11)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_c",
+        "section": "Article20",
+        "number": "124.c",
+        "type": "option",
+        "text": "Acuerdos y arreglos bilaterales, regionales y multilaterales (párrafo 2 del artículo 14 y párrafo 3 b) del artículo 20)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_d",
+        "section": "Article20",
+        "number": "124.d",
+        "type": "option",
+        "text": "Detalles para contactos con las autoridades nacionales competentes (párrafos 2 y 3 del artículo 19), puntos focales nacionales (párrafo 1 del artículo 19 y párrafo 3 del artículo 19), puntos de contacto para casos de emergencia (párrafo 3 e) del artículo 17)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_e",
+        "section": "Article20",
+        "number": "124.e",
+        "type": "option",
+        "text": "Informes presentados por las Partes sobre el funcionamiento del Protocolo (párrafo 3 e) del artículo 20)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_f",
+        "section": "Article20",
+        "number": "124.f",
+        "type": "option",
+        "text": "Decisiones de una Parte acerca de la reglamentación del tránsito de organismos vivos modificados específicos (OVM) (párrafo 1 del artículo 6)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_g",
+        "section": "Article20",
+        "number": "124.g",
+        "type": "option",
+        "text": "Acaecimiento de movimientos transfronterizos involuntarios que probablemente tengan efectos adversos significativos en la diversidad biológica (párrafo 1 del artículo 17)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_h",
+        "section": "Article20",
+        "number": "124.h",
+        "type": "option",
+        "text": "Movimientos transfronterizos ilícitos de los OVM (párrafo 3 del artículo 25)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_i",
+        "section": "Article20",
+        "number": "124.i",
+        "type": "option",
+        "text": "Decisiones finales relativas a la importación o liberación de los OVM (es decir, aprobación o prohibición, cualesquiera condiciones, solicitudes de ulterior información, prórrogas concedidas, motivos de la decisión) (párrafo 3 del artículo 10 y párrafo 3 d) del artículo 20)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_j",
+        "section": "Article20",
+        "number": "124.j",
+        "type": "option",
+        "text": "Información sobre la aplicación de sus reglamentos nacionales sobre importaciones concretas de OVM (párrafo 4 del artículo 14)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_k",
+        "section": "Article20",
+        "number": "124.k",
+        "type": "option",
+        "text": "Decisiones finales relativas al uso nacional de los OVM que pudieran ser objeto de un movimiento transfronterizo para uso directo como alimento humano o animal o para procesamiento (párrafo 1 del artículo 11)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_l",
+        "section": "Article20",
+        "number": "124.l",
+        "type": "option",
+        "text": "Decisiones finales relativas a la importación de los OVM destinados para uso directo como alimento humano o animal o para procesamiento que hayan sido adoptadas en virtud de marcos reglamentarios nacionales (párrafo 4 del artículo 11) o de conformidad con lo indicado en el anexo III (párrafo 6 del artículo 11) (requisito del párrafo 3 d) del artículo 20)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_m",
+        "section": "Article20",
+        "number": "124.m",
+        "type": "option",
+        "text": "Declaraciones relativas al marco que haya de aplicarse a los OVM destinados para uso directo como alimento humano o animal o para procesamiento (párrafo 6 del artículo 11)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_n",
+        "section": "Article20",
+        "number": "124.n",
+        "type": "option",
+        "text": "Revisión y cambio de las decisiones relativas a movimientos transfronterizos deliberados de los OVM (párrafo 1 del artículo 12)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_o",
+        "section": "Article20",
+        "number": "124.o",
+        "type": "option",
+        "text": "Situación de exenciones concedidas para los OVM por cada Parte (párrafo 1 del artículo 13)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_p",
+        "section": "Article20",
+        "number": "124.p",
+        "type": "option",
+        "text": "Casos en los que el movimiento transfronterizo intencional puede efectuarse al mismo tiempo que se notifica el movimiento a la Parte de importación (párrafo 1 del artículo 13)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q124_q",
+        "section": "Article20",
+        "number": "124.q",
+        "type": "option",
+        "text": "Resúmenes de evaluaciones del riesgo o exámenes ambientales para los OVM que se hayan realizado como consecuencia de procesos reglamentarios e información pertinente sobre productos derivados (párrafo 3 c) del artículo 20)",
+        "values": [
+          {
+            "value": "true.availableOnBch",
+            "text": "Información disponible y en el CIISB"
+          },
+          {
+            "value": "true.availableNotOnBch",
+            "text": "Información disponible pero no en el CIISB"
+          },
+          {
+            "value": "true.availablePartialyOnBch",
+            "text": "Información disponible pero solo parcialmente en el CIISB"
+          },
+          {
+            "value": "false.notAvailable",
+            "text": "Información no disponible"
+          }
+        ]
+      },
+      {
+        "key": "Q125",
+        "section": "Article20",
+        "number": "125",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para fortalecer la capacidad del punto focal nacional correspondiente al CIISB de desempeñar sus funciones administrativas?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q126",
+        "section": "Article20",
+        "number": "126",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para la coordinación del punto focal nacional correspondiente al CIISB, el punto focal del Protocolo de Cartagena, y la autoridad nacional competente para que la información esté a disposición del CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q127",
+        "section": "Article20",
+        "number": "127",
+        "type": "option",
+        "text": "¿Utiliza su país la información disponible en el CIISB en sus procesos de adopción de decisiones sobre los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q128",
+        "section": "Article20",
+        "number": "128",
+        "type": "option",
+        "text": "¿Ha experimentado su país dificultades en cuanto a tener acceso o utilizar el CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q129",
+        "section": "Article20",
+        "number": "129",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 128 es Sí, ¿ha notificado su país estos problemas al CIISB o a la Secretaría?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q130",
+        "section": "Article20",
+        "number": "130",
+        "type": "option",
+        "text": "¿Está la información presentada por su país al CIISB completa y actualizada?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q131",
+        "section": "Article20",
+        "number": "131",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 20 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article21",
+    "text": "Artículo 21 – Información confidencial",
+    "questions": [
+      {
+        "key": "Q132",
+        "section": "Article21",
+        "number": "132",
+        "type": "option",
+        "text": "¿Ha establecido su país procedimientos para proteger la información confidencial recibida en el marco del Protocolo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q133",
+        "section": "Article21",
+        "number": "133",
+        "type": "option",
+        "text": "¿Permite su país al notificador determinar la información que debe ser tratada como confidencial?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q134",
+        "section": "Article21",
+        "number": "134",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 21 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article22",
+    "text": "Artículo 22 – Creación de capacidad",
+    "questions": [
+      {
+        "key": "Q135",
+        "section": "Article22",
+        "number": "135",
+        "type": "option",
+        "text": "¿Ha recibido su país apoyo externo o se ha beneficiado de actividades de colaboración con otras Partes en el desarrollo y/o fortalecimiento de los recursos humanos y capacidades institucionales en materia de seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q136",
+        "section": "Article22",
+        "number": "136",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 135 es Sí, ¿cómo se pusieron a disposición estos recursos?",
+        "values": [
+          {
+            "value": "channels.bilateral",
+            "text": "Canales bilaterales"
+          },
+          {
+            "value": "channels.regional",
+            "text": "Canales regionales"
+          },
+          {
+            "value": "channels.multilateral",
+            "text": "Canales multilaterales"
+          }
+        ]
+      },
+      {
+        "key": "Q137",
+        "section": "Article22",
+        "number": "137",
+        "type": "option",
+        "text": "¿Ha proporcionado su país apoyo a otras Partes en el desarrollo y/o fortalecimiento de los recursos humanos y capacidades institucionales en materia de seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q138",
+        "section": "Article22",
+        "number": "138",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 137 es Sí, ¿cómo se pusieron a disposición estos recursos?",
+        "values": [
+          {
+            "value": "channels.bilateral",
+            "text": "Canales bilaterales"
+          },
+          {
+            "value": "channels.regional",
+            "text": "Canales regionales"
+          },
+          {
+            "value": "channels.multilateral",
+            "text": "Canales multilaterales"
+          }
+        ]
+      },
+      {
+        "key": "Q139",
+        "section": "Article22",
+        "number": "139",
+        "type": "option",
+        "text": "¿Reúne su país las condiciones para recibir financiamiento del Fondo para el Medio Ambiente Mundial (FMAM)?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q140",
+        "section": "Article22",
+        "number": "140",
+        "type": "option",
+        "text": "¿Alguna vez su país ha iniciado un proceso para obtener fondos del FMAM destinados a la creación de capacidad relativa a la seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q141",
+        "section": "Article22",
+        "number": "141",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 140 es Sí, ¿cómo calificaría ese proceso?",
+        "values": [
+          {
+            "value": "veryEasy",
+            "text": "Muy fácil"
+          },
+          {
+            "value": "easy",
+            "text": "Fácil"
+          },
+          {
+            "value": "average",
+            "text": "Regular"
+          },
+          {
+            "value": "difficult",
+            "text": "Difícil"
+          },
+          {
+            "value": "veryDifficult",
+            "text": "Muy difícil"
+          }
+        ]
+      },
+      {
+        "key": "Q142",
+        "section": "Article22",
+        "number": "142",
+        "type": "term",
+        "text": "¿Alguna vez su país recibió financiamiento del FMAM destinado a la creación de capacidad relativa a la seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "C6F5F985-183C-45F7-8A61-5B6DB2F13D10",
+            "text": "Proyecto piloto de actividades habilitantes de seguridad de la biotecnología"
+          },
+          {
+            "value": "303E8C81-AE0E-4CDE-A791-3DA21CB2",
+            "text": "Elaboración de marcos nacionales de seguridad de la biotecnología"
+          },
+          {
+            "value": "2781FB83-5221-4D8F-ACF6-D71423AF",
+            "text": "Implantación de marcos nacionales de seguridad de la biotecnología"
+          },
+          {
+            "value": "BAA4A44E-39CF-41ED-96B1-216ED265A2C3",
+            "text": "Creación de capacidad para una participación eficaz en el CIISB (Etapa I)"
+          },
+          {
+            "value": "08A3193F-9F13-4587-8106-E6F4F3A7A7F9",
+            "text": "Creación de capacidad para una participación eficaz en el CIISB (Etapa II)"
+          },
+          {
+            "value": "7FAF8785-54AA-446B-A61E-89F952FE607B",
+            "text": "Creación de capacidad para una participación eficaz en el CIISB (Etapa III)"
+          }
+        ]
+      },
+      {
+        "key": "Q143",
+        "section": "Article22",
+        "number": "143",
+        "type": "option",
+        "text": "Durante el actual período de notificación, ¿ha emprendido su país actividades de desarrollo y/o fortalecimiento de los recursos humanos y capacidades institucionales en materia de seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q144",
+        "section": "Article22",
+        "number": "144",
+        "type": "term",
+        "text": "Si su respuesta a la pregunta 143 es Sí, ¿en cuál de las siguientes áreas se emprendieron estas actividades?",
+        "values": [
+          {
+            "value": "BB3CA716-E122-4445-9FAD-9F6B440363BD",
+            "text": "Capacitación institucional"
+          },
+          {
+            "value": "68250AA6-75F1-470D-A8E7-85ECDF703D00",
+            "text": "Desarrollo y la formación en capacitación de recursos humanos"
+          },
+          {
+            "value": "7C980FF4-3C5B-4711-81F9-BA6F28C12598",
+            "text": "Evaluación de riesgos y otras competencias científicas y técnicas"
+          },
+          {
+            "value": "B6B916B4-1700-430C-BCFB-FCE81D6F1349",
+            "text": "Gestión de riesgos"
+          },
+          {
+            "value": "8419162A-8A34-46AC-8AF2-3D2905F9BA08",
+            "text": "Sensibilización, participación y educación en seguridad de la biotecnología"
+          },
+          {
+            "value": "AF59E45F-3AC2-4F71-889C-B42E83F75A8A",
+            "text": "Intercambio de información y gestión de datos, incluida la participación en el CIISB"
+          },
+          {
+            "value": "85C0A7F0-D527-40C1-B50D-2363EA600F2D",
+            "text": "Colaboración científica, técnica e institucional en nivel sub-regional, regional e internacional"
+          },
+          {
+            "value": "6F6C058C-6741-4878-A448-AE56299821A8",
+            "text": "Transferencia de tecnología"
+          },
+          {
+            "value": "0FF8F112-C0E9-4A18-83E1-40D4EF61503E",
+            "text": "Identificación de los OVMs, incluida su detección"
+          },
+          {
+            "value": "76DB23A3-F880-4AC8-8602-DF9DC45EECAF",
+            "text": "Consideraciones socio-económicas"
+          },
+          {
+            "value": "A16727EE-FE61-43FF-8530-35A9C7261247",
+            "text": "Aplicación de los requisitos de documentación en virtud del Artículo 18.2 del Protocolo"
+          },
+          {
+            "value": "3E7615C5-7DFC-4E04-9D26-6C80B4B1DED8",
+            "text": "Gestión de información confidencial "
+          },
+          {
+            "value": "D9AC6B7F-316B-483B-8E74-A5EC87343C81",
+            "text": "Medidas para hacer frente a movimientos transfronterizos involuntarios y/o ilegales de organismos vivos modificados"
+          },
+          {
+            "value": "09063980-88D9-4826-9F54-CB3EAC36641A",
+            "text": "Investigación científica sobre seguridad de la biotecnología relacionada con los OVMs"
+          },
+          {
+            "value": "799CD9B1-4571-4C2A-A459-F78E004D7F32",
+            "text": "Apreciación de los riesgos para la salud humana"
+          }
+        ]
+      },
+      {
+        "key": "Q145",
+        "section": "Article22",
+        "number": "145",
+        "type": "option",
+        "text": "Durante el actual período de notificación, ¿ha realizado su país una evaluación de sus necesidades de creación de capacidad?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q146",
+        "section": "Article22",
+        "number": "146",
+        "type": "option",
+        "text": "¿Tiene todavía su país necesidades de creación de capacidad?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, unas pocas"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q147",
+        "section": "Article22",
+        "number": "147",
+        "type": "term",
+        "text": "Si su respuesta a la pregunta 146 es Sí, ¿cuál de las siguientes áreas requiere todavía creación de capacidad?",
+        "values": [
+          {
+            "value": "BB3CA716-E122-4445-9FAD-9F6B440363BD",
+            "text": "Capacitación institucional"
+          },
+          {
+            "value": "68250AA6-75F1-470D-A8E7-85ECDF703D00",
+            "text": "Desarrollo y la formación en capacitación de recursos humanos"
+          },
+          {
+            "value": "7C980FF4-3C5B-4711-81F9-BA6F28C12598",
+            "text": "Evaluación de riesgos y otras competencias científicas y técnicas"
+          },
+          {
+            "value": "B6B916B4-1700-430C-BCFB-FCE81D6F1349",
+            "text": "Gestión de riesgos"
+          },
+          {
+            "value": "8419162A-8A34-46AC-8AF2-3D2905F9BA08",
+            "text": "Sensibilización, participación y educación en seguridad de la biotecnología"
+          },
+          {
+            "value": "AF59E45F-3AC2-4F71-889C-B42E83F75A8A",
+            "text": "Intercambio de información y gestión de datos, incluida la participación en el CIISB"
+          },
+          {
+            "value": "85C0A7F0-D527-40C1-B50D-2363EA600F2D",
+            "text": "Colaboración científica, técnica e institucional en nivel sub-regional, regional e internacional"
+          },
+          {
+            "value": "6F6C058C-6741-4878-A448-AE56299821A8",
+            "text": "Transferencia de tecnología"
+          },
+          {
+            "value": "0FF8F112-C0E9-4A18-83E1-40D4EF61503E",
+            "text": "Identificación de los OVMs, incluida su detección"
+          },
+          {
+            "value": "76DB23A3-F880-4AC8-8602-DF9DC45EECAF",
+            "text": "Consideraciones socio-económicas"
+          },
+          {
+            "value": "A16727EE-FE61-43FF-8530-35A9C7261247",
+            "text": "Aplicación de los requisitos de documentación en virtud del Artículo 18.2 del Protocolo"
+          },
+          {
+            "value": "3E7615C5-7DFC-4E04-9D26-6C80B4B1DED8",
+            "text": "Gestión de información confidencial "
+          },
+          {
+            "value": "D9AC6B7F-316B-483B-8E74-A5EC87343C81",
+            "text": "Medidas para hacer frente a movimientos transfronterizos involuntarios y/o ilegales de organismos vivos modificados"
+          },
+          {
+            "value": "09063980-88D9-4826-9F54-CB3EAC36641A",
+            "text": "Investigación científica sobre seguridad de la biotecnología relacionada con los OVMs"
+          },
+          {
+            "value": "799CD9B1-4571-4C2A-A459-F78E004D7F32",
+            "text": "Apreciación de los riesgos para la salud humana"
+          }
+        ]
+      },
+      {
+        "key": "Q148",
+        "section": "Article22",
+        "number": "148",
+        "type": "option",
+        "text": "¿Ha elaborado su país una estrategia o plan de acción para creación de capacidad?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q149",
+        "section": "Article22",
+        "number": "149",
+        "type": "option",
+        "text": "¿Ha presentado su país los detalles acerca de expertos nacionales en seguridad de la biotecnología para su inclusión en la Lista de expertos del CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q150",
+        "section": "Article22",
+        "number": "150",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 22 en su país, incluidos otros detalles acerca de su experiencia relativa a la obtención de fondos del FMAM:"
+      }
+    ]
+  },
+  {
+    "section": "Article23",
+    "text": "Artículo 23 – Concienciación y participación del público",
+    "questions": [
+      {
+        "key": "Q151",
+        "section": "Article23",
+        "number": "151",
+        "type": "option",
+        "text": "¿Ha establecido su país una estrategia o ha sancionado leyes para fomentar y facilitar la sensibilización, educación y participación del público en lo que atañe a la seguridad de la transferencia, manipulación y utilización de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q152",
+        "section": "Article23",
+        "number": "152",
+        "type": "option",
+        "text": "¿Ha establecido su país un sitio web sobre seguridad de la biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q153",
+        "section": "Article23",
+        "number": "153",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para asegurar que el público tenga acceso a la información sobre organismos vivos modificados que puedan ser importados?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.limited",
+            "text": "Sí, con amplitud limitada"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q154",
+        "section": "Article23",
+        "number": "154",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para consultar al público en el proceso de adopción de decisiones relativas a los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.limited",
+            "text": "Sí, con amplitud limitada"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q155",
+        "section": "Article23",
+        "number": "155",
+        "type": "option",
+        "text": "¿Ha establecido su país un mecanismo para poner a disposición del público los resultados de las decisiones adoptadas sobre los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.limited",
+            "text": "Sí, con amplitud limitada"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q156",
+        "section": "Article23",
+        "number": "156",
+        "type": "option",
+        "text": "¿Ha tomado su país alguna iniciativa para informar a su público acerca de los medios para tener acceso público al CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q157",
+        "section": "Article23",
+        "number": "157",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿ha fomentado y facilitado su país la sensibilización, educación y participación del público en lo que atañe a la seguridad de la transferencia, manipulación y utilización de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.limited",
+            "text": "Sí, con amplitud limitada"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q158",
+        "section": "Article23",
+        "number": "158",
+        "type": "option",
+        "text": "Si su respuesta a la pregunta 157 es Sí, ¿ha cooperado su país con otros Estados y organismos internacionales?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q159",
+        "section": "Article23",
+        "number": "159",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿cuántas veces ha consultado su país al público en el proceso de adopción de decisiones relativas a los OVM y ha puesto a disposición del público los resultados de tales decisiones?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Ninguna"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "5+",
+            "text": "Más de 5"
+          }
+        ]
+      },
+      {
+        "key": "Q160",
+        "section": "Article23",
+        "number": "160",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 23 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article24",
+    "text": "Artículo 24 –Estados que no son Partes",
+    "questions": [
+      {
+        "key": "Q161",
+        "section": "Article24",
+        "number": "161",
+        "type": "option",
+        "text": "¿Ha concertado su país algún acuerdo bilateral, regional o multilateral con Estados que no son Partes respecto a movimientos transfronterizos de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q162",
+        "section": "Article24",
+        "number": "162",
+        "type": "option",
+        "text": "¿Ha importado su país alguna vez OVM de Estados que no son Partes?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q163",
+        "section": "Article24",
+        "number": "163",
+        "type": "option",
+        "text": "¿Ha exportado su país alguna vez OVM a Estados que no son Partes?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q164",
+        "section": "Article24",
+        "number": "164",
+        "type": "option",
+        "text": "Si su respuesta a las preguntas 162 o 163 es Sí, ¿se realizaron los movimientos transfronterizos de los OVM en consonancia con el objetivo del Protocolo de Cartagena sobre Seguridad de la Biotecnología?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q165",
+        "section": "Article24",
+        "number": "165",
+        "type": "option",
+        "text": "Si su respuesta a las preguntas 162 o 163 es Sí, ¿fue presentada la información acerca de estos movimientos transfronterizos al CIISB?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q166",
+        "section": "Article24",
+        "number": "166",
+        "type": "option",
+        "text": "Si su país no es Parte en el Protocolo de Cartagena, ¿ha aportado información al CIISB sobre los OVM liberados o introducidos en zonas dentro de su jurisdicción nacional, o transportados fuera de ella?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí, siempre"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q167",
+        "section": "Article24",
+        "number": "167",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 24 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article25",
+    "text": "Artículo 25 – Movimientos transfronterizos ilícitos",
+    "questions": [
+      {
+        "key": "Q168",
+        "section": "Article25",
+        "number": "168",
+        "type": "option",
+        "text": "¿Ha adoptado su país medidas nacionales orientadas a prevenir y/o penalizar los movimientos transfronterizos de organismos vivos modificados realizados en contravención de las medidas nacionales que rigen la aplicación de este Protocolo?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q169",
+        "section": "Article25",
+        "number": "169",
+        "type": "option",
+        "text": "¿Ha establecido su país alguna estrategia para detectar movimientos transfronterizos ilícitos de OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q170",
+        "section": "Article25",
+        "number": "170",
+        "type": "option",
+        "text": "En el actual período de presentación de informes, ¿cuántas veces ha recibido su país información relativa a casos de movimientos transfronterizos ilícitos de un OVM hacia o desde territorios bajo su jurisdicción?",
+        "values": [
+          {
+            "value": "0",
+            "text": "Nunca"
+          },
+          {
+            "value": "5-",
+            "text": "Menos de 5"
+          },
+          {
+            "value": "10-",
+            "text": "Menos de 10"
+          },
+          {
+            "value": "10+",
+            "text": "Más de 10"
+          }
+        ]
+      },
+      {
+        "key": "Q171",
+        "section": "Article25",
+        "number": "171",
+        "type": "option",
+        "text": "¿Ha informado su país al CIISB y a otras Partes implicadas?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "true.parties",
+            "text": "Solo a otras Partes implicadas"
+          },
+          {
+            "value": "true.bch",
+            "text": "Solo al CIISB"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q172",
+        "section": "Article25",
+        "number": "172",
+        "type": "option",
+        "text": "¿Ha establecido su país el origen de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q173",
+        "section": "Article25",
+        "number": "173",
+        "type": "option",
+        "text": "¿Ha establecido su país la naturaleza de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q174",
+        "section": "Article25",
+        "number": "174",
+        "type": "option",
+        "text": "¿Ha establecido su país las circunstancias de los movimientos transfronterizos ilícitos?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q175",
+        "section": "Article25",
+        "number": "175",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 25 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article26",
+    "text": "Artículo 26 –Consideraciones socioeconómicas",
+    "questions": [
+      {
+        "key": "Q176",
+        "section": "Article26",
+        "number": "176",
+        "type": "option",
+        "text": "Si su país hubiera adoptado una decisión sobre la importación, ¿ha tenido alguna vez en cuenta las consideraciones socioeconómicas resultantes de los efectos de los OVM en la conservación y utilización sostenible de la diversidad biológica?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Solo en algunos casos"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q177",
+        "section": "Article26",
+        "number": "177",
+        "type": "option",
+        "text": "¿Ha cooperado su país con otras Partes en investigación e intercambio de información sobre cualesquiera impactos socioeconómicos de los OVM?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.some",
+            "text": "Sí, con amplitud limitada"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q178",
+        "section": "Article26",
+        "number": "178",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 26 en su país:"
+      }
+    ]
+  },
+  {
+    "section": "Article27",
+    "text": "Artículo 27 –Responsabilidad y compensación",
+    "questions": [
+      {
+        "key": "Q179",
+        "section": "Article27",
+        "number": "179",
+        "type": "option",
+        "text": "¿Ha firmado su país el Protocolo Suplementario de Nagoya – Kuala Lumpur sobre Responsabilidad y Compensación?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q180",
+        "section": "Article27",
+        "number": "180",
+        "type": "option",
+        "text": "¿Ha adoptado su país medidas para ratificar, aceptar o aprobar el Protocolo Suplementario de Nagoya – Kuala Lumpur?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q181",
+        "section": "Article27",
+        "number": "181",
+        "type": "text",
+        "text": "En este lugar puede proporcionar otros detalles sobre cualesquiera actividades emprendidas en su país con respecto a la aplicación del Protocolo Suplementario de Nagoya – Kuala  Lumpur sobre Responsabilidad y Compensación:"
+      }
+    ]
+  },
+  {
+    "section": "Article33",
+    "text": "Artículo 33 – Vigilancia y presentación de informes",
+    "questions": [
+      {
+        "key": "Q182",
+        "section": "Article33",
+        "number": "182",
+        "type": "option",
+        "text": "¿Ha presentado su país los anteriores informes nacionales (Informe provisional y Primer informe nacional)?",
+        "values": [
+          {
+            "value": "true",
+            "text": "Sí"
+          },
+          {
+            "value": "true.interimReportOnly",
+            "text": "Sí, solo el Informe provisional"
+          },
+          {
+            "value": "true.firstReportOnly",
+            "text": "Sí, solo el Primer informe"
+          },
+          {
+            "value": "false",
+            "text": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q183",
+        "section": "Article33",
+        "number": "183",
+        "type": "term",
+        "text": "Si su país no presentó los informes anteriores, indique los principales impedimentos que obstaculizaron la presentación",
+        "values": [
+          {
+            "value": "9D149B05-B490-43BC-BE81-473F4A15D5AC",
+            "text": "Falta de recursos financieros para recopilar la información necesaria"
+          },
+          {
+            "value": "CCACEEF3-01E5-4E19-BE04-01E673A0DDE5",
+            "text": "Falta de información pertinente a nivel nacional"
+          },
+          {
+            "value": "6EEDA8B0-1096-45C9-BB43-6DA7E6C2FB0F",
+            "text": "Dificultad en recopilar la información de varios sectores"
+          },
+          {
+            "value": "6C994EFC-EF9C-457E-95B4-FA55BFFEAC38",
+            "text": "No existía ninguna obligación de presentar (p. ej. el país no era una Parte en esa fecha)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "AdditionalInformation",
+    "text": "Otra información",
+    "questions": [
+      {
+        "key": "Q184",
+        "section": "AdditionalInformation",
+        "number": "184",
+        "type": "text",
+        "text": "Utilice este campo para proporcionar cualquier otra información sobre cuestiones relacionadas con la aplicación nacional del Protocolo, incluidos cualesquiera obstáculos o impedimentos enfrentados."
+      }
+    ]
+  },
+  {
+    "section": "Comments",
+    "text": "Comentarios sobre el formato de presentación de informes",
+    "questions": [
+      {
+        "key": "Q185",
+        "section": "Comments",
+        "number": "185",
+        "type": "text",
+        "text": "Utilice este campo para proporcionar cualquier otra información sobre dificultades con las que se haya enfrentado al cumplimentar este informe."
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+<div class="NR-Analyzer">
+    <table cellpadding="0" cellspacing="0" class="searchCriteria">
+        <tr>
+    		<td class="searchCriteriaTitle">National Report</td>
+            <td class="searchCriteriaInput">
+    		    <select style="Width: 100%;" ng-model="reportType">
+                    <option value="cpbNationalReport3">Third National Report</option>
+                    <option value="cpbNationalReport2">Second National Report</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+    		<td class="searchCriteriaTitle" style="border-top:1px solid #e0e0e0">Geographical areas</td>
+            <td class="searchCriteriaInput" style="border-top:1px solid #e0e0e0">
+    		    <select style="Width: 100%;">
+                    <option value="government~D50FE62D-8A5E-4407-83F8-AFCAAF708EA4|government~5E5B7AA4-2420-4147-825B-0820F7EC5A4B|government~942E40CA-4C23-4D3A-A0B4-736CD0EFCD54|government~3D0CCC9A-A0A1-4399-8FA2-41D4D649DB0E|government~0EC2E5AE-25F3-4D3A-B71F-8019BB62ED4B" selected="">
+                    	Breakdown by CBD regions
+                    </option>
+                    <option value="">Select countries or regions</option>
+
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <div class="Sections" ng-show="sections">
+
+        <div class="Sections-Header">
+            <table cellpadding="0" cellspacing="0" class="Header" style="width: 100%;">
+                <tr>
+                    <td class="Selector"><input type="checkbox"></td>
+                    <td class="Title" style="cursor: pointer;">All questions and/or sections of the report.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="Section" ng-repeat="section in sections">
+        	<table cellpadding="0" cellspacing="0" class="Header" style="width: 100%;">
+                <tr>
+        		    <td class="Selector"><input type="checkbox" ng-model="section.selected" ng-click="broadcastSelection(section)"></td>
+                    <td  ng-click="section.expanded=!section.expanded" class="Title"     style="cursor: pointer;">{{section.text}}</td>
+                    <td  ng-click="section.expanded=!section.expanded" ng-class="{ Collapsed : !section.expanded, Expanded : section.expanded }" style="cursor: pointer;">&nbsp;</td>
+                </tr>
+            </table>
+
+            <div class="Container" ng-show="section.expanded">
+                <div class="Question" ng-repeat="question in section.questions">
+                    <table cellpadding="0" cellspacing="0" class="Header" id="E8567158" style="width: 100%;">
+                        <tr id="E8567159">
+                            <td class="Selector"><input type="checkbox" ng-model="question.selected" ng-click="emitSelection(question)"></td>
+                            <td class="Number" style="cursor: pointer;" ng-click="question.selected=!question.selected; emitSelection(question)">Question {{question.number}}.</td>
+                            <td class="Title"  style="cursor: pointer;" ng-click="question.selected=!question.selected; emitSelection(question)">{{question.text}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <pre>{{sectionsX|json}}</pre>
+</div>
