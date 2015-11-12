@@ -6,5 +6,22 @@ define(['angular'], function(ng) { 'use strict';
 
 	var app = ng.module('app', deps);
 
+    app.value('locale', getLocale());
+    define   ('locale', getLocale());
+
 	return app;
+
+    //========================================
+    //
+    //
+    //========================================
+    function getLocale() {
+
+        var matches = /Preferences=Locale=(\w{2,3})/g.exec(document.cookie);
+
+        if(matches)
+            return matches[1]; //
+
+        return 'en';
+    }
 });
