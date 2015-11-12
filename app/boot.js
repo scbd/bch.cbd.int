@@ -10,6 +10,7 @@ require.config({
         'lodash'    : 'libs/lodash/lodash.min',
         'text'      : 'libs/requirejs-text/text',
         'jquery'    : 'libs/jquery/dist/jquery.min',
+        'diacritics': 'libs/diacritic/diacritics'
     },
     shim: {
         'angular'              : { deps: ['libs/angular/angular'] },
