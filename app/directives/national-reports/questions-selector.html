@@ -1,26 +1,47 @@
 <div class="NR-Analyzer">
     <table cellpadding="0" cellspacing="0" class="searchCriteria">
         <tr>
-    		<td class="searchCriteriaTitle">National Report</td>
+            <td class="searchCriteriaTitle">National Report</td>
             <td class="searchCriteriaInput">
-    		    <select style="Width: 100%;" ng-model="reportType">
+                <select style="Width: 100%;" ng-model="reportType"  class="form-control">
                     <option value="cpbNationalReport3">Third National Report</option>
                     <option value="cpbNationalReport2">Second National Report</option>
                 </select>
             </td>
         </tr>
         <tr>
-    		<td class="searchCriteriaTitle" style="border-top:1px solid #e0e0e0">Geographical areas</td>
+            <td class="searchCriteriaTitle" style="border-top:1px solid #e0e0e0">Geographical areas</td>
             <td class="searchCriteriaInput" style="border-top:1px solid #e0e0e0">
-    		    <select style="Width: 100%;">
-                    <option value="government~D50FE62D-8A5E-4407-83F8-AFCAAF708EA4|government~5E5B7AA4-2420-4147-825B-0820F7EC5A4B|government~942E40CA-4C23-4D3A-A0B4-736CD0EFCD54|government~3D0CCC9A-A0A1-4399-8FA2-41D4D649DB0E|government~0EC2E5AE-25F3-4D3A-B71F-8019BB62ED4B" selected="">
-                    	Breakdown by CBD regions
-                    </option>
-                    <option value="">Select countries or regions</option>
 
+                <select style="Width: 100%;" ng-model="countriesPreset" class="form-control">
+                    <option value="cbdRegions">Breakdown by CBD regions</option>
+                    <option value="countries">Select countries</option>
+                    <option value="regions">Select regions</option>
                 </select>
+
+                <terms-dialog title="Countries" visible="showCountries" selection="governments" terms="getCountries()" columns="2"></terms-dialog>
+                <terms-dialog title="Regions"   visible="showRegions"   selection="governments" terms="getRegions()"></terms-dialog>
+
             </td>
         </tr>
+        <tr ng-hide="countriesPreset=='cbdRegions'">
+            <td class="searchCriteriaTitle text-center" style="border-top:1px solid #e0e0e0">
+                <button type="button" class="btn btn-default btn-sm" ng-click="showCountries=true;" ng-show="countriesPreset=='countries'">Select countries</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="showRegions=true;"   ng-show="countriesPreset=='regions'">Select regions</button>
+            </td>
+            <td class="searchCriteriaInput" style="border-top:1px solid #e0e0e0">
+
+                <div ng-hide="governments.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">
+                    No countries or regions selected.
+                </div>
+
+                <ul ng-if="governments" class="list-unstyled">
+                    <li ng-repeat="c in governments">
+                        <i class="fa fa-times" ng-click="removeGovernment(c)" ng-show="countriesPreset!='cbdRegions'"></i>
+                        {{countriesMap[c].title|lstring}}
+                    </li>
+                </ul>
+            </td>
     </table>
 
     <div class="Sections" ng-show="sections">
@@ -28,16 +49,16 @@
         <div class="Sections-Header">
             <table cellpadding="0" cellspacing="0" class="Header" style="width: 100%;">
                 <tr>
-                    <td class="Selector"><input type="checkbox"></td>
+                    <td class="Selector"><input type="checkbox"  ng-model="allSelected" indeterminate="allSelected===null" ng-click="onAllSections()" ></td>
                     <td class="Title" style="cursor: pointer;">All questions and/or sections of the report.</td>
                 </tr>
             </table>
         </div>
 
         <div class="Section" ng-repeat="section in sections">
-        	<table cellpadding="0" cellspacing="0" class="Header" style="width: 100%;">
+            <table cellpadding="0" cellspacing="0" class="Header" style="width: 100%;">
                 <tr>
-        		    <td class="Selector"><input type="checkbox" ng-model="section.selected" ng-click="broadcastSelection(section)"></td>
+                    <td class="Selector"><input type="checkbox" ng-model="section.selected" ng-click="onSection(section)" indeterminate="section.selected===null"></td>
                     <td  ng-click="section.expanded=!section.expanded" class="Title"     style="cursor: pointer;">{{section.text}}</td>
                     <td  ng-click="section.expanded=!section.expanded" ng-class="{ Collapsed : !section.expanded, Expanded : section.expanded }" style="cursor: pointer;">&nbsp;</td>
                 </tr>
@@ -47,14 +68,13 @@
                 <div class="Question" ng-repeat="question in section.questions">
                     <table cellpadding="0" cellspacing="0" class="Header" id="E8567158" style="width: 100%;">
                         <tr id="E8567159">
-                            <td class="Selector"><input type="checkbox" ng-model="question.selected" ng-click="emitSelection(question)"></td>
-                            <td class="Number" style="cursor: pointer;" ng-click="question.selected=!question.selected; emitSelection(question)">Question {{question.number}}.</td>
-                            <td class="Title"  style="cursor: pointer;" ng-click="question.selected=!question.selected; emitSelection(question)">{{question.text}}</td>
+                            <td class="Selector"><input type="checkbox" ng-model="question.selected" ng-click="onQuestion(question)"></td>
+                            <td class="Number" style="cursor: pointer;" ng-click="question.selected=!question.selected; onQuestion(question)">Question {{question.number}}.</td>
+                            <td class="Title"  style="cursor: pointer;" ng-click="question.selected=!question.selected; onQuestion(question)">{{question.text}}</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    <pre>{{sectionsX|json}}</pre>
 </div>
