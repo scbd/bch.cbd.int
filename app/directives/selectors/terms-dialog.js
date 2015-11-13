@@ -1,4 +1,4 @@
-define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/lstring', 'directives/intermediate'], function(templateHtml, app, _) {
+define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/lstring', 'directives/selectors/tree-selector'], function(templateHtml, app, _) {
 
     //==============================================
     //
@@ -19,6 +19,7 @@ define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/l
             link: function ($scope, $dialog) {
 
                 var allTerms = [];
+                var skipSelectionWatch = false;
 
                 //====================================
                 //
@@ -26,114 +27,10 @@ define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/l
                 //====================================
                 $scope.clearSelection = function() {
 
-                    allTerms.forEach(function(t){
-                        t.selected = false;
+                    $scope.columns.forEach(function(column){
+                        column.selection = undefined;
                     });
-
-                    $scope.onSelect();
                 };
-
-                //====================================
-                //
-                //
-                //====================================
-                $scope.onSelect = function(term) {
-
-                    if(term) {
-                        applyIntermediateState(term);
-                    }
-
-                    if(!_.isArray($scope.selection)) { // Try to keep array instance
-                        $scope.selection = [];
-                    }
-
-                    $scope.selection.length = 0; // Clear array content;
-
-                    _.where(allTerms, {selected : true}).forEach(function(t){
-
-                        if(t.selected) {
-                            $scope.selection.push(t.identifier);
-                        }
-                    });
-
-                    if(!$scope.selection.length) {
-                        $scope.selection = undefined;
-                    }
-                };
-
-                //====================================
-                //
-                //
-                //====================================
-                function applyIntermediateState(term) {
-
-                    var root = term;
-
-                    getParents(term).forEach(function(o){
-                        o.selected = false;
-                        root = o;
-                    });
-
-                    getChildren(term).forEach(function(o){
-                        o.selected = false;
-                    });
-
-                    var branchTerms = getChildren(root);
-
-                    branchTerms.push(root);
-
-                    branchTerms.forEach(function(o) {
-                        o.selected = o.selected || false;
-                    });
-
-                    _.where(branchTerms, {selected : true}).forEach(function(o) {
-
-                        getParents(o).forEach(function(u){
-                            u.selected = null;
-                        });
-
-                        getChildren(o).forEach(function(u){
-                            u.selected = null;
-                        });
-                    });
-                }
-
-                //====================================
-                //
-                //
-                //====================================
-                function getParents(term) {
-
-                    var parents = [];
-                    var parent = term.parent;
-
-                    while (parent) {
-                        parents.push(parent);
-                        parent = parent.parent;
-                    }
-
-                    return parents;
-                }
-
-                //====================================
-                //
-                //
-                //====================================
-                function getChildren(term) { // Deep-first
-
-                    var children = [];
-
-                    term.children.forEach(function(child) {
-
-                        if(child.children && child.children.length) {
-                            children = children.concat(getChildren(child));
-                        }
-
-                        children.push(child);
-                    });
-
-                    return children;
-                }
 
                 //====================================
                 //
@@ -152,8 +49,117 @@ define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/l
                 //
                 //
                 //====================================
-                function initialize(terms) {
+                $scope.$watch('selection', function(selection) {
 
+                    if(!skipSelectionWatch) {
+                        applySelection(selection);
+                    }
+
+                    skipSelectionWatch = false;
+                });
+
+                //====================================
+                //
+                //
+                //====================================
+                function applySelection(selection) {
+
+                    if(!$scope.columns) {
+                        return;
+                    }
+
+                    // map selection
+
+                    var selectionMap = {};
+
+                    (selection||[]).forEach(function(id) {
+                        selectionMap[id] = true;
+                    });
+
+                    $scope.columns.forEach(function(column) {
+
+                        selection = [];
+
+                        column.items.forEach(function(root){
+
+                            flattenBranch(root).forEach(function(item){
+
+                                if(selectionMap[item.identifier]) {
+                                    selection.push(item.identifier);
+                                }
+                            });
+                        });
+
+                        column.selection    = selection;
+                        column.selectionBak = selection;
+                    });
+                }
+
+                //====================================
+                //
+                //
+                //====================================
+                function flattenBranch(item) { // root first
+
+                    var children = [];
+
+                    appendChild(item);
+
+                    return children;
+
+                    function appendChild(child) {
+
+                        children.push(child);
+
+                        child.children.forEach(appendChild);
+                    }
+                }
+
+
+
+                //====================================
+                //
+                //
+                //====================================
+                $scope.$watch(monitorColumnsSelection, function(selection) {
+                    skipSelectionWatch = true;
+                    $scope.selection = selection;
+                });
+
+                //====================================
+                //
+                //
+                //====================================
+                function monitorColumnsSelection() {
+
+                    if(!$scope.columns) {
+                        return;
+                    }
+
+                    var selection = $scope.selection;
+
+                    var updated = _.any($scope.columns, function(column){
+                        return column.selection !== column.selectionBak;
+                    });
+
+                    if(updated) {
+
+                        selection = [];
+
+                        $scope.columns.forEach(function(column){
+                            column.selectionBak = column.selection;
+                            selection = selection.concat(column.selection);
+                        });
+                    }
+
+                    return selection;
+                }
+
+                //====================================
+                //
+                //
+                //====================================
+                function initialize(terms) {
 
                     //Cleanup + mapping
 
@@ -197,25 +203,6 @@ define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/l
                     allTerms = terms;
                     terms = _.where(terms, { parent : null });
 
-                    // Apply selection
-
-                    var selection = $scope.selection;
-
-                    if(_.isString(selection))
-                    selection = [selection];
-
-                    if(!_.isArray(selection))
-                    selection = [];
-
-                    selection.forEach(function(id) {
-
-                        if(termsMap[id]) {
-
-                            termsMap[id].selected = true;
-                            applyIntermediateState(termsMap[id]);
-                        }
-                    });
-
                     // split by columns
 
                     var colCount = Math.max($scope.columnCountFn()||1, 1);
@@ -223,11 +210,13 @@ define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/l
                     $scope.columns = [];
 
                     for(var i=0; i<colCount; ++i)
-                        $scope.columns.push([]);
+                    $scope.columns.push({ items : [] });
 
                     terms.forEach(function(term, index) {
-                        $scope.columns[index % colCount].push(term);
+                        $scope.columns[index % colCount].items.push(term);
                     });
+
+                    applySelection($scope.selection);
                 }
 
                 //====================================

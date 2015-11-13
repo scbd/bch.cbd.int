@@ -9,27 +9,10 @@
 
                 <h4 ng-show="loading"><i class="fa fa-cog fa-spin"></i> Loading...</h4>
 
-                <script type="text/ng-template" id="child-terms">
-                    <td style="vertical-align:top">
-                        <input id="{{term.identifier}}" type="checkbox" ng-model="term.selected" indeterminate="term.selected===null" ng-click="onSelect(term)">&nbsp;
-                    </td>
-                    <td style="vertical-align:top">
-                        <label for={{term.identifier}}>{{term.title|lstring}}</label>
-
-                        <table ng-if="term.children">
-                            <tr ng-repeat="term in term.children" ng-include="'child-terms'"></tr>
-                        </table>
-
-                    </td>
-                </script>
-
-
                 <table>
                     <tr>
-                        <td ng-repeat="terms in columns" >
-                            <table>
-                                <tr ng-repeat="term in terms" ng-include="'child-terms'"></tr>
-                            </table>
+                        <td ng-repeat="column in columns" >
+                            <tree-selector items="column.items" selection="column.selection"></tree-selector>
                         </td>
                     </tr>
                 </table>
