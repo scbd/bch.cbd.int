@@ -6,7 +6,7 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
     //
     //
     //==============================================
-    app.directive('nationalReportQuestionsSelector', ['$http', function($http) {
+    app.directive('nationalReportQuestionsSelector', ['$http', 'locale', function($http, locale) {
         return {
             restrict : 'E',
             replace : true,
@@ -28,7 +28,7 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                 //====================================
                 $scope.$watch('reportType', function (reportType) {
 
-                    $http.get(baseUrl+'resources/national-reports/en/'+reportType+'.json', { cache : true }).then(function(res){
+                    $http.get(baseUrl+'resources/national-reports/'+locale+'/'+reportType+'.json', { cache : true }).then(function(res){
 
                         $scope.sections = res.data;
                         $scope.allSelected = true;
