@@ -12,6 +12,7 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
             replace : true,
             template : templateHtml,
             scope :  {
+                reportType : '=',
                 questions : '=',
                 governments : '='
             },
