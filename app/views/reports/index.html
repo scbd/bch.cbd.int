@@ -1,4 +1,7 @@
 <div>
+    <link href="/cms/services/clearinghouse/ui/searchforms/search.css" rel="stylesheet" type="text/css">
+    <link href="app/assets/css/national-report-analyzer.css" rel="stylesheet" type="text/css">
+
     <div class="NR-Analyzer">
         <div class="searchHeader">
             <table cellpadding="0" cellspacing="0" style="width: 100%;">
@@ -21,13 +24,12 @@
                         </p>
                 </td>
                 <td style="width: 1%;">
-                    <input type="button" value="Analyze »" class="cmsButton">
+                    <button type="button" value="Analyze »" class="btn btn-default" ng-click="anaylze()"></button>
                 </td>
                 </tr>
             </table>
         </div>
     </div>
 
-    <regions-selector></regions-selector>
     <national-report-questions-selector></national-report-questions-selector>
 </div>
