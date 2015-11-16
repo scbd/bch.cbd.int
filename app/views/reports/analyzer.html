@@ -1,1 +1,11 @@
-<div>SELECTOR</div>
+<div>
+    <link href="/cms/services/clearinghouse/ui/searchforms/search.css" rel="stylesheet" type="text/css">
+    <link href="/app/assets/css/national-report-analyzer.css" rel="stylesheet" type="text/css">
+
+    <button type="button" ng-click="showSettings=!showSettings">Settings</button>
+
+    <national-report-questions-selector ng-show="showSettings" report-type="reportType" questions="questions" governments="governments"></national-report-questions-selector>
+
+    <national-report-anaylzer report-type="reportType" questions="questions" governments="governments"></national-report-anaylzer>
+
+</div>

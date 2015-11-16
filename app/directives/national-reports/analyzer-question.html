@@ -1,0 +1,17 @@
+<div>
+    <h3>Question {{::question.number||11}}</h3>
+    <h4>{{::question.text}}</h4>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>All</th>
+            <th ng-repeat="region in regions">{{::region.shortTitle|lstring}}</th>
+        </tr>
+        <tr ng-repeat="option in ::question.values">
+            <td>{{::option.text}}</td>
+            <td>{{::option.all}}</td>
+            <td ng-repeat="region in regions">{{option[region.identifier]}}</td>
+        </tr>
+    </table>
+</div>
