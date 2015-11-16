@@ -169,7 +169,7 @@ define(['app', 'text!./tree-selector.html', 'lodash', 'filters/lstring', 'direct
                 //
                 //
                 //====================================
-                function getChildren(item) { // root first
+                function getChildren(item) {
 
                     var children = [];
 
