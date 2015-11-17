@@ -12,13 +12,13 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
             replace : true,
             template : templateHtml,
             scope :  {
-                reportType : '=',
-                questions : '=',
-                governments : '='
+                selectedReportType : '=reportType',
+                selectedQuestions : '=questions',
+                selectedRegions : '=regions'
             },
             link: function ($scope) {
 
-                $scope.reportType = 'cpbNationalReport3';
+                $scope.selectedReportType = 'cpbNationalReport3';
                 $scope.countriesPreset = "cbdRegions";
                 $scope.allSelected = true;
                 $scope.countriesMap = {};
@@ -27,7 +27,10 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                 //
                 //
                 //====================================
-                $scope.$watch('reportType', function (reportType) {
+                $scope.$watch('selectedReportType', function (reportType) {
+
+                    if(!reportType)
+                        return;
 
                     $http.get(baseUrl+'resources/national-reports/'+locale+'/'+reportType+'.json', { cache : true }).then(function(res){
 
@@ -44,9 +47,9 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                 //====================================
                 $scope.$watch('countriesPreset', function (preset) {
 
-                    if(preset=="cbdRegions") { $scope.governments = ["D50FE62D-8A5E-4407-83F8-AFCAAF708EA4","942E40CA-4C23-4D3A-A0B4-736CD0EFCD54","0EC2E5AE-25F3-4D3A-B71F-8019BB62ED4B","19F80933-5D34-46DC-A14C-2867E29ED7CB","93CC7519-2CE8-49CB-8605-DE093B2F6090"]; }
-                    if(preset=="countries")  { $scope.governments = []; $scope.showCountries = true; }
-                    if(preset=="regions")    { $scope.governments = []; $scope.showRegions = true; }
+                    if(preset=="cbdRegions") { $scope.selectedRegions = ["D50FE62D-8A5E-4407-83F8-AFCAAF708EA4","942E40CA-4C23-4D3A-A0B4-736CD0EFCD54","0EC2E5AE-25F3-4D3A-B71F-8019BB62ED4B","19F80933-5D34-46DC-A14C-2867E29ED7CB","93CC7519-2CE8-49CB-8605-DE093B2F6090"]; }
+                    if(preset=="countries")  { $scope.selectedRegions = []; $scope.showCountries = true; }
+                    if(preset=="regions")    { $scope.selectedRegions = []; $scope.showRegions = true; }
                 });
 
                 //====================================
@@ -55,10 +58,10 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                 //====================================
                 $scope.removeGovernment = function(country){
 
-                    var index = $scope.governments.indexOf(country);
+                    var index = $scope.selectedRegions.indexOf(country);
 
                     if(index>=0)
-                        $scope.governments.splice(index,1);
+                        $scope.selectedRegions.splice(index,1);
                 };
 
                 //====================================
@@ -122,12 +125,12 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                     if((on && off) || int) $scope.allSelected = null;
                     else                   $scope.allSelected = !!on;
 
-                    $scope.questions = [];
+                    $scope.selectedQuestions = [];
 
                     $scope.sections.forEach(function(section){
                         section.questions.forEach(function(question){
                             if(question.selected)
-                            $scope.questions.push(question.key);
+                            $scope.selectedQuestions.push(question.key);
                         });
                     });
 
