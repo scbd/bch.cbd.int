@@ -1,17 +1,31 @@
 <div>
-    <h3>Question {{::question.number||11}}</h3>
+    <h3>Question {{::question.number||11}} <a href="#" ng-click="setSumType()">∑</a></h3>
     <h4>{{::question.text}}</h4>
-
     <table>
         <tr>
-            <th></th>
-            <th>All</th>
-            <th ng-repeat="region in regions">{{::region.shortTitle|lstring}}</th>
+            <th>&nbsp;</th>
+            <th class="bchCellWorld"></th>
+            <th class="bchCellWorld bchCellWorldSpacer" colspan="2">All</th>
+            <th class="bchCellRegion" ng-repeat="region in regions" title="{{::(region.title)|lstring}}">{{::(region.shortTitle)|lstring}}</th>
         </tr>
-        <tr ng-repeat="option in ::question.values">
-            <td>{{::option.text}}</td>
-            <td>{{::option.all}}</td>
-            <td ng-repeat="region in regions">{{option[region.identifier]}}</td>
+        <tr ng-if="question.type!='text'" ng-repeat="option in ::question.values">
+            <td width="22px">
+                <i style="font-size:14px" class="fa fa-filter"></i>
+		    </td>
+            <td class="bchCellAnswer">{{::option.text}}</td>
+            <td class="bchCellWorld">{{::option.sum}}</td>
+            <td class="bchCellWorld bchCellWorldSpacer">({{::option.percent}}%)</td>
+            <td class="bchCellGroup" ng-repeat="region in regions">
+                {{option.regions[region.identifier][sumType]||0}}<span ng-if="sumType!='sum'">%</span>
+            </td>
+        </tr>
+        <tr ng-if="question.type=='text'">
+            <td width="22px">
+        		<i style="font-size:14px;opacity:0.5" class="fa fa-filter"></i>
+		    </td>
+            <td class="bchCellAnswer">Free text</td>
+            <td class="bchCellWorld bchCellWorldSpacer"colspan="2"><i style="font-size:14px" class="fa fa-file-text-o"></i></td>
+            <td class="bchCellGroup" ng-repeat="region in regions"><i style="font-size:14px" class="fa fa-file-text-o"></i></td>
         </tr>
     </table>
 </div>
