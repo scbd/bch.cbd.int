@@ -2,6 +2,15 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
 
     var baseUrl = require.toUrl('');
 
+    var DefaultRegions = [
+        "D50FE62D-8A5E-4407-83F8-AFCAAF708EA4", // CBD Regional Groups - Africa
+        "5E5B7AA4-2420-4147-825B-0820F7EC5A4B", // CBD Regional Groups - Asia and the Pacific
+        "942E40CA-4C23-4D3A-A0B4-736CD0EFCD54", // CBD Regional Groups - Central and Eastern Europe
+        "3D0CCC9A-A0A1-4399-8FA2-41D4D649DB0E", // CBD Regional Groups - Latin America and the Caribbean
+        "0EC2E5AE-25F3-4D3A-B71F-8019BB62ED4B"  // CBD Regional Groups - Western Europe and Others
+    ];
+
+
     //==============================================
     //
     //
@@ -46,8 +55,7 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                 //
                 //====================================
                 $scope.$watch('countriesPreset', function (preset) {
-
-                    if(preset=="cbdRegions") { $scope.selectedRegions = ["D50FE62D-8A5E-4407-83F8-AFCAAF708EA4","942E40CA-4C23-4D3A-A0B4-736CD0EFCD54","0EC2E5AE-25F3-4D3A-B71F-8019BB62ED4B","19F80933-5D34-46DC-A14C-2867E29ED7CB","93CC7519-2CE8-49CB-8605-DE093B2F6090"]; }
+                    if(preset=="cbdRegions") { $scope.selectedRegions = DefaultRegions.concat(); }
                     if(preset=="countries")  { $scope.selectedRegions = []; $scope.showCountries = true; }
                     if(preset=="regions")    { $scope.selectedRegions = []; $scope.showRegions = true; }
                 });
