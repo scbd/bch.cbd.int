@@ -7,6 +7,7 @@ require.config({
         'angular'   : 'libs/angular-flex/angular-flex',
         'ngRoute'   : 'libs/angular-route/angular-route.min',
         'ngCookies' : 'libs/angular-cookies/angular-cookies.min',
+        'ngSanitize': 'libs/angular-sanitize/angular-sanitize.min',
         'lodash'    : 'libs/lodash/lodash.min',
         'text'      : 'libs/requirejs-text/text',
         'jquery'    : 'libs/jquery/dist/jquery.min',
@@ -16,6 +17,7 @@ require.config({
         'angular'              : { deps: ['libs/angular/angular'] },
         'libs/angular/angular' : { deps: ['jquery'] },
         'ngRoute'              : { deps: ['angular'] },
+        'ngSanitize'           : { deps: ['angular'] },
         'ngCookies'            : { deps: ['angular'] }
     }
 });
