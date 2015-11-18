@@ -1,7 +1,5 @@
-define(['app', 'lodash', 'ngCookies', 'directives/national-reports/questions-selector'], function(app, _) { 'use strict';
+define(['directives/national-reports/questions-selector'], function() { 'use strict';
 
-	return ['$scope', '$http', '$cookies', function($scope, $http, $cookies) {
-
-
+	return [function() {
 	}];
 });

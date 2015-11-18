@@ -58,8 +58,6 @@ define(['app', 'jquery'], function(app, $) {
 
                         pollInProgress = false;
                     }
-
-
                 }
 
                 //========================================
