@@ -4,26 +4,10 @@
     <link href="/bch/styles/nr-analyzer.css" rel="stylesheet" type="text/css">
 
 
-    <button type="button" ng-click="showSettings=!showSettings">Settings</button>
+    <button type="button" ng-click="showSettings=!showSettings; queueDigest()">Settings</button>
 
     <national-report-questions-selector ng-show="showSettings" report-type="selectedReportType" questions="selectedQuestions" regions="selectedRegions"></national-report-questions-selector>
 
-    <div class="bchNationalReport2Analyzer">
-
-        <div ng-repeat="section in sections | limitTo:limit">
-
-            <h2>{{::section.text}}</h2>
-
-            <national-report-anaylzer-question sum-type="$parent.$parent.sumType" regions="::regions" reports="::reports" question="::question" ng-repeat="question in section.questions | limitTo:section.limit"></national-report-anaylzer-question>
-
-        </div>
-
-        <div class="well well-lg text-center" infinit-scroll="nextPage(3)" infinit-scroll-options="{offset:100}" ng-show="infinitScrollVisible"  style="font-size:18px">
-            <i class="fa fa-cog fa-spin"></i> Loading....
-        </div>
-
-        <pre>{{governments|json}}</pre>
-        <pre>{{reports.length}}</pre>
-    </div>
+    <national-report-analyzer report-type="selectedReportType" questions="selectedQuestions" regions="selectedRegions"></national-report-analyzer>
 
 </div>
