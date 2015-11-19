@@ -1,4 +1,4 @@
-define(['app', 'jquery', 'lodash', 'providers/extended-route'], function(app, $, _) { 'use strict';
+define(['app', 'jquery', 'providers/extended-route'], function(app, $) { 'use strict';
 
 	app.config(['extendedRouteProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
