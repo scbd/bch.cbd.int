@@ -14,7 +14,7 @@ require.config({
         'diacritics': 'libs/diacritic/diacritics'
     },
     shim: {
-        'angular'              : { deps: ['libs/angular/angular'] },
+        'angular'              : { deps: ['libs/angular/angular.min'] },
         'libs/angular/angular' : { deps: ['jquery'] },
         'ngRoute'              : { deps: ['angular'] },
         'ngSanitize'           : { deps: ['angular'] },
