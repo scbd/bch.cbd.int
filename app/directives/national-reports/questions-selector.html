@@ -19,8 +19,8 @@
                     <option value="regions">Select regions</option>
                 </select>
 
-                <terms-dialog title="Countries" visible="showCountries" selection="governments" terms="getCountries()" columns="2"></terms-dialog>
-                <terms-dialog title="Regions"   visible="showRegions"   selection="governments" terms="getRegions()"></terms-dialog>
+                <terms-dialog title="Countries" visible="showCountries" selection="selectedRegions" terms="getCountries()" columns="2"></terms-dialog>
+                <terms-dialog title="Regions"   visible="showRegions"   selection="selectedRegions" terms="getRegions()"></terms-dialog>
 
             </td>
         </tr>
@@ -31,14 +31,14 @@
             </td>
             <td class="searchCriteriaInput" style="border-top:1px solid #e0e0e0">
 
-                <div ng-hide="governments.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">
+                <div ng-hide="selectedRegions.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">
                     No countries or regions selected.
                 </div>
 
-                <ul ng-if="governments" class="list-unstyled">
-                    <li ng-repeat="c in governments">
-                        <i class="fa fa-times" ng-click="removeGovernment(c)" ng-show="countriesPreset!='cbdRegions'"></i>
-                        {{countriesMap[c].title|lstring}}
+                <ul ng-if="selectedRegions.length" class="list-unstyled">
+                    <li ng-repeat="c in selectedRegions">
+                        <i class="fa fa-times" ng-click="removeRegions(c)" ng-show="countriesPreset!='cbdRegions'"></i>
+                        {{::countriesMap[c].title|lstring}}
                     </li>
                 </ul>
             </td>
@@ -59,18 +59,18 @@
             <table cellpadding="0" cellspacing="0" class="Header" style="width: 100%;">
                 <tr>
                     <td class="Selector"><input type="checkbox" ng-model="section.selected" ng-click="onSection(section)" indeterminate="section.selected===null"></td>
-                    <td  ng-click="section.expanded=!section.expanded" class="Title"     style="cursor: pointer;">{{section.text}}</td>
+                    <td  ng-click="section.expanded=!section.expanded" class="Title"     style="cursor: pointer;">{{::section.title}}</td>
                     <td  ng-click="section.expanded=!section.expanded" ng-class="{ Collapsed : !section.expanded, Expanded : section.expanded }" style="cursor: pointer;">&nbsp;</td>
                 </tr>
             </table>
 
             <div class="Container" ng-show="section.expanded">
-                <div class="Question" ng-repeat="question in section.questions">
+                <div class="Question" ng-repeat="question in ::section.questions">
                     <table cellpadding="0" cellspacing="0" class="Header" id="E8567158" style="width: 100%;">
                         <tr id="E8567159">
                             <td class="Selector"><input type="checkbox" ng-model="question.selected" ng-click="onQuestion(question)"></td>
-                            <td class="Number" style="cursor: pointer;" ng-click="question.selected=!question.selected; onQuestion(question)">Question {{question.number}}.</td>
-                            <td class="Title"  style="cursor: pointer;" ng-click="question.selected=!question.selected; onQuestion(question)">{{question.text}}</td>
+                            <td class="Number" style="cursor: pointer;" ng-click="question.selected=!question.selected; onQuestion(question)">Question {{::question.number}}.</td>
+                            <td class="Title"  style="cursor: pointer;" ng-click="question.selected=!question.selected; onQuestion(question)">{{::question.title}}</td>
                         </tr>
                     </table>
                 </div>

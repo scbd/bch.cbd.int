@@ -64,7 +64,7 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                 //
                 //
                 //====================================
-                $scope.removeGovernment = function(country){
+                $scope.removeRegions = function(country){
 
                     var index = $scope.selectedRegions.indexOf(country);
 
