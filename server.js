@@ -1,19 +1,15 @@
+'use strict'; // jshint browser: false, node: true, esnext: true
 // CREATE HTTP SERVER AND PROXY
-
 var app     = require('express')();
 var proxy   = require('http-proxy').createProxyServer({});
 
-// LOAD CONFIGURATION
-
 app.use(require('morgan')('dev'));
-app.use(require('compression')());
 
 // Configure routes
 
-app.use('/app',   require('serve-static')(__dirname + '/app_build'));
 app.use('/app',   require('serve-static')(__dirname + '/app'));
-app.all('/app/*', function(req, res) { res.status(404).send(); } );
-app.all('/api/*', function(req, res) { proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ); } );
+app.all('/app/*', (req, res) => res.status(404).send());
+app.all('/api/*', (req, res) => proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ));
 
 // FOR DEV:
 // app.all('/*', function(req, res) { proxy.web(req, res, { target: 'https://bch.cbd.int:443', secure: false } ); } );
@@ -26,8 +22,8 @@ app.listen(process.env.PORT || 2000, '0.0.0.0', function(){
 
 // Handle proxy errors ignore
 
-proxy.on('error', function (e,req, res) {
-    console.error('proxy error:', e);
+proxy.on('error', function (err, req, res) {
+    console.error('proxy error:', err);
     res.status(502).send();
 });
 
