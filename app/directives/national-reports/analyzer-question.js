@@ -44,14 +44,19 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     if(!$scope.regions) return;
                     if(!$scope.question) return;
 
+                    $scope.reportsMap = {};
+
                     var reports  = $scope.reports;
                     var regions  = $scope.regions;
                     var question = $scope.question;
-                    var options  = $scope.question.values;
+                    var options  = $scope.question.options;
+                    var reportsMap = $scope.reportsMap;
                     var optionsMap = {};
 
-                    if(!options)
-                        return;
+                    if(question.type=='text') {
+                        options = [{ value: 'text' }];  // text responses don't have predefine values; Simulate a fake one
+                        $scope.question.options = options;
+                    }
 
                     options.forEach(function(option, i) {
 
@@ -68,11 +73,22 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     question.sum = 0;
                     question.regions = {};
 
-                    reports.forEach(function(report){
+                    reports.forEach(function(report) {
 
-                        var responses = _([report[question.key]]).flatten().compact().value();
+                        reportsMap[report.government] = report;
 
-                        responses.forEach(function(value){
+                        var answers = report[question.key];
+
+                        if(_.isEmpty(answers))
+                            answers = undefined;
+
+                        if(question.type=='text' && !!answers) {
+                            answers = 'text';
+                        }
+
+                        answers = _([answers]).flatten().compact().value();
+
+                        answers.forEach(function(value){
 
                             var option = optionsMap[value.toString()];
 
@@ -90,7 +106,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 var qRegion = question.regions[region.identifier] || (question.regions[region.identifier] = { sum : 0 });
                                 var oRegion = option  .regions[region.identifier] || (option  .regions[region.identifier] = { sum : 0, percentRow: 0, percentColumn: 0, percentGlobal: 0 });
 
-                                if(region.reports[report.government]) {
+                                if(region.countries[report.government]) {
                                     qRegion.sum++; // column
                                     oRegion.sum++; // column
                                 }
@@ -98,7 +114,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 oRegion.percentRow    = Math.round((oRegion.sum*100) / option.sum);
                                 oRegion.percentColumn = Math.round((oRegion.sum*100) / qRegion.sum);
                                 oRegion.percentGlobal = Math.round((oRegion.sum*100) / question.sum);
-                                oRegion.htmlColor = htmlColor(blendColor(WHITE, option.color, oRegion.percentRow/100));
+                                oRegion.htmlColor     = htmlColor(blendColor(WHITE, option.color, oRegion.percentRow/100));
                             });
                         });
                     });

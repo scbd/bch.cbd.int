@@ -1,7 +1,23 @@
-define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyzer-question', 'directives/infinit-scroll', 'filters/lstring'],
+define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyzer-section', 'filters/lstring'],
         function(templateHtml, app, _, require, $) { 'use strict';
 
     var baseUrl = require.toUrl('');
+
+    //====================================
+    //
+    //
+    //====================================
+    function toMap(values, key) {
+
+        return _.reduce(values, function(map, v) {
+
+            if(key) map[v[key]] = v;
+            else    map[v]      = v;
+
+            return  map;
+
+        }, {});
+    }
 
     //==============================================
     //
@@ -12,23 +28,13 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
             restrict : 'E',
             replace : true,
             template : templateHtml,
+            require : 'nationalReportAnalyzer',
             scope :  {
                 selectedRegions: '=regions',
                 selectedQuestions: '=questions',
                 selectedReportType: '=reportType'
             },
-            controller : ['$scope', function($scope){
-
-                var sumTypes = ['sum', 'percentRow', 'percentColumn', 'percentGlobal'];
-
-                this.selectSumType = function() {
-
-                    $scope.sumType = sumTypes.pop();
-
-                    sumTypes.unshift($scope.sumType);
-                };
-            }],
-            link: function ($scope) {
+            link: function ($scope, el, attr, nrAnalyzer) {
 
                 $scope.limit = 0;
                 $scope.sumType = 'sum';
@@ -54,7 +60,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     $scope.limit = 0;
                     $scope.infinitScrollVisible = true;
 
-                    $q.all([loadRegions(), loadSections(), loadReports()]).then(function(results) {
+                    $q.all([loadRegions(), loadSections(), nrAnalyzer.loadReports()]).then(function(results) {
 
                         var regions  = results[0];
                         var sections = results[1];
@@ -62,27 +68,33 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                         regions = _.map(regions, function(term){
 
-                            var regionReports = _.filter(reports, function(report){
+                            var countries = _(reports).filter(function(report){
+
                                 return report.regions[term.identifier];
-                            });
+
+                            }).sortBy('government').reduce(function(ret, report) {
+
+                                ret[report.government] = report.government;
+                                return ret;
+
+                            }, {});
 
                             return {
                                 identifier: term.identifier,
                                 title: term.title,
                                 shortTitle: term.shortTitle,
                                 htmlTitle : htmlTitle(term.shortTitle, term.title),
-                                reports: toMap(regionReports, 'government')
+                                countries: countries
                             };
                         });
 
                         $scope.regions = regions;
-                        $scope.reports = reports;
                         $scope.sections = sections;
 
-                        $scope.limit = 0;
-                        $scope.infinitScrollVisible = true;
+                    }).then(function(){
 
-                        $scope.nextPage(10);
+                        nrAnalyzer.toggleSection($scope.sections[0].key, true);
+
                     });
                 }
 
@@ -142,62 +154,6 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //
                 //
                 //====================================
-                function loadReports(options) {
-
-                    options = _.defaults(options||{}, {
-                        reportType : $scope.selectedReportType,
-                    });
-
-                    var query  = { 'government_REL' : { $in: $scope.selectedRegions } };
-                    var fields = {
-                        contact: 0,
-                        participatingOrganizations: 0
-                    };
-
-                    var collectionUrls = {
-                        cpbNationalReport2 : "/api/v2015/national-reports-cpb-2",
-                        cpbNationalReport3 : "/api/v2015/national-reports-cpb-3"
-                    };
-
-                    return $http.get(collectionUrls[options.reportType], {  params: { q : query, f : fields }, cache : true }).then(function(res) {
-
-                        return _.map(res.data, function(report) {
-
-                            report.regions = toMap(report.government_REL);
-
-                            return _.mapValues(report, toRawValue);
-                        });
-                    });
-
-                    function toRawValue(v) {
-
-                        if(_.isArray(v))
-                        return _.map(v, toRawValue);
-
-                        return v.value || v.identifier || v;
-                    }
-                }
-
-                //====================================
-                //
-                //
-                //====================================
-                function toMap(values, key) {
-
-                    return _.reduce(values, function(map, v) {
-
-                        if(key) map[v[key]] = v;
-                        else    map[v]      = v;
-
-                        return  map;
-
-                    }, {});
-                }
-
-                //====================================
-                //
-                //
-                //====================================
                 function htmlTitle(shortTitle, title) {
 
                     var lstring = $filter('lstring');
@@ -247,7 +203,102 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     $scope.infinitScrollVisible = $scope     .limit != sections.length ||
                     lastSection.limit != lastSection.questions.length;
                 };
-            }
+            },
+
+            controller : ['$scope', function($scope){
+
+                var _self = this;
+
+                var sumTypes = ['sum', 'percentRow', 'percentColumn', 'percentGlobal'];
+
+                this.selectSumType = function() {
+
+                    $scope.sumType = sumTypes.pop();
+
+                    sumTypes.unshift($scope.sumType);
+                };
+
+                this.toggleSection = function(sectionName, expanded) {
+
+                    var section = _.findWhere($scope.sections||[], { key : sectionName });
+
+                    if(!section)
+                        return;
+
+                    if(expanded === undefined)
+                        expanded = !section.expanded;
+
+                    expanded = !!expanded; // !! force boolean
+
+                    if(section.reports) {
+
+                        section.expanded = expanded;
+
+                        return $q.resolve(expanded);
+
+                    }
+
+                    return _self.loadReports({
+
+                        questions : _.pluck(section.questions, 'key')
+
+                    }).then(function(reports){
+
+                        section.reports  = reports;
+                        section.expanded = expanded;
+
+                        return expanded;
+
+                    });
+                };
+
+                //====================================
+                //
+                //
+                //====================================
+                this.loadReports = function(options) {
+
+                    options = _.defaults(options||{}, {
+                        reportType : $scope.selectedReportType,
+                        regions : $scope.selectedRegions,
+                        questions : []
+                    });
+
+                    var query  = { 'government_REL' : { $in: options.regions } };
+                    var fields = _(options.questions).union(['documentId', 'government', 'government_REL']).reduce(function(ret, key) {
+                        ret[key] = 1;
+                        return ret;
+                    }, {});
+
+                    var collectionUrls = {
+                        cpbNationalReport2 : "/api/v2015/national-reports-cpb-2",
+                        cpbNationalReport3 : "/api/v2015/national-reports-cpb-3"
+                    };
+
+                    return $http.get(collectionUrls[options.reportType], {  params: { q : query, f : fields }, cache : true }).then(function(res) {
+
+                        return _.map(res.data, function(report) {
+
+                            report.regions = toMap(report.government_REL);
+
+                            return _.mapValues(report, toRawValue);
+                        });
+                    });
+
+                    function toRawValue(v) {
+
+                        if(_.isArray(v))
+                            return _.map(v, toRawValue);
+
+                        v = v.value || v.identifier || v;
+
+                        if(typeof(v)=='boolean')
+                            v = v.toString();
+
+                        return v;
+                    }
+                };
+            }]
         };
     }]);
 });

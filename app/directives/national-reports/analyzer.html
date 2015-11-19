@@ -1,14 +1,3 @@
 <div class="bchNationalReport2Analyzer">
-
-    <div ng-repeat="section in sections | limitTo:limit">
-
-        <h2>{{::section.text}}</h2>
-
-        <national-report-analyzer-question sum-type="$parent.$parent.sumType" regions="::regions" reports="::reports" question="::question" ng-repeat="question in section.questions | limitTo:section.limit"></national-report-analyzer-question>
-
-    </div>
-
-    <div class="well well-lg text-center" infinit-scroll="nextPage(3)" infinit-scroll-options="{offset:500}" ng-show="infinitScrollVisible"  style="font-size:18px">
-        <i class="fa fa-cog fa-spin"></i> Loading....
-    </div>
+    <national-report-analyzer-section sum-type="sumType" regions="::regions" section="::section" ng-repeat="section in sections"></national-report-analyzer-section>
 </div>

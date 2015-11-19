@@ -1,49 +1,57 @@
-<div>
-    <h3>Question {{::question.number||11}} <a href="#" ng-click="selectSumType()">∑</a></h3>
-    <h4>{{::question.text}}</h4>
+<div style="margin-bottom:10px;">
+    <b>Question {{::question.number||11}}</b> <a href="#" ng-click="selectSumType()">∑</a>
+    <div>{{::question.title}}</div>
     <table>
         <tr>
             <th>&nbsp;</th>
             <th class="bchCellWorld"></th>
             <th class="bchCellWorld bchCellWorldSpacer" colspan="2">All</th>
-            <th class="bchCellRegion" ng-repeat-start="region in ::regions" title="{{::(region.title|lstring)}}">
+            <th class="bchCellRegion text-nowrap" ng-repeat-start="region in ::regions" title="{{::(region.title|lstring)}}">
                 <span ng-bind-html="region.htmlTitle"ng-click="region.expanded=!region.expanded">
                 </span>&nbsp;<i class="fa fa-caret-right" ng-click="region.expanded=true"  ng-hide="region.expanded"></i><i class="fa fa-caret-left"  ng-click="region.expanded=false" ng-show="region.expanded"></i>
             </th>
                 <!-- show countries if region.expanded -->
-                <th class="bchCellCountry" ng-show="region.expanded" ng-repeat="(gov, report) in ::(region.reports|orderBy:'government')">
+                <th class="bchCellCountry" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
                     <a href="/database/record.shtml?documentid={{::report.documentId}}" target="_report">{{::(gov|uppercase)}}</a>
                 </th>
             <th class="bchCellRegion" ng-repeat-end="END OF: region in regions" ng-if="false"></th>
         </tr>
 
-        <tr ng-if="question.type!='text'" ng-repeat="option in ::question.values">
+        <!-- OPTIONS + TERMS -->
+        <tr ng-if="question.type!='text'" ng-repeat="option in ::question.options">
             <td width="22px">
                 <i style="font-size:14px" class="fa fa-filter"></i>
 		    </td>
-            <td class="bchCellAnswer" style="white-space:nowrap">{{::option.text}}</td>
+            <td class="bchCellAnswer">{{::option.title}}</td>
             <td class="bchCellWorld" style="background-color:{{::option.htmlColor}}">{{::option.sum}}</td>
             <td class="bchCellWorld bchCellWorldSpacer" style="background-color:{{::option.htmlColor}}">({{::option.percent}}%)</td>
             <td class="bchCellGroup" ng-repeat-start="region in ::regions" style="background-color:{{::option.regions[region.identifier].htmlColor}}">
                 {{option.regions[region.identifier][sumType]||0}}<span ng-if="sumType!='sum'">%</span>
             </td>
                 <!-- show countries if region.expanded -->
-                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="(gov, report) in ::(region.reports|orderBy)">
-                    <div ng-if="::report[question.key]==option.value">●</div>
+                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
+                    <div ng-if="::(reportsMap[gov][question.key]==option.value || reportsMap[gov][question.key].indexOf(option.value)>=0)">●</div>
                 </td>
             <td class="bchCellGroup" ng-repeat-end="END OF: region in regions" ng-if="false"></th>
         </tr>
 
+        <!-- FREE TEXT -->
         <tr ng-if="question.type=='text'">
             <td width="22px">
         		<i style="font-size:14px;opacity:0.5" class="fa fa-filter"></i>
 		    </td>
             <td class="bchCellAnswer">Free text</td>
-            <td class="bchCellWorld bchCellWorldSpacer"colspan="2"><img src="/bch/images/nr-documents.png"></td>
-            <td class="bchCellGroup" ng-repeat-start="region in ::regions"><img src="/bch/images/nr-documents.png"></td>
+            <td class="bchCellWorld bchCellWorldSpacer text-nowrap"colspan="2">
+                {{::question.options[0].sum||0}}
+                <img ng-if="::question.options[0].sum" src="/bch/images/nr-documents.png">
+            </td>
+            <td class="bchCellGroup text-nowrap" ng-repeat-start="region in ::regions">
+                {{::question.options[0].regions[region.identifier].sum||0}}
+                <img ng-if="::question.options[0].regions[region.identifier].sum" src="/bch/images/nr-documents.png">
+            </td>
                 <!-- show countries if region.expanded -->
-                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="(gov, report) in ::(region.reports|orderBy)">
-                    <img ng-if="::report[question.key]" src="/bch/images/nr-document.png">
+                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
+                    <img ng-if="::reportsMap[gov][question.key]" src="/bch/images/nr-document.png">
                 </td>
             <td class="bchCellGroup" ng-repeat-end="END OF: region in regions" ng-if="false"></th>
         </tr>
