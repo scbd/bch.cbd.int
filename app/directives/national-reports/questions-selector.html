@@ -60,7 +60,10 @@
                 <tr>
                     <td class="Selector"><input type="checkbox" ng-model="section.selected" ng-click="onSection(section)" indeterminate="section.selected===null"></td>
                     <td  ng-click="section.expanded=!section.expanded" class="Title"     style="cursor: pointer;">{{::section.title}}</td>
-                    <td  ng-click="section.expanded=!section.expanded" ng-class="{ Collapsed : !section.expanded, Expanded : section.expanded }" style="cursor: pointer;">&nbsp;</td>
+                    <td  ng-click="section.expanded=!section.expanded" class="text-right" style="cursor: pointer;">
+                        <i class="fa fa-caret-down"  ng-if="!section.expanded"></i>
+                        <i class="fa fa-caret-up"    ng-if="section.expanded"></i>
+                    </td>
                 </tr>
             </table>
 
