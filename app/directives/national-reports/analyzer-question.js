@@ -106,7 +106,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 var qRegion = question.regions[region.identifier] || (question.regions[region.identifier] = { sum : 0 });
                                 var oRegion = option  .regions[region.identifier] || (option  .regions[region.identifier] = { sum : 0, percentRow: 0, percentColumn: 0, percentGlobal: 0 });
 
-                                if(region.countries[report.government]) {
+                                if(region.countriesMap[report.government]) {
                                     qRegion.sum++; // column
                                     oRegion.sum++; // column
                                 }

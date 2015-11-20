@@ -11,8 +11,8 @@
                 </span>&nbsp;<i class="fa fa-caret-right" ng-click="region.expanded=true"  ng-hide="region.expanded"></i><i class="fa fa-caret-left"  ng-click="region.expanded=false" ng-show="region.expanded"></i>
             </th>
                 <!-- show countries if region.expanded -->
-                <th class="bchCellCountry" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
-                    <a href="/database/record.shtml?documentid={{::report.documentId}}" target="_report">{{::(gov|uppercase)}}</a>
+                <th class="bchCellCountry" ng-show="region.expanded" ng-repeat="gov in ::region.countriesMap">
+                    <a href="/database/record.shtml?documentid={{::reportsMap[gov].documentId}}" target="_report">{{::(gov|uppercase)}}</a>
                 </th>
             <th class="bchCellRegion" ng-repeat-end="END OF: region in regions" ng-if="false"></th>
         </tr>
@@ -29,7 +29,7 @@
                 {{option.regions[region.identifier][sumType]||0}}<span ng-if="sumType!='sum'">%</span>
             </td>
                 <!-- show countries if region.expanded -->
-                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
+                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countriesMap">
                     <div ng-if="::(reportsMap[gov][question.key]==option.value || reportsMap[gov][question.key].indexOf(option.value)>=0)">●</div>
                 </td>
             <td class="bchCellGroup" ng-repeat-end="END OF: region in regions" ng-if="false"></th>
@@ -50,7 +50,7 @@
                 <img ng-if="::question.options[0].regions[region.identifier].sum" src="/bch/images/nr-documents.png">
             </td>
                 <!-- show countries if region.expanded -->
-                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
+                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countriesMap">
                     <img ng-if="::reportsMap[gov][question.key]" src="/bch/images/nr-document.png">
                 </td>
             <td class="bchCellGroup" ng-repeat-end="END OF: region in regions" ng-if="false"></th>

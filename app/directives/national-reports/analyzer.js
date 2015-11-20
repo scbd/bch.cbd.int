@@ -7,16 +7,16 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
     //
     //
     //====================================
-    function toMap(values, key) {
+    function mapReduce(key) {
 
-        return _.reduce(values, function(map, v) {
+        return function(map, v) {
 
             if(key) map[v[key]] = v;
             else    map[v]      = v;
 
             return  map;
 
-        }, {});
+        };
     }
 
     //==============================================
@@ -72,25 +72,16 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         var sections = results[1];
                         var reports  = results[2];
 
+                        var reportsCountriesMap = _(reports).pluck('government').sortBy().reduce(mapReduce(), {});
+
                         regions = _.map(regions, function(term){
-
-                            var countries = _(reports).filter(function(report){
-
-                                return report.regions[term.identifier];
-
-                            }).sortBy('government').reduce(function(ret, report) {
-
-                                ret[report.government] = report.government;
-                                return ret;
-
-                            }, {});
 
                             return {
                                 identifier: term.identifier,
                                 title: term.title,
                                 shortTitle: term.shortTitle,
                                 htmlTitle : htmlTitle(term.shortTitle, term.title),
-                                countries: countries
+                                countriesMap: _.pick(reportsCountriesMap, [term.identifier].concat(term.expandedNarrowerTerms||term.narrowerTerms||[]))
                             };
                         });
 
@@ -116,13 +107,13 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         return res.data;
                     });
 
-                    var regions = $http.get('/api/v2013/thesaurus/domains/regions/terms', { cache : true }).then(function(res) {
+                    var regions = $http.get('/api/v2013/thesaurus/domains/regions/terms?relations', { cache : true }).then(function(res) {
                         return res.data;
                     });
 
                     return $q.all([countries, regions]).then(function(results){
 
-                        var selection = toMap($scope.selectedRegions);
+                        var selection = _($scope.selectedRegions).reduce(mapReduce(), {});
 
                         return _(results).flatten().filter(function (term) {
                             return selection[term.identifier];
@@ -142,7 +133,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     return $http.get(baseUrl+'resources/national-reports/'+locale+'/'+reportType+'.json', { cache : true }).then(function(res) {
 
-                        var selection = toMap($scope.selectedQuestions);
+                        var selection = _($scope.selectedQuestions).reduce(mapReduce(), {});
 
                         return _.filter(res.data, function(section) {
 
