@@ -23,9 +23,9 @@
                 <i style="font-size:14px" class="fa fa-filter"></i>
 		    </td>
             <td class="bchCellAnswer">{{::option.title}}</td>
-            <td class="bchCellWorld" style="background-color:{{::option.htmlColor}}">{{::option.sum}}</td>
-            <td class="bchCellWorld bchCellWorldSpacer" style="background-color:{{::option.htmlColor}}">({{::option.percent}}%)</td>
-            <td class="bchCellGroup" ng-repeat-start="region in ::regions" style="background-color:{{::option.regions[region.identifier].htmlColor}}">
+            <td class="bchCellWorld" ng-style="::{ 'background-color': option.htmlColor }">{{::option.sum}}</td>
+            <td class="bchCellWorld bchCellWorldSpacer" ng-style="::{ 'background-color': option.htmlColor }">({{::option.percent}}%)</td>
+            <td class="bchCellGroup" ng-repeat-start="region in ::regions" ng-style="::{ 'background-color': option.regions[region.identifier].htmlColor }">
                 {{option.regions[region.identifier][sumType]||0}}<span ng-if="sumType!='sum'">%</span>
             </td>
                 <!-- show countries if region.expanded -->
