@@ -34,10 +34,16 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 selectedQuestions: '=questions',
                 selectedReportType: '=reportType'
             },
-            link: function ($scope, el, attr, nrAnalyzer) {
+            link: function ($scope, $element, attr, nrAnalyzer) {
 
                 $scope.limit = 0;
                 $scope.sumType = 'sum';
+                $scope.sumTypes = [
+                    { code: 'sum',           title: 'Count of responses'   },
+                    { code: 'percentRow',    title: 'Percentage by row'    },
+                    { code: 'percentColumn', title: 'Percentage by column' },
+                    { code: 'percentGlobal', title: 'Percentage overall'   },
+                ];
 
                 //====================================
                 //
@@ -178,6 +184,36 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //
                 //
                 //====================================
+                $scope.setSumType = function(type) {
+                    $scope.sumType = type;
+                    nrAnalyzer.showSumTypeSelector(false);
+                };
+
+                //====================================
+                //
+                //
+                //====================================
+                var sumTypeDialog = $element.find("#sumTypeDialog");
+
+                sumTypeDialog.on("shown.bs.modal",  function() { $scope.$apply(function() { $scope.sumTypeSelectorVisible = true;  }); });
+                sumTypeDialog.on("hidden.bs.modal", function() { $scope.$apply(function() { $scope.sumTypeSelectorVisible = false; }); });
+
+                $scope.$watch('sumTypeSelectorVisible', function(visible) {
+
+                    visible = visible || false;
+
+                    if(sumTypeDialog.is(":visible") == visible){
+                        return;
+                    }
+
+                    if(visible) sumTypeDialog.modal('show');
+                    else        sumTypeDialog.modal('hide');
+                });
+
+                //====================================
+                //
+                //
+                //====================================
                 $scope.nextPage = function(increment) {
 
                     var sections = $scope.sections;
@@ -209,13 +245,16 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                 var _self = this;
 
-                var sumTypes = ['sum', 'percentRow', 'percentColumn', 'percentGlobal'];
+                //====================================
+                //
+                //
+                //====================================
+                this.showSumTypeSelector = function(visible) {
 
-                this.selectSumType = function() {
+                    if(visible===undefined)
+                        visible = true;
 
-                    $scope.sumType = sumTypes.pop();
-
-                    sumTypes.unshift($scope.sumType);
+                    $scope.sumTypeSelectorVisible = visible;
                 };
 
                 this.toggleSection = function(sectionName, expanded) {

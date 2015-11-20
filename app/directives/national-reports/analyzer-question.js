@@ -30,8 +30,8 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
-                $scope.selectSumType = function() {
-                    nrAnalyzer.selectSumType();
+                $scope.showSumTypeSelector = function() {
+                    nrAnalyzer.showSumTypeSelector(true);
                 };
 
                 //==============================================

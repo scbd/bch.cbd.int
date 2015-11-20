@@ -1,3 +1,38 @@
 <div class="bchNationalReport2Analyzer">
+
     <national-report-analyzer-section sum-type="sumType" regions="::regions" section="::section" ng-repeat="section in sections"></national-report-analyzer-section>
+
+    <!-- SUM SELECTOR -->
+    <div class="modal fade" id="sumTypeDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Change how numbers are calculated</i></h4>
+                </div>
+
+                <div class="modal-body" style="max-height:75vh;overflow-y: auto;">
+
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6 col-xs-12" ng-repeat="type in ::sumTypes">
+
+                            <div class="panel" ng-class="{ 'panel-primary' : sumType==type.code, 'panel-info' : sumType!=type.code }">
+                                <div class="panel-heading  text-center">
+                                    <h2 style="color:inherit"><a style="color:inherit" href="#" ng-click="setSumType(type.code)">{{::type.title}}</a></h2>
+                                </div>
+                                <div class="panel-body hidden-xs" style="min-height:110px">
+                                    <a style="color:inherit" href="#" ng-click="setSumType(type.code)">{{type}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
