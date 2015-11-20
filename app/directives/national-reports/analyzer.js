@@ -90,8 +90,9 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     }).then(function(){
 
-                        nrAnalyzer.toggleSection($scope.sections[0].key, true);
-
+                        if($scope.sections && $scope.sections.length) {
+                            nrAnalyzer.toggleSection($scope.sections[0].key, true);
+                        }
                     });
                 }
 
