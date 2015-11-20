@@ -249,6 +249,10 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     $scope.sumTypeSelectorVisible = visible;
                 };
 
+                //====================================
+                //
+                //
+                //====================================
                 this.toggleSection = function(sectionName, expanded) {
 
                     var section = _.findWhere($scope.sections||[], { key : sectionName });
