@@ -271,7 +271,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     return _self.loadReports({
 
-                        questions : _.pluck(section.questions, 'key')
+                        questions : _.pluck(section.questions, 'key').concat(['documentId'])
 
                     }).then(function(reports){
 
@@ -296,7 +296,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     });
 
                     var query  = { 'government_REL' : { $in: options.regions } };
-                    var fields = _(options.questions).union(['documentId', 'government', 'government_REL']).reduce(function(ret, key) {
+                    var fields = _(options.questions).union(['government']).reduce(function(ret, key) {
                         ret[key] = 1;
                         return ret;
                     }, {});
@@ -309,9 +309,6 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     return $http.get(collectionUrls[options.reportType], {  params: { q : query, f : fields }, cache : true }).then(function(res) {
 
                         return _.map(res.data, function(report) {
-
-                            report.regions = toMap(report.government_REL);
-
                             return _.mapValues(report, toRawValue);
                         });
                     });
