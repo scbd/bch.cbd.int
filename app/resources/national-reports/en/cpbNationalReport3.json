@@ -4567,32 +4567,32 @@
         "title": "How much additional funding (in the equivalent of US dollars) has your country mobilized in the last four years to support implementation of the Biosafety Protocol, beyond the regular national budgetary allocation?",
         "options": [
           {
-            "value": "USD5000-",
-            "title": "Less than 5,000 USD"
-          },
-          {
-            "value": "USD5000+",
-            "title": "5,000 USD or more"
-          },
-          {
-            "value": "USD50000+",
-            "title": "50,000 USD or more"
-          },
-          {
-            "value": "USD100000+",
-            "title": "100,000 USD or more"
-          },
-          {
-            "value": "USD500000+",
-            "title": "500,000 USD or more"
+            "value": "USD5000000+",
+            "title": "5,000,000 USD or more"
           },
           {
             "value": "USD1000000+",
             "title": "1,000,000 USD or more"
           },
           {
-            "value": "USD5000000+",
-            "title": "5,000,000 USD or more"
+            "value": "USD500000+",
+            "title": "500,000 USD or more"
+          },
+          {
+            "value": "USD100000+",
+            "title": "100,000 USD or more"
+          },
+          {
+            "value": "USD50000+",
+            "title": "50,000 USD or more"
+          },
+          {
+            "value": "USD5000+",
+            "title": "5,000 USD or more"
+          },
+          {
+            "value": "USD5000-",
+            "title": "Less than 5,000 USD"
           }
         ]
       }

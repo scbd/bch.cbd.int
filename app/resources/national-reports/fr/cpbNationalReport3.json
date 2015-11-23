@@ -4567,32 +4567,32 @@
         "title": "À quel montant s'élèvent les fonds supplémentaires (montant équivalent en dollars américains) mobilisés par votre pays au cours des quatre dernières années afin de soutenir l'application du Protocole sur la prévention des risques biotechnologiques, en plus du budget national régulier alloué ?",
         "options": [
           {
-            "value": "USD5000-",
-            "title": "Moins de 5 000 $E-U"
-          },
-          {
-            "value": "USD5000+",
-            "title": "5 000 $E-U ou plus"
-          },
-          {
-            "value": "USD50000+",
-            "title": "50 000 $E-U ou plus"
-          },
-          {
-            "value": "USD100000+",
-            "title": "100 000 $E-U ou plus"
-          },
-          {
-            "value": "USD500000+",
-            "title": "500 000 $E-U ou plus"
+            "value": "USD5000000+",
+            "title": "5 000 000 $E-U ou plus"
           },
           {
             "value": "USD1000000+",
             "title": "1 000 000 $E-U ou plus"
           },
           {
-            "value": "USD5000000+",
-            "title": "5 000 000 $E-U ou plus"
+            "value": "USD500000+",
+            "title": "500 000 $E-U ou plus"
+          },
+          {
+            "value": "USD100000+",
+            "title": "100 000 $E-U ou plus"
+          },
+          {
+            "value": "USD50000+",
+            "title": "50 000 $E-U ou plus"
+          },
+          {
+            "value": "USD5000+",
+            "title": "5 000 $E-U ou plus"
+          },
+          {
+            "value": "USD5000-",
+            "title": "Moins de 5 000 $E-U"
           }
         ]
       }
