@@ -35,4 +35,38 @@
             </div>
         </div>
     </div>
+
+
+    <!-- TEXTS DISPLAY -->
+    <div class="modal fade" id="textsDialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Question {{currentQuestion.number}}.</h4>
+                    {{currentQuestion.title|lstring}}
+                </div>
+
+                <div class="modal-body" style="max-height:75vh;overflow-y: auto;">
+
+                    <div ng-repeat="item in countriesTexts">
+                        <div class="pull-right">
+                            <span ng-repeat="(locale, text) in ::item.text">
+                                <a href="#" ng-click="item.locale=locale">{{::locale|uppercase}}</a>
+                            </span>
+                        </div>
+                        <h5>{{::allRegionsMap[item.government].title|lstring}}</h5>
+                        <pre>{{item.text|lstring:item.locale}}</pre>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

@@ -36,6 +36,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
             },
             link: function ($scope, $element, attr, nrAnalyzer) {
 
+                $scope.allRegionsMap = {};
+
                 $scope.limit = 0;
                 $scope.sumType = 'sum';
                 $scope.sumTypes = [
@@ -72,17 +74,17 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         var sections = results[1];
                         var reports  = results[2];
 
-                        var reportsCountriesMap = _(reports).pluck('government').sortBy().reduce(mapReduce(), {});
+                        var reportsCountriesMap = _(reports).pluck('government').sortBy().map(function(id){
+                            return $scope.allRegionsMap[id];
+                        }).reduce(mapReduce('identifier'), {});
 
-                        regions = _.map(regions, function(term){
+                        regions = _.map(regions, function(region){
 
-                            return {
-                                identifier: term.identifier,
-                                title: term.title,
-                                shortTitle: term.shortTitle,
-                                htmlTitle : htmlTitle(term.shortTitle, term.title),
-                                countriesMap: _.pick(reportsCountriesMap, [term.identifier].concat(term.expandedNarrowerTerms||term.narrowerTerms||[]))
-                            };
+                            region.htmlTitle    = htmlTitle(region.shortTitle, region.title);
+                            region.countriesMap = _.pick(reportsCountriesMap, [region.identifier].concat(region.expandedNarrowerTerms||region.narrowerTerms||[]));
+                            region.countries    = _.keys(region.countriesMap);
+
+                            return region;
                         });
 
                         $scope.regions = regions;
@@ -114,10 +116,12 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     return $q.all([countries, regions]).then(function(results){
 
-                        var selection = _($scope.selectedRegions).reduce(mapReduce(), {});
+                        var allRegionsMap = _(results).flatten().reduce(mapReduce('identifier'), {});
 
-                        return _(results).flatten().filter(function (term) {
-                            return selection[term.identifier];
+                        $scope.allRegionsMap = allRegionsMap;
+
+                        return _($scope.selectedRegions).map(function(id) {
+                            return allRegionsMap[id];
                         }).sortBy(function(term) {
                             return lstring(term.shortTitle) || lstring(term.title);
                         }).value();
@@ -187,50 +191,35 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //====================================
                 var sumTypeDialog = $element.find("#sumTypeDialog");
 
-                sumTypeDialog.on("shown.bs.modal",  function() { $scope.$apply(function() { $scope.sumTypeSelectorVisible = true;  }); });
-                sumTypeDialog.on("hidden.bs.modal", function() { $scope.$apply(function() { $scope.sumTypeSelectorVisible = false; }); });
+                sumTypeDialog.on("shown.bs.modal",    function() { $scope.$apply(function() { $scope.sumTypeDialogVisible = true;  }); });
+                sumTypeDialog.on("hidden.bs.modal",   function() { $scope.$apply(function() { $scope.sumTypeDialogVisible = false; }); });
+                $scope.$watch('sumTypeDialogVisible', function(visible) {
 
-                $scope.$watch('sumTypeSelectorVisible', function(visible) {
+                    if(sumTypeDialog.is(":visible") != (visible || false)) {
 
-                    visible = visible || false;
-
-                    if(sumTypeDialog.is(":visible") == visible){
-                        return;
+                        if(visible) sumTypeDialog.modal('show');
+                        else        sumTypeDialog.modal('hide');
                     }
-
-                    if(visible) sumTypeDialog.modal('show');
-                    else        sumTypeDialog.modal('hide');
                 });
 
+
                 //====================================
                 //
                 //
                 //====================================
-                $scope.nextPage = function(increment) {
+                var textsDialog = $element.find("#textsDialog");
 
-                    var sections = $scope.sections;
+                textsDialog.on("shown.bs.modal",  function() { textsDialog.find(".modal-body").scrollTop(0); });
+                textsDialog.on("shown.bs.modal",  function() { $scope.$apply(function() { $scope.textsDialogVisible = true;  }); });
+                textsDialog.on("hidden.bs.modal", function() { $scope.$apply(function() { $scope.textsDialogVisible = false; }); });
+                $scope.$watch('textsDialogVisible', function(visible) {
 
-                    if(!sections)
-                    return;
+                    if(sumTypeDialog.is(":visible") != (visible || false)) {
 
-                    increment = Math.max(increment || 1, 0);
-
-                    for(var s = Math.max($scope.limit-1, 0);  s < sections.length && increment>0; ++s) {
-
-                        $scope.limit = Math.max(s+1 , $scope.limit);
-
-                        var section = sections[s];
-                        var delta = Math.min(section.questions.length - section.limit, increment);
-
-                        section.limit += delta;
-                        increment     -= delta;
+                        if(visible) textsDialog.modal('show');
+                        else        textsDialog.modal('hide');
                     }
-
-                    var lastSection = _.last(sections);
-
-                    $scope.infinitScrollVisible = $scope     .limit != sections.length ||
-                    lastSection.limit != lastSection.questions.length;
-                };
+                });
             },
 
             controller : ['$scope', function($scope){
@@ -246,7 +235,24 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     if(visible===undefined)
                         visible = true;
 
-                    $scope.sumTypeSelectorVisible = visible;
+                    $scope.sumTypeDialogVisible = visible;
+                };
+
+                //====================================
+                //
+                //
+                //====================================
+                this.showTexts = function(countriesTexts, question) {
+
+                    var lstring = $filter('lstring');
+
+                    countriesTexts = _.sortBy(countriesTexts||[], function(item){
+                        return lstring($scope.allRegionsMap[item.government].title);
+                    });
+
+                    $scope.currentQuestion = question;
+                    $scope.countriesTexts  = countriesTexts;
+                    $scope.textsDialogVisible = !_.isEmpty(countriesTexts);
                 };
 
                 //====================================

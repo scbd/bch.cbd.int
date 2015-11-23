@@ -5,14 +5,17 @@
         <tr>
             <th>&nbsp;</th>
             <th class="bchCellWorld"></th>
-            <th class="bchCellWorld bchCellWorldSpacer" colspan="2">All</th>
+            <th class="bchCellWorld bchCellWorldSpacer text-nowrap" colspan="2">
+                <span>All</span>
+            </th>
             <th class="bchCellRegion text-nowrap" ng-repeat-start="region in ::regions" title="{{::(region.title|lstring)}}">
-                <span ng-bind-html="region.htmlTitle"ng-click="region.expanded=!region.expanded">
-                </span>&nbsp;<i class="fa fa-caret-right" ng-click="region.expanded=true"  ng-hide="region.expanded"></i><i class="fa fa-caret-left"  ng-click="region.expanded=false" ng-show="region.expanded"></i>
+                <span ng-bind-html="region.htmlTitle" ng-click="region.expanded=!region.expanded"></span>
+                <i class="fa fa-caret-right" ng-click="region.expanded=true"  ng-hide="region.expanded"></i>
+                <i class="fa fa-caret-left"  ng-click="region.expanded=false" ng-show="region.expanded"></i>
             </th>
                 <!-- show countries if region.expanded -->
-                <th class="bchCellCountry" ng-show="region.expanded" ng-repeat="gov in ::region.countriesMap">
-                    <a href="/database/record.shtml?documentid={{::reportsMap[gov].documentId}}" target="_report">{{::(gov|uppercase)}}</a>
+                <th class="bchCellCountry" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
+                    <a href="/database/record.shtml?documentid={{::reportsMap[gov].documentId}}" target="_report" title="{{::region.countriesMap[gov].title|lstring}}">{{::(gov|uppercase)}}</a>
                 </th>
             <th class="bchCellRegion" ng-repeat-end="END OF: region in regions" ng-if="false"></th>
         </tr>
@@ -29,7 +32,7 @@
                 {{option.regions[region.identifier][sumType]||0}}<span ng-if="sumType!='sum'">%</span>
             </td>
                 <!-- show countries if region.expanded -->
-                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countriesMap">
+                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
                     <div ng-if="::(reportsMap[gov][question.key]==option.value || reportsMap[gov][question.key].indexOf(option.value)>=0)">●</div>
                 </td>
             <td class="bchCellGroup" ng-repeat-end="END OF: region in regions" ng-if="false"></th>
@@ -41,17 +44,17 @@
         		&nbsp;
 		    </td>
             <td class="bchCellAnswer">Free text</td>
-            <td class="bchCellWorld bchCellWorldSpacer text-nowrap"colspan="2">
+            <td class="bchCellWorld bchCellWorldSpacer text-nowrap" colspan="2">
                 {{::question.options[0].sum||0}}
-                <img ng-if="::question.options[0].sum" src="/bch/images/nr-documents.png">
+                <img ng-if="::question.options[0].sum" src="/bch/images/nr-documents.png" ng-click="showTexts()" style="cursor:pointer">
             </td>
             <td class="bchCellGroup text-nowrap" ng-repeat-start="region in ::regions">
                 {{::question.options[0].regions[region.identifier].sum||0}}
-                <img ng-if="::question.options[0].regions[region.identifier].sum" src="/bch/images/nr-documents.png">
+                <img ng-if="::question.options[0].regions[region.identifier].sum"  ng-click="showTexts(region.countries)" src="/bch/images/nr-documents.png" style="cursor:pointer">
             </td>
                 <!-- show countries if region.expanded -->
-                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countriesMap">
-                    <img ng-if="::reportsMap[gov][question.key]" src="/bch/images/nr-document.png">
+                <td class="bchCellBullet" ng-show="region.expanded" ng-repeat="gov in ::region.countries">
+                    <img ng-if="::reportsMap[gov][question.key]" src="/bch/images/nr-document.png" ng-click="showTexts([gov])" style="cursor:pointer">
                 </td>
             <td class="bchCellGroup" ng-repeat-end="END OF: region in regions" ng-if="false"></th>
         </tr>

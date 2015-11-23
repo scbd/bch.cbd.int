@@ -38,6 +38,37 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
+                $scope.showTexts = function(governments) {
+
+                    if(!governments)
+                        governments = _.pluck($scope.reports, 'government');
+
+                    var results = _($scope.reports).filter(function(report) {
+
+                        return governments.indexOf(report.government)>=0;
+
+                    }).filter(function(report) {
+
+                        return !_.isEmpty(report[$scope.question.key]);
+
+                    }).map(function(report) {
+
+                        return {
+                            government : report.government,
+                            text : report[$scope.question.key]
+                        };
+
+                    }).value();
+
+                    nrAnalyzer.showTexts(results, $scope.question);
+                };
+
+
+
+                //==============================================
+                //
+                //
+                //==============================================
                 function analyze() {
 
                     if(!$scope.reports) return;
