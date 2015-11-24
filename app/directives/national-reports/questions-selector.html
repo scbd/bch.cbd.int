@@ -1,8 +1,8 @@
-<div class="NR-Analyzer">
-    <table cellpadding="0" cellspacing="0" class="searchCriteria">
+<div class="question-selector">
+    <table class="table table-hover" style="margin-bottom:0px">
         <tr>
-            <td class="searchCriteriaTitle">National Report</td>
-            <td class="searchCriteriaInput">
+            <th style="width:200px">National Report</th>
+            <td>
                 <select style="Width: 100%;" ng-model="selectedReportType"  class="form-control">
                     <option value="cpbNationalReport3">Third National Report</option>
                     <option value="cpbNationalReport2">Second National Report</option>
@@ -10,26 +10,21 @@
             </td>
         </tr>
         <tr>
-            <td class="searchCriteriaTitle" style="border-top:1px solid #e0e0e0">Geographical areas</td>
-            <td class="searchCriteriaInput" style="border-top:1px solid #e0e0e0">
-
-                <select style="Width: 100%;" ng-model="countriesPreset" class="form-control">
+            <th>Geographical areas</th>
+            <td>
+                <select style="width: 100%;" ng-model="countriesPreset" class="form-control">
                     <option value="cbdRegions">Breakdown by CBD regions</option>
                     <option value="countries">Select countries</option>
                     <option value="regions">Select regions</option>
                 </select>
-
-                <terms-dialog title="Countries" visible="showCountries" selection="selectedRegions" terms="getCountries()" columns="2"></terms-dialog>
-                <terms-dialog title="Regions"   visible="showRegions"   selection="selectedRegions" terms="getRegions()"></terms-dialog>
-
             </td>
         </tr>
-        <tr ng-hide="countriesPreset=='cbdRegions'">
-            <td class="searchCriteriaTitle text-center" style="border-top:1px solid #e0e0e0">
-                <button type="button" class="btn btn-default btn-sm" ng-click="showCountries=true;" ng-show="countriesPreset=='countries'">Select countries</button>
-                <button type="button" class="btn btn-default btn-sm" ng-click="showRegions=true;"   ng-show="countriesPreset=='regions'">Select regions</button>
+        <tr ng-if="countriesPreset!='cbdRegions'">
+            <td class="text-center">
+                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showCountries=true;" ng-show="countriesPreset=='countries'">Select countries</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showRegions=true;"   ng-show="countriesPreset=='regions'">Select regions</button>
             </td>
-            <td class="searchCriteriaInput" style="border-top:1px solid #e0e0e0">
+            <td>
 
                 <div ng-hide="selectedRegions.length || showCountries || showRegions" class="alert alert-warning" role="alert" style="margin-bottom:0px">
                     No countries or regions selected.
@@ -44,40 +39,37 @@
             </td>
     </table>
 
-    <div class="Sections" ng-show="sections">
+    <table class="table table-hover">
+        <tr>
+            <td>
+                <input type="checkbox"  ng-model="allSelected" indeterminate="allSelected===null" ng-click="onAllSections()" >
+            </td>
+            <th class="Title" colspan="4" ng-click="allSelected=!allSelected; onAllSections();">
+                All questions and/or sections of the report.
+            </th>
+        </tr>
 
-        <div class="Sections-Header">
-            <table cellpadding="0" cellspacing="0" class="Header" style="width: 100%;">
-                <tr>
-                    <td class="Selector"><input type="checkbox"  ng-model="allSelected" indeterminate="allSelected===null" ng-click="onAllSections()" ></td>
-                    <td class="Title" style="cursor: pointer;">All questions and/or sections of the report.</td>
-                </tr>
-            </table>
-        </div>
+        <tr ng-repeat-start="section in sections">
+            <td><input type="checkbox" ng-model="section.selected" ng-click="onSection(section)" indeterminate="section.selected===null"></td>
+            <th ng-click="section.expanded=!section.expanded" colspan="3">{{::section.title}}</th>
+            <th ng-click="section.expanded=!section.expanded">
+                <i class="fa" ng-class="{ 'fa-caret-up' : section.expanded, 'fa-caret-down' : !section.expanded }"></i>
+            </th>
+        </tr>
 
-        <div class="Section" ng-repeat="section in sections">
-            <table cellpadding="0" cellspacing="0" class="Header" style="width: 100%;">
-                <tr>
-                    <td class="Selector"><input type="checkbox" ng-model="section.selected" ng-click="onSection(section)" indeterminate="section.selected===null"></td>
-                    <td  ng-click="section.expanded=!section.expanded" class="Title"     style="cursor: pointer;">{{::section.title}}</td>
-                    <td  ng-click="section.expanded=!section.expanded" class="text-right" style="cursor: pointer;">
-                        <i class="fa fa-caret-down"  ng-if="!section.expanded"></i>
-                        <i class="fa fa-caret-up"    ng-if="section.expanded"></i>
-                    </td>
-                </tr>
-            </table>
+        <tr ng-if="section.expanded" ng-repeat="question in ::section.questions">
+            <td></td>
+            <td><input type="checkbox" ng-model="question.selected" ng-click="onQuestion(question)"></td>
+            <td ng-click="question.selected=!question.selected; onQuestion(question)" class="text-nowrap">Question {{::question.number||11}}.</td>
+            <td ng-click="question.selected=!question.selected; onQuestion(question)">{{::question.title}}</td>
+            <td></td>
+        </tr>
 
-            <div class="Container" ng-show="section.expanded">
-                <div class="Question" ng-repeat="question in ::section.questions">
-                    <table cellpadding="0" cellspacing="0" class="Header" id="E8567158" style="width: 100%;">
-                        <tr id="E8567159">
-                            <td class="Selector"><input type="checkbox" ng-model="question.selected" ng-click="onQuestion(question)"></td>
-                            <td class="Number" style="cursor: pointer;" ng-click="question.selected=!question.selected; onQuestion(question)">Question {{::question.number}}.</td>
-                            <td class="Title"  style="cursor: pointer;" ng-click="question.selected=!question.selected; onQuestion(question)">{{::question.title}}</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+        <tr ng-repeat-end ng-if="::false"></tr>
+
+    </table>
+
+    <terms-dialog title="Countries" visible="showCountries" selection="selectedRegions" terms="getCountries()" columns="2"></terms-dialog>
+    <terms-dialog title="Regions"   visible="showRegions"   selection="selectedRegions" terms="getRegions()"></terms-dialog>
+
 </div>

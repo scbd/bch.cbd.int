@@ -27,7 +27,7 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
             },
             link: function ($scope) {
 
-                $scope.selectedReportType = 'cpbNationalReport3';
+                $scope.selectedReportType = $scope.selectedReportType || 'cpbNationalReport3';
                 $scope.countriesPreset = "cbdRegions";
                 $scope.allSelected = true;
                 $scope.countriesMap = {};
