@@ -39,6 +39,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 $scope.allRegionsMap = {};
 
                 $scope.limit = 0;
+                $scope.filters = [];
+                $scope.filtersCountriesMap = {};
                 $scope.sumType = 'sum';
                 $scope.sumTypes = [
                     { code: 'sum',           title: 'Count of responses'   },
@@ -67,6 +69,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     $scope.limit = 0;
                     $scope.infinitScrollVisible = true;
+                    $scope.filter = undefined;
 
                     $q.all([loadRegions(), loadSections(), nrAnalyzer.loadReports()]).then(function(results) {
 
@@ -291,6 +294,20 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         return expanded;
 
                     });
+                };
+
+                //====================================
+                //
+                //
+                //====================================
+                this.filter = function(filter) {
+
+                    if(!arguments.length) {
+                        return $scope.filter;
+                    }
+
+                    $scope.filter = filter;
+                    $scope.$broadcast('nrAnalyzer.nrFilter', filter);
                 };
 
                 //====================================

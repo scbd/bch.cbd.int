@@ -22,9 +22,12 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
             },
             link: function ($scope, el, attr, nrAnalyzer) {
 
-                $scope.$watch('::question', analyze);
-                $scope.$watch('::reports',  analyze);
-                $scope.$watch('::regions',  analyze);
+                var analyzed = false;
+
+                $scope.$watch('::question', function() { if(!analyzed) analyze(); });
+                $scope.$watch('::reports',  function() { if(!analyzed) analyze(); });
+                $scope.$watch('::regions',  function() { if(!analyzed) analyze(); });
+                $scope.$on('nrAnalyzer.nrFilter', analyze);
 
                 //==============================================
                 //
@@ -63,7 +66,39 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     nrAnalyzer.showTexts(results, $scope.question);
                 };
 
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.toggleFilter = function(option) {
 
+                    var question = $scope.question;
+                    var oldFilter = nrAnalyzer.filter();
+
+                    if(!option || (oldFilter && oldFilter.question.key == question.key && oldFilter.option.value == option.value)) {
+                        nrAnalyzer.filter(undefined);
+                        return;
+                    }
+
+                    var countriesMap = _($scope.reports).filter(function(report) {
+
+                        var answer = report[question.key];
+
+                        return answer && (answer == option.value || answer.indexOf(option.value)>=0);
+
+                    }).reduce(function(ret, report){
+
+                        ret[report.government] = report.government;
+                        return ret;
+
+                    }, {});
+
+                    nrAnalyzer.filter({
+                        question : question,
+                        option : option,
+                        matchingCountriesMap : countriesMap
+                    });
+                };
 
                 //==============================================
                 //
@@ -75,9 +110,15 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     if(!$scope.regions) return;
                     if(!$scope.question) return;
 
-                    $scope.reportsMap = {};
+                    analyzed = true;
 
-                    var reports  = $scope.reports;
+                    console.time($scope.question.key);
+
+                    $scope.reportsMap = {};
+                    $scope.filter     = nrAnalyzer.filter();
+
+                    var filter = $scope.filter;
+                    var reports = $scope.reports;
                     var regions  = $scope.regions;
                     var question = $scope.question;
                     var options  = $scope.question.options;
@@ -91,23 +132,37 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     options.forEach(function(option, i) {
 
+                        optionsMap[option.value] = option;
+
                         option.sum = 0;
-                        option.percent = 0;
+                        option.percent = "0%";
                         option.regions = {};
                         option.color = question.type=='option' ? blendColor(GREEN, BLUE, i/(options.length-1)) : BLUE;
-
                         option.htmlColor = htmlColor(option.color);
-
-                        optionsMap[option.value] = option;
+                        option.filterOn  = filter && filter.question.key == question.key && filter.option.value == option.value;
+                        option.regions   = _(regions).reduce(function(ret, region){
+                            ret[region.identifier] = {
+                                sum : 0,
+                                percentRow: "0%",
+                                percentColumn: "0%",
+                                percentGlobal: "0%",
+                                htmlColor: htmlColor(WHITE)
+                            };
+                            return ret;
+                        }, {});
                     });
 
                     question.sum = 0;
-                    question.regions = {};
+                    question.regions = _(regions).reduce(function(ret, region){
+                        ret[region.identifier] = { sum : 0 };
+                        return ret;
+                    }, {});
 
                     reports.forEach(function(report) {
 
                         reportsMap[report.government] = report;
 
+                        var excluded = filter && !filter.matchingCountriesMap[report.government];
                         var answers = report[question.key];
 
                         if(_.isEmpty(answers))
@@ -127,28 +182,34 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 return;
                             }
 
-                            question.sum++;
-                            option  .sum++;
-                            option  .percent = Math.round((option.sum*100) / question.sum);
+                            if(!excluded) {
+                                question.sum++;
+                                option  .sum++;
+                                option.percent = Math.round((option.sum*100) / question.sum).toString() + "%";
+                            }
 
                             regions.forEach(function(region){
 
+                                var qRegion = question.regions[region.identifier];
+                                var oRegion = option  .regions[region.identifier];
 
-                                var qRegion = question.regions[region.identifier] || (question.regions[region.identifier] = { sum : 0 });
-                                var oRegion = option  .regions[region.identifier] || (option  .regions[region.identifier] = { sum : 0, percentRow: 0, percentColumn: 0, percentGlobal: 0 });
-
-                                if(region.countriesMap[report.government]) {
+                                if(!excluded && region.countriesMap[report.government]) {
                                     qRegion.sum++; // column
                                     oRegion.sum++; // column
-                                }
 
-                                oRegion.percentRow    = Math.round((oRegion.sum*100) / option.sum);
-                                oRegion.percentColumn = Math.round((oRegion.sum*100) / qRegion.sum);
-                                oRegion.percentGlobal = Math.round((oRegion.sum*100) / question.sum);
-                                oRegion.htmlColor     = htmlColor(blendColor(WHITE, option.color, oRegion.percentRow/100));
+                                    var percentRow = Math.round((oRegion.sum*100) / option.sum  );
+
+                                    oRegion.percentRow    = percentRow + "%";
+                                    oRegion.percentColumn = Math.round((oRegion.sum*100) / qRegion.sum ).toString() + "%";
+                                    oRegion.percentGlobal = Math.round((oRegion.sum*100) / question.sum).toString() + "%";
+                                    oRegion.htmlColor     = htmlColor(blendColor(WHITE, option.color, percentRow/100));
+                                }
                             });
                         });
                     });
+
+                    console.timeEnd($scope.question.key);
+
                 }
 
                 //============================================================
