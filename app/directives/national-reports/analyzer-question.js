@@ -135,6 +135,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         optionsMap[option.value] = option;
 
                         option.sum = 0;
+                        option.fullSum = 0;
                         option.percent = "0%";
                         option.regions = {};
                         option.color = question.type=='option' ? blendColor(GREEN, BLUE, i/(options.length-1)) : BLUE;
@@ -153,6 +154,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     });
 
                     question.sum = 0;
+                    question.fullSum = 0;
                     question.regions = _(regions).reduce(function(ret, region){
                         ret[region.identifier] = { sum : 0 };
                         return ret;
@@ -162,7 +164,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                         reportsMap[report.government] = report;
 
-                        var excluded = filter && !filter.matchingCountriesMap[report.government];
+                        var included = !filter || !!filter.matchingCountriesMap[report.government];
                         var answers = report[question.key];
 
                         if(_.isEmpty(answers))
@@ -182,7 +184,10 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 return;
                             }
 
-                            if(!excluded) {
+                            question.fullSum++;
+                            option  .fullSum++;
+
+                            if(included) {
                                 question.sum++;
                                 option  .sum++;
                                 option.percent = Math.round((option.sum*100) / question.sum).toString() + "%";
@@ -193,17 +198,18 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 var qRegion = question.regions[region.identifier];
                                 var oRegion = option  .regions[region.identifier];
 
-                                if(!excluded && region.countriesMap[report.government]) {
+                                if(included && region.countriesMap[report.government]) {
                                     qRegion.sum++; // column
                                     oRegion.sum++; // column
-
-                                    var percentRow = Math.round((oRegion.sum*100) / option.sum  );
-
-                                    oRegion.percentRow    = percentRow + "%";
-                                    oRegion.percentColumn = Math.round((oRegion.sum*100) / qRegion.sum ).toString() + "%";
-                                    oRegion.percentGlobal = Math.round((oRegion.sum*100) / question.sum).toString() + "%";
-                                    oRegion.htmlColor     = htmlColor(blendColor(WHITE, option.color, percentRow/100));
                                 }
+
+                                var percentRow = option.sum ? Math.round((oRegion.sum*100) / option.sum) : 0;
+
+                                oRegion.percentRow    = option.sum   ? percentRow + "%" : '-';
+                                oRegion.percentColumn = qRegion.sum  ? Math.round((oRegion.sum*100) / qRegion.sum ).toString() + "%" : '-';
+                                oRegion.percentGlobal = question.sum ? Math.round((oRegion.sum*100) / question.sum).toString() + "%" : '-';
+                                oRegion.htmlColor     = htmlColor(blendColor(WHITE, option.color, percentRow/100));
+
                             });
                         });
                     });
