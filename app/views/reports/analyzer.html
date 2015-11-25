@@ -1,9 +1,13 @@
 <div>
     <style>
-        .nr-analyzer td[ng-click], .nr-analyzer th[ng-click] { cursor:pointer; }
+        .nr-selector td[ng-click],
+        .nr-selector th[ng-click],
+        .nr-analyzer td[ng-click],
+        .nr-analyzer th[ng-click]
+        { cursor:pointer; }
     </style>
 
-    <div class="nr-analyzer">
+    <div class="nr-selector">
 
         <div class="panel panel-default">
 
@@ -44,7 +48,8 @@
             <button type="button" class="btn btn-primary" ng-click="$parent.showSettings=false;">Analyze »</button>
         </div>
 
-        <national-report-analyzer ng-if="!showSettings" report-type="$parent.selectedReportType" questions="$parent.selectedQuestions" regions="$parent.selectedRegions"></national-report-analyzer>
     </div>
+
+    <national-report-analyzer ng-if="!showSettings" report-type="$parent.selectedReportType" questions="$parent.selectedQuestions" regions="$parent.selectedRegions"></national-report-analyzer>
 
 </div>
