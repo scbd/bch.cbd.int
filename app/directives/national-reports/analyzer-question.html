@@ -23,17 +23,20 @@
         </tr>
 
         <!-- OPTIONS + TERMS -->
-        <tr ng-if="::question.type!='text'" ng-repeat="option in ::question.options track by option.value" ng-class="{ 'success': option.filterOn, 'filter': filter }">
-            <td><i ng-if="::option.fullSum" style="cursor:pointer" class="fa fa-filter fa-lg" ng-class="{ 'fa-2x': option.filterOn }" ng-click="toggleFilter(option)"></i></td>
+        <tr ng-if="::question.type!='text'" ng-repeat="option in ::question.options track by option.value" ng-class="{ 'info': option.filterOn, 'filter-on': option.filterOn, 'filter': filter }">
+            <td class="filter">
+                <i ng-if="::option.fullSum"  class="fa fa-filter fa-lg" style="cursor:pointer" ng-click="toggleFilter(option)" title="Filter: Include only reports which have this answer selected."></i>
+                <i ng-if="::!option.fullSum" class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i>
+            </td>
             <td>{{::option.title}}</td>
             <td class="text-right"  ng-style="::{ 'background-color': option.htmlColor }">{{option.sum}}</td>
-            <td class="text-center" ng-style="::{ 'background-color': option.htmlColor }" >({{option.percent}})</td>
+            <td class="text-center" ng-style="::{ 'background-color': option.htmlColor }">({{option.percent}})</td>
             <td class="text-center region" ng-style="  { 'background-color': option.regions[region.identifier].htmlColor }" ng-repeat-start="region in ::regions track by region.identifier" >
                 {{option.regions[region.identifier][sumType]}}
             </td>
             <!-- show countries if region.expanded -->
             <td class="text-center country" ng-if="region.expanded" ng-repeat="gov in ::region.countries track by gov">
-                <div ng-if="::(reportsMap[gov][question.key]==option.value || reportsMap[gov][question.key].indexOf(option.value)>=0)">●</div>
+                <div ng-if="(reportsMap[gov][question.key]==option.value || reportsMap[gov][question.key].indexOf(option.value)>=0)">●</div>
             </td>
             <td ng-repeat-end ng-if="::false"></th>
             <td class="bordered" style="padding:0px;background-color:white"></td>
@@ -41,17 +44,19 @@
 
         <!-- FREE TEXT -->
         <tr ng-if="::question.type=='text'">
-            <td>&nbsp;</td>
+            <td class="filter">
+                <i class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i>
+            </td>
             <td>Free text</td>
             <td class="text-right">{{question.options[0].sum}}</td>
             <td class="text-center"><img ng-if="::question.options[0].sum" src="/bch/images/nr-documents.png" ng-click="showTexts()" style="cursor:pointer"></td>
             <td class="text-center region" class="bchCellGroup text-nowrap" ng-repeat-start="region in ::regions track by region.identifier">
                 {{question.options[0].regions[region.identifier].sum}}
-                <img ng-if="::question.options[0].regions[region.identifier].sum"  ng-click="showTexts(region.countries)" src="/bch/images/nr-documents.png" style="cursor:pointer">
+                <img ng-if="question.options[0].regions[region.identifier].sum"  ng-click="showTexts(region.countries)" src="/bch/images/nr-documents.png" style="cursor:pointer">
             </td>
             <!-- show countries if region.expanded -->
             <td class="text-center country country"ng-if="region.expanded" ng-repeat="gov in ::region.countries track by gov">
-                <img ng-if="::reportsMap[gov][question.key]" src="/bch/images/nr-document.png" ng-click="showTexts([gov])" style="cursor:pointer">
+                <img ng-if="reportsMap[gov][question.key]" src="/bch/images/nr-document.png" ng-click="showTexts([gov])" style="cursor:pointer">
             </td>
             <td ng-repeat-end ng-if="::false"></th>
             <td style="padding:0px;background-color:white"></td>

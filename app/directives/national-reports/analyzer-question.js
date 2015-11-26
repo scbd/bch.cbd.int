@@ -46,6 +46,8 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     if(!governments)
                         governments = _.pluck($scope.reports, 'government');
 
+                    var filter = nrAnalyzer.filter();
+
                     var results = _($scope.reports).filter(function(report) {
 
                         return governments.indexOf(report.government)>=0;
@@ -53,6 +55,10 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     }).filter(function(report) {
 
                         return !_.isEmpty(report[$scope.question.key]);
+
+                    }).filter(function(report) {
+
+                        return !filter || filter.matchingCountriesMap[report.government];
 
                     }).map(function(report) {
 
@@ -162,17 +168,18 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     reports.forEach(function(report) {
 
-                        reportsMap[report.government] = report;
-
                         var included = !filter || !!filter.matchingCountriesMap[report.government];
-                        var answers = report[question.key];
+                        var answers  = report[question.key];
+
+                        if(included)
+                            reportsMap[report.government] = report;
+
 
                         if(_.isEmpty(answers))
                             answers = undefined;
 
-                        if(question.type=='text' && !!answers) {
+                        if(question.type=='text' && !!answers)
                             answers = 'text';
-                        }
 
                         answers = _([answers]).flatten().compact().value();
 

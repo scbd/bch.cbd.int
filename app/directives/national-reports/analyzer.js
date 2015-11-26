@@ -36,6 +36,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
             },
             link: function ($scope, $element, attr, nrAnalyzer) {
 
+                $element.find("#filter").affix({ offset: Math.round($element.offset().top)-10 });
+
                 $scope.allRegionsMap = {};
 
                 $scope.limit = 0;
@@ -186,6 +188,14 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 $scope.setSumType = function(type) {
                     $scope.sumType = type;
                     nrAnalyzer.showSumTypeSelector(false);
+                };
+
+                //====================================
+                //
+                //
+                //====================================
+                $scope.clearFilter = function() {
+                    nrAnalyzer.filter(undefined);
                 };
 
                 //====================================
