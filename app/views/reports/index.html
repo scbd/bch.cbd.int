@@ -1,35 +1,41 @@
 <div>
-    <link href="/cms/services/clearinghouse/ui/searchforms/search.css" rel="stylesheet" type="text/css">
-    <link href="app/assets/css/national-report-analyzer.css" rel="stylesheet" type="text/css">
+    <div class="panel panel-default">
 
-    <div class="NR-Analyzer">
-        <div class="searchHeader">
-            <table cellpadding="0" cellspacing="0" style="width: 100%;">
-                <tbody><tr>
+        <div class="panel-heading">
+
+            <table style="width:100%">
+                <tr>
+                    <td style="width:99%"><h3 class="panel-title">National Report</h3></td>
                     <td>
-                        <a name="NationalReport"></a>
-                        <h3 class="cmsH3">National Report</h3>
-
-                        <p>
-                            This tool allows you to select sections/questions of interest, cross-compare results by region/country, visualize counts/averages, etc.
-                        </p>
-                        <p>
-                            <i>Analyze results of the 2nd &amp; 3rd national report by selecting:</i>
-                            <ul>
-                                <li>one or more countries or geographical areas (by default all countries are selected <br>and grouped by CBD regions), <b>and/or</b></li>
-                                <li>questions and/or sections of the report (by default all sections and questions are selected)</li>
-                                <li>follow this link to analyze <a href="/database/reports/results/?searchid=XXXXXX">3rd National Report submissions as of 30 November 2015</a></li>
-                                <li>follow this link to analyze <a href="/database/reports/results/?searchid=537999">2nd National Report submissions as of 31 December 2011</a></li>
-                            </ul>
-                        </p>
-                </td>
-                <td style="width: 1%;">
-                    <button type="button" value="Analyze »" class="btn btn-default" ng-click="anaylze()"></button>
-                </td>
+                        <button type="button" class="btn btn-primary" ng-click="analyze()">Analyze »</button>
+                    </td>
                 </tr>
             </table>
+
         </div>
+
+        <div class="panel-body">
+            <p>
+                This tool allows you to select sections/questions of interest, cross-compare results by region/country, visualize counts/averages, etc.
+            </p>
+            <p>
+                <i>Analyze results of the 2nd &amp; 3rd national report by selecting:</i>
+                <ul>
+                    <li>one or more countries or geographical areas (by default all countries are selected <br>and grouped by CBD regions), <b>and/or</b></li>
+                    <li>questions and/or sections of the report (by default all sections and questions are selected)</li>
+                    <li>follow this link to analyze <a href="/database/reports/results/?searchid=XXXXXX">3rd National Report submissions as of 30 November 2015</a></li>
+                    <li>follow this link to analyze <a href="/database/reports/results/?searchid=537999">2nd National Report submissions as of 31 December 2011</a></li>
+                </ul>
+            </p>
+        </div>
+
     </div>
 
-    <national-report-questions-selector></national-report-questions-selector>
+    <national-report-questions-selector report-type="$parent.selectedReportType" questions="$parent.selectedQuestions" regions="$parent.selectedRegions"></national-report-questions-selector>
+
+    <div class="panel-footer text-right">
+        <button type="button" class="btn btn-primary" ng-click="analyze()">Analyze »</button>
+    </div>
+
+
 </div>
