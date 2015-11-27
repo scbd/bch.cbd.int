@@ -1,34 +1,34 @@
 <div>
 
-    <h1 ng-switch="selectedReportType">
+    <h1>National Report Analyzer</h1>
+    <h2 ng-switch="selectedReportType">
         <span ng-switch-when="cpbNationalReport3">Third National Report on the Implementation of the Cartagena Protocol on Biosafety</span>
         <span ng-switch-when="cpbNationalReport2">Second National Report on the Implementation of the Cartagena Protocol on Biosafety</span>
         <span ng-switch-default="cpbNationalReport3">National Report</span>
-    </h1>
+    </h2>
 
-    <div class="panel panel-default">
+    <div ng-show="!showAnalyzer" class="panel panel-default">
 
         <div class="panel-heading">
 
             <table style="width:100%">
                 <tr>
                     <td style="width:99%">
-                        <h4 class="panel-title" ng-switch="selectedReportType">
+                        <h4 ng-switch="selectedReportType">
                             Regions and Questions Settings
                         </h4>
                     </td>
                     <td>
-                        <button type="button" ng-if="!showAnalyzer" class="btn btn-primary" ng-click="analyze(true);">Analyze »</button>
-                        <button type="button" ng-if=" showAnalyzer" class="btn btn-info"    ng-click="analyze(false);">Change settings</button>
+                        <button type="button" class="btn btn-primary" ng-click="analyze(true);">Analyze »</button>
                     </td>
                 </tr>
             </table>
 
         </div>
 
-        <national-report-questions-selector ng-show="!showAnalyzer" report-type="selectedReportType" questions="selectedQuestions" regions="selectedRegions"></national-report-questions-selector>
+        <national-report-questions-selector report-type="selectedReportType" questions="selectedQuestions" regions="selectedRegions"></national-report-questions-selector>
 
-        <div ng-if="!showAnalyzer" class="panel-footer text-right">
+        <div class="panel-footer text-right">
             <button type="button" class="btn btn-primary" ng-click="analyze(true)">Analyze »</button>
         </div>
 

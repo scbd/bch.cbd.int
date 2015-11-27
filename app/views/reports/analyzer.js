@@ -71,5 +71,13 @@ define(['directives/national-reports/questions-selector', 'directives/national-r
 
             $scope.showAnalyzer = showAnalyser;
         }
+
+        //========================================
+        //
+        //
+        //========================================
+        $scope.$on('nr.analyzer.settings', function(){
+            analyze(false);            
+        });
     }];
 });

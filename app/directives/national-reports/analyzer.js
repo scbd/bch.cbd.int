@@ -1,4 +1,4 @@
-define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyzer-section', 'filters/lstring'],
+define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyzer-section', 'filters/lstring', 'filters/cases'],
         function(templateHtml, app, _, require, $) { 'use strict';
 
     var baseUrl = require.toUrl('');
@@ -47,12 +47,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 $scope.filters = [];
                 $scope.filtersCountriesMap = {};
                 $scope.sumType = 'sum';
-                $scope.sumTypes = [
-                    { code: 'sum',           title: 'Count of responses'   },
-                    { code: 'percentRow',    title: 'Percentage by row'    },
-                    { code: 'percentColumn', title: 'Percentage by column' },
-                    { code: 'percentGlobal', title: 'Percentage overall'   },
-                ];
+                $scope.sumTypes = ['sum', 'percentGlobal', 'percentRow', 'percentColumn' ];
 
                 //====================================
                 //
@@ -184,6 +179,14 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                   return $('<div/>').text(value).html();
                 }
 
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.showSumTypeSelector = function() {
+                    nrAnalyzer.showSumTypeSelector(true);
+                };
+
                 //====================================
                 //
                 //
@@ -199,6 +202,14 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //====================================
                 $scope.clearFilter = function() {
                     nrAnalyzer.filter(undefined);
+                };
+
+                //====================================
+                //
+                //
+                //====================================
+                $scope.showSettings = function() {
+                    $scope.$emit('nr.analyzer.settings');
                 };
 
                 //====================================
