@@ -14,7 +14,7 @@ define(['app', 'jquery', 'providers/extended-route'], function(app, $) { 'use st
             $routeProvider.when('/decisions.shtml',  { templateUrl: 'views/lmos/decisions-lmo-id.html', resolveController: true});
 
 		}
-        else if(baseHref == '/database/reports/') {
+        else if(baseHref == '/database/reportsx/') {
 
             $routeProvider.when('/',          { templateUrl: 'views/reports/index.html',    resolveController: true});
             $routeProvider.when('/analyzer',  { templateUrl: 'views/reports/analyzer.html', resolveController: true});
