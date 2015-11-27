@@ -1,34 +1,75 @@
 define(['directives/national-reports/questions-selector', 'directives/national-reports/analyzer'], function() { 'use strict';
 
-	return ['$scope', function($scope) {
+    return ['$scope', '$location', function($scope, $location) {
 
-        $scope.showSettings = true;
+        $scope.showAnalyzer = false;
 
+        delete $scope.selectedReportType;
+        delete $scope.selectedQuestions;
+        delete $scope.selectedRegions;
+
+        //========================================
+        //
+        //
+        //========================================
         try {
 
-            var data = JSON.parse(sessionStorage.getItem('nrAnalyzerData') || '{}');
+            var data = $location.search();
 
-            $scope.selectedReportType = data.reportType;
+            if(!data.type)
+                data = JSON.parse(sessionStorage.getItem('nrAnalyzerData') || '{}');
+
+            $scope.selectedReportType = mapReportType(data.type);
             $scope.selectedQuestions  = data.questions;
             $scope.selectedRegions    = data.regions;
 
-            if($scope.selectedReportType && $scope.selectedQuestions && $scope.selectedRegions)
-                $scope.showSettings = false;
-
-        } finally {
+        } catch (e) {
             sessionStorage.removeItem('nrAnalyzerData');
+        } finally {
+            //sessionStorage.removeItem('nrAnalyzerData');
+        }
+
+        analyze(true);
+
+        $scope.$watch('selectedReportType', saveSettings);
+        $scope.$watchCollection('selectedQuestions', saveSettings);
+        $scope.$watchCollection('selectedRegions',   saveSettings);
+
+        //========================================
+        //
+        //
+        //========================================
+        function saveSettings() {
+            sessionStorage.setItem('nrAnalyzerData', JSON.stringify({
+                type: $scope.selectedReportType,
+                regions: $scope.selectedRegions,
+                questions: $scope.selectedQuestions
+            }));
+        }
+        //========================================
+        //
+        //
+        //========================================
+        function mapReportType(type) {
+
+            if(type=='nr-cpb-2') return 'cpbNationalReport2';
+            if(type=='nr-cpb-3') return 'cpbNationalReport3';
+
+            return type;
         }
 
         //========================================
         //
         //
         //========================================
-        $scope.analyze = function(showAnalyser) {
+        $scope.analyze = analyze;
+
+        function analyze(showAnalyser) {
 
             if(showAnalyser===undefined)
-                showAnalyser = true;
+            showAnalyser = true;
 
-            $scope.showSettings = !showAnalyser;
-        };
+            $scope.showAnalyzer = showAnalyser;
+        }
     }];
 });
