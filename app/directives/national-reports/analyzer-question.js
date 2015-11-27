@@ -118,8 +118,6 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     analyzed = true;
 
-                    console.time($scope.question.key);
-
                     $scope.reportsMap = {};
                     $scope.filter     = nrAnalyzer.filter();
 
@@ -220,9 +218,6 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                             });
                         });
                     });
-
-                    console.timeEnd($scope.question.key);
-
                 }
 
                 //============================================================
@@ -253,7 +248,6 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     return '#'+RR+GG+BB;
                 }
-
             }
         };
     }]);
