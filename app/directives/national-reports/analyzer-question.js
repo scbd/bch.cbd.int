@@ -24,7 +24,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                 analyze();
 
-                $scope.$on('nrAnalyzer.nrFilter', analyze);
+                $scope.$on('nr.analyzer.filter', analyze);
 
                 //==============================================
                 //

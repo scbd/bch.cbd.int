@@ -321,7 +321,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     }
 
                     $scope.filter = filter;
-                    $scope.$broadcast('nrAnalyzer.nrFilter', filter);
+                    $scope.$broadcast('nr.analyzer.filter', filter);
                 };
 
                 //====================================
