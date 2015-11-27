@@ -42,8 +42,6 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 $element.find(".filter.panel").affix({ offset: { top : affixTop } });
 
                 $scope.allRegionsMap = {};
-
-                $scope.limit = 0;
                 $scope.filters = [];
                 $scope.filtersCountriesMap = {};
                 $scope.sumType = 'sum';
@@ -57,9 +55,6 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //====================================
                 function load() {
 
-
-                    $scope.limit = 0;
-                    $scope.infinitScrollVisible = true;
                     $scope.filter = undefined;
 
                     $q.all([loadRegions(), loadSections(), nrAnalyzer.loadReports()]).then(function(results) {
