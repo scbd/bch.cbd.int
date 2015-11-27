@@ -19,6 +19,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
         };
     }
 
+    var affixTop = 600;
+
     //==============================================
     //
     //
@@ -36,7 +38,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
             },
             link: function ($scope, $element, attr, nrAnalyzer) {
 
-                $element.find("#filter").affix({ offset: Math.round($element.offset().top)-10 });
+                affixTop = Math.min(Math.round($element.offset().top), affixTop) - 10 ;
+                $element.find(".filter.panel").affix({ offset: { top : affixTop } });
 
                 $scope.allRegionsMap = {};
 
