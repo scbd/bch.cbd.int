@@ -9,7 +9,7 @@
         <tr>
             <th style="width:200px">National Report</th>
             <td>
-                <select style="Width: 100%;" ng-model="selectedReportType"  class="form-control">
+                <select style="Width: 100%;" ng-model="selectedReportType" ng-change="reportTypeChanged()"  class="form-control">
                     <option value="cpbNationalReport3">Third National Report</option>
                     <option value="cpbNationalReport2">Second National Report</option>
                 </select>
@@ -18,17 +18,17 @@
         <tr>
             <th>Geographical areas</th>
             <td>
-                <select style="width: 100%;" ng-model="countriesPreset" class="form-control">
+                <select style="width: 100%;" ng-model="regionsPreset" ng-change="regionsPresetChanged()" class="form-control">
                     <option value="cbdRegions">Breakdown by CBD regions</option>
                     <option value="countries">Select countries</option>
                     <option value="regions">Select regions</option>
                 </select>
             </td>
         </tr>
-        <tr ng-if="countriesPreset!='cbdRegions'">
+        <tr ng-if="regionsPreset!='cbdRegions'">
             <td class="text-center">
-                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showCountries=true;" ng-show="countriesPreset=='countries'">Select countries</button>
-                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showRegions=true;"   ng-show="countriesPreset=='regions'">Select regions</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showCountries=true;" ng-show="regionsPreset=='countries'">Select countries</button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="$parent.showRegions=true;"   ng-show="regionsPreset=='regions'">Select regions</button>
             </td>
             <td>
 
@@ -38,8 +38,8 @@
 
                 <ul ng-if="selectedRegions.length" class="list-unstyled">
                     <li ng-repeat="c in selectedRegions">
-                        <i class="fa fa-times" ng-click="removeRegions(c)" ng-show="countriesPreset!='cbdRegions'"></i>
-                        {{::countriesMap[c].title|lstring}}
+                        <i class="fa fa-times" ng-click="removeRegions(c)" ng-show="regionsPreset!='cbdRegions'"></i>
+                        {{regionsMap[c].title|lstring}}
                     </li>
                 </ul>
             </td>
@@ -48,15 +48,15 @@
     <table class="table table-hover">
         <tr>
             <td>
-                <input type="checkbox"  ng-model="allSelected" indeterminate="allSelected===null" ng-click="onAllSections()" >
+                <input type="checkbox"  ng-model="allSelected" indeterminate="allSelected===null" ng-click="allSectionsClicked()" >
             </td>
-            <th class="Title" colspan="4" ng-click="allSelected=!allSelected; onAllSections();">
+            <th class="Title" colspan="4" ng-click="allSelected=!allSelected; allSectionsClicked();">
                 All questions and/or sections of the report.
             </th>
         </tr>
 
         <tr ng-repeat-start="section in sections">
-            <td><input type="checkbox" ng-model="section.selected" ng-click="onSection(section)" indeterminate="section.selected===null"></td>
+            <td><input type="checkbox" ng-model="section.selected" ng-click="sectionClicked(section)" indeterminate="section.selected===null"></td>
             <th ng-click="section.expanded=!section.expanded" colspan="3">{{::section.title}}</th>
             <th ng-click="section.expanded=!section.expanded">
                 <i class="fa" ng-class="{ 'fa-caret-up' : section.expanded, 'fa-caret-down' : !section.expanded }"></i>
@@ -65,9 +65,9 @@
 
         <tr ng-if="section.expanded" ng-repeat="question in ::section.questions">
             <td></td>
-            <td><input type="checkbox" ng-model="question.selected" ng-click="onQuestion(question)"></td>
-            <td ng-click="question.selected=!question.selected; onQuestion(question)" class="text-nowrap">Question {{::question.number||11}}.</td>
-            <td ng-click="question.selected=!question.selected; onQuestion(question)">{{::question.title}}</td>
+            <td><input type="checkbox" ng-model="question.selected" ng-click="questionClicked(question)"></td>
+            <td ng-click="question.selected=!question.selected; questionClicked(question)" class="text-nowrap">Question {{::question.number||11}}.</td>
+            <td ng-click="question.selected=!question.selected; questionClicked(question)">{{::question.title}}</td>
             <td></td>
         </tr>
 
