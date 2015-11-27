@@ -130,24 +130,23 @@ define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/l
                 //====================================
                 function monitorColumnsSelection() {
 
-                    if(!$scope.columns) {
-                        return;
-                    }
-
                     var selection = $scope.selection;
 
-                    var updated = _.any($scope.columns, function(column){
-                        return column.selection !== column.selectionBak;
-                    });
+                    if($scope.columns) {
 
-                    if(updated) {
-
-                        selection = [];
-
-                        $scope.columns.forEach(function(column){
-                            column.selectionBak = column.selection;
-                            selection = selection.concat(column.selection);
+                        var updated = _.any($scope.columns, function(column){
+                            return column.selection !== column.selectionBak;
                         });
+
+                        if(updated) {
+
+                            selection = [];
+
+                            $scope.columns.forEach(function(column){
+                                column.selectionBak = column.selection;
+                                selection = selection.concat(column.selection);
+                            });
+                        }
                     }
 
                     return selection;
