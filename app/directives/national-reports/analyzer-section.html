@@ -8,7 +8,7 @@
       </span>
       <h4 style="display:inline">{{::section.title}}</h4>
       <i style="white-space:nowrap" ng-if="::section.questions.length==1">(Question {{::section.questions[0].number}})</i>
-      <i style="white-space:nowrap" ng-if="::section.questions.length>1" >(Questions {{::section.questions[0].number||11}} - {{::(section.questions|limitTo:-1)[0].number}})</i>
+      <i style="white-space:nowrap" ng-if="::section.questions.length>1" >(Questions {{::section.questions[0].number}} - {{::(section.questions|limitTo:-1)[0].number}})</i>
   </div>
   <div class="panel-body" ng-show="section.expanded">
 
