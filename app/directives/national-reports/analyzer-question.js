@@ -22,11 +22,8 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
             },
             link: function ($scope, el, attr, nrAnalyzer) {
 
-                var analyzed = false;
+                analyze();
 
-                $scope.$watch('::question', function() { if(!analyzed) analyze(); });
-                $scope.$watch('::reports',  function() { if(!analyzed) analyze(); });
-                $scope.$watch('::regions',  function() { if(!analyzed) analyze(); });
                 $scope.$on('nrAnalyzer.nrFilter', analyze);
 
                 //==============================================
@@ -115,8 +112,6 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     if(!$scope.reports) return;
                     if(!$scope.regions) return;
                     if(!$scope.question) return;
-
-                    analyzed = true;
 
                     $scope.reportsMap = {};
                     $scope.filter     = nrAnalyzer.filter();

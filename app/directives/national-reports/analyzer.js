@@ -32,9 +32,9 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
             template : templateHtml,
             require : 'nationalReportAnalyzer',
             scope :  {
-                selectedRegions: '=regions',
-                selectedQuestions: '=questions',
-                selectedReportType: '=reportType'
+                getSelectedRegions: '&regions',
+                getSelectedQuestions: '&questions',
+                getSelectedReportType: '&reportType'
             },
             link: function ($scope, $element, attr, nrAnalyzer) {
 
@@ -49,13 +49,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 $scope.sumType = 'sum';
                 $scope.sumTypes = ['sum', 'percentGlobal', 'percentRow', 'percentColumn' ];
 
-                //====================================
-                //
-                //
-                //====================================
-                $scope.$watch('selectedRegions',    load);
-                $scope.$watch('selectedQuestions',  load);
-                $scope.$watch('selectedReportType', load);
+                load();
 
                 //====================================
                 //
@@ -63,9 +57,6 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //====================================
                 function load() {
 
-                    if(!$scope.selectedRegions)    return;
-                    if(!$scope.selectedQuestions)  return;
-                    if(!$scope.selectedReportType) return;
 
                     $scope.limit = 0;
                     $scope.infinitScrollVisible = true;
@@ -123,7 +114,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                         $scope.allRegionsMap = allRegionsMap;
 
-                        return _($scope.selectedRegions).map(function(id) {
+                        return _($scope.getSelectedRegions()).map(function(id) {
                             return allRegionsMap[id];
                         }).sortBy(function(term) {
                             return lstring(term.shortTitle) || lstring(term.title);
@@ -137,15 +128,14 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //====================================
                 function loadSections() {
 
-                    var reportType = $scope.selectedReportType;
+                    var reportType = $scope.getSelectedReportType();
 
                     return $http.get(baseUrl+'resources/national-reports/'+locale+'/'+reportType+'.json', { cache : true }).then(function(res) {
 
-                        var selection = _($scope.selectedQuestions).reduce(mapReduce(), {});
+                        var selection = _($scope.getSelectedQuestions()).reduce(mapReduce(), {});
 
                         return _.filter(res.data, function(section) {
 
-                            section.limit = 0;
                             section.questions = _.filter(section.questions, function(q) {
                                 return selection[q.key];
                             });
@@ -341,8 +331,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 this.loadReports = function(options) {
 
                     options = _.defaults(options||{}, {
-                        reportType : $scope.selectedReportType,
-                        regions : $scope.selectedRegions,
+                        reportType : $scope.getSelectedReportType(),
+                        regions : $scope.getSelectedRegions(),
                         questions : []
                     });
 
