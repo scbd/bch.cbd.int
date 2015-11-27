@@ -1,4 +1,4 @@
-define(['app', 'jquery', 'lodash', 'providers/extended-route'], function(app, $, _) { 'use strict';
+define(['app', 'jquery', 'providers/extended-route'], function(app, $) { 'use strict';
 
 	app.config(['extendedRouteProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -9,8 +9,16 @@ define(['app', 'jquery', 'lodash', 'providers/extended-route'], function(app, $,
 
 		//CONDITIONAL ROUTES
 
-		if(baseHref == '/database/lmo/') {
-			$routeProvider.when('/decisions.shtml',  { templateUrl: 'views/lmos/decisions-lmo-id.html', resolveController: true});
+        if(baseHref == '/database/lmo/') {
+
+            $routeProvider.when('/decisions.shtml',  { templateUrl: 'views/lmos/decisions-lmo-id.html', resolveController: true});
+
+		}
+        else if(baseHref == '/database/reportsx/') {
+
+            $routeProvider.when('/',          { templateUrl: 'views/reports/index.html',    resolveController: true});
+            $routeProvider.when('/analyzer',  { templateUrl: 'views/reports/analyzer.html', resolveController: true});
+
 		}
 		else {
 			throw "Unhandled base:" + baseHref;

@@ -1,0 +1,167 @@
+<div class="nr-analyzer">
+    <style>
+    .nr-analyzer td[ng-click], .nr-analyzer th[ng-click] { cursor:pointer; }
+    .nr-analyzer .question table.table th { vertical-align: middle}
+    .nr-analyzer .question table.table tr > td.region,
+    .nr-analyzer .question table.table tr > td.country    { border:1px solid #ddd }
+    .nr-analyzer .question table.table tr:last-child > td { border-bottom:1px solid #ddd }
+    .nr-analyzer .question table.table tr > td:last-child { border-bottom:none;border-top:none;border-right:none; }
+    .nr-analyzer .filter.affix { max-width:600px; }
+    .nr-analyzer tr.filter > td.filter { color:#777; }
+    .nr-analyzer tr.filter.filter-on > td.filter { color:#337ab7; }
+    .nr-analyzer tr > td.filter:hover { color:#337ab7; }
+    .nr-analyzer tr > td.filter > i[disabled] { color:#ccc; }
+    </style>
+
+    <div class="text-right" ng-if="sections" style="margin-bottom:5px">
+
+        <button type="button" class="btn btn-default"  ng-click="showSettings();">
+            <i class="fa fa-cogs"></i>
+            Change Regions and Questions Settings
+        </button>
+
+        <!-- Split button -->
+        <div class="btn-group" title="Change how numbers are calculated">
+            <button type="button" class="btn btn-default" ng-click="showSumTypeSelector()">∑
+                <span ng-switch="sumType">
+                    <span ng-switch-when="sum">Count of responses</span>
+                    <span ng-switch-when="percentRow">Percentage by row</span>
+                    <span ng-switch-when="percentColumn">Percentage by column</span>
+                    <span ng-switch-when="percentGlobal">Percentage overall</span>
+                </span>
+            </button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li ng-repeat="type in ::sumTypes">
+                    <a href="#" ng-click="setSumType(type)">
+                        <span ng-switch="type">
+                            <span ng-switch-when="sum">Count of responses</span>
+                            <span ng-switch-when="percentRow">Percentage by row</span>
+                            <span ng-switch-when="percentColumn">Percentage by column</span>
+                            <span ng-switch-when="percentGlobal">Percentage overall</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="filter panel panel-primary" ng-show="filter" style="top:10px;right:10px">
+        <div class="panel-heading">
+            <table style="width:100%;color:inherit">
+                <tr>
+                    <td>
+                        <h3 style="color:inherit; margin-top:10px">
+                            <i class="fa fa-exclamation-triangle"></i>
+                            <b>The current analysis is filtered to show only reports where &nbsp;</b>
+                        </h3>
+                    </td>
+                    <td class="text-right">
+                        <button type="button" class="btn btn-xs btn-default" ng-click="clearFilter()">&times; Remove filter</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel-body">
+            <div class="alert alert-info" style="margin-bottom:0px" ng-show="filter">
+                <p style="margin-bottom:10px">
+                    <b>Question {{filter.question.number}}</b><br/>
+                    {{filter.question.title|lstring}}
+                </p>
+                <p>
+                    <i>Has been answered as follows:</i>
+                    <b>{{filter.option.title|lstring}}</b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <national-report-analyzer-section sum-type="sumType" regions="::regions" section="::section" ng-repeat="section in sections"></national-report-analyzer-section>
+
+    <!-- SUM SELECTOR -->
+    <div class="modal fade" id="sumTypeDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Change how numbers are calculated</i></h4>
+                </div>
+
+                <div class="modal-body" style="max-height:75vh;overflow-y: auto;">
+
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6 col-xs-12" ng-repeat="type in ::sumTypes">
+
+                            <div class="panel" ng-class="{ 'panel-primary' : sumType==type, 'panel-info' : sumType!=type }">
+                                <div class="panel-heading  text-center">
+                                    <h2 style="color:inherit">
+                                        <a style="color:inherit" href="#" ng-click="setSumType(type)">
+                                            <span ng-switch="type">
+                                                <span ng-switch-when="sum">Count of responses</span>
+                                                <span ng-switch-when="percentRow">Percentage by row</span>
+                                                <span ng-switch-when="percentColumn">Percentage by column</span>
+                                                <span ng-switch-when="percentGlobal">Percentage overall</span>
+                                            </span>
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div class="panel-body hidden-xs" style="height:195px;overflow-y:auto">
+                                    <a style="color:inherit" href="#" ng-click="setSumType(type)">
+                                        <img ng-src="/app/resources/national-reports/{{type | kebabcase}}.png"><br/>
+                                        <div ng-switch="type" class="text-justify" style="margin-top:5px">
+                                            <span ng-switch-when="sum">Displays the absolute number of responses received for a given combination of row (answers) and column (groups).</span>
+                                            <span ng-switch-when="percentRow">Displays the percentages within the different groups selected (columns). In this case the sum of all values in a row is 100%.</span>
+                                            <span ng-switch-when="percentColumn">Displays the percentages within different given answers (rows). In this case the sum of all values in a column is 100%.</span>
+                                            <span ng-switch-when="percentGlobal">Displays the percentages within all given responses. In this case the sum of all values (rows and columns) is 100%.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TEXTS DISPLAY -->
+    <div class="modal fade" id="textsDialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Question {{currentQuestion.number}}.</h4>
+                    {{currentQuestion.title|lstring}}
+                </div>
+
+                <div class="modal-body" style="max-height:75vh;overflow-y: auto;">
+
+                    <div ng-repeat="item in countriesTexts">
+                        <div class="pull-right">
+                            <span ng-repeat="(locale, text) in ::item.text">
+                                <a href="#" ng-click="item.locale=locale">{{::locale|uppercase}}</a>
+                            </span>
+                        </div>
+                        <h5>{{::allRegionsMap[item.government].title|lstring}}</h5>
+                        <pre>{{item.text|lstring:item.locale}}</pre>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
