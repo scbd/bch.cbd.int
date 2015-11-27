@@ -49,7 +49,7 @@ define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/l
                 //
                 //
                 //====================================
-                $scope.$watch('selection', function(selection) {
+                $scope.$watchCollection('selection', function(selection) {
 
                     if(!skipSelectionWatch) {
                         applySelection(selection);
@@ -115,13 +115,11 @@ define(['text!./terms-dialog.html', 'app', 'lodash', 'filters/ascii', 'filters/l
                     }
                 }
 
-
-
                 //====================================
                 //
                 //
                 //====================================
-                $scope.$watch(monitorColumnsSelection, function(selection) {
+                $scope.$watchCollection(monitorColumnsSelection, function(selection) {
                     skipSelectionWatch = true;
                     $scope.selection = selection;
                 });
