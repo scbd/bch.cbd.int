@@ -13,7 +13,8 @@ define(['text!./analyzer-section.html', 'app', './analyzer-question'], function(
             scope :  {
                 regions: '=',
                 section: '=',
-                sumType: '='
+                sumType: '=',
+                previousMapping : '='
             },
             link: function ($scope, el, attr, nrAnalyzer) {
 

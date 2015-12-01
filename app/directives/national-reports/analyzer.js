@@ -67,11 +67,12 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     loaded = true;
                     $scope.filter = undefined;
 
-                    $q.all([loadRegions(), loadSections(), nrAnalyzer.loadReports()]).then(function(results) {
+                    $q.all([loadRegions(), loadSections(), nrAnalyzer.loadReports(), loadPreviousReportQuestionsMapping()]).then(function(results) {
 
                         var regions  = results[0];
                         var sections = results[1];
                         var reports  = results[2];
+                        var prevMapping = results[3];
 
                         var reportsCountriesMap = _(reports).pluck('government').sortBy().map(function(id){
                             return $scope.allRegionsMap[id];
@@ -88,6 +89,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                         $scope.regions = regions;
                         $scope.sections = sections;
+                        $scope.previousMapping = prevMapping;
 
                     }).then(function(){
 
@@ -124,6 +126,25 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         }).sortBy(function(term) {
                             return lstring(term.shortTitle) || lstring(term.title);
                         }).value();
+                    });
+                }
+
+                //====================================
+                //
+                //
+                //====================================
+                function loadPreviousReportQuestionsMapping() {
+
+                    var reportType = $scope.selectedReportType;
+
+                    return $http.get(baseUrl+'resources/national-reports/mapping/'+reportType+'.json', { cache : true }).then(function(res) {
+
+                        return res.data;
+
+                    }).catch(function() {
+
+                        return undefined;
+
                     });
                 }
 

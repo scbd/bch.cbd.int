@@ -18,13 +18,22 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 question : '=',
                 reports : '=',
                 regions : '=',
-                sumType : '='
+                sumType : '=',
+                previousMapping : '='
             },
             link: function ($scope, el, attr, nrAnalyzer) {
 
+                $scope.$on('nr.analyzer.filter', analyze);
+
                 analyze();
 
-                $scope.$on('nr.analyzer.filter', analyze);
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.$watch('::previousMapping', function(){
+                    el.find('[data-toggle="popover"]').popover({trigger:'hover'});
+                });
 
                 //==============================================
                 //
@@ -101,6 +110,53 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         option : option,
                         matchingCountriesMap : countriesMap
                     });
+                };
+
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.toggleCompare = function() {
+
+                    if($scope.previousReportsMap) {
+
+                        $scope.previousReportsMap = null;
+                        analyze();
+
+                        return;
+                    }
+
+                    var reports = $scope.reports;
+                    var question = $scope.question;
+                    var previousMapping = $scope.previousMapping;
+
+                    if(!previousMapping)
+                        return;
+
+                    var data = {
+                        reportType : previousMapping.schema,
+                        regions : _.pluck(reports, 'government'),
+                        questions : [previousMapping[question.key]]
+                    };
+
+                    return nrAnalyzer.loadReports(data).then(function(previousReports) {
+
+                        return ($scope.previousReportsMap = _(previousReports).reduce(function(ret, report){
+
+                            ret[report.government] = report;
+                            return ret;
+
+                        },{}));
+
+                    }).then(analyze);
+                };
+
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.cleanupQuestionNumber = function(q) {
+                    return (q||'').replace(/^Q0*/, '');
                 };
 
                 //==============================================
