@@ -9,6 +9,7 @@
         "number": "11",
         "type": "option",
         "title": "¿Es su país parte en el Protocolo de Cartagena sobre la Seguridad de la Biotecnología (CPB)?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -26,6 +27,7 @@
         "number": "12",
         "type": "option",
         "title": "Si su país no es parte en el Protocolo de Cartagena sobre Seguridad de la Biotecnología (CPB), ¿hay algún trámite nacional en marcha para convertirse en Parte?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -42,7 +44,8 @@
         "section": "General",
         "number": "13",
         "type": "text",
-        "title": "Aquí se puede facilitar otros detalles"
+        "title": "Aquí se puede facilitar otros detalles",
+        "multiple": false
       }
     ]
   },
@@ -56,6 +59,7 @@
         "number": "14",
         "type": "option",
         "title": "¿Ha introducido su país las medidas jurídicas, administrativas y de otra clase necesarias para la aplicación del Protocolo?",
+        "multiple": false,
         "options": [
           {
             "value": "implementation.fullFramwork",
@@ -85,6 +89,7 @@
         "number": "15",
         "type": "option",
         "title": "Si en la pregunta anterior ha indicado que existe un marco nacional de seguridad de la biotecnología, ¿cuándo empezó a funcionar?",
+        "multiple": false,
         "options": [
           {
             "value": "2001",
@@ -150,6 +155,7 @@
         "number": "16",
         "type": "option",
         "title": "¿Cuáles son los instrumentos jurídicos establecidos para la aplicación de su marco nacional de seguridad de la biotecnología?",
+        "multiple": true,
         "options": [
           {
             "value": "instrument.nationalBiosafetyLaws",
@@ -179,6 +185,7 @@
         "number": "17",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo de asignaciones presupuestarias de fondos para el funcionamiento de su marco nacional de seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -200,6 +207,7 @@
         "number": "18",
         "type": "option",
         "title": "¿Dispone su país de personal permanente para administrar las funciones directamente relacionadas con el marco nacional de seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -217,6 +225,7 @@
         "number": "19",
         "type": "option",
         "title": "Si su respuesta a la pregunta 18 es Sí, ¿cuántos miembros de personal permanente han sido establecidos cuyas funciones están directamente relacionadas con el marco nacional de seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "1",
@@ -242,6 +251,7 @@
         "number": "20",
         "type": "option",
         "title": "¿Tiene su país un marco de seguridad de la biotecnología / leyes / reglamentos / directrices que hayan sido presentadas al Centro de Intercambio de Información sobre Seguridad de la Biotecnología (CIISB)?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -262,7 +272,8 @@
         "section": "Article2",
         "number": "21",
         "type": "text",
-        "title": "Aquí usted puede facilitar otros detalles sobre la aplicación del artículo 2 en su país"
+        "title": "Aquí usted puede facilitar otros detalles sobre la aplicación del artículo 2 en su país",
+        "multiple": false
       }
     ]
   },
@@ -276,6 +287,7 @@
         "number": "22",
         "type": "option",
         "title": "¿Regula su país el movimiento transfronterizo, la manipulación y la utilización de organismos vivos modificados (OVM) que son productos farmacéuticos?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -297,6 +309,7 @@
         "number": "23",
         "type": "option",
         "title": "Si su respuesta a la pregunta 22 es Sí, ¿ha sido presentada esta información al CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -317,7 +330,8 @@
         "section": "Article5",
         "number": "24",
         "type": "text",
-        "title": "Aquí se puede facilitar otros detalles sobre la aplicación del artículo 5 en su país:"
+        "title": "Aquí se puede facilitar otros detalles sobre la aplicación del artículo 5 en su país:",
+        "multiple": false
       }
     ]
   },
@@ -331,6 +345,7 @@
         "number": "25",
         "type": "option",
         "title": "¿Regula su país el tránsito de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -352,6 +367,7 @@
         "number": "26",
         "type": "option",
         "title": "¿Regula su país el uso confinado de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -369,6 +385,7 @@
         "number": "27",
         "type": "option",
         "title": "Si su respuesta a las preguntas 25 o 26 es Sí, ¿ha sido presentada esta información al CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -389,7 +406,8 @@
         "section": "Article6",
         "number": "28",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 6 en su país:"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 6 en su país:",
+        "multiple": false
       }
     ]
   },
@@ -403,6 +421,7 @@
         "number": "29",
         "type": "option",
         "title": "¿Ha adoptado su país leyes / reglamentos / medidas administrativas para el funcionamiento del procedimiento de AFP del Protocolo O BIEN un marco reglamentario nacional de conformidad con el Protocolo relativo al movimiento transfronterizo de OVM destinados a la introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -420,6 +439,7 @@
         "number": "30",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para tomar decisiones relativas al primer movimiento transfronterizo intencional de OVM destinados a la introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -441,6 +461,7 @@
         "number": "31",
         "type": "option",
         "title": "Si su respuesta a la pregunta 30 es  Sí, ¿se aplica también el mecanismo a casos de introducción deliberada de OVM en el medio ambiente que no han sido objeto de un movimiento transfronterizo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -458,6 +479,7 @@
         "number": "32",
         "type": "option",
         "title": "¿Ha establecido su país requisitos legales para que los exportadores bajo su jurisdicción notifiquen por escrito a la autoridad nacional competente de la Parte  importadora antes del movimiento transfronterizo intencional de un OVM comprendido en el ámbito del procedimiento de acuerdo fundamentado previo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -479,6 +501,7 @@
         "number": "33",
         "type": "option",
         "title": "¿Ha establecido su país requisitos legales en cuanto a la exactitud de la información que figura en la notificación?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -500,6 +523,7 @@
         "number": "34",
         "type": "option",
         "title": "¿Ha recibido su país alguna vez una solicitud / notificación relativa a movimientos transfronterizos intencionales de OVM para su introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -517,6 +541,7 @@
         "number": "35",
         "type": "option",
         "title": "¿Ha tomado su país alguna vez una decisión sobre una solicitud / notificación relativa a movimientos transfronterizos intencionales de OVM para su introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -534,6 +559,7 @@
         "number": "36",
         "type": "option",
         "title": "Si su respuesta a la pregunta 35 es Sí, ¿para cuántos OVM ha sido aprobada hasta la fecha la importación en su país para su introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -559,6 +585,7 @@
         "number": "37",
         "type": "option",
         "title": "Si su respuesta a la pregunta 35 es Sí, ¿cuántos OVM no importados han sido aprobados en su país hasta la fecha para su introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -584,6 +611,7 @@
         "number": "38",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿cuántas solicitudes/notificaciones ha recibido su país en relación con movimientos transfronterizos intencionales de OVM para su introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -609,6 +637,7 @@
         "number": "39",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿cuántas decisiones ha tomado su país en relación con movimientos transfronterizos intencionales de OVM para su introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -634,6 +663,7 @@
         "number": "40",
         "type": "option",
         "title": "Por referencia a las decisiones tomadas sobre movimientos transfronterizos intencionales de OVM para su introducción deliberada en el medio ambiente, ¿ha recibido su país notificación de las Partes de exportación y de los exportadores antes del movimiento transfronterizo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -655,6 +685,7 @@
         "number": "41",
         "type": "option",
         "title": "¿Se incluía en las notificaciones información completa (como mínimo la información especificada en el anexo I del Protocolo de Cartagena sobre Seguridad de la Biotecnología)?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -676,6 +707,7 @@
         "number": "42",
         "type": "option",
         "title": "¿Ha acusado recibo su país al notificador de las notificaciones en un plazo de 90 días desde su recibo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -697,6 +729,7 @@
         "number": "43",
         "type": "option",
         "title": "¿Ha informado su país al notificador (-es) y el CIISB de su decisión (-es)?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -726,6 +759,7 @@
         "number": "44",
         "type": "term",
         "title": "¿Qué porcentaje de las decisiones de su país queda comprendida en las siguientes categorías?",
+        "multiple": true,
         "options": [
           {
             "value": "3B9ECE67-B35C-40FF-8C06-4EA5FF762899",
@@ -755,6 +789,7 @@
         "number": "45",
         "type": "option",
         "title": "En los casos en los que su país aprobó una importación con condiciones o prohibió una importación, ¿expuso los motivos en los que se basaban sus decisiones al notificador y al CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -783,7 +818,8 @@
         "section": "Articles7-10",
         "number": "46",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación de los artículos 7 a 10 de su país, incluidas las medidas en caso de falta de certeza científica sobre los posibles efectos adversos de los OVM para su introducción intencional en el medio ambiente"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación de los artículos 7 a 10 de su país, incluidas las medidas en caso de falta de certeza científica sobre los posibles efectos adversos de los OVM para su introducción intencional en el medio ambiente",
+        "multiple": false
       }
     ]
   },
@@ -797,6 +833,7 @@
         "number": "47",
         "type": "option",
         "title": "¿Ha adoptado su país leyes o reglamentos específicos para tomar decisiones relativas al uso nacional de OVM-AHAP, incluida su colocación en el mercado?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -814,6 +851,7 @@
         "number": "48",
         "type": "option",
         "title": "¿Ha establecido su país requisitos legales respecto a la precisión de la información proporcionada por el solicitante?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -835,6 +873,7 @@
         "number": "49",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para asegurar que las decisiones relativas a los OVM-AHAP que pudieran ser objeto de un movimiento transfronterizo sean comunicadas a las Partes por conducto del CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -852,6 +891,7 @@
         "number": "50",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para tomar decisiones sobre la importación de OVM-AHAP?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -869,6 +909,7 @@
         "number": "51",
         "type": "option",
         "title": "¿Ha indicado su país sus necesidades de asistencia financiera y técnica y de la creación de la capacidad en relación con los OVM-AHAP?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -886,6 +927,7 @@
         "number": "52",
         "type": "option",
         "title": "¿Ha tomado alguna vez su país una decisión sobre los OVM-AHAP (ya sea para importación o para uso nacional)?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -903,6 +945,7 @@
         "number": "53",
         "type": "option",
         "title": "¿Cuántos OVM-AHAP han sido aprobados hasta ahora por su país?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -928,6 +971,7 @@
         "number": "54",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿cuántas decisiones ha tomado su país respecto a la importación de OVM-AHAP?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -953,6 +997,7 @@
         "number": "55",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿cuántas decisiones ha tomado su país respecto al uso nacional de OVM-AHAP, incluida su colocación en el mercado?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -978,6 +1023,7 @@
         "number": "56",
         "type": "option",
         "title": "¿Ha informado su país a las Partes por conducto del CIISB acerca de sus decisiones relativas a la importación de OVM-AHAP?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -999,6 +1045,7 @@
         "number": "57",
         "type": "option",
         "title": "¿Ha informado su país a las Partes por conducto del CIISB acerca de sus decisiones relativas al uso nacional de OVM-AHAP, incluida su colocación en el mercado, en un plazo de 15 días?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1023,7 +1070,8 @@
         "section": "Article11",
         "number": "58",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 11 en su país, incluyendo medidas en caso de falta de certeza científica sobre los posibles efectos adversos de los OVM-AHAP"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 11 en su país, incluyendo medidas en caso de falta de certeza científica sobre los posibles efectos adversos de los OVM-AHAP",
+        "multiple": false
       }
     ]
   },
@@ -1037,6 +1085,7 @@
         "number": "59",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para la revisión y cambio de una decisión relativa a un movimiento transfronterizo intencional de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1058,6 +1107,7 @@
         "number": "60",
         "type": "option",
         "title": "¿Ha recibido alguna vez su país una solicitud de revisión de una decisión?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1075,6 +1125,7 @@
         "number": "61",
         "type": "option",
         "title": "¿Ha revisado/modificado alguna vez su país una decisión relativa a un movimiento transfronterizo intencional de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true.reviewed",
@@ -1096,6 +1147,7 @@
         "number": "62",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿cuántas decisiones respecto a un movimiento transfronterizo intencional de un OVM han sido revisadas y/o modificadas?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1117,6 +1169,7 @@
         "number": "63",
         "type": "option",
         "title": "¿Ha informado su país tanto al notificador como al CIISB acerca de la revisión y/o modificaciones de la decisión?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1146,6 +1199,7 @@
         "number": "64",
         "type": "option",
         "title": "¿Ha informado su país tanto al notificador como al CIISB acerca de la revisión y modificaciones de la decisión en un plazo de 30 días?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1171,6 +1225,7 @@
         "number": "65",
         "type": "option",
         "title": "¿Ha expuesto su país tanto al notificador como al CIISB los motivos de la revisión y/o de las modificaciones de la decisión?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1199,7 +1254,8 @@
         "section": "Article12",
         "number": "66",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 12 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 12 en su país",
+        "multiple": false
       }
     ]
   },
@@ -1213,6 +1269,7 @@
         "number": "67",
         "type": "option",
         "title": "¿Ha establecido su país un sistema para la aplicación del procedimiento simplificado en lo que atañe a un movimiento transfronterizo intencional de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1234,6 +1291,7 @@
         "number": "68",
         "type": "option",
         "title": "¿Ha aplicado alguna vez su país el procedimiento simplificado?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1251,6 +1309,7 @@
         "number": "69",
         "type": "option",
         "title": "Si su respuesta a la pregunta 68 es Sí, ¿ha informado su país a las Partes por conducto del CIISB acerca de casos en los que se aplica el procedimiento simplificado?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1272,6 +1331,7 @@
         "number": "70",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿con relación a cuántos OVM ha aplicado su país el procedimiento simplificado?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1292,7 +1352,8 @@
         "section": "Article13",
         "number": "71",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 13 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 13 en su país",
+        "multiple": false
       }
     ]
   },
@@ -1306,6 +1367,7 @@
         "number": "72",
         "type": "option",
         "title": "¿Ha concertado su país acuerdos o arreglos bilaterales, regionales o multilaterales?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1323,6 +1385,7 @@
         "number": "73",
         "type": "option",
         "title": "Si su respuesta a la pregunta 72 es Sí, ¿cuántos acuerdos bilaterales/multilaterales de colaboración relacionadas con los OVM ha establecido su país con otras Partes o países que no son Partes?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1352,6 +1415,7 @@
         "number": "74",
         "type": "option",
         "title": "Si su respuesta a la pregunta 72 es Sí, ¿ha informado su país a las Partes por conducto del CIISB acerca de los acuerdos o arreglos?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1372,14 +1436,16 @@
         "section": "Article14",
         "number": "75",
         "type": "text",
-        "title": "Si su respuesta a la pregunta 72 es Sí, describa brevemente el alcance y objetivo de los acuerdos o arreglos concertados en"
+        "title": "Si su respuesta a la pregunta 72 es Sí, describa brevemente el alcance y objetivo de los acuerdos o arreglos concertados en",
+        "multiple": false
       },
       {
         "key": "Q076",
         "section": "Article14",
         "number": "76",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 14 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 14 en su país",
+        "multiple": false
       }
     ]
   },
@@ -1393,6 +1459,7 @@
         "number": "77",
         "type": "option",
         "title": "¿Ha establecido su país un marco nacional para realizar evaluaciones del riesgo antes de tomar decisiones relativas a los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1414,6 +1481,7 @@
         "number": "78",
         "type": "option",
         "title": "Si su respuesta a la pregunta 77 es Sí, ¿se incluyen en este marco procedimientos para identificar o capacitar a expertos nacionales para que realicen evaluaciones del riesgo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1431,6 +1499,7 @@
         "number": "80",
         "type": "option",
         "title": "¿Su país está utilizando material de capacitación y/u orientación técnica para la capacitación en evaluación del riesgo y gestión del riesgo de los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1448,6 +1517,7 @@
         "number": "81",
         "type": "option",
         "title": "¿Está utilizando su país el Manual on Risk Assessment of LMOs (Manual sobre evaluación del riesgo de OVM) (elaborado por la Secretaría del CDB) para la capacitación en evaluación del riesgo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1465,6 +1535,7 @@
         "number": "82",
         "type": "option",
         "title": "¿Está utilizando su país la Guidance on Risk Assessment of LMOs (Orientación para la evaluación del riesgo de OVM) (elaborada por el Foro en línea y el GEET en evaluación del riesgo y gestión del riesgo) para la capacitación en evaluación del riesgo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1482,6 +1553,7 @@
         "number": "83",
         "type": "option",
         "title": "¿Son suficientes los materiales de capacitación o la orientación técnica disponibles en la actualidad para la evaluación del riesgo o la gestión del riesgo de los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1499,6 +1571,7 @@
         "number": "86",
         "type": "option",
         "title": "¿Está utilizando su país la Guidance on Risk Assessment of LMOs (Orientación para la evaluación del riesgo de OVM) (elaborada por el Foro en línea y el GEET en evaluación del riesgo y gestión del riesgo) para llevar a cabo evaluaciones del riesgo o gestionar el riesgo, o para evaluar informes sobre evaluaciones del riesgo presentados por notificadores?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1516,6 +1589,7 @@
         "number": "87",
         "type": "option",
         "title": "¿Ha adoptado su país algún enfoque de la evaluación del riesgo en común con otros países?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1533,6 +1607,7 @@
         "number": "88",
         "type": "option",
         "title": "¿Ha cooperado su país con otras Partes con miras a determinar los OVM o los rasgos específicos que puedan tener efectos adversos para la conservación y la utilización sostenible de la diversidad biológica?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1550,6 +1625,7 @@
         "number": "89",
         "type": "option",
         "title": "¿Ha realizado alguna vez su país una evaluación del riesgo de un OVM, incluido cualquier tipo de riesgo, p. ej. para uso confinado, pruebas de campo, fines comerciales, uso directo como alimento humano o animal o para procesamiento?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1567,6 +1643,7 @@
         "number": "90",
         "type": "term",
         "title": "Si su respuesta a la pregunta 89 es Sí, indique el alcance de las evaluaciones del riesgo (seleccione todas las respuestas que correspondan):",
+        "multiple": true,
         "options": [
           {
             "value": "D6B59E8A-D82C-4516-917A-A745ACDA5931",
@@ -1604,6 +1681,7 @@
         "number": "91",
         "type": "option",
         "title": "Si su respuesta a la pregunta 89 es Sí, ¿se presentaron los informes resumidos de las evaluaciones del riesgo al CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1625,6 +1703,7 @@
         "number": "92",
         "type": "option",
         "title": "Si su respuesta a la pregunta 89 es Sí, ¿se realizaron evaluaciones del riesgo para todas las decisiones sobre OVM que iban a ser introducidos deliberadamente en el medio ambiente o sobre el uso directo de OVM a nivel nacional como alimento humano o animal o para procesamiento?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1646,6 +1725,7 @@
         "number": "93",
         "type": "option",
         "title": "Si su respuesta a la pregunta 89 es Sí, ¿cuántas evaluaciones del riesgo se han realizado en el período de presentación de informes actual?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1671,6 +1751,7 @@
         "number": "94",
         "type": "option",
         "title": "¿Ha tomado su país medidas para asegurar que cualquier OVM, ya sea importado o desarrollado en el país, haya pasado por un período de observación apropiado a su ciclo vital o a su tiempo de generación antes de que se le dé su uso previsto?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1692,6 +1773,7 @@
         "number": "95",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo de vigilancia de los posibles efectos de los OVM que hayan sido liberados al medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1713,6 +1795,7 @@
         "number": "96",
         "type": "option",
         "title": "¿Cuenta su país con infraestructura (por ejemplo laboratorios) para vigilar o gestionar OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1729,7 +1812,8 @@
         "section": "Article15_16",
         "number": "97",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación de los artículos 15 y 16 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación de los artículos 15 y 16 en su país",
+        "multiple": false
       },
       {
         "key": "Q79a",
@@ -1737,6 +1821,7 @@
         "number": "79a",
         "type": "option",
         "title": "Evaluación del riesgo:",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1766,6 +1851,7 @@
         "number": "79b",
         "type": "option",
         "title": "Gestión / Control:",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1795,6 +1881,7 @@
         "number": "79c",
         "type": "option",
         "title": "Vigilancia:",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1824,6 +1911,7 @@
         "number": "84a",
         "type": "option",
         "title": "Detectar:",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1841,6 +1929,7 @@
         "number": "84b",
         "type": "option",
         "title": "Identificar:",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1858,6 +1947,7 @@
         "number": "84c",
         "type": "option",
         "title": "Evaluar:",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1875,6 +1965,7 @@
         "number": "84d",
         "type": "option",
         "title": "Vigilar:",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1892,6 +1983,7 @@
         "number": "85a",
         "type": "option",
         "title": "Evaluación del riesgo:",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1909,6 +2001,7 @@
         "number": "85b",
         "type": "option",
         "title": "Gestión del riesgo:",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1932,6 +2025,7 @@
         "number": "98",
         "type": "option",
         "title": "¿Ha establecido y mantenido su país medidas adecuadas para prevenir movimientos transfronterizos involuntarios de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1953,6 +2047,7 @@
         "number": "99",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para instaurar medidas de emergencia en el caso de movimientos transfronterizos involuntarios de OVM que probablemente tengan efectos adversos significativos en la diversidad biológica?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1974,6 +2069,7 @@
         "number": "100",
         "type": "option",
         "title": "¿Tiene su país capacidad para tomar las medidas adecuadas en el caso de que se libere involuntariamente un OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1991,6 +2087,7 @@
         "number": "101",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿cuántas veces ha recibido su país información relativa a situaciones que han conducido o que pueden haber conducido a un movimiento transfronterizo involuntario de uno o más OVM hacia o desde territorios bajo su jurisdicción?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -2016,6 +2113,7 @@
         "number": "102",
         "type": "option",
         "title": "Si su respuesta a la pregunta 101 es Sí, ¿ha notificado su país a los Estados afectados o que podrían haber sido afectados, al CIISB y, cuando proceda, a las organizaciones internacionales pertinentes acerca de esas liberaciones?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2037,6 +2135,7 @@
         "number": "103",
         "type": "option",
         "title": "Si su respuesta a la pregunta 101 es Sí, ¿a quién notificó su país?",
+        "multiple": false,
         "options": [
           {
             "value": "state",
@@ -2058,6 +2157,7 @@
         "number": "104",
         "type": "option",
         "title": "Si su respuesta a la pregunta 101 es Sí, ¿ha consultado inmediatamente su país a los Estados afectados o que podrían haber sido afectados para que estos puedan determinar las respuestas apropiadas y poner en marcha las actividades necesarias, incluidas medidas de emergencia?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2082,7 +2182,8 @@
         "section": "Article17",
         "number": "105",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 17 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 17 en su país",
+        "multiple": false
       }
     ]
   },
@@ -2096,6 +2197,7 @@
         "number": "106",
         "type": "option",
         "title": "¿Ha tomado su país medidas para requerir que los OVM que son objeto de movimientos transfronterizos sean manipulados, envasados y transportados en condiciones de seguridad, teniendo en cuenta las normas y los estándares internacionales pertinentes?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2117,6 +2219,7 @@
         "number": "107",
         "type": "option",
         "title": "¿Ha tomado su país medidas para requerir que la documentación que acompaña a los OVM-AHAP identifique claramente que, en los casos en los que la identidad de los OVM no es conocida por medios tales como los sistemas de preservación de la identidad, puedan llegar a contener organismos vivos modificados y que no están destinados para su introducción deliberada en el medio ambiente, así como un punto de contacto para solicitar información adicional?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2138,6 +2241,7 @@
         "number": "108",
         "type": "option",
         "title": "¿Ha tomado su país medidas para requerir que la documentación que acompaña a los OVM-AHAP identifique claramente que, en los casos en los que la identidad de los OVM es conocida por medios tales como los sistemas de preservación de la identidad, contienen organismos vivos modificados y que no están destinados para su introducción deliberada en el medio ambiente, así como un punto de contacto para solicitar información adicional?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2159,6 +2263,7 @@
         "number": "109",
         "type": "option",
         "title": "Si su respuesta a la pregunta 107 o 108 es Sí o Sí, hasta cierto punto, ¿qué tipo de documentación exige su país para la identificación de OVM-AHAP?",
+        "multiple": false,
         "options": [
           {
             "value": "existing",
@@ -2180,6 +2285,7 @@
         "number": "110",
         "type": "option",
         "title": "¿Ha tomado su país medidas para requerir que la documentación que acompaña a OVM destinados para uso confinado los identifique claramente como organismos vivos modificados y especifique los requisitos para su manipulación, almacenamiento, transporte y uso seguro, el punto de contacto para obtener información adicional, incluidos el nombre y las señas de la persona y la institución a quienes se envían los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2201,6 +2307,7 @@
         "number": "111",
         "type": "option",
         "title": "Si su respuesta a la pregunta 110 es Sí o Sí, hasta cierto punto, ¿qué tipo de documentación exige su país para la identificación de OVM destinados para uso confinado?",
+        "multiple": false,
         "options": [
           {
             "value": "existing",
@@ -2222,6 +2329,7 @@
         "number": "112",
         "type": "option",
         "title": "¿Ha tomado su país medidas para requerir que la documentación que acompaña a OVM destinados para su introducción deliberada en el medio ambiente por la Parte de importadora los identifique claramente como organismos vivos modificados, especifique la identidad y los rasgos/características pertinentes, los requisitos para su manipulación, almacenamiento, transporte y uso seguro, el punto de contacto para obtener información adicional y, según proceda, el nombre y las señas del importador y del exportador, y contenga una declaración de que el movimiento se efectúa de conformidad con las disposiciones de este Protocolo aplicables al exportador?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2243,6 +2351,7 @@
         "number": "113",
         "type": "option",
         "title": "Si su respuesta a la pregunta 112 es Sí o Sí, hasta cierto punto, ¿qué tipo de documentación exige su país para la identificación de OVM destinados para su introducción deliberada en el medio ambiente?",
+        "multiple": false,
         "options": [
           {
             "value": "existing",
@@ -2264,6 +2373,7 @@
         "number": "114",
         "type": "option",
         "title": "¿Cuenta su país con algún tipo de orientación para asegurarse de que la manipulación, el transporte y el envasado de organismos vivos modificados son seguros?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2281,6 +2391,7 @@
         "number": "115",
         "type": "option",
         "title": "¿Tiene su país capacidad para hacer cumplir los requisitos de identificación y documentación de los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2302,6 +2413,7 @@
         "number": "116",
         "type": "option",
         "title": "¿Cuántos funcionarios de aduanas de su país han recibido capacitación para identificar OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -2331,6 +2443,7 @@
         "number": "117",
         "type": "option",
         "title": "¿Ha establecido su país procedimientos para muestreo y detección de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2352,6 +2465,7 @@
         "number": "118",
         "type": "option",
         "title": "¿Cuántos empleados de laboratorios de su país han recibido capacitación en la detección de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -2381,6 +2495,7 @@
         "number": "119",
         "type": "option",
         "title": "¿Cuenta su país con acceso fiable a laboratorios para la detección de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2398,6 +2513,7 @@
         "number": "120",
         "type": "option",
         "title": "¿Cuántos laboratorios de su país están certificados para la detección de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -2427,6 +2543,7 @@
         "number": "121",
         "type": "option",
         "title": "¿Cuántos de los laboratorios certificados de la pregunta anterior están interviniendo actualmente en la detección de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -2455,7 +2572,8 @@
         "section": "Article18",
         "number": "122",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 18 en su país:"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 18 en su país:",
+        "multiple": false
       }
     ]
   },
@@ -2469,6 +2587,7 @@
         "number": "123",
         "type": "option",
         "title": "En el caso de que su país haya designado a más de una autoridad nacional competente, ¿ha establecido su país un mecanismo para la coordinación de sus actuaciones antes de tomar decisiones relativas a los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2486,6 +2605,7 @@
         "number": "124",
         "type": "option",
         "title": "¿Ha establecido su país capacidad institucional adecuada para que las autoridades nacionales competentes puedan desempeñar las funciones administrativas requeridas por el Protocolo de Cartagena sobre Seguridad de la Biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2506,7 +2626,8 @@
         "section": "Article19",
         "number": "125",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 19 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 19 en su país",
+        "multiple": false
       }
     ]
   },
@@ -2520,6 +2641,7 @@
         "number": "126a",
         "type": "option",
         "title": "Leyes, reglamentos y directrices nacionales existentes para la aplicación del Protocolo, así como la información requerida por las Partes para el procedimiento de acuerdo fundamentado previo (párrafo 3 a] del artículo 20)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2545,6 +2667,7 @@
         "number": "126b",
         "type": "option",
         "title": "Leyes, reglamentaciones y directrices nacionales aplicables a la importación de OVM destinados para uso directo como alimento humano o animal o para procesamiento (párrafo 5 del artículo 11)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2570,6 +2693,7 @@
         "number": "126c",
         "type": "option",
         "title": "Acuerdos y arreglos bilaterales, regionales y multilaterales (párrafo 2 del artículo 14 y párrafo 3 b] del artículo 20)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2595,6 +2719,7 @@
         "number": "126d",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para fortalecer la capacidad del punto focal nacional correspondiente al CIISB para desempeñar sus funciones administrativas?",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2620,6 +2745,7 @@
         "number": "126e",
         "type": "option",
         "title": "Informes presentados por las Partes sobre el funcionamiento del Protocolo (artículo 20, párrafo 3 (e))",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2645,6 +2771,7 @@
         "number": "126f",
         "type": "option",
         "title": "Decisiones adoptadas por una Parte para regular el tránsito de organismos vivos modificados específicos (OVM) (artículo 6, párrafo 1)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2670,6 +2797,7 @@
         "number": "126g",
         "type": "option",
         "title": "Presencia de movimientos transfronterizos involuntarios que puedan tener efectos adversos importantes para la diversidad biológica (artículo 17, párrafo 1)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2695,6 +2823,7 @@
         "number": "126h",
         "type": "option",
         "title": "Movimientos ilegales transfronterizos de OVM (artículo 25, párrafo 3)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2720,6 +2849,7 @@
         "number": "126i",
         "type": "option",
         "title": "Decisiones finales relativas a la importación o liberación de OVM (es decir aprobación o prohibición, cualesquiera condiciones, solicitudes de información ulterior, ampliaciones concedidas, motivos de la decisión) (artículos 10, párrafo 3, y 20, párrafo 3 (d))",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2745,6 +2875,7 @@
         "number": "126j",
         "type": "option",
         "title": "Información sobre la aplicación de la reglamentación nacional para importaciones concretas de OVM (artículo 14, párrafo 4)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2770,6 +2901,7 @@
         "number": "126k",
         "type": "option",
         "title": "Decisiones definitivas relativas al uso doméstico de los OVM que puedan ser objeto de un movimiento transfronterizo para uso directo como alimento humano o animal o para procesamiento (artículo 11, párrafo 1)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2795,6 +2927,7 @@
         "number": "126l",
         "type": "option",
         "title": "Decisiones finales relativas a la importación de OMV para su uso directo como alimento humano o animal o para procesamiento, que están incluidas en virtud de marcos normativos nacionales (artículo 11, párrafo 4) o de acuerdo con el anexo III (artículo 11, párrafo 6) (requisito del artículo 20, párrafo 3 (d))",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2820,6 +2953,7 @@
         "number": "126m",
         "type": "option",
         "title": "Declaraciones relativas al marco que se utilizan para OVM destinados a uso directo como alimento humano o animal o para procesamiento (artículo 11, párrafo 6)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2845,6 +2979,7 @@
         "number": "126n",
         "type": "option",
         "title": "Revisión y modificación de las decisiones relativas a los movimientos intencionales transfronterizos de OVM (artículo 12, párrafo 1)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2870,6 +3005,7 @@
         "number": "126o",
         "type": "option",
         "title": "Situación de exención concedida de OVM por cada Parte (artículo 13, párrafo 1)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2895,6 +3031,7 @@
         "number": "126p",
         "type": "option",
         "title": "Casos en que los movimientos transfronterizos intencionales pueden efectuarse al mismo tiempo que se notifica el movimiento a la Parte  importadora (artículo 13, párrafo 1)",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2920,6 +3057,7 @@
         "number": "126q",
         "type": "option",
         "title": "Resúmenes de evaluaciones del riesgo o revisiones ambientales de OVM resultantes de procesos reglamentarios e información acerca de los productos relevantes de los mismos (artículo 20, párrafo 3 (c))",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2945,6 +3083,7 @@
         "number": "127",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para el fortalecimiento de la capacidad del CIISB Centro de coordinación nacional para llevar a cabo sus funciones administrativas?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2966,6 +3105,7 @@
         "number": "128",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para la coordinación del punto focal nacional correspondiente al CIISB, el punto focal del Protocolo de Cartagena, y la autoridad nacional competente para que la información esté a disposición del CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2987,6 +3127,7 @@
         "number": "129",
         "type": "option",
         "title": "¿Utiliza su país la información disponible en el CIISB en sus procesos de toma de decisiones sobre los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3008,6 +3149,7 @@
         "number": "130",
         "type": "option",
         "title": "¿Ha experimentado su país dificultades para acceder al CIISB o utilizarlo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3025,6 +3167,7 @@
         "number": "131",
         "type": "option",
         "title": "¿Está la información presentada por su país al CIISB completa y actualizada?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3042,6 +3185,7 @@
         "number": "132",
         "type": "option",
         "title": "Indique el número de eventos regionales, nacionales e internacionales organizados en relación con la seguridad de la biotecnología (p. ej. seminarios, talleres, conferencias de prensa, eventos educativos, etc.) en los últimos 2 años:",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -3071,6 +3215,7 @@
         "number": "133",
         "type": "option",
         "title": "Indique el número de publicaciones relacionadas con la seguridad de la biotecnología que han salido a la luz en su país en el último año:",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -3100,6 +3245,7 @@
         "number": "134",
         "type": "term",
         "title": "Si salió a la luz alguna publicación relacionada con la seguridad de la biotecnología (vea la pregunta anterior), indique qué modalidades se prefirieron:",
+        "multiple": true,
         "options": [
           {
             "value": "4E205CD9-9958-497F-A760-F8321771AB3A",
@@ -3120,7 +3266,8 @@
         "section": "Article20",
         "number": "135",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 20 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 20 en su país",
+        "multiple": false
       }
     ]
   },
@@ -3134,6 +3281,7 @@
         "number": "136",
         "type": "option",
         "title": "¿Ha establecido su país procedimientos para proteger la información confidencial recibida en el marco del Protocolo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3155,6 +3303,7 @@
         "number": "137",
         "type": "option",
         "title": "¿Permite su país al notificador determinar la información que debe ser tratada como confidencial?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3175,7 +3324,8 @@
         "section": "Article21",
         "number": "138",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 21 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 21 en su país",
+        "multiple": false
       }
     ]
   },
@@ -3189,6 +3339,7 @@
         "number": "139",
         "type": "option",
         "title": "¿Cuenta su país con financiación previsible y fiable para crear capacidad destinada a la aplicación efectiva del Protocolo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3206,6 +3357,7 @@
         "number": "140",
         "type": "option",
         "title": "¿Ha recibido su país apoyo externo o se ha beneficiado de actividades de colaboración con otras Partes para desarrollar y/o fortalecer los recursos humanos y capacidades institucionales en materia de seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3227,6 +3379,7 @@
         "number": "141",
         "type": "option",
         "title": "Si su respuesta a la pregunta 140 es Sí, ¿cómo se proporcionaron estos recursos?",
+        "multiple": false,
         "options": [
           {
             "value": "channels.bilateral",
@@ -3248,6 +3401,7 @@
         "number": "142",
         "type": "option",
         "title": "¿Ha proporcionado su país apoyo a otras Partes para desarrollar y/o fortalecer los recursos humanos y capacidades institucionales en materia de seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3269,6 +3423,7 @@
         "number": "143",
         "type": "option",
         "title": "Si su respuesta a la pregunta 142 es Sí, ¿cómo se proporcionaron estos recursos?",
+        "multiple": false,
         "options": [
           {
             "value": "channels.bilateral",
@@ -3290,6 +3445,7 @@
         "number": "144",
         "type": "option",
         "title": "¿Alguna vez ha iniciado su país un proceso para obtener fondos del FMAM destinados a la creación de capacidad relativa a la seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3307,6 +3463,7 @@
         "number": "145",
         "type": "option",
         "title": "Si su respuesta a la pregunta 144 es Sí, ¿cómo calificaría ese proceso?",
+        "multiple": false,
         "options": [
           {
             "value": "veryEasy",
@@ -3336,6 +3493,7 @@
         "number": "146",
         "type": "term",
         "title": "¿Alguna vez ha recibido su país financiación del FMAM destinado a la creación de capacidad relativa a la seguridad de la biotecnología?",
+        "multiple": true,
         "options": [
           {
             "value": "C6F5F985-183C-45F7-8A61-5B6DB2F13D10",
@@ -3369,6 +3527,7 @@
         "number": "147",
         "type": "option",
         "title": "Durante el actual período de presentación de informes, ¿ha emprendido su país actividades de desarrollo y/o fortalecimiento de los recursos humanos y capacidades institucionales en materia de seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3390,6 +3549,7 @@
         "number": "148",
         "type": "term",
         "title": "Si su respuesta a la pregunta 147 es Sí, ¿en cuál de las siguientes áreas se emprendieron estas actividades?",
+        "multiple": true,
         "options": [
           {
             "value": "BB3CA716-E122-4445-9FAD-9F6B440363BD",
@@ -3459,6 +3619,7 @@
         "number": "149",
         "type": "option",
         "title": "Durante el actual período de presentación de informes, ¿ha realizado su país una evaluación de sus necesidades de creación de capacidad?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3476,6 +3637,7 @@
         "number": "150",
         "type": "option",
         "title": "Si su respuesta a la pregunta 149 es Sí, ¿ha sido presentada esta información al CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3493,6 +3655,7 @@
         "number": "151",
         "type": "option",
         "title": "¿Tiene todavía su país necesidades de creación de capacidad?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3514,6 +3677,7 @@
         "number": "152",
         "type": "term",
         "title": "Si su respuesta a la pregunta 151 es Sí, ¿cuál de las siguientes áreas requiere todavía creación de capacidad?",
+        "multiple": true,
         "options": [
           {
             "value": "BB3CA716-E122-4445-9FAD-9F6B440363BD",
@@ -3583,6 +3747,7 @@
         "number": "153",
         "type": "option",
         "title": "¿Ha elaborado su país una estrategia o plan de acción para creación de capacidad?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3600,6 +3765,7 @@
         "number": "154",
         "type": "option",
         "title": "¿Cuenta su país con un mecanismo nacional funcional que se encarga de coordinar iniciativas de creación de capacidad para la seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3617,6 +3783,7 @@
         "number": "155",
         "type": "option",
         "title": "¿Cuántos programas de capacitación a corto plazo y/o cursos académicos de seguridad de la biotecnología se ofrecen anualmente en su país?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -3646,6 +3813,7 @@
         "number": "156",
         "type": "option",
         "title": "¿Ha presentado su país los detalles acerca de expertos nacionales en seguridad de la biotecnología para su inclusión en la Lista de expertos del CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3662,7 +3830,8 @@
         "section": "Article22",
         "number": "157",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 22 en su país, incluidos otros detalles acerca de su experiencia relativa a la obtención de fondos del FMAM"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 22 en su país, incluidos otros detalles acerca de su experiencia relativa a la obtención de fondos del FMAM",
+        "multiple": false
       }
     ]
   },
@@ -3676,6 +3845,7 @@
         "number": "158",
         "type": "option",
         "title": "¿Ha establecido su país una estrategia o ha sancionado leyes para fomentar y facilitar la sensibilización, educación y participación del público en lo que atañe a la seguridad de la transferencia, manipulación y utilización de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3697,6 +3867,7 @@
         "number": "159",
         "type": "option",
         "title": "¿Ha diseñado y/o aplicado su país una estrategia de divulgación/comunicación centrada en la seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3714,6 +3885,7 @@
         "number": "160",
         "type": "option",
         "title": "¿Tiene su país algún programa de concienciación y divulgación centrado en la seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3730,7 +3902,8 @@
         "section": "Article23",
         "number": "161",
         "type": "text",
-        "title": "Si su respuesta a la pregunta 160 es Sí, indique qué entidad es responsable de llevar a cabo los programas o servicios y a qué nivel se llevan a cabo (p. ej. local, nacional, etc.)."
+        "title": "Si su respuesta a la pregunta 160 es Sí, indique qué entidad es responsable de llevar a cabo los programas o servicios y a qué nivel se llevan a cabo (p. ej. local, nacional, etc.).",
+        "multiple": false
       },
       {
         "key": "Q162",
@@ -3738,6 +3911,7 @@
         "number": "162",
         "type": "option",
         "title": "¿Ha establecido su país archivos con capacidad de búsqueda en sitios web dedicados a la seguridad de la biotecnología, centros de recursos nacionales o secciones en las bibliotecas nacionales existentes dedicados a materiales educativos sobre seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3755,6 +3929,7 @@
         "number": "163",
         "type": "option",
         "title": "¿Cuántas iniciativas de colaboración (incluidas las actividades conjuntas) centradas en el Protocolo de Cartagena y otras convenciones y procesos ha establecido su Gobierno en los últimos 4 años?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -3784,6 +3959,7 @@
         "number": "164",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para asegurar que el público tenga acceso a información sobre los organismos vivos modificados que puedan ser importados?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3805,6 +3981,7 @@
         "number": "165",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para consultar al público en el proceso de toma de decisiones relativas a los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3826,6 +4003,7 @@
         "number": "166",
         "type": "option",
         "title": "¿Ha establecido su país un mecanismo para poner a disposición del público los resultados de las decisiones tomadas sobre los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3847,6 +4025,7 @@
         "number": "167",
         "type": "option",
         "title": "¿Ha informado su país al público de las modalidades existentes de participación pública en el proceso de toma de decisiones sobre los organismos vivos modificados?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3868,6 +4047,7 @@
         "number": "168",
         "type": "term",
         "title": "Si su respuesta a la pregunta 167 es Sí, indique las modalidades utilizadas para informar al público:",
+        "multiple": true,
         "options": [
           {
             "value": "4E205CD9-9958-497F-A760-F8321771AB3A",
@@ -3897,6 +4077,7 @@
         "number": "169",
         "type": "term",
         "title": "Si ha indicado más de una modalidad en la pregunta 168, ¿cuál fue la que más se usó?",
+        "multiple": false,
         "options": [
           {
             "value": "4E205CD9-9958-497F-A760-F8321771AB3A",
@@ -3926,6 +4107,7 @@
         "number": "170",
         "type": "option",
         "title": "¿Ha tomado su país alguna iniciativa para informar a su público acerca de los medios para tener acceso público al CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3943,6 +4125,7 @@
         "number": "171",
         "type": "option",
         "title": "¿Cuántas instituciones académicas de su país están ofreciendo cursos y programas de educación y capacitación en seguridad de la biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -3972,6 +4155,7 @@
         "number": "172",
         "type": "option",
         "title": "Indique el número de materiales educativos y/o módulos en línea sobre seguridad de la biotecnología que están disponibles y accesibles para el público en su país:",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -4005,6 +4189,7 @@
         "number": "173",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿ha fomentado y facilitado su país la sensibilización, educación y participación del público en lo que atañe a la seguridad de la transferencia, manipulación y utilización de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4026,6 +4211,7 @@
         "number": "174",
         "type": "option",
         "title": "Si su respuesta a la pregunta 173 es Sí, ¿ha cooperado su país con otros Estados y organismos internacionales?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4043,6 +4229,7 @@
         "number": "175",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿cuántas veces ha consultado su país al público en el proceso de toma de decisiones relativas a los OVM y ha puesto a disposición del público los resultados de tales decisiones?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -4063,7 +4250,8 @@
         "section": "Article23",
         "number": "176",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 23 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 23 en su país",
+        "multiple": false
       }
     ]
   },
@@ -4077,6 +4265,7 @@
         "number": "177",
         "type": "option",
         "title": "¿Ha concertado su país algún acuerdo bilateral, regional, o multilateral con Estados que no son Partes respecto a movimientos transfronterizos de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4094,6 +4283,7 @@
         "number": "178",
         "type": "option",
         "title": "¿Ha importado su país alguna vez OVM de Estados que no son Partes?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4111,6 +4301,7 @@
         "number": "179",
         "type": "option",
         "title": "¿Ha exportado a su país alguna vez OVM a Estados que no son Partes?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4128,6 +4319,7 @@
         "number": "180",
         "type": "option",
         "title": "Si su respuesta a la pregunta 178 o 179 es Sí, ¿se realizaron los movimientos transfronterizos de los OVM en consonancia con el objetivo del Protocolo de Cartagena sobre Seguridad de la Biotecnología?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4149,6 +4341,7 @@
         "number": "181",
         "type": "option",
         "title": "Si su respuesta a las preguntas 178 o 179 es Sí, ¿fue presentada la información acerca de estos movimientos transfronterizos al CIISB?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4170,6 +4363,7 @@
         "number": "182",
         "type": "option",
         "title": "Si su país no es Parte en el Protocolo de Cartagena, ¿ha aportado información al CIISB sobre OVM liberados o introducidos en zonas dentro de su jurisdicción nacional o transportados fuera de ella?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4190,7 +4384,8 @@
         "section": "Article24",
         "number": "183",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 24 en su país:"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 24 en su país:",
+        "multiple": false
       }
     ]
   },
@@ -4204,6 +4399,7 @@
         "number": "184",
         "type": "option",
         "title": "¿Ha tomado su país medidas nacionales orientadas a prevenir y/o penalizar los movimientos transfronterizos de OVM realizados en contravención de las medidas nacionales que rigen la aplicación de este Protocolo?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4225,6 +4421,7 @@
         "number": "185",
         "type": "option",
         "title": "¿Ha establecido su país alguna estrategia para detectar movimientos transfronterizos ilícitos de OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4246,6 +4443,7 @@
         "number": "186",
         "type": "option",
         "title": "En el actual período de presentación de informes, ¿cuántas veces ha recibido su país información relativa a casos de movimientos transfronterizos ilícitos de un OVM hacia o desde territorios bajo su jurisdicción?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -4271,6 +4469,7 @@
         "number": "187",
         "type": "option",
         "title": "Si su país ha recibido información sobre casos de movimientos transfronterizos ilícitos de algún OVM en el actual período de presentación de informes, ¿ha informado su país al CIISB y a la otra u otras Partes implicadas?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4300,6 +4499,7 @@
         "number": "188",
         "type": "option",
         "title": "Si su país ha recibido información sobre casos de movimientos transfronterizos ilícitos de algún OVM en el actual período de presentación de informes, ¿ha establecido su país el origen del o los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4321,6 +4521,7 @@
         "number": "189",
         "type": "option",
         "title": "Si su país ha recibido información sobre casos de movimientos transfronterizos ilícitos de algún OVM en el actual período de presentación de informes, ¿ha establecido su país la naturaleza del o los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4342,6 +4543,7 @@
         "number": "190",
         "type": "option",
         "title": "Si su país ha recibido información sobre casos de movimientos transfronterizos ilícitos de algún OVM en el actual período de presentación de informes, ¿ha establecido su país las circunstancias del movimiento o movimientos transfronterizos ilícitos?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4362,7 +4564,8 @@
         "section": "Article25",
         "number": "191",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 25 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 25 en su país",
+        "multiple": false
       }
     ]
   },
@@ -4376,6 +4579,7 @@
         "number": "192",
         "type": "option",
         "title": "¿Su país tiene algún planteamiento o requisito específico que facilite la inclusión de consideraciones socioeconómicas en la toma de decisiones sobre los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4393,6 +4597,7 @@
         "number": "193",
         "type": "option",
         "title": "Si su país ha tomado alguna decisión sobre la importación, ¿ha tenido alguna vez en cuenta las consideraciones socioeconómicas resultantes de los efectos de los OVM en la conservación y utilización sostenible de la diversidad biológica?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4414,6 +4619,7 @@
         "number": "194",
         "type": "option",
         "title": " ¿Cuántos materiales evaluados por partes y publicados ha utilizado su país con el fin de planificar o determinar acciones nacionales relacionadas con consideraciones socioeconómicas?",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -4442,7 +4648,8 @@
         "section": "Article26",
         "number": "195",
         "type": "text",
-        "title": "¿Qué experiencia tiene su país, si es que la tiene, en la inclusión de consideraciones socioeconómicas a la hora de tomar decisiones sobre los OVM? Facilite detalles:"
+        "title": "¿Qué experiencia tiene su país, si es que la tiene, en la inclusión de consideraciones socioeconómicas a la hora de tomar decisiones sobre los OVM? Facilite detalles:",
+        "multiple": false
       },
       {
         "key": "Q196",
@@ -4450,6 +4657,7 @@
         "number": "196",
         "type": "option",
         "title": "¿Ha cooperado su país con otras Partes en investigación e intercambio de información sobre cualesquiera impactos socioeconómicos de los OVM?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4470,7 +4678,8 @@
         "section": "Article26",
         "number": "197",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 26 en su país"
+        "title": "Aquí se pueden facilitar otros detalles sobre la aplicación del artículo 26 en su país",
+        "multiple": false
       }
     ]
   },
@@ -4484,6 +4693,7 @@
         "number": "198",
         "type": "option",
         "title": "¿Ha ratificado o se ha adherido su país al Protocolo Suplementario de Nagoya-Kuala Lumpur sobre la responsabilidad y compensación?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4501,6 +4711,7 @@
         "number": "199",
         "type": "option",
         "title": "Si su respuesta a la pregunta 198 es No, ¿hay establecido algún proceso nacional para llegar a ser Parte?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4518,6 +4729,7 @@
         "number": "200",
         "type": "option",
         "title": "¿Ha recibido su país alguna ayuda financiera y/o técnica para crear capacidad en el área de la responsabilidad y la compensación relacionadas con los organismos vivos modificados?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4535,6 +4747,7 @@
         "number": "201",
         "type": "option",
         "title": "¿Cuenta su país con algún instrumento administrativo o jurídico que proporcione medidas de respuesta a daños causados a la diversidad biológica por organismos vivos modificados?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4551,7 +4764,8 @@
         "section": "Article27",
         "number": "202",
         "type": "text",
-        "title": "Aquí se pueden facilitar otros detalles sobre las actividades llevadas a cabo en su país en la aplicación del Protocolo Suplementario de Nagoya-Kuala Lumpur sobre la responsabilidad y compensación"
+        "title": "Aquí se pueden facilitar otros detalles sobre las actividades llevadas a cabo en su país en la aplicación del Protocolo Suplementario de Nagoya-Kuala Lumpur sobre la responsabilidad y compensación",
+        "multiple": false
       }
     ]
   },
@@ -4565,6 +4779,7 @@
         "number": "203",
         "type": "option",
         "title": "¿Cuánta financiación adicional (en el equivalente en dólares estadounidenses) ha movilizado su país en los últimos cuatro años para apoyar la aplicación del Protocolo sobre Seguridad de la Biotecnología además de la asignación presupuestaria nacional ordinaria?",
+        "multiple": false,
         "options": [
           {
             "value": "USD5000000+",
@@ -4608,6 +4823,7 @@
         "number": "204a",
         "type": "option",
         "title": "Sistema de vigilancia:",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4625,6 +4841,7 @@
         "number": "204b",
         "type": "option",
         "title": "Sistema de imposición:",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4642,6 +4859,7 @@
         "number": "205",
         "type": "option",
         "title": "¿Ha presentado su país todos los informes nacionales anteriores?",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -4659,6 +4877,7 @@
         "number": "206",
         "type": "term",
         "title": "Si su respuesta a la pregunta 205 es No, indique los principales impedimentos que obstaculizaron la presentación de esos informes.",
+        "multiple": true,
         "options": [
           {
             "value": "9D149B05-B490-43BC-BE81-473F4A15D5AC",
@@ -4689,7 +4908,8 @@
         "section": "AdditionalInformation",
         "number": "207",
         "type": "text",
-        "title": "Utilice este campo para facilitar cualquier otra información sobre cuestiones relacionadas con la aplicación nacional del Protocolo, incluidos cualquier obstáculo o impedimento afrontado."
+        "title": "Utilice este campo para facilitar cualquier otra información sobre cuestiones relacionadas con la aplicación nacional del Protocolo, incluidos cualquier obstáculo o impedimento afrontado.",
+        "multiple": false
       }
     ]
   },
@@ -4702,7 +4922,8 @@
         "section": "Comments",
         "number": "208",
         "type": "text",
-        "title": "Por favor, utilice este campo para facilitar cualquier otra información sobre las dificultades con que se haya enfrentado al cumplimentar este informe"
+        "title": "Por favor, utilice este campo para facilitar cualquier otra información sobre las dificultades con que se haya enfrentado al cumplimentar este informe",
+        "multiple": false
       }
     ]
   }

@@ -9,6 +9,7 @@
         "number": "12",
         "type": "option",
         "title": "贵国是否是《卡塔赫纳生物安全议定书》的缔约方？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -26,6 +27,7 @@
         "number": "13",
         "type": "option",
         "title": "若贵国对第12个问题回答“否”，那么是否已启动了成为缔约方的任何国家进程？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -42,7 +44,8 @@
         "section": "General",
         "number": "14",
         "type": "text",
-        "title": "在此你可填入详细资料"
+        "title": "在此你可填入详细资料",
+        "multiple": false
       }
     ]
   },
@@ -56,6 +59,7 @@
         "number": "15",
         "type": "option",
         "title": "贵国是否已采取必要的法律、行政和其他措施以执行《议定书》？",
+        "multiple": false,
         "options": [
           {
             "value": "implementation.fullFramwork",
@@ -85,6 +89,7 @@
         "number": "16",
         "type": "option",
         "title": "贵国已制定哪些国家生物安全框架执行文书？",
+        "multiple": true,
         "options": [
           {
             "value": "instrument.nationalBiosafetyLaws",
@@ -114,6 +119,7 @@
         "number": "17",
         "type": "option",
         "title": "贵国是否已经建立了国家生物安全框架运营资金的预算分配机制？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -131,6 +137,7 @@
         "number": "18",
         "type": "option",
         "title": "贵国是否有常设工作人员管理与国家生物安全框架直接相关的各项职能？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -148,6 +155,7 @@
         "number": "19",
         "type": "option",
         "title": "若贵国对第18个问题回答“是”，那么职能与国家生物安全框架直接相关的常设工作人员已有多少人？",
+        "multiple": false,
         "options": [
           {
             "value": "1",
@@ -173,6 +181,7 @@
         "number": "20",
         "type": "option",
         "title": "贵国的生物安全框架/法律/条例/准则是否已提交生物安全信息交换所？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -193,7 +202,8 @@
         "section": "Article2",
         "number": "21",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第2条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第2条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -207,6 +217,7 @@
         "number": "22",
         "type": "option",
         "title": "贵国是否规范了作为药物的改性活生物体的越境转移、处理和使用？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -228,6 +239,7 @@
         "number": "23",
         "type": "option",
         "title": "若贵国对第22个问题回答“是”，那么这一信息是否已向生物安全信息交换所提交？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -248,7 +260,8 @@
         "section": "Article5",
         "number": "24",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第5条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第5条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -262,6 +275,7 @@
         "number": "25",
         "type": "option",
         "title": "贵国是否规范了改性活生物体的过境？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -279,6 +293,7 @@
         "number": "26",
         "type": "option",
         "title": "贵国是否规范了改性活生物体的封闭使用？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -296,6 +311,7 @@
         "number": "27",
         "type": "option",
         "title": "若贵国对第25或第26个问题回答“是”，那么这一信息是否已向生物安全信息交换所提交？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -316,7 +332,8 @@
         "section": "Article6",
         "number": "28",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第6条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第6条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -330,6 +347,7 @@
         "number": "29",
         "type": "option",
         "title": "贵国是否已采取法律/条例/行政措施以实施《议定书》的事先知情同意程序？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -347,6 +365,7 @@
         "number": "30",
         "type": "option",
         "title": "贵国是否已采取符合《议定书》关于越境转移有意引进环境的改性活生物体的国内管制框架？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -364,6 +383,7 @@
         "number": "31",
         "type": "option",
         "title": "贵国是否已就拟有意向环境中引入改性活生物体的首次有意越境转移建立了决策机制？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -381,6 +401,7 @@
         "number": "32",
         "type": "option",
         "title": "若贵国对第31个问题回答“是”，那么这一机制是否也适用于并不局限于越境转移而有意向环境中引入改性活生物体的情形？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -398,6 +419,7 @@
         "number": "33",
         "type": "option",
         "title": "贵国是否已建立了机制以监测释放到环境中的改性活生物体的潜在影响？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -415,6 +437,7 @@
         "number": "34",
         "type": "option",
         "title": "贵国是否有能力发现和识别改性活生物体？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -436,6 +459,7 @@
         "number": "35",
         "type": "option",
         "title": "贵国是否已为所管辖下的出口者规定了法律要求，在有意越境转移属于事先知情同意程序范围内的改性活生物体之前以书面形式通知进口方国家主管部门？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -453,6 +477,7 @@
         "number": "36",
         "type": "option",
         "title": "贵国是否已就通知所载信息的准确性规定了法律要求？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -470,6 +495,7 @@
         "number": "37",
         "type": "option",
         "title": "贵国是否曾收到过拟有意向环境中引入改性活生物体的有意越境转移的相关申请/通知？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -487,6 +513,7 @@
         "number": "38",
         "type": "option",
         "title": "贵国是否曾就拟有意向环境中引入改性活生物体的有意越境转移的相关申请/通知做出决定？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -504,6 +531,7 @@
         "number": "39",
         "type": "option",
         "title": "若贵国对第38个问题回答“是”，那么贵国迄今已核准进口多少种拟有意向环境中引入的改性活生物体？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -529,6 +557,7 @@
         "number": "40",
         "type": "option",
         "title": "若贵国对第38个问题回答“是”，那么贵国迄今已核准多少种拟有意向环境中引入的非进口改性活生物体？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -554,6 +583,7 @@
         "number": "41",
         "type": "option",
         "title": "在本报告所述期间内，贵国已收到多少次拟有意向环境中引入改性活生物体的有意越境转移的相关申请/通知？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -579,6 +609,7 @@
         "number": "42",
         "type": "option",
         "title": "在本报告所述期间内，贵国已就拟有意向环境中引入改性活生物体的有意越境转移做出过几次决定？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -604,6 +635,7 @@
         "number": "43",
         "type": "option",
         "title": "在就拟有意向环境中引入改性活生物体的有意越境转移所做决定方面，贵国是否曾在越境转移之前收到过出口方或出口者的通知？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -625,6 +657,7 @@
         "number": "44",
         "type": "option",
         "title": "通知是否载有完整信息（至少载有《卡塔赫纳生物安全议定书》附件1的规定信息）？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -646,6 +679,7 @@
         "number": "45",
         "type": "option",
         "title": "贵国是否会在收到通知90天之内向通知人确认收到？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -667,6 +701,7 @@
         "number": "46",
         "type": "option",
         "title": "贵国是否会将其决定告知通知人和生物安全信息交换所？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -696,6 +731,7 @@
         "number": "47",
         "type": "option",
         "title": "贵国是否会适时（在270天之内或贵国与通知人所沟通确定的期限内）将其决定告知通知人和生物安全信息交换所？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -717,6 +753,7 @@
         "number": "48",
         "type": "term",
         "title": "贵国以下类别决定所占的百分比是多少？",
+        "multiple": true,
         "options": [
           {
             "value": "3B9ECE67-B35C-40FF-8C06-4EA5FF762899",
@@ -746,6 +783,7 @@
         "number": "49",
         "type": "option",
         "title": "在贵国准予有条件进口或禁止进口的情形下，是否会就其决定依据向通知人和生物安全信息交换所说明理由？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -774,7 +812,8 @@
         "section": "Articles7-10",
         "number": "50",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第7-10条的更多细节，在对有意引进环境的改性活生物体的潜在不利影响没有科学上的把握性时，包括措施："
+        "title": "贵国可以在此提供有关贵国执行第7-10条的更多细节，在对有意引进环境的改性活生物体的潜在不利影响没有科学上的把握性时，包括措施：",
+        "multiple": false
       }
     ]
   },
@@ -788,6 +827,7 @@
         "number": "51",
         "type": "option",
         "title": "贵国是否采用了具体的法律或条例，用于就拟直接用作食品或饲料、或用于加工目的的改性活生物体的国内用途包括市场投放做出决定？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -805,6 +845,7 @@
         "number": "52",
         "type": "option",
         "title": "贵国是否就申请者所提供资料的准确性规定了法律要求？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -822,6 +863,7 @@
         "number": "53",
         "type": "option",
         "title": "贵国是否建立了机制以确保通过生物安全信息交换所与缔约方就可能被越境转移的拟直接用作食品或饲料、或用于加工目的的改性活生物体相关决定进行沟通？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -839,6 +881,7 @@
         "number": "54",
         "type": "option",
         "title": "贵国是否已就拟直接用作食品或饲料、或用于加工目的的改性活生物体的进口事宜建立了一个决策机制？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -856,6 +899,7 @@
         "number": "55",
         "type": "option",
         "title": "贵国是否已在未订有监管框架的情况下通过生物安全信息交换所宣布，它将根据《卡塔赫纳生物安全议定书》第11.6条在拟直接用作食品或饲料、或用于加工目的的改性活生物体的首次进口之前做出决定？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -873,6 +917,7 @@
         "number": "56",
         "type": "option",
         "title": "贵国是否已表明它需要拟直接用作食品或饲料、或用于加工目的的改性活生物体方面的财务和技术援助和能力建设？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -890,6 +935,7 @@
         "number": "57",
         "type": "option",
         "title": "贵国是否已就拟直接用作食品或饲料、或用于加工目的的改性活生物体（进口或国内用途）做出决定？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -907,6 +953,7 @@
         "number": "58",
         "type": "option",
         "title": "贵国迄今已核准了多少种拟直接用作食品或饲料、或用于加工目的的改性活生物体？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -932,6 +979,7 @@
         "number": "59",
         "type": "option",
         "title": "在本报告所述期间内，贵国已就拟直接用作食品或饲料、或用于加工目的的改性活生物体的进口事宜做出过几次决定？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -957,6 +1005,7 @@
         "number": "60",
         "type": "option",
         "title": "在本报告所述期间内，贵国已就拟直接用作食品或饲料、或用于加工目的的改性活生物体的国内用途包括市场投放做出过几次决定？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -982,6 +1031,7 @@
         "number": "61",
         "type": "option",
         "title": "贵国是否已通过生物安全信息交换所向缔约方通报了它在拟直接用作食品或饲料、或用于加工目的的改性活生物体的进口方面所做的决定？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1003,6 +1053,7 @@
         "number": "62",
         "type": "option",
         "title": "贵国是否已在15天之内通过生物安全信息交换所向缔约方通报了它在拟直接用作食品或饲料、或用于加工目的的改性活生物体的国内用途包括市场投放方面所做的决定？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1027,7 +1078,8 @@
         "section": "Article11",
         "number": "63",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第11条的更多细节，在对拟直接用作食品或饲料、或用于加工目的的改性活生物体的潜在不利影响没有科学上的把握性时，包括措施："
+        "title": "贵国可以在此提供有关贵国执行第11条的更多细节，在对拟直接用作食品或饲料、或用于加工目的的改性活生物体的潜在不利影响没有科学上的把握性时，包括措施：",
+        "multiple": false
       }
     ]
   },
@@ -1041,6 +1093,7 @@
         "number": "64",
         "type": "option",
         "title": "贵国是否已建立了机制用于审查并更改其已就改性活生物体的有意越境转移所做出的决定？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1058,6 +1111,7 @@
         "number": "65",
         "type": "option",
         "title": "贵国是否收到过对决定进行审查的要求？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1075,6 +1129,7 @@
         "number": "66",
         "type": "option",
         "title": "贵国是否审查/更改过就改性活生物体的有意越境转移所做出的决定？",
+        "multiple": false,
         "options": [
           {
             "value": "true.reviewed",
@@ -1096,6 +1151,7 @@
         "number": "67",
         "type": "option",
         "title": "在本报告所述期间内，审查和/或更改过几次就改性活生物体的有意越境转移所做出的决定？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1117,6 +1173,7 @@
         "number": "68",
         "type": "option",
         "title": "贵国是否曾将决定的审查和/或更改告知通知人和生物安全信息交换所？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1146,6 +1203,7 @@
         "number": "69",
         "type": "option",
         "title": "贵国是否曾将决定的审查和/或更改在30天之内告知通知人和生物安全信息交换所？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1171,6 +1229,7 @@
         "number": "70",
         "type": "option",
         "title": "贵国是否曾向通知人和生物安全信息交换所说明决定的审查和/或更改理由？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1199,7 +1258,8 @@
         "section": "Article12",
         "number": "71",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第12条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第12条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -1213,6 +1273,7 @@
         "number": "72",
         "type": "option",
         "title": "贵国是否已就改性活生物体的有意越境转移简化程序建立了应用系统？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1230,6 +1291,7 @@
         "number": "73",
         "type": "option",
         "title": "贵国是否曾适用简化程序？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1247,6 +1309,7 @@
         "number": "74",
         "type": "option",
         "title": "若贵国对第73个问题回答“是”，贵国是否曾通过生物安全信息交换所向缔约方通报适用简化程序的案例？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1268,6 +1331,7 @@
         "number": "75",
         "type": "option",
         "title": "在本报告所述期间内，贵国对多少种改性活生物体适用了简化程序？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1288,7 +1352,8 @@
         "section": "Article13",
         "number": "76",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第13条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第13条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -1302,6 +1367,7 @@
         "number": "77",
         "type": "option",
         "title": "贵国是否曾订立任何双边、区域及多边协定和安排？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1319,6 +1385,7 @@
         "number": "78",
         "type": "option",
         "title": "若贵国对第77个问题回答“是”，那么贵国是否曾通过生物安全信息交换所向缔约方通报这类协定或安排？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1339,14 +1406,16 @@
         "section": "Article14",
         "number": "79",
         "type": "text",
-        "title": "若贵国对第77个问题回答“是”，请简要描述所订立协定或安排的范围和目标："
+        "title": "若贵国对第77个问题回答“是”，请简要描述所订立协定或安排的范围和目标：",
+        "multiple": false
       },
       {
         "key": "Q080",
         "section": "Article14",
         "number": "80",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第14条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第14条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -1360,6 +1429,7 @@
         "number": "81",
         "type": "option",
         "title": "贵国是否已建立机制，用于在就改性活生物体做出决定之前开展风险评估？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1377,6 +1447,7 @@
         "number": "82",
         "type": "option",
         "title": "若贵国对第81个问题回答“是”，那么这一机制是否包括开展风险评估的专家认定程序？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1394,6 +1465,7 @@
         "number": "83",
         "type": "option",
         "title": "贵国是否已在就改性活生物体做出决定之前开展风险评估方面制定了准则？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1411,6 +1483,7 @@
         "number": "84",
         "type": "option",
         "title": "贵国是否已经获得了开展风险评估的必要国内能力？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1428,6 +1501,7 @@
         "number": "85",
         "type": "option",
         "title": "贵国是否已建立了开展风险评估的国内专家培训机制？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1445,6 +1519,7 @@
         "number": "86",
         "type": "option",
         "title": "贵国是否曾就拟有意向环境中引入的某种改性活生物体开展过风险评估？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1462,6 +1537,7 @@
         "number": "87",
         "type": "option",
         "title": "贵国是否曾就拟直接用作食品或饲料、或用于加工目的的某种改性活生物体开展过风险评估？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1479,6 +1555,7 @@
         "number": "88",
         "type": "option",
         "title": "若贵国曾就拟有意向环境中引入的改性活生物体或拟直接用作食品或饲料、或用于加工目的的改性活生物体的国内用途做出过决定，那么是否对所有决定都开展了风险评估？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1500,6 +1577,7 @@
         "number": "89",
         "type": "option",
         "title": "贵国是否曾向生物安全信息交换所提交风险评估总结报告？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1521,6 +1599,7 @@
         "number": "90",
         "type": "option",
         "title": "在本报告所述期间内，若贵国曾就改性活生物体做出过决定，那么在这些决定背景下开展过多少次风险评估？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1546,6 +1625,7 @@
         "number": "91",
         "type": "option",
         "title": "贵国是否曾要求出口者开展风险评估？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1567,6 +1647,7 @@
         "number": "92",
         "type": "option",
         "title": "贵国是否曾要求通知人承担改性活生物体的风险评估费用？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1587,7 +1668,8 @@
         "section": "Article15",
         "number": "93",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第15条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第15条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -1601,6 +1683,7 @@
         "number": "95",
         "type": "option",
         "title": "贵国是否制定并保持了适当的措施，以防止改性活生物体的意外越境转移？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1622,6 +1705,7 @@
         "number": "96",
         "type": "option",
         "title": "贵国是否采取了措施确保任何改性活生物体 － 无论是进口的还是本地研制的 － 在投入有意使用前均接受与其生命周期或世代时间相应的适当期限的观察？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1639,6 +1723,7 @@
         "number": "97",
         "type": "option",
         "title": "贵国是否与其他缔约方进行了合作，以期确认可能对生物多样性保护和可持续利用产生不利影响的改性活生物体或其具体特性？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1656,6 +1741,7 @@
         "number": "98",
         "type": "option",
         "title": "贵国是否与其他缔约方进行了合作，以期采取措施，处理可能对生物多样性保护和可持续利用产生不利影响的改性活生物体或其具体特性？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1672,7 +1758,8 @@
         "section": "Article16",
         "number": "99",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第16条的更多细节，在对改性活生物体的潜在不利影响没有科学上的把握性时，包括关于风险管理占领的详细情况："
+        "title": "贵国可以在此提供有关贵国执行第16条的更多细节，在对改性活生物体的潜在不利影响没有科学上的把握性时，包括关于风险管理占领的详细情况：",
+        "multiple": false
       },
       {
         "key": "Q94_1",
@@ -1680,6 +1767,7 @@
         "number": "94.1",
         "type": "option",
         "title": "有意引入到环境中的改性活生物体？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1701,6 +1789,7 @@
         "number": "94.2",
         "type": "option",
         "title": "拟直接用作食品或饲料、或用于加工目的的改性活生物体",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1728,6 +1817,7 @@
         "number": "100",
         "type": "option",
         "title": "贵国是否已根据第17条向生物安全信息交换所提供了相关详情，列明其联络点以便接收通知？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1745,6 +1835,7 @@
         "number": "101",
         "type": "option",
         "title": "贵国是否已就可能对生物多样性产生重大不利影响的改性活生物体意外越境转移的紧急措施制定了一个应对机制？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1762,6 +1853,7 @@
         "number": "102",
         "type": "option",
         "title": "贵国是否执行了紧急措施应对有关释放导致或可能导致改性活生物体的意外越境转移的信息？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1779,6 +1871,7 @@
         "number": "103",
         "type": "option",
         "title": "在本报告所述期间内，贵国曾获得过几次有关在贵国管辖范围内出现导致或可能导致一种或多种改性活生物体意外越境转移的事件信息？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -1804,6 +1897,7 @@
         "number": "104",
         "type": "option",
         "title": "贵国是否曾就上述释放情况通知受到影响或可能会受到影响的国家、生物安全信息交换所并酌情通知有关国际组织？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1825,6 +1919,7 @@
         "number": "105",
         "type": "option",
         "title": "若贵国对第104个问题回答“是”，那么贵国通知的是：",
+        "multiple": false,
         "options": [
           {
             "value": "affectedStates",
@@ -1846,6 +1941,7 @@
         "number": "106",
         "type": "option",
         "title": "贵国是否曾立即与受到影响或可能会受到影响的国家进行协商，使之得以确定适当的应对办法并主动采取必要行动，包括采取各种应急措施？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1870,7 +1966,8 @@
         "section": "Article17",
         "number": "107",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第17条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第17条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -1884,6 +1981,7 @@
         "number": "108",
         "type": "option",
         "title": "贵国是否已采取措施，参照有关国际规则和标准，要求在安全的条件下处理、包装和运输属于拟越境转移的改性活生物体？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1905,6 +2003,7 @@
         "number": "109",
         "type": "option",
         "title": "贵国是否已采取措施，在通过身份保护系统等手段无法获知改性活生物体名称的情况下，要求拟直接用作食品或饲料、或用于加工目的的改性活生物体所附单据明确说明其中“可能含有”改性活生物体且不打算有意将其引入环境，并附上供进一步索取信息资料的联络点。",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1926,6 +2025,7 @@
         "number": "110",
         "type": "option",
         "title": "贵国是否已采取措施，在通过身份保护系统等手段获知改性活生物体名称的情况下，要求拟直接用作食品或饲料、或用于加工目的的改性活生物体所附单据明确说明其中含有改性活生物体且不打算有意将其引入环境之中，并附上供进一步索取信息资料的联络点？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1947,6 +2047,7 @@
         "number": "111",
         "type": "option",
         "title": "贵国是否已采取措施，要求预定用于封闭性使用的改性活生物体所附单据明确将其标明为改性活生物体，并具体说明安全处理、储存、运输和使用的任何要求，以及供进一步索取信息资料的联络点，包括接收改性活生物体的个人和机构的名称和地址？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1968,6 +2069,7 @@
         "number": "112",
         "type": "option",
         "title": "贵国是否已采取措施，要求拟有意引入进口缔约方环境中的改性活生物体所附单据明确将其标明为改性活生物体；具体说明其名称和相关特性和/或特点、关于安全处理、储存、运输和使用的任何要求以及供进一步索取信息资料的联络点，并酌情提供进口者和出口者名称和地址；以及列出关于所涉转移符合本议定书中适用于出口者的规定的声明？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -1989,6 +2091,7 @@
         "number": "113",
         "type": "option",
         "title": "贵国是否有能力实施改性活生物体的标志和单据方面的要求？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2010,6 +2113,7 @@
         "number": "114",
         "type": "option",
         "title": "贵国是否建立了改性活生物体的采样和检测程序？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2030,7 +2134,8 @@
         "section": "Article18",
         "number": "115",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第18条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第18条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -2044,6 +2149,7 @@
         "number": "116",
         "type": "option",
         "title": "贵国是否指定了《卡塔赫纳议定书》国家联络点负责与秘书处进行联系？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2061,6 +2167,7 @@
         "number": "117",
         "type": "option",
         "title": "贵国是否指定了生物安全信息交换所国家联络点，就生物安全信息交换所的发展和执行方面的问题与秘书处联系？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2078,6 +2185,7 @@
         "number": "118",
         "type": "option",
         "title": "贵国是否已指定了一个或数个国家主管部门，负责行使《卡塔赫纳生物安全议定书》规定的行政职能并按照授权代表贵国行使此类职能？",
+        "multiple": false,
         "options": [
           {
             "value": "1",
@@ -2099,6 +2207,7 @@
         "number": "119",
         "type": "option",
         "title": "若贵国指定了一个以上的国家主管部门，贵国是否已将这些主管部门的各自职责转告了秘书处？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2116,6 +2225,7 @@
         "number": "120",
         "type": "option",
         "title": "贵国是否已向生物安全信息交换所提供了第116－119个问题所提及的必要信息？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2137,6 +2247,7 @@
         "number": "121",
         "type": "option",
         "title": "若贵国指定了一个以上的国家主管部门，贵国是否在就改性活生物体做出决定之前建立了协调行动机制？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2154,6 +2265,7 @@
         "number": "122",
         "type": "option",
         "title": "贵国是否已建立了充分的体制能力，使国家主管当局能够执行《卡塔赫纳生物安全议定书》所要求的行政职能？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2174,7 +2286,8 @@
         "section": "Article19",
         "number": "123",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第19条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第19条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -2188,6 +2301,7 @@
         "number": "124.a",
         "type": "option",
         "title": "用于执行《议定书》的现有的国家立法、条例和准则，以及缔约方用于事先知情同意程序所需要的信息（第20条第3(a)款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2213,6 +2327,7 @@
         "number": "124.b",
         "type": "option",
         "title": "适用于拟直接用作食品或饲料、或用于加工目的的进口改性活生物体的国家法律、条例和准则（第11条第5款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2238,6 +2353,7 @@
         "number": "124.c",
         "type": "option",
         "title": "双边、多边和区域协议及安排（第14条第2款和第20条第3(b)款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2263,6 +2379,7 @@
         "number": "124.d",
         "type": "option",
         "title": "国家主管部门（第19条第2和3款）和国家联络点（第19条第1和3款）的详细联系方式以及紧急联系方式（第17条第3 (e)款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2288,6 +2405,7 @@
         "number": "124.e",
         "type": "option",
         "title": "缔约方关于《议定书》的执行提交的报告（第20条第3 (e)款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2313,6 +2431,7 @@
         "number": "124.f",
         "type": "option",
         "title": "某一缔约方对特定改性活生物体的特性予以管制的决定（第6条第1款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2338,6 +2457,7 @@
         "number": "124.g",
         "type": "option",
         "title": "可能对生物多样性造成重大不利影响的无意的越境转移事件（第17条第1款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2363,6 +2483,7 @@
         "number": "124.h",
         "type": "option",
         "title": "改性活生物体的非法越境转移（第25条第3款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2388,6 +2509,7 @@
         "number": "124.i",
         "type": "option",
         "title": "关于改性活生物体进口或释放的最后决定（即批准或禁止、任何先行条件、要求进一步信息、批准延期、决定的理由）（第10条第3款和第20条第3(d)款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2413,6 +2535,7 @@
         "number": "124.j",
         "type": "option",
         "title": "关于特定改性活生物体进口时国内条例适用性的信息（第14条第4款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2438,6 +2561,7 @@
         "number": "124.k",
         "type": "option",
         "title": "关于在国内使用可能越境转移的拟直接用作食品或饲料、或用于加工目的的改性活生物体的最终决定（第11条第1款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2463,6 +2587,7 @@
         "number": "124.l",
         "type": "option",
         "title": "关于在国内规定框架下（第11条第4款）或按照附件三（第11条第6款）（第20条第3(d)款的要求））进口拟直接用作食品或饲料、或用于加工目的的改性活生物体的最终决定",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2488,6 +2613,7 @@
         "number": "124.m",
         "type": "option",
         "title": "申报采用的关于拟直接用作食品或饲料、或用于加工目的的改性活生物体的体制（第11条第6款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2513,6 +2639,7 @@
         "number": "124.n",
         "type": "option",
         "title": "审议并改动关于改性活生物体有意越境转移的决定（第12条第1款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2538,6 +2665,7 @@
         "number": "124.o",
         "type": "option",
         "title": "由各缔约方赋予豁免权的改性活生物体（第13条第1款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2563,6 +2691,7 @@
         "number": "124.p",
         "type": "option",
         "title": "可能在通知进口缔约方的同时发生的有意越境转移案例（第13条第1款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2588,6 +2717,7 @@
         "number": "124.q",
         "type": "option",
         "title": "在监管过程中生成的改性活生物体风险评估或环境审查及有关产品相关信息的概述（第20条第3 (c)款）",
+        "multiple": false,
         "options": [
           {
             "value": "true.availableOnBch",
@@ -2613,6 +2743,7 @@
         "number": "125",
         "type": "option",
         "title": "贵国是否已建立机制以强化生物安全信息交换所国家联络点履行其行政职能的能力？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2630,6 +2761,7 @@
         "number": "126",
         "type": "option",
         "title": "贵国是否已建立机制协调生物安全信息交换所国家联络点、《卡塔赫纳生物安全议定书》联络点以及国家主管部门向生物安全信息交换所提供信息的行动？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2647,6 +2779,7 @@
         "number": "127",
         "type": "option",
         "title": "贵国是否在处理改性活生物体的决定中使用了向生物安全信息交换所提供的信息？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2668,6 +2801,7 @@
         "number": "128",
         "type": "option",
         "title": "贵国是否在访问和使用生物安全信息交换所方面遇到过困难？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2685,6 +2819,7 @@
         "number": "129",
         "type": "option",
         "title": "若贵国对第128个问题回答“是”，那么贵国是否已向生物安全信息交换所或秘书处报告此类问题？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2702,6 +2837,7 @@
         "number": "130",
         "type": "option",
         "title": "贵国向生物安全信息交换所提供的信息是否完整和最新？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2718,7 +2854,8 @@
         "section": "Article20",
         "number": "131",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第20条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第20条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -2732,6 +2869,7 @@
         "number": "132",
         "type": "option",
         "title": "贵国是否制定了程序，对《议定书》下获得的保密信息予以保密？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2749,6 +2887,7 @@
         "number": "133",
         "type": "option",
         "title": "贵国是否允许通知人确认哪些信息将被视为保密信息？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2769,7 +2908,8 @@
         "section": "Article21",
         "number": "134",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第21条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第21条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -2783,6 +2923,7 @@
         "number": "135",
         "type": "option",
         "title": "贵国是否在开发和/或加强生物安全人力资源和机构能力方面得到了外部支持，或受益于与其他缔约方的共同行动？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2800,6 +2941,7 @@
         "number": "136",
         "type": "option",
         "title": "若贵国对第135个问题回答“是”，贵国是如何提供这些资源的？",
+        "multiple": false,
         "options": [
           {
             "value": "channels.bilateral",
@@ -2821,6 +2963,7 @@
         "number": "137",
         "type": "option",
         "title": "贵国是否在开发和/或加强生物安全人力资源和机构能力方面向其他缔约方提供了支持？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2838,6 +2981,7 @@
         "number": "138",
         "type": "option",
         "title": "若贵国对第137个问题回答“是”，贵国是如何提供这些资源的？",
+        "multiple": false,
         "options": [
           {
             "value": "channels.bilateral",
@@ -2859,6 +3003,7 @@
         "number": "139",
         "type": "option",
         "title": "贵国是否符合自全球环境基金（全环基金）接受资助的资格？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2876,6 +3021,7 @@
         "number": "140",
         "type": "option",
         "title": "贵国是否启动过获得全环基金的生物技术能力建设资金的进程？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2893,6 +3039,7 @@
         "number": "141",
         "type": "option",
         "title": "若贵国对第140个问题回答“是”，贵国对这一进程作如何的表述？",
+        "multiple": false,
         "options": [
           {
             "value": "veryEasy",
@@ -2922,6 +3069,7 @@
         "number": "142",
         "type": "term",
         "title": "贵国是否曾从全环基金获得过用于建设生物安全能力的资金？",
+        "multiple": true,
         "options": [
           {
             "value": "C6F5F985-183C-45F7-8A61-5B6DB2F13D10",
@@ -2955,6 +3103,7 @@
         "number": "143",
         "type": "option",
         "title": "在本报告所述期间内，贵国是否采取行动发展和/或加强生物安全人力资源和机构能力？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -2972,6 +3121,7 @@
         "number": "144",
         "type": "term",
         "title": "若贵国对第143个问题回答“是”，那么在下列哪些领域开展了此类行动？",
+        "multiple": true,
         "options": [
           {
             "value": "BB3CA716-E122-4445-9FAD-9F6B440363BD",
@@ -3041,6 +3191,7 @@
         "number": "145",
         "type": "option",
         "title": "在本报告所述期间，贵国是否开展过一次能力建设需求评估？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3058,6 +3209,7 @@
         "number": "146",
         "type": "option",
         "title": "贵国是否仍有能力建设需求？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3079,6 +3231,7 @@
         "number": "147",
         "type": "term",
         "title": "若贵国对第146个问题回答“是”，请标明下列哪些领域仍需开展能力建设。",
+        "multiple": true,
         "options": [
           {
             "value": "BB3CA716-E122-4445-9FAD-9F6B440363BD",
@@ -3148,6 +3301,7 @@
         "number": "148",
         "type": "option",
         "title": "贵国是否已制定有能力建设战略或行动计划？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3165,6 +3319,7 @@
         "number": "149",
         "type": "option",
         "title": "贵国是否向生物安全信息交换所专家名册提交了国家生物安全专家的详细资料？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3181,7 +3336,8 @@
         "section": "Article22",
         "number": "150",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第22条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第22条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -3195,6 +3351,7 @@
         "number": "151",
         "type": "option",
         "title": "贵国是否已就改性活生物体的安全转移、处理和使用制定了战略或制定了立法，以提高和促进公众认识、教育和参与？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3216,6 +3373,7 @@
         "number": "152",
         "type": "option",
         "title": "贵国是否建立了生物安全网站？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3233,6 +3391,7 @@
         "number": "153",
         "type": "option",
         "title": "贵国是否已建立了机制以确保公众获得可以进口的改性活生物体的相关信息？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3254,6 +3413,7 @@
         "number": "154",
         "type": "option",
         "title": "贵国是否已建立了机制以在关于改性活生物体的决策过程中征求公众的意见？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3275,6 +3435,7 @@
         "number": "155",
         "type": "option",
         "title": "贵国是否已建立了机制以向公众通报有关改性活生物体的决策结果？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3296,6 +3457,7 @@
         "number": "156",
         "type": "option",
         "title": "贵国是否采取过任何行动，以向公众公布获得生物安全信息交换所信息的方式？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3313,6 +3475,7 @@
         "number": "157",
         "type": "option",
         "title": "在本报告所述期间内，贵国是否已在改性活生物体的安全转移、处理和使用方面提高并促进了公众认识、教育和参与？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3334,6 +3497,7 @@
         "number": "158",
         "type": "option",
         "title": "若贵国对第157个问题回答“是”，那么贵国是否与其他缔约方和国际机构有过合作？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3351,6 +3515,7 @@
         "number": "159",
         "type": "option",
         "title": "在本报告所述期间内，贵国有过几次在关于改性活生物体的决策过程中征求公众的意见并向公众公布此类决定的结果？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -3371,7 +3536,8 @@
         "section": "Article23",
         "number": "160",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第23条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第23条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -3385,6 +3551,7 @@
         "number": "161",
         "type": "option",
         "title": "贵国是否已与非缔约方就改性活生物体的越境转移问题订立有任何双边、区域及多边协定？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3402,6 +3569,7 @@
         "number": "162",
         "type": "option",
         "title": "贵国是否曾从某非缔约方进口改性活生物体？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3419,6 +3587,7 @@
         "number": "163",
         "type": "option",
         "title": "贵国是否曾向某非缔约方出口改性活生物体？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3436,6 +3605,7 @@
         "number": "164",
         "type": "option",
         "title": "若贵国对第162或第163个问题回答“是”，那么改性活生物体的越境转移是否符合《卡塔赫纳生物安全议定书》的目标？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3457,6 +3627,7 @@
         "number": "165",
         "type": "option",
         "title": "若贵国对第162或第163个问题回答“是”，那么有关此类越境转移的信息是否已向生物安全信息交换所提交？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3478,6 +3649,7 @@
         "number": "166",
         "type": "option",
         "title": "若贵国并非《卡塔赫纳议定书》的缔约方，那么贵国是否曾向生物安全信息交换所贡献有关改性活生物体在其国家辖区内释放或转移进出的信息？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3498,7 +3670,8 @@
         "section": "Article24",
         "number": "167",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第24条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第24条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -3512,6 +3685,7 @@
         "number": "168",
         "type": "option",
         "title": "贵国是否已在国内采取适当措施，以便防止和/或惩处违反其执行本《议定书》的国内措施而进行的改性活生物体越境转移？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3529,6 +3703,7 @@
         "number": "169",
         "type": "option",
         "title": "贵国是否制定了战略监测改性活生物体的非法越境转移？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3546,6 +3721,7 @@
         "number": "170",
         "type": "option",
         "title": "在本报告所述期间内，贵国曾获得过几次有关某种改性活生物体在贵国管辖范围内非法越境转移的事件信息？",
+        "multiple": false,
         "options": [
           {
             "value": "0",
@@ -3571,6 +3747,7 @@
         "number": "171",
         "type": "option",
         "title": "贵国是否曾告知生物安全信息交换所及其他有关缔约方？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3600,6 +3777,7 @@
         "number": "172",
         "type": "option",
         "title": "贵国是否已确定了改性活生物体的来源？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3621,6 +3799,7 @@
         "number": "173",
         "type": "option",
         "title": "贵国是否已确定了改性活生物体的性质？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3642,6 +3821,7 @@
         "number": "174",
         "type": "option",
         "title": "贵国是否已确定了非法越境转移的情形？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3662,7 +3842,8 @@
         "section": "Article25",
         "number": "175",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第25条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第25条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -3676,6 +3857,7 @@
         "number": "176",
         "type": "option",
         "title": "若贵国已就进口事宜做出决定，该决定是否虑及改性活生物体对生物多样性的保护和可持续利用造成的社会经济影响？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3697,6 +3879,7 @@
         "number": "177",
         "type": "option",
         "title": "贵国是否曾就改性活生物体的任何社会经济影响与其他缔约方开展过合作研究和信息交流？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3717,7 +3900,8 @@
         "section": "Article26",
         "number": "178",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国执行第26条的更多细节："
+        "title": "贵国可以在此提供有关贵国执行第26条的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -3731,6 +3915,7 @@
         "number": "179",
         "type": "option",
         "title": "贵国是否已签署《赔偿责任和补救问题名古屋－吉隆坡补充议定书》？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3748,6 +3933,7 @@
         "number": "180",
         "type": "option",
         "title": "贵国是否开始了批准、接受或核准《名古屋－吉隆坡补充议定书》的步骤？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3764,7 +3950,8 @@
         "section": "Article27",
         "number": "181",
         "type": "text",
-        "title": "贵国可以在此提供有关贵国为执行《名古屋－吉隆坡补充议定书》而开展的任何活动的更多细节："
+        "title": "贵国可以在此提供有关贵国为执行《名古屋－吉隆坡补充议定书》而开展的任何活动的更多细节：",
+        "multiple": false
       }
     ]
   },
@@ -3778,6 +3965,7 @@
         "number": "182",
         "type": "option",
         "title": "贵国此前是否已提交过国家报告（临时和第一次国家报告）？",
+        "multiple": false,
         "options": [
           {
             "value": "true",
@@ -3803,6 +3991,7 @@
         "number": "183",
         "type": "term",
         "title": "若贵国此前并未提交过报告，请说明阻碍提交的主要困难",
+        "multiple": true,
         "options": [
           {
             "value": "9D149B05-B490-43BC-BE81-473F4A15D5AC",
@@ -3833,7 +4022,8 @@
         "section": "AdditionalInformation",
         "number": "184",
         "type": "text",
-        "title": "请使用此空间提供与本国《议定书》执行情况有关的任何其他信息，包括所遇到的任何障碍或阻碍。"
+        "title": "请使用此空间提供与本国《议定书》执行情况有关的任何其他信息，包括所遇到的任何障碍或阻碍。",
+        "multiple": false
       }
     ]
   },
@@ -3846,7 +4036,8 @@
         "section": "Comments",
         "number": "185",
         "type": "text",
-        "title": "请使用此空间提供有关贵国在填写本报告过程中遇到困难的任何其他信息。"
+        "title": "请使用此空间提供有关贵国在填写本报告过程中遇到困难的任何其他信息。",
+        "multiple": false
       }
     ]
   }
