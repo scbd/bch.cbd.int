@@ -41,8 +41,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 $scope.allRegionsMap = {};
                 $scope.filters = [];
                 $scope.filtersCountriesMap = {};
-                $scope.sumType = 'sum';
-                $scope.sumTypes = ['sum', 'percentGlobal', 'percentRow', 'percentColumn' ];
+                $scope.sumType = 'percentGlobal';
+                $scope.sumTypes = ['percentGlobal', 'percentColumn', 'percentRow', 'sum' ];
 
                 var loaded = false;
 
