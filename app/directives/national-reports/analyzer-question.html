@@ -1,13 +1,14 @@
 <div class="question" style="margin-bottom:10px;">
 
-    <b>Question {{::question.number}}</b> <a href="#" ng-click="showSumTypeSelector()" title="Change how numbers are calculated...">∑</a>
-    <div>{{::question.title}}</div>
+    <b>Question {{::question.number}}</b>
+    <div><b>{{::question.title}}</b></div>
+
     <table class="table table-hover">
         <tr>
-            <th style="width:22px">&nbsp;</th>
-            <th>&nbsp;</th>
+            <th style="width:22px"></th>
+            <th class="text-right">&nbsp;</th>
             <th style="width:30px" class="text-right  text-nowrap">All</th>
-            <th style="width:60px" class="text-center text-nowrap"></th>
+            <th style="width:60px" class="text-center text-nowrap"><a href="#" ng-click="showSumTypeSelector()" title="Change how numbers are calculated...">∑</a></th>
             <th style="width:50px" class="text-center" ng-click="region.expanded=!region.expanded" ng-repeat-start="region in ::regions track by region.identifier" title="{{::(region.title|lstring)}}">
                 <div>
                     <span ng-bind-html="::region.htmlTitle"></span><span class="text-nowrap">
