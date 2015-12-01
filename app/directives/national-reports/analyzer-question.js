@@ -1,8 +1,8 @@
 define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], function(templateHtml, app, _) {
 
-    var GREEN = { R:167, G:201, B: 27 };
-    var BLUE  = { R: 70, G:163, B:230 };
-    var WHITE = { R:255, G:255, B:255 };
+    var WHITE      = { R:255, G:255, B:255 };
+    var SHADE_BASE = { R: 70, G:163, B:230 };
+
 
     //==============================================
     //
@@ -185,7 +185,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         $scope.question.options = options;
                     }
 
-                    options.forEach(function(option, i) {
+                    options.forEach(function(option) {
 
                         optionsMap[option.value] = option;
 
@@ -193,8 +193,6 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         option.fullSum = 0;
                         option.percent = "0%";
                         option.regions = {};
-                        option.color = question.type=='option' ? blendColor(GREEN, BLUE, i/(options.length-1)) : BLUE;
-                        option.htmlColor = htmlColor(option.color);
                         option.filterOn  = filter && filter.question.key == question.key && filter.option.value == option.value;
                         option.regions   = _(regions).reduce(function(ret, region){
                             ret[region.identifier] = {
@@ -202,7 +200,12 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 percentRow: "0%",
                                 percentColumn: "0%",
                                 percentGlobal: "0%",
-                                htmlColor: htmlColor(WHITE)
+                                htmlColor : {
+                                    sum           : htmlColor(WHITE),
+                                    percentGlobal : htmlColor(WHITE),
+                                    percentColumn : htmlColor(WHITE),
+                                    percentRow    : htmlColor(WHITE)
+                                }
                             };
                             return ret;
                         }, {});
@@ -259,13 +262,20 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                     oRegion.sum++; // column
                                 }
 
-                                var percentRow = option.sum ? Math.round((oRegion.sum*100) / option.sum) : 0;
+                                var percentRow    = option.sum   ? Math.round((oRegion.sum*100) / option.sum)   : 0;
+                                var percentColumn = qRegion.sum  ? Math.round((oRegion.sum*100) / qRegion.sum)  : 0;
+                                var percentGlobal = question.sum ? Math.round((oRegion.sum*100) / question.sum) : 0;
 
-                                oRegion.percentRow    = option.sum   ? percentRow + "%" : '-';
-                                oRegion.percentColumn = qRegion.sum  ? Math.round((oRegion.sum*100) / qRegion.sum ).toString() + "%" : '-';
-                                oRegion.percentGlobal = question.sum ? Math.round((oRegion.sum*100) / question.sum).toString() + "%" : '-';
-                                oRegion.htmlColor     = htmlColor(blendColor(WHITE, option.color, percentRow/100));
+                                oRegion.percentRow    = option.sum   ? percentRow    + "%" : '-';
+                                oRegion.percentColumn = qRegion.sum  ? percentColumn + "%" : '-';
+                                oRegion.percentGlobal = question.sum ? percentGlobal + "%" : '-';
 
+                                oRegion.htmlColor = {
+                                    sum           : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
+                                    percentGlobal : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
+                                    percentColumn : htmlColor(blendColor(WHITE, SHADE_BASE, percentColumn/100)),
+                                    percentRow    : htmlColor(blendColor(WHITE, SHADE_BASE, percentRow/100))
+                                };
                             });
                         });
                     });
