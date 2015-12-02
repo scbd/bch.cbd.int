@@ -172,65 +172,84 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
+                $scope.$watch("::regions", function(regions) {
+
+                    $scope.regionsMap = _(regions).reduce(function(regionsMap, region){
+
+                        regionsMap[region.identifier] = region;
+
+                        return regionsMap;
+
+                    },{});
+                });
+
+                //==============================================
+                //
+                //
+                //==============================================
                 function analyze() {
 
                     if(!$scope.reports) return;
                     if(!$scope.regions) return;
                     if(!$scope.question) return;
 
-                    $scope.reportsMap = {};
-                    $scope.filter     = nrAnalyzer.filter();
-
-                    var filter = $scope.filter;
-                    var reports = $scope.reports;
-                    var regions  = $scope.regions;
-                    var question = $scope.question;
-                    var options  = $scope.question.options;
-                    var reportsMap = $scope.reportsMap;
-                    var optionsMap = {};
-
-                    if(question.type=='text') {
-                        options = [{ value: 'text' }];  // text responses don't have predefine values; Simulate a fake one
-                        $scope.question.options = options;
+                    if($scope.question.type=='text') {
+                        $scope.question.options = [{ value: 'text' }];  // text responses don't have predefine values; Simulate a fake one
                     }
 
-                    options.forEach(function(option) {
+                    $scope.filter = nrAnalyzer.filter();
 
-                        optionsMap[option.value] = option;
+                    var data = analyzeReports($scope.reports);
 
-                        option.sum = 0;
-                        option.fullSum = 0;
-                        option.percent = "0%";
-                        option.regions = {};
-                        option.filterOn  = filter && filter.question.key == question.key && filter.option.value == option.value;
-                        option.regions   = _(regions).reduce(function(ret, region){
-                            ret[region.identifier] = {
-                                sum : 0,
-                                percentRow: "0%",
-                                percentColumn: "0%",
-                                percentGlobal: "0%",
-                                backgroundColor : {
-                                    sum           : htmlColor(WHITE),
-                                    percentGlobal : htmlColor(WHITE),
-                                    percentColumn : htmlColor(WHITE),
-                                    percentRow    : htmlColor(WHITE)
-                                },
-                                textColor : {
-                                    sum           : 'inherit',
-                                    percentGlobal : 'inherit',
-                                    percentColumn : 'inherit',
-                                    percentRow    : 'inherit'
-                                }
-                            };
-                            return ret;
-                        }, {});
-                    });
+                    $scope.reportsMap = data.reports;
+                    $scope.fullSum    = data.fullSum;
+                    $scope.rows       = _.values(data.rows);
+                }
 
-                    question.sum = 0;
-                    question.fullSum = 0;
-                    question.regions = _(regions).reduce(function(ret, region){
-                        ret[region.identifier] = { sum : 0 };
-                        return ret;
+                //============================================================
+                //
+                //
+                //============================================================
+                function analyzeReports(reports) {
+
+                    var question = $scope.question;
+                    var regions  = $scope.regions;
+                    var filter   = $scope.filter;
+
+                    var data = {
+                        sum : 0,
+                        fullSum : 0,
+                        reports : {}
+                    };
+
+                    data.columns = _(regions).reduce(function(columns, r){
+
+                        columns[r.identifier] = {
+                            identifier : r.identifier,
+                            sum : 0
+                        };
+
+                        return columns;
+
+                    }, {});
+
+                    data.rows = _(question.options).reduce(function (rows, option) {
+
+                        rows[option.value] = _.assign({}, option, {
+                            sum : 0,
+                            fullSum : 0,
+                            filterOn : filter && filter.question.key == question.key && filter.option.value == option.value,
+                            cells : _(regions).reduce(function(cells, r){
+                                cells[r.identifier] = {
+                                    identifier : r.identifier,
+                                    sum : 0
+                                };
+                                return cells;
+                            }, {})
+                        });
+
+                        return rows;
+
                     }, {});
 
                     reports.forEach(function(report) {
@@ -238,67 +257,62 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         var included = !filter || !!filter.matchingCountriesMap[report.government];
 
                         if(included)
-                            reportsMap[report.government] = report;
+                            data.reports[report.government] = report;
 
-                        var answeredOptions  = _(getNormalizeAnswers(report)).map(function(answer) {
-                            return optionsMap[answer.toString()];
-                        }).compact().value();
+                        var answers      = getNormalizeAnswers(report);
+                        var answeredRows = _(answers).map(function(value) { return data.rows[value]; }).compact().value();
 
-                        answeredOptions.forEach(function(option){
+                        answeredRows.forEach(function(row){
 
-                            question.fullSum++;
-                            option  .fullSum++;
+                            data.fullSum++;
+                            row .fullSum++;
 
                             if(included) {
-                                question.sum++;
-                                option  .sum++;
+                                data.sum++;
+                                row .sum++;
                             }
 
                             regions.forEach(function(region){
 
-                                var qRegion = question.regions[region.identifier];
-                                var oRegion = option  .regions[region.identifier];
+                                var column = data.columns[region.identifier];
+                                var cell   = row .cells  [region.identifier];
 
                                 if(included && region.countriesMap[report.government]) {
-                                    qRegion.sum++; // column
-                                    oRegion.sum++; // column
+                                    column.sum++; // column
+                                    cell  .sum++; // column
                                 }
                             });
                         });
                     });
 
-                    regions.forEach(function(region){
+                    _.forEach(data.columns, function(column, identifier){
 
-                        options.forEach(function(option) {
+                        _.values(data.rows).forEach(function(row) {
 
-                            var qRegion = question.regions[region.identifier];
-                            var oRegion = option  .regions[region.identifier];
+                            var cell = row.cells[identifier];
 
-                            var percent       = question.sum ? Math.round((option.sum*100) / question.sum)  : 0;
-                            var percentGlobal = question.sum ? Math.round((oRegion.sum*100) / question.sum) : 0;
-                            var percentColumn = qRegion.sum  ? Math.round((oRegion.sum*100) / qRegion.sum)  : 0;
-                            var percentRow    = option.sum   ? Math.round((oRegion.sum*100) / option.sum)   : 0;
+                            row .percent       = data  .sum ? Math.round((row .sum*100) / data.sum)   : 0;
+                            cell.percentGlobal = data  .sum ? Math.round((cell.sum*100) / data.sum)   : 0;
+                            cell.percentColumn = column.sum ? Math.round((cell.sum*100) / column.sum) : 0;
+                            cell.percentRow    = row   .sum ? Math.round((cell.sum*100) / row.sum)    : 0;
 
-                            option .percent       = percent       + "%";
-                            oRegion.percentGlobal = percentGlobal + "%";
-                            oRegion.percentColumn = percentColumn + "%";
-                            oRegion.percentRow    = percentRow    + "%";
-
-                            oRegion.backgroundColor = {
-                                sum           : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
-                                percentGlobal : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
-                                percentColumn : htmlColor(blendColor(WHITE, SHADE_BASE, percentColumn/100)),
-                                percentRow    : htmlColor(blendColor(WHITE, SHADE_BASE, percentRow   /100))
+                            cell.backgroundColor = {
+                                sum           : htmlColor(blendColor(WHITE, SHADE_BASE, cell.percentGlobal/100)),
+                                percentGlobal : htmlColor(blendColor(WHITE, SHADE_BASE, cell.percentGlobal/100)),
+                                percentColumn : htmlColor(blendColor(WHITE, SHADE_BASE, cell.percentColumn/100)),
+                                percentRow    : htmlColor(blendColor(WHITE, SHADE_BASE, cell.percentRow   /100))
                             };
 
-                            oRegion.textColor = {
-                                sum           : percentGlobal < 75 ? 'inherit' : 'white',
-                                percentGlobal : percentGlobal < 75 ? 'inherit' : 'white',
-                                percentColumn : percentColumn < 75 ? 'inherit' : 'white',
-                                percentRow    : percentRow    < 75 ? 'inherit' : 'white'
+                            cell.textColor = {
+                                sum           : cell.percentGlobal < 75 ? 'inherit' : 'white',
+                                percentGlobal : cell.percentGlobal < 75 ? 'inherit' : 'white',
+                                percentColumn : cell.percentColumn < 75 ? 'inherit' : 'white',
+                                percentRow    : cell.percentRow    < 75 ? 'inherit' : 'white'
                             };
                         });
                     });
+
+                    return data;
                 }
 
                 //============================================================

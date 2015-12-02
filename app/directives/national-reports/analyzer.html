@@ -51,6 +51,9 @@
         .nr-analyzer tr.option.percentRow > td.region.first { border-left:   solid 2px #777 !important; }
         .nr-analyzer tr.option.percentRow > td:last-child   { border-left:   solid 2px #777 !important; }
 
+        .nr-analyzer tr.option.percentGlobal span.cell-value::after,
+        .nr-analyzer tr.option.percentColumn span.cell-value::after,
+        .nr-analyzer tr.option.percentRow    span.cell-value::after { content: '%' }
     </style>
 
     <div ng-show="sections" style="margin-bottom:5px">

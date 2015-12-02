@@ -1,4 +1,4 @@
-<div class="question" style="margin-bottom:10px;" ng-init="expanded={}" ng-disabled="!question.fullSum">
+<div class="question" style="margin-bottom:10px;" ng-init="expanded={}" ng-disabled="!fullSum">
 
     <b>Question {{::question.number}}</b>
     <i>
@@ -31,20 +31,20 @@
         </tr>
 
         <!-- OPTIONS + TERMS -->
-        <tr class="option {{sumType}}" ng-class="{ 'first': $first, 'last' : $last }" ng-if="::question.type!='text'" ng-repeat="option in ::question.options track by option.value" ng-class="{ 'info': option.filterOn, 'filter-on': option.filterOn, 'filter': filter }">
+        <tr ng-if="::question.type!='text'" class="option {{sumType}}" ng-class="{ 'first': $first, 'last' : $last }" ng-repeat="row in ::rows track by row.value" ng-class="{ 'info': row.filterOn, 'filter-on': row.filterOn, 'filter': filter }">
             <td class="filter">
-                <i ng-if="::option.fullSum"  class="fa fa-filter fa-lg" style="cursor:pointer" ng-click="toggleFilter(option)" title="Filter: Include only reports which have this answer selected."></i>
-                <i ng-if="::!option.fullSum" class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i>
+                <i ng-if="::row.fullSum"  class="fa fa-filter fa-lg" style="cursor:pointer" ng-click="toggleFilter(row)" title="Filter: Include only reports which have this answer selected."></i>
+                <i ng-if="::!row.fullSum" class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i>
             </td>
-            <td>{{::option.title}}</td>
-            <td class="text-center" >{{option.sum}}</td>
-            <td class="text-center">{{option.percent}}</td>
-            <td class="text-center region" ng-class="{ first: $first, last: $last, expanded: expanded[region.identifier] }" ng-style="  { 'background-color': option.regions[region.identifier].backgroundColor[sumType], 'color' : option.regions[region.identifier].textColor[sumType] }" ng-repeat-start="region in ::regions track by region.identifier" >
-                {{option.regions[region.identifier][sumType]}}
+            <td>{{::row.title}}</td>
+            <td class="text-center" >{{row.sum}}</td>
+            <td class="text-center">{{row.percent}}%</td>
+            <td class="text-center region" ng-class="{ first: $first, last: $last, expanded: expanded[cell.identifier] }" ng-style="  { 'background-color': cell.backgroundColor[sumType], 'color' : cell.textColor[sumType] }" ng-repeat-start="cell in ::row.cells" >
+                <span class="cell-value">{{cell[sumType]}}</span>
             </td>
             <!-- show countries if expanded[region.identifier] -->
-            <td class="text-center country"  ng-class="{ 'first': $first, 'last' : $last }" ng-if="expanded[region.identifier]" ng-repeat="gov in ::region.countries track by gov">
-                <div ng-if="::testAnswer(reportsMap[gov][question.key], option.value)">●</div>
+            <td class="text-center country"  ng-class="{ 'first': $first, 'last' : $last }" ng-if="expanded[cell.identifier]" ng-repeat="gov in ::regionsMap[cell.identifier].countries track by gov">
+                <div ng-if="::testAnswer(reportsMap[gov][question.key], row.value)">●</div>
             </td>
             <td ng-repeat-end ng-if="::false"></th>
             <td class="bordered" style="padding:0px;background-color:white"></td>
@@ -59,8 +59,8 @@
             <td class="text-center">{{question.options[0].sum}}</td>
             <td class="text-center"><img ng-if="::question.options[0].sum" src="/bch/images/nr-documents.png" ng-click="showTexts()" style="cursor:pointer"></td>
             <td class="text-center region" class="bchCellGroup text-nowrap" ng-repeat-start="region in ::regions track by region.identifier">
-                {{question.options[0].regions[region.identifier].sum}}
-                <img ng-if="question.options[0].regions[region.identifier].sum"  ng-click="showTexts(region.countries)" src="/bch/images/nr-documents.png" style="cursor:pointer">
+                {{rows[0].cells[region.identifier].sum}}
+                <img ng-if="rows[0].cells[region.identifier].sum"  ng-click="showTexts(region.countries)" src="/bch/images/nr-documents.png" style="cursor:pointer">
             </td>
             <!-- show countries if expanded[region.identifier] -->
             <td class="text-center country country"ng-if="expanded[region.identifier]" ng-repeat="gov in ::region.countries track by gov">
