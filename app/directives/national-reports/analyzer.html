@@ -6,7 +6,9 @@
         .nr-analyzer .question table.table tr > td.country    { border:1px solid #ddd }
         .nr-analyzer .question table.table tr:last-child > td { border-bottom:1px solid #ddd }
         .nr-analyzer .question table.table tr > td:last-child { border-bottom:none;border-top:none;border-right:none; }
-        .nr-analyzer .filter.affix { max-width:600px; }
+        .nr-analyzer #filterBox.affix     { top:50px;right:10px; max-width:600px; }
+        .nr-analyzer #sumTypeButton.affix { top:10px;right:10px }
+        .nr-analyzer #sumTypeButton.affix .btn { background-color: #337ab7; color: white; border-color: #2e6da4}
         .nr-analyzer tr.filter > td.filter { color:#777; }
         .nr-analyzer tr.filter.filter-on > td.filter { color:#337ab7; }
         .nr-analyzer tr > td.filter:hover { color:#337ab7; }
@@ -50,14 +52,13 @@
 
     </style>
 
-    <div ng-if="sections" style="margin-bottom:5px">
+    <div ng-show="sections" style="margin-bottom:5px">
 
         <button type="button" class="btn btn-default"  ng-click="showSettings();">
             « Return to Regions and Questions settings
         </button>
 
-        <!-- Split button -->
-        <div class="btn-group" title="Change how numbers are calculated">
+        <div id="sumTypeButton" class="btn-group" title="Change how numbers are calculated">
             <button type="button" class="btn btn-default" ng-click="showSumTypeSelector()">∑
                 <span ng-switch="sumType">
                     <span ng-switch-when="sum">Count of responses</span>
@@ -85,7 +86,7 @@
         </div>
     </div>
 
-    <div class="filter panel panel-primary" ng-show="filter" style="top:10px;right:10px">
+    <div id="filterBox" class="filter panel panel-primary" ng-show="filter">
         <div class="panel-heading">
             <table style="width:100%;color:inherit">
                 <tr>

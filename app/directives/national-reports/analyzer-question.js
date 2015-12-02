@@ -57,14 +57,6 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
-                $scope.showSumTypeSelector = function() {
-                    nrAnalyzer.showSumTypeSelector(true);
-                };
-
-                //==============================================
-                //
-                //
-                //==============================================
                 $scope.showTexts = function(governments) {
 
                     if(!governments)

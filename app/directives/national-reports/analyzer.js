@@ -36,7 +36,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
             },
             link: function ($scope, $element, attr, nrAnalyzer) {
 
-                $element.find(".filter.panel").affix({ offset: { top : 350 } });
+                $element.find("#sumTypeButton").affix({ offset: { top : 300 } });
+                $element.find("#filterBox"    ).affix({ offset: { top : 340 } });
 
                 $scope.allRegionsMap = {};
                 $scope.filters = [];
