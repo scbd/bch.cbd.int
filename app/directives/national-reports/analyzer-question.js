@@ -3,7 +3,6 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
     var WHITE      = { R:255, G:255, B:255 };
     var SHADE_BASE = { R: 70, G:163, B:230 };
 
-
     //==============================================
     //
     //
@@ -237,27 +236,15 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     reports.forEach(function(report) {
 
                         var included = !filter || !!filter.matchingCountriesMap[report.government];
-                        var answers  = report[question.key];
 
                         if(included)
                             reportsMap[report.government] = report;
 
+                        var answeredOptions  = _(getNormalizeAnswers(report)).map(function(answer) {
+                            return optionsMap[answer.toString()];
+                        }).compact().value();
 
-                        if(_.isEmpty(answers))
-                            answers = undefined;
-
-                        if(question.type=='text' && !!answers)
-                            answers = 'text';
-
-                        answers = _([answers]).flatten().compact().value();
-
-                        answers.forEach(function(value){
-
-                            var option = optionsMap[value.toString()];
-
-                            if(!option) {
-                                return;
-                            }
+                        answeredOptions.forEach(function(option){
 
                             question.fullSum++;
                             option  .fullSum++;
@@ -265,7 +252,6 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                             if(included) {
                                 question.sum++;
                                 option  .sum++;
-                                option.percent = Math.round((option.sum*100) / question.sum).toString() + "%";
                             }
 
                             regions.forEach(function(region){
@@ -277,32 +263,59 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                     qRegion.sum++; // column
                                     oRegion.sum++; // column
                                 }
-
-                                var percentRow    = option.sum   ? Math.round((oRegion.sum*100) / option.sum)   : 0;
-                                var percentColumn = qRegion.sum  ? Math.round((oRegion.sum*100) / qRegion.sum)  : 0;
-                                var percentGlobal = question.sum ? Math.round((oRegion.sum*100) / question.sum) : 0;
-
-                                oRegion.percentRow    = option.sum   ? percentRow    + "%" : '-';
-                                oRegion.percentColumn = qRegion.sum  ? percentColumn + "%" : '-';
-                                oRegion.percentGlobal = question.sum ? percentGlobal + "%" : '-';
-
-                                oRegion.backgroundColor = {
-                                    sum           : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
-                                    percentGlobal : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
-                                    percentColumn : htmlColor(blendColor(WHITE, SHADE_BASE, percentColumn/100)),
-                                    percentRow    : htmlColor(blendColor(WHITE, SHADE_BASE, percentRow/100))
-                                };
-
-                                oRegion.textColor = {
-                                    sum           : percentGlobal < 75 ? 'inherit' : 'white',
-                                    percentGlobal : percentGlobal < 75 ? 'inherit' : 'white',
-                                    percentColumn : percentColumn < 75 ? 'inherit' : 'white',
-                                    percentRow    : percentRow    < 75 ? 'inherit' : 'white'
-                                }
-
                             });
                         });
                     });
+
+                    regions.forEach(function(region){
+
+                        options.forEach(function(option) {
+
+                            var qRegion = question.regions[region.identifier];
+                            var oRegion = option  .regions[region.identifier];
+
+                            var percent       = question.sum ? Math.round((option.sum*100) / question.sum)  : 0;
+                            var percentGlobal = question.sum ? Math.round((oRegion.sum*100) / question.sum) : 0;
+                            var percentColumn = qRegion.sum  ? Math.round((oRegion.sum*100) / qRegion.sum)  : 0;
+                            var percentRow    = option.sum   ? Math.round((oRegion.sum*100) / option.sum)   : 0;
+
+                            option .percent       = percent       + "%";
+                            oRegion.percentGlobal = percentGlobal + "%";
+                            oRegion.percentColumn = percentColumn + "%";
+                            oRegion.percentRow    = percentRow    + "%";
+
+                            oRegion.backgroundColor = {
+                                sum           : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
+                                percentGlobal : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
+                                percentColumn : htmlColor(blendColor(WHITE, SHADE_BASE, percentColumn/100)),
+                                percentRow    : htmlColor(blendColor(WHITE, SHADE_BASE, percentRow   /100))
+                            };
+
+                            oRegion.textColor = {
+                                sum           : percentGlobal < 75 ? 'inherit' : 'white',
+                                percentGlobal : percentGlobal < 75 ? 'inherit' : 'white',
+                                percentColumn : percentColumn < 75 ? 'inherit' : 'white',
+                                percentRow    : percentRow    < 75 ? 'inherit' : 'white'
+                            };
+                        });
+                    });
+                }
+
+                //============================================================
+                //
+                //
+                //============================================================
+                function getNormalizeAnswers(report) {
+
+                    var answers = report[$scope.question.key];
+
+                    if(_.isEmpty(answers))
+                        answers = undefined;
+
+                    if($scope.question.type=='text' && !!answers)
+                        answers = 'text';
+
+                    return _([answers]).flatten().compact().value();
                 }
 
                 //============================================================
