@@ -2,7 +2,7 @@
 
     <b>Question {{::question.number}}</b>
     <i>
-        <a href="#" ng-click="toggleCompare()" ng-if="::previousMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with Question {{::cleanupQuestionNumber(previousMapping[question.key])}} of the X-NR">
+        <a href="#" ng-click="toggleCompare()" ng-if="::previousQuestionsMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with Question {{::cleanupQuestionNumber(previousQuestionsMapping[question.key])}} of the X-NR">
             <i class="fa fa-exchange"></i>
         </a>
     </i>
@@ -14,7 +14,7 @@
             <th style="width:22px"></th>
             <th class="text-right">&nbsp;</th>
             <th style="width:30px" class="text-right  text-nowrap">All</th>
-            <th style="width:60px" class="text-center text-nowrap"><a href="#" ng-click="showSumTypeSelector()" title="Change how numbers are calculated...">∑</a></th>
+            <th style="width:60px" class="text-center text-nowrap"><a href="#" ng-click="showSumTypeSelector()" data-toggle="popover" data-placement="top" data-content="Change how numbers are calculated...">∑</a></th>
             <th style="width:50px" class="text-center" ng-click="region.expanded=!region.expanded" ng-repeat-start="region in ::regions track by region.identifier" title="{{::(region.title|lstring)}}">
                 <div>
                     <span ng-bind-html="::region.htmlTitle"></span><span class="text-nowrap">
@@ -44,7 +44,7 @@
             </td>
             <!-- show countries if region.expanded -->
             <td class="text-center country"  ng-class="{ 'first': $first, 'last' : $last }" ng-if="region.expanded" ng-repeat="gov in ::region.countries track by gov">
-                <div ng-if="(reportsMap[gov][question.key]==option.value || reportsMap[gov][question.key].indexOf(option.value)>=0)">●</div>
+                <div ng-if="::testAnswer(reportsMap[gov][question.key], option.value)">●</div>
             </td>
             <td ng-repeat-end ng-if="::false"></th>
             <td class="bordered" style="padding:0px;background-color:white"></td>

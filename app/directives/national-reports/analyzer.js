@@ -72,7 +72,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         var regions  = results[0];
                         var sections = results[1];
                         var reports  = results[2];
-                        var prevMapping = results[3];
+                        var previousQuestionsMapping = results[3];
 
                         var reportsCountriesMap = _(reports).pluck('government').sortBy().map(function(id){
                             return $scope.allRegionsMap[id];
@@ -89,7 +89,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                         $scope.regions = regions;
                         $scope.sections = sections;
-                        $scope.previousMapping = prevMapping;
+                        $scope.previousQuestionsMapping = previousQuestionsMapping;
 
                     }).then(function(){
 

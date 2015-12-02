@@ -19,9 +19,11 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 reports : '=',
                 regions : '=',
                 sumType : '=',
-                previousMapping : '='
+                previousQuestionsMapping : '='
             },
             link: function ($scope, el, attr, nrAnalyzer) {
+
+                initTooltips();
 
                 $scope.$on('nr.analyzer.filter', analyze);
 
@@ -31,9 +33,25 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
-                $scope.$watch('::previousMapping', function(){
-                    el.find('[data-toggle="popover"]').popover({trigger:'hover'});
-                });
+                $scope.$watch('::previousQuestionsMapping', initTooltips);
+
+                function initTooltips() {
+                    el.find('[data-toggle="popover"]:not([data-original-title])').popover({trigger:'hover focus'});
+                }
+
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.testAnswer = function(answer, value) {
+
+                    if(answer === value)     return true;
+                    if(answer === undefined) return false;
+                    if(_.isArray  (answer))  return answer.indexOf(value)>=0;
+                    if(_.isBoolean(answer))  return value == (answer ? 'true' : 'false');
+
+                    return false;
+                };
 
                 //==============================================
                 //
@@ -128,15 +146,15 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     var reports = $scope.reports;
                     var question = $scope.question;
-                    var previousMapping = $scope.previousMapping;
+                    var previousQuestionsMapping = $scope.previousQuestionsMapping;
 
-                    if(!previousMapping)
+                    if(!previousQuestionsMapping)
                         return;
 
                     var data = {
-                        reportType : previousMapping.schema,
+                        reportType : previousQuestionsMapping.schema,
                         regions : _.pluck(reports, 'government'),
-                        questions : [previousMapping[question.key]]
+                        questions : [previousQuestionsMapping[question.key]]
                     };
 
                     return nrAnalyzer.loadReports(data).then(function(previousReports) {
