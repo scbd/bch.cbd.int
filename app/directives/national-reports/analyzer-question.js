@@ -197,10 +197,9 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         $scope.question.options = [{ value: 'text' }];  // text responses don't have predefine values; Simulate a fake one
                     }
 
-                    $scope.filter = nrAnalyzer.filter();
-
                     var data = analyzeReports($scope.reports);
 
+                    $scope.filter     = nrAnalyzer.filter();
                     $scope.reportsMap = data.reports;
                     $scope.fullSum    = data.fullSum;
                     $scope.rows       = _.values(data.rows);
@@ -214,7 +213,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     var question = $scope.question;
                     var regions  = $scope.regions;
-                    var filter   = $scope.filter;
+                    var filter   = nrAnalyzer.filter();
 
                     var data = {
                         sum : 0,

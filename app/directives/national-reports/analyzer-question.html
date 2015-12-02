@@ -31,7 +31,7 @@
         </tr>
 
         <!-- OPTIONS + TERMS -->
-        <tr ng-if="::question.type!='text'" class="option {{sumType}}" ng-class="{ 'first': $first, 'last' : $last }" ng-repeat="row in ::rows track by row.value" ng-class="{ 'info': row.filterOn, 'filter-on': row.filterOn, 'filter': filter }">
+        <tr ng-if="::question.type!='text'" class="option {{sumType}}" ng-repeat="row in rows" ng-class="{ 'first': $first, 'last' : $last, 'info': row.filterOn, 'filter-on': row.filterOn, 'filter': filter }">
             <td class="filter">
                 <i ng-if="::row.fullSum"  class="fa fa-filter fa-lg" style="cursor:pointer" ng-click="toggleFilter(row)" title="Filter: Include only reports which have this answer selected."></i>
                 <i ng-if="::!row.fullSum" class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i>
