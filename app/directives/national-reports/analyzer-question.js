@@ -218,11 +218,17 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 percentRow: "0%",
                                 percentColumn: "0%",
                                 percentGlobal: "0%",
-                                htmlColor : {
+                                backgroundColor : {
                                     sum           : htmlColor(WHITE),
                                     percentGlobal : htmlColor(WHITE),
                                     percentColumn : htmlColor(WHITE),
                                     percentRow    : htmlColor(WHITE)
+                                },
+                                textColor : {
+                                    sum           : 'inherit',
+                                    percentGlobal : 'inherit',
+                                    percentColumn : 'inherit',
+                                    percentRow    : 'inherit'
                                 }
                             };
                             return ret;
@@ -288,12 +294,20 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 oRegion.percentColumn = qRegion.sum  ? percentColumn + "%" : '-';
                                 oRegion.percentGlobal = question.sum ? percentGlobal + "%" : '-';
 
-                                oRegion.htmlColor = {
+                                oRegion.backgroundColor = {
                                     sum           : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
                                     percentGlobal : htmlColor(blendColor(WHITE, SHADE_BASE, percentGlobal/100)),
                                     percentColumn : htmlColor(blendColor(WHITE, SHADE_BASE, percentColumn/100)),
                                     percentRow    : htmlColor(blendColor(WHITE, SHADE_BASE, percentRow/100))
                                 };
+
+                                oRegion.textColor = {
+                                    sum           : percentGlobal < 75 ? 'inherit' : 'white',
+                                    percentGlobal : percentGlobal < 75 ? 'inherit' : 'white',
+                                    percentColumn : percentColumn < 75 ? 'inherit' : 'white',
+                                    percentRow    : percentRow    < 75 ? 'inherit' : 'white'
+                                }
+
                             });
                         });
                     });
