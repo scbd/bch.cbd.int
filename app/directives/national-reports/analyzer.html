@@ -10,9 +10,9 @@
         .nr-analyzer #filterBox.affix     { top:50px;right:10px; max-width:600px; }
         .nr-analyzer #sumTypeButton.affix { top:10px;right:10px }
         .nr-analyzer #sumTypeButton.affix .btn { background-color: #337ab7; color: white; border-color: #2e6da4}
-        .nr-analyzer tr.filter > td.filter { color:#777; }
-        .nr-analyzer tr.filter.filter-on > td.filter { color:#337ab7; }
-        .nr-analyzer tr > td.filter:hover { color:#337ab7; }
+        .nr-analyzer tr.filter > td.filter > i { color:#777; }
+        .nr-analyzer tr.filter.filter-on > td.filter > i { color:#337ab7; }
+        .nr-analyzer tr > td.filter:hover > i { color:#337ab7; }
         .nr-analyzer tr > td.filter > i[disabled] { color:#ccc; }
         .nr-analyzer .panel.panel-collapse > .panel-heading { border-bottom: none; }
         .nr-analyzer .panel.panel-collapse > .panel-body    { display: none; }
@@ -51,9 +51,28 @@
         .nr-analyzer tr.option.percentRow > td.region.first { border-left:   solid 2px #777 !important; }
         .nr-analyzer tr.option.percentRow > td:last-child   { border-left:   solid 2px #777 !important; }
 
-        .nr-analyzer tr.option.percentGlobal span.cell-value::after,
-        .nr-analyzer tr.option.percentColumn span.cell-value::after,
-        .nr-analyzer tr.option.percentRow    span.cell-value::after { content: '%' }
+        .nr-analyzer tr.option.percentGlobal .cell-value::after,
+        .nr-analyzer tr.option.percentColumn .cell-value::after,
+        .nr-analyzer tr.option.percentRow    .cell-value::after { content: '%' }
+
+        .nr-analyzer .cell-delta.inc    { color:#008000;white-space: nowrap;cursor:help}
+        .nr-analyzer .cell-delta.dec    { color:#800000;white-space: nowrap;cursor:help}
+        .nr-analyzer .cell-delta.stable { color:#808080;white-space: nowrap;cursor:help}
+        .nr-analyzer .cell-delta.inc::before { content: '\25B2\0A+' }
+        .nr-analyzer .cell-delta.dec::before { content: '\25BC\0A' }
+        .nr-analyzer .cell-delta.stable::before { content: '\f0da\f0d9\0A'; font-family: 'FontAwesome' }
+        .nr-analyzer .highlight {
+            padding: 5px;
+            border: 2px solid #dadada;
+            border-radius: 7px;
+            outline: none;
+            border-color: #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
+            margin-top: -7px;
+            margin-right: -7px;
+            margin-left: -7px;
+        }
+
     </style>
 
     <div ng-show="sections" style="margin-bottom:5px">

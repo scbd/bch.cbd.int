@@ -1,8 +1,8 @@
-<div class="question" style="margin-bottom:10px;" ng-init="expanded={}" ng-disabled="!fullSum">
+<div class="question" style="margin-bottom:10px;" ng-init="expanded={}" ng-class="{ highlight : previousReports }" ng-disabled="!fullSum">
 
     <b>Question {{::question.number}}</b>
     <i>
-        <a href="#" ng-click="toggleCompare()" ng-if="::previousQuestionsMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with Question {{::cleanupQuestionNumber(previousQuestionsMapping[question.key])}} of the X-NR">
+        <a href="#" ng-click="toggleCompare()" ng-if="::previousQuestionsMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with Question {{::cleanupQuestionNumber(previousQuestionsMapping[question.key])}}">
             <i class="fa fa-exchange"></i>
         </a>
     </i>
@@ -15,8 +15,8 @@
             <th class="text-right">&nbsp;</th>
             <th style="width:30px" class="text-center  text-nowrap">Total</th>
             <th style="width:60px" class="text-center text-nowrap"><span ng-if="::question.type!='text'">%</span></th>
-            <th style="width:50px" class="text-center" ng-click="expanded[region.identifier] = !expanded[region.identifier]" ng-repeat-start="region in ::regions track by region.identifier" title="{{::(region.title|lstring)}}">
-                <div>
+            <th style="width:50px" class="text-center" ng-click="toggleRegion(region)" ng-repeat-start="region in ::regions track by region.identifier">
+                <div data-toggle="tooltip" data-original-title="{{::(region.title|lstring)}}">
                     <span ng-bind-html="::region.htmlTitle"></span><span class="text-nowrap">
                         <i class="fa" ng-class="{ 'fa-caret-left': expanded[region.identifier] , 'fa-caret-right': !expanded[region.identifier] }"></i>
                     </span>
@@ -24,7 +24,7 @@
             </th>
             <!-- show countries if expanded[region.identifier] -->
             <th style="width:25px" ng-if="expanded[region.identifier]" ng-repeat="gov in ::region.countries track by gov">
-                <a href="/database/record.shtml?documentid={{::reportsMap[gov].documentId}}" target="_report" title="{{::region.countriesMap[gov].title|lstring}}">{{::(gov|uppercase)}}</a>
+                <a href="/database/record.shtml?documentid={{::reportsMap[gov].documentId}}" target="_report" data-toggle="tooltip" data-original-title="{{::region.countriesMap[gov].title|lstring}}">{{::(gov|uppercase)}}</a>
             </th>
             <th ng-repeat-end ng-if="::false"></th>
             <th style="width:10px;background-color:white"></th>
@@ -33,18 +33,27 @@
         <!-- OPTIONS + TERMS -->
         <tr ng-if="::question.type!='text'" class="option {{sumType}}" ng-repeat="row in rows" ng-class="{ 'first': $first, 'last' : $last, 'info': row.filterOn, 'filter-on': row.filterOn, 'filter': filter }">
             <td class="filter">
-                <i ng-if="::row.fullSum"  class="fa fa-filter fa-lg" style="cursor:pointer" ng-click="toggleFilter(row)" title="Filter: Include only reports which have this answer selected."></i>
+                <i ng-if="::row.fullSum"  class="fa fa-filter fa-lg" style="cursor:pointer" ng-click="toggleFilter(row)" data-toggle="popover" data-placement="top" data-content="Filter: Include only reports which have this answer selected."></i>
                 <i ng-if="::!row.fullSum" class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i>
             </td>
             <td>{{::row.title}}</td>
             <td class="text-center" >{{row.sum}}</td>
-            <td class="text-center">{{row.percent}}%</td>
+            <td class="text-center">
+                <span>{{row.percent}}%</span>
+                <div ng-if="row.previous">
+                    <span class="cell-delta"  ng-class="{ 'inc' : row.previous.percent.delta>0, 'dec' : row.previous.percent.delta<0, 'stable' : row.previous.percent.delta==0 }">{{row.previous.percent.delta}}</span>
+                </div>
+            </td>
             <td class="text-center region" ng-class="{ first: $first, last: $last, expanded: expanded[cell.identifier] }" ng-style="  { 'background-color': cell.backgroundColor[sumType], 'color' : cell.textColor[sumType] }" ng-repeat-start="cell in ::row.cells" >
                 <span class="cell-value">{{cell[sumType]}}</span>
+                <div ng-if="cell.previous">
+                    <span class="cell-delta" ng-class="{ 'inc' : cell.previous[sumType].delta>0, 'dec' : cell.previous[sumType].delta<0, 'stable' : cell.previous[sumType].delta==0 }" data-toggle="tooltip" data-original-title="{{cell.previous[sumType].value}}{{sumType!='sum'?'%':''}}">{{cell.previous[sumType].delta}}</span>
+                </div>
             </td>
             <!-- show countries if expanded[region.identifier] -->
             <td class="text-center country"  ng-class="{ 'first': $first, 'last' : $last }" ng-if="expanded[cell.identifier]" ng-repeat="gov in ::regionsMap[cell.identifier].countries track by gov">
-                <div ng-if="::testAnswer(reportsMap[gov][question.key], row.value)">●</div>
+                <div style="font-size:18px;line-height:inherit" ng-if="::testAnswer(reportsMap[gov][question.key], row.value)">&#x25CF;</div>
+                <div style="font-size:18px;line-height:inherit" ng-if="previousReports && testAnswer(previousReportsMap[gov][previousQuestionsMapping[question.key]], row.value)">&#x25CB;</div>
             </td>
             <td ng-repeat-end ng-if="::false"></th>
             <td class="bordered" style="padding:0px;background-color:white"></td>
@@ -72,5 +81,4 @@
 
     </table>
 
-    {{previousReports}}
 </div>
