@@ -64,12 +64,12 @@
             <td>Free text</td>
             <td class="text-center">{{question.options[0].sum}}</td>
             <td class="text-center"><img ng-if="::question.options[0].sum" src="/bch/images/nr-documents.png" ng-click="showTexts()" style="cursor:pointer"></td>
-            <td class="text-center region" class="bchCellGroup text-nowrap" ng-repeat-start="region in ::regions track by region.identifier">
+            <td class="text-center text-nowrap region" class="bchCellGroup text-nowrap" ng-repeat-start="region in ::regions track by region.identifier">
                 {{rows[0].cells[region.identifier].sum}}
                 <img ng-if="rows[0].cells[region.identifier].sum"  ng-click="showTexts(region.countries)" src="/bch/images/nr-documents.png" style="cursor:pointer">
             </td>
             <!-- show countries if expanded[region.identifier] -->
-            <td class="text-center country country"ng-if="expanded[region.identifier]" ng-repeat="gov in ::region.countries track by gov">
+            <td class="text-center text-nowrap country country"ng-if="expanded[region.identifier]" ng-repeat="gov in ::region.countries track by gov">
                 <img ng-if="reportsMap[gov][question.key]" src="/bch/images/nr-document.png" ng-click="showTexts([gov])" style="cursor:pointer">
             </td>
             <td ng-repeat-end ng-if="::false"></th>
