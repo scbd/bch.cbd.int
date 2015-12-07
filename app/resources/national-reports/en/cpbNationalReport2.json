@@ -4,7 +4,7 @@
     "title": "Party to the Cartagena Protocol on Biosafety",
     "questions": [
       {
-        "key": "party",
+        "key": "Q012",
         "section": "General",
         "number": "12",
         "type": "option",
@@ -1678,6 +1678,50 @@
     "title": "Article 16 – Risk management",
     "questions": [
       {
+        "key": "Q094_a",
+        "section": "Article16",
+        "number": "94.1",
+        "type": "option",
+        "title": "LMOs for intentional introduction into the environment?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Yes"
+          },
+          {
+            "value": "true.some",
+            "title": "Yes, to some extent"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q094_b",
+        "section": "Article16",
+        "number": "94.2",
+        "type": "option",
+        "title": "LMOs intended for direct use as food or feed, or for processing?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Yes"
+          },
+          {
+            "value": "true.some",
+            "title": "Yes, to some extent"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
         "key": "Q095",
         "section": "Article16",
         "number": "95",
@@ -1760,50 +1804,6 @@
         "type": "text",
         "title": "Here you may provide further details on the implementation of Article 16 in your country, including any details regarding risk management strategies, also in case of lack of scientific certainty on potential adverse effects of LMOs:",
         "multiple": false
-      },
-      {
-        "key": "Q94_1",
-        "section": "Article16",
-        "number": "94.1",
-        "type": "option",
-        "title": "LMOs for intentional introduction into the environment?",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Yes"
-          },
-          {
-            "value": "true.some",
-            "title": "Yes, to some extent"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q94_2",
-        "section": "Article16",
-        "number": "94.2",
-        "type": "option",
-        "title": "LMOs intended for direct use as food or feed, or for processing?",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Yes"
-          },
-          {
-            "value": "true.some",
-            "title": "Yes, to some extent"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
       }
     ]
   },

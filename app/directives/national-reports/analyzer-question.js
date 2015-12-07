@@ -163,7 +163,12 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //==============================================
                 $scope.cleanupQuestionNumber = function(q) {
-                    return (q||'').replace(/^Q0*/, '');
+                    q = (q||'').toString().replace(/^[Q0]*/, '');
+
+                    if(/[a-z]$/.test(q))
+                        q = q.replace(/^(\d*).*?([a-z]*)$/, '$1 $2)');
+
+                    return q;
                 };
 
                 //==============================================

@@ -4,7 +4,7 @@
     "title": "الطرف في بروتوكول قرطاجنة للسلامة الأحيائية",
     "questions": [
       {
-        "key": "party",
+        "key": "Q012",
         "section": "General",
         "number": "12",
         "type": "option",
@@ -1678,6 +1678,50 @@
     "title": "المادة 16 - إدارة المخاطر",
     "questions": [
       {
+        "key": "Q094_a",
+        "section": "Article16",
+        "number": "94.1",
+        "type": "option",
+        "title": "الكائنات الحية المحورة للإدخال المقصود في البيئة؟",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "نعم"
+          },
+          {
+            "value": "true.some",
+            "title": "نعم، إلى حد ما"
+          },
+          {
+            "value": "false",
+            "title": "لا"
+          }
+        ]
+      },
+      {
+        "key": "Q094_b",
+        "section": "Article16",
+        "number": "94.2",
+        "type": "option",
+        "title": "هل الكائنات الحية المحورة مراد استخدامها كغذاء أو كعلف أو للتصنيع والتجهيز؟",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "نعم"
+          },
+          {
+            "value": "true.some",
+            "title": "نعم، إلى حد ما"
+          },
+          {
+            "value": "false",
+            "title": "لا"
+          }
+        ]
+      },
+      {
         "key": "Q095",
         "section": "Article16",
         "number": "95",
@@ -1760,50 +1804,6 @@
         "type": "text",
         "title": "يمكن أن تقدم هنا المزيد من التفاصيل بشأن تنفيذ المادة 16 في بلدك، بما في ذلك أي تفاصيل عن استراتيجيات إدارة المخاطر، وأيضا في حالة غياب اليقين العلمي بشأن الآثار الضارة المحتملة للكائنات الحية المحورة:",
         "multiple": false
-      },
-      {
-        "key": "Q94_1",
-        "section": "Article16",
-        "number": "94.1",
-        "type": "option",
-        "title": "الكائنات الحية المحورة للإدخال المقصود في البيئة؟",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "نعم"
-          },
-          {
-            "value": "true.some",
-            "title": "نعم، إلى حد ما"
-          },
-          {
-            "value": "false",
-            "title": "لا"
-          }
-        ]
-      },
-      {
-        "key": "Q94_2",
-        "section": "Article16",
-        "number": "94.2",
-        "type": "option",
-        "title": "هل الكائنات الحية المحورة مراد استخدامها كغذاء أو كعلف أو للتصنيع والتجهيز؟",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "نعم"
-          },
-          {
-            "value": "true.some",
-            "title": "نعم، إلى حد ما"
-          },
-          {
-            "value": "false",
-            "title": "لا"
-          }
-        ]
       }
     ]
   },

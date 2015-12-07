@@ -4,7 +4,7 @@
     "title": "《卡塔赫纳生物安全议定书》缔约方",
     "questions": [
       {
-        "key": "party",
+        "key": "Q012_party",
         "section": "General",
         "number": "11",
         "type": "option",
@@ -1494,6 +1494,96 @@
         ]
       },
       {
+        "key": "Q079_a",
+        "section": "Article15_16",
+        "number": "79a",
+        "type": "option",
+        "title": "贵国有多少人曾受过改性活生物体风险评估、监测、管理和控制的培训？\r\n风险评估：",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "无"
+          },
+          {
+            "value": "1+",
+            "title": "1 个或 1 个以上"
+          },
+          {
+            "value": "10+",
+            "title": "10 个或 10 个以上"
+          },
+          {
+            "value": "50+",
+            "title": "50 个或 50 个以上"
+          },
+          {
+            "value": "100+",
+            "title": "100 个或 100 个以上"
+          }
+        ]
+      },
+      {
+        "key": "Q079_b",
+        "section": "Article15_16",
+        "number": "79b",
+        "type": "option",
+        "title": "贵国有多少人曾受过改性活生物体风险评估、监测、管理和控制的培训？\r\n管理 / 控制：",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "无"
+          },
+          {
+            "value": "1+",
+            "title": "1 个或 1 个以上"
+          },
+          {
+            "value": "10+",
+            "title": "10 个或 10 个以上"
+          },
+          {
+            "value": "50+",
+            "title": "50 个或 50 个以上"
+          },
+          {
+            "value": "100+",
+            "title": "100 个或 100 个以上"
+          }
+        ]
+      },
+      {
+        "key": "Q079_c",
+        "section": "Article15_16",
+        "number": "79c",
+        "type": "option",
+        "title": "贵国有多少人曾受过改性活生物体风险评估、监测、管理和控制的培训？\r\n监测：",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "无"
+          },
+          {
+            "value": "1+",
+            "title": "1 个或 1 个以上"
+          },
+          {
+            "value": "10+",
+            "title": "10 个或 10 个以上"
+          },
+          {
+            "value": "50+",
+            "title": "50 个或 50 个以上"
+          },
+          {
+            "value": "100+",
+            "title": "100 个或 100 个以上"
+          }
+        ]
+      },
+      {
         "key": "Q080",
         "section": "Article15_16",
         "number": "80",
@@ -1553,6 +1643,114 @@
         "number": "83",
         "type": "option",
         "title": "目前使用的改性活生物体风险评估和/或风险管理的培训材料或培训技术指南是否充分？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q084_a",
+        "section": "Article15_16",
+        "number": "84a",
+        "type": "option",
+        "title": "贵国是否有能力检测、鉴别、评估和/或监测可能对生物多样性保护和可持续利用产生不利影响的改性活生物体或具体特性，考虑对人类健康的风险？\r\n检测：",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q084_b",
+        "section": "Article15_16",
+        "number": "84b",
+        "type": "option",
+        "title": "贵国是否有能力检测、鉴别、评估和/或监测可能对生物多样性保护和可持续利用产生不利影响的改性活生物体或具体特性，考虑对人类健康的风险？\r\n鉴别：",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q084_c",
+        "section": "Article15_16",
+        "number": "84c",
+        "type": "option",
+        "title": "贵国是否有能力检测、鉴别、评估和/或监测可能对生物多样性保护和可持续利用产生不利影响的改性活生物体或具体特性，考虑对人类健康的风险？\r\n评估：",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q084_d",
+        "section": "Article15_16",
+        "number": "84d",
+        "type": "option",
+        "title": "贵国是否有能力检测、鉴别、评估和/或监测可能对生物多样性保护和可持续利用产生不利影响的改性活生物体或具体特性，考虑对人类健康的风险？\r\n监测：",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q085_a",
+        "section": "Article15_16",
+        "number": "85a",
+        "type": "option",
+        "title": "贵国是否已采用或使用任何用于进行风险评估或风险管理，或者用于对通知人提交的风险评估报告进行评估的指导性文件？\r\n风险评估：",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q085_b",
+        "section": "Article15_16",
+        "number": "85b",
+        "type": "option",
+        "title": "贵国是否已采用或使用任何用于进行风险评估或风险管理，或者用于对通知人提交的风险评估报告进行评估的指导性文件？\r\n风险管理：",
         "multiple": false,
         "options": [
           {
@@ -1814,204 +2012,6 @@
         "type": "text",
         "title": "贵国可以在此提供有关贵国执行第 15 和 16 条的更多细节：",
         "multiple": false
-      },
-      {
-        "key": "Q79a",
-        "section": "Article15_16",
-        "number": "79a",
-        "type": "option",
-        "title": "风险评估：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "无"
-          },
-          {
-            "value": "1+",
-            "title": "1 个或 1 个以上"
-          },
-          {
-            "value": "10+",
-            "title": "10 个或 10 个以上"
-          },
-          {
-            "value": "50+",
-            "title": "50 个或 50 个以上"
-          },
-          {
-            "value": "100+",
-            "title": "100 个或 100 个以上"
-          }
-        ]
-      },
-      {
-        "key": "Q79b",
-        "section": "Article15_16",
-        "number": "79b",
-        "type": "option",
-        "title": "管理 / 控制：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "无"
-          },
-          {
-            "value": "1+",
-            "title": "1 个或 1 个以上"
-          },
-          {
-            "value": "10+",
-            "title": "10 个或 10 个以上"
-          },
-          {
-            "value": "50+",
-            "title": "50 个或 50 个以上"
-          },
-          {
-            "value": "100+",
-            "title": "100 个或 100 个以上"
-          }
-        ]
-      },
-      {
-        "key": "Q79c",
-        "section": "Article15_16",
-        "number": "79c",
-        "type": "option",
-        "title": "监测：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "无"
-          },
-          {
-            "value": "1+",
-            "title": "1 个或 1 个以上"
-          },
-          {
-            "value": "10+",
-            "title": "10 个或 10 个以上"
-          },
-          {
-            "value": "50+",
-            "title": "50 个或 50 个以上"
-          },
-          {
-            "value": "100+",
-            "title": "100 个或 100 个以上"
-          }
-        ]
-      },
-      {
-        "key": "Q84a",
-        "section": "Article15_16",
-        "number": "84a",
-        "type": "option",
-        "title": "检测：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "是"
-          },
-          {
-            "value": "false",
-            "title": "否"
-          }
-        ]
-      },
-      {
-        "key": "Q84b",
-        "section": "Article15_16",
-        "number": "84b",
-        "type": "option",
-        "title": "鉴别：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "是"
-          },
-          {
-            "value": "false",
-            "title": "否"
-          }
-        ]
-      },
-      {
-        "key": "Q84c",
-        "section": "Article15_16",
-        "number": "84c",
-        "type": "option",
-        "title": "评估：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "是"
-          },
-          {
-            "value": "false",
-            "title": "否"
-          }
-        ]
-      },
-      {
-        "key": "Q84d",
-        "section": "Article15_16",
-        "number": "84d",
-        "type": "option",
-        "title": "监测：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "是"
-          },
-          {
-            "value": "false",
-            "title": "否"
-          }
-        ]
-      },
-      {
-        "key": "Q85a",
-        "section": "Article15_16",
-        "number": "85a",
-        "type": "option",
-        "title": "风险评估：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "是"
-          },
-          {
-            "value": "false",
-            "title": "否"
-          }
-        ]
-      },
-      {
-        "key": "Q85b",
-        "section": "Article15_16",
-        "number": "85b",
-        "type": "option",
-        "title": "风险管理：",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "是"
-          },
-          {
-            "value": "false",
-            "title": "否"
-          }
-        ]
       }
     ]
   },
@@ -2218,7 +2218,7 @@
         "section": "Article18",
         "number": "107",
         "type": "option",
-        "title": "贵国是否已采取措施，在通过身份保护系统等手段无法获知改性活生物体名称的情况下，要求拟直接用作食品或饲料、或用于加工目的的改性活生物体所附单据明确说明其中“可能含有”改性活生物体且不打算有意将其引入环境，并附上供进一步索取信息资料的联络点？\n",
+        "title": "贵国是否已采取措施，在通过身份保护系统等手段无法获知改性活生物体名称的情况下，要求拟直接用作食品或饲料、或用于加工目的的改性活生物体所附单据明确说明其中“可能含有”改性活生物体且不打算有意将其引入环境，并附上供进一步索取信息资料的联络点？",
         "multiple": false,
         "options": [
           {
@@ -2636,11 +2636,11 @@
     "title": "第 20 条 – 信息共享与生物安全信息交换所（BCH）",
     "questions": [
       {
-        "key": "Q126a",
+        "key": "Q126_a",
         "section": "Article20",
         "number": "126a",
         "type": "option",
-        "title": "用于执行《议定书》的现有的国家立法、条例和准则，以及缔约方用于事先知情同意程序所需要的信息（第 20 条第 3(a) 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n用于执行《议定书》的现有的国家立法、条例和准则，以及缔约方用于事先知情同意程序所需要的信息（第 20 条第 3(a) 款）",
         "multiple": false,
         "options": [
           {
@@ -2662,11 +2662,11 @@
         ]
       },
       {
-        "key": "Q126b",
+        "key": "Q126_b",
         "section": "Article20",
         "number": "126b",
         "type": "option",
-        "title": "适用于拟直接用作食品或饲料、或用于加工目的的进口改性活生物体的国家法律、条例和准则（第 11 条第 5 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n适用于拟直接用作食品或饲料、或用于加工目的的进口改性活生物体的国家法律、条例和准则（第 11 条第 5 款）",
         "multiple": false,
         "options": [
           {
@@ -2688,11 +2688,11 @@
         ]
       },
       {
-        "key": "Q126c",
+        "key": "Q126_c",
         "section": "Article20",
         "number": "126c",
         "type": "option",
-        "title": "双边、多边和区域协议及安排（第 14 条第 2 款和第 20 条第 3(b) 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n双边、多边和区域协议及安排（第 14 条第 2 款和第 20 条第 3(b) 款）",
         "multiple": false,
         "options": [
           {
@@ -2714,11 +2714,11 @@
         ]
       },
       {
-        "key": "Q126d",
+        "key": "Q126_d",
         "section": "Article20",
         "number": "126d",
         "type": "option",
-        "title": "国家主管部门（第 19 条第 2 和 3 款）和国家联络点（第 19 条第 1 和 3 款）的详细联系方式以及紧急联系方式（第 17 条第 3(e) 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n国家主管部门（第 19 条第 2 和 3 款）和国家联络点（第 19 条第 1 和 3 款）的详细联系方式以及紧急联系方式（第 17 条第 3(e) 款）",
         "multiple": false,
         "options": [
           {
@@ -2740,11 +2740,11 @@
         ]
       },
       {
-        "key": "Q126e",
+        "key": "Q126_e",
         "section": "Article20",
         "number": "126e",
         "type": "option",
-        "title": "缔约方关于《议定书》的执行提交的报告（第 20 条第 3(e) 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n缔约方关于《议定书》的执行提交的报告（第 20 条第 3(e) 款）",
         "multiple": false,
         "options": [
           {
@@ -2766,11 +2766,11 @@
         ]
       },
       {
-        "key": "Q126f",
+        "key": "Q126_f",
         "section": "Article20",
         "number": "126f",
         "type": "option",
-        "title": "某一缔约方对特定改性活生物体的特性予以管制的决定（第 6 条第 1 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n某一缔约方对特定改性活生物体的特性予以管制的决定（第 6 条第 1 款）",
         "multiple": false,
         "options": [
           {
@@ -2792,11 +2792,11 @@
         ]
       },
       {
-        "key": "Q126g",
+        "key": "Q126_g",
         "section": "Article20",
         "number": "126g",
         "type": "option",
-        "title": "可能对生物多样性造成重大不利影响的无意的越境转移事件（第 17 条第 1 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n可能对生物多样性造成重大不利影响的无意的越境转移事件（第 17 条第 1 款）",
         "multiple": false,
         "options": [
           {
@@ -2818,11 +2818,11 @@
         ]
       },
       {
-        "key": "Q126h",
+        "key": "Q126_h",
         "section": "Article20",
         "number": "126h",
         "type": "option",
-        "title": "改性活生物体的非法越境转移（第 25 条第 3 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n改性活生物体的非法越境转移（第 25 条第 3 款）",
         "multiple": false,
         "options": [
           {
@@ -2844,11 +2844,11 @@
         ]
       },
       {
-        "key": "Q126i",
+        "key": "Q126_i",
         "section": "Article20",
         "number": "126i",
         "type": "option",
-        "title": "关于改性活生物体进口或释放的最后决定（即批准或禁止、任何先行条件、要求进一步信息、批准延期、决定的理由）（第 10 条第 3 款和第 20 第 3(d) 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n关于改性活生物体进口或释放的最后决定（即批准或禁止、任何先行条件、要求进一步信息、批准延期、决定的理由）（第 10 条第 3 款和第 20 第 3(d) 款）",
         "multiple": false,
         "options": [
           {
@@ -2870,11 +2870,11 @@
         ]
       },
       {
-        "key": "Q126j",
+        "key": "Q126_j",
         "section": "Article20",
         "number": "126j",
         "type": "option",
-        "title": "关于特定改性活生物体进口时国内条例适用性的信息（第 14 条第 4 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n关于特定改性活生物体进口时国内条例适用性的信息（第 14 条第 4 款）",
         "multiple": false,
         "options": [
           {
@@ -2896,11 +2896,11 @@
         ]
       },
       {
-        "key": "Q126k",
+        "key": "Q126_k",
         "section": "Article20",
         "number": "126k",
         "type": "option",
-        "title": "关于在国内使用可能越境转移的拟直接用作食品或饲料、或用于加工目的的改性活生物体的最终决定（第 11 条第 1 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n关于在国内使用可能越境转移的拟直接用作食品或饲料、或用于加工目的的改性活生物体的最终决定（第 11 条第 1 款）",
         "multiple": false,
         "options": [
           {
@@ -2922,11 +2922,11 @@
         ]
       },
       {
-        "key": "Q126l",
+        "key": "Q126_l",
         "section": "Article20",
         "number": "126l",
         "type": "option",
-        "title": "关于在国内规定框架下（第 11 条第 4 款）或按照附件三（第 11 条第 6 款）（第 20 条第 3(d) 款的要求）进口拟直接用作食品或饲料、或用于加工目的的改性活生物体的最终决定",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n关于在国内规定框架下（第 11 条第 4 款）或按照附件三（第 11 条第 6 款）（第 20 条第 3(d) 款的要求）进口拟直接用作食品或饲料、或用于加工目的的改性活生物体的最终决定",
         "multiple": false,
         "options": [
           {
@@ -2948,11 +2948,11 @@
         ]
       },
       {
-        "key": "Q126m",
+        "key": "Q126_m",
         "section": "Article20",
         "number": "126m",
         "type": "option",
-        "title": "申报采用的关于拟直接用作食品或饲料、或用于加工目的的改性活生物体的体制（第 11 条第 6 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n申报采用的关于拟直接用作食品或饲料、或用于加工目的的改性活生物体的体制（第 11 条第 6 款）",
         "multiple": false,
         "options": [
           {
@@ -2974,11 +2974,11 @@
         ]
       },
       {
-        "key": "Q126n",
+        "key": "Q126_n",
         "section": "Article20",
         "number": "126n",
         "type": "option",
-        "title": "审议并改动关于改性活生物体有意越境转移的决定（第 12 条第 1 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n审议并改动关于改性活生物体有意越境转移的决定（第 12 条第 1 款）",
         "multiple": false,
         "options": [
           {
@@ -3000,11 +3000,11 @@
         ]
       },
       {
-        "key": "Q126o",
+        "key": "Q126_o",
         "section": "Article20",
         "number": "126o",
         "type": "option",
-        "title": "由各缔约方赋予豁免权的改性活生物体（第 13 条第 1 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n由各缔约方赋予豁免权的改性活生物体（第 13 条第 1 款）",
         "multiple": false,
         "options": [
           {
@@ -3026,11 +3026,11 @@
         ]
       },
       {
-        "key": "Q126p",
+        "key": "Q126_p",
         "section": "Article20",
         "number": "126p",
         "type": "option",
-        "title": "可能在通知进口缔约方的同时发生的有意越境转移案例（第 13 条第 1 款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n可能在通知进口缔约方的同时发生的有意越境转移案例（第 13 条第 1 款）",
         "multiple": false,
         "options": [
           {
@@ -3052,11 +3052,11 @@
         ]
       },
       {
-        "key": "Q126q",
+        "key": "Q126_q",
         "section": "Article20",
         "number": "126q",
         "type": "option",
-        "title": "在监管过程中生成的改性活生物体风险评估或环境审查及有关产品相关信息的概述（第 20 条第 3(c)款）",
+        "title": "请概述贵国向生物安全信息交换所提供信息的情况，具体说明各类信息是否可用，以及是否已向生物安全信息交换所提交。\r\n在监管过程中生成的改性活生物体风险评估或环境审查及有关产品相关信息的概述（第 20 条第 3(c)款）",
         "multiple": false,
         "options": [
           {
@@ -4818,11 +4818,11 @@
     "title": "第 33 条 – 监测与报告",
     "questions": [
       {
-        "key": "Q204a",
+        "key": "Q204_a",
         "section": "Article33",
         "number": "204a",
         "type": "option",
-        "title": "监测制度：",
+        "title": "贵国是否有执行《卡塔赫纳议定书》的监测和/或实施制度？\r\n监测制度：",
         "multiple": false,
         "options": [
           {
@@ -4836,11 +4836,11 @@
         ]
       },
       {
-        "key": "Q204b",
+        "key": "Q204_b",
         "section": "Article33",
         "number": "204b",
         "type": "option",
-        "title": "实施制度：",
+        "title": "贵国是否有执行《卡塔赫纳议定书》的监测和/或实施制度？\r\n实施制度：",
         "multiple": false,
         "options": [
           {

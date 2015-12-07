@@ -4,7 +4,7 @@
     "title": "Parte en el Protocolo de Cartagena sobre Seguridad de la Biotecnología",
     "questions": [
       {
-        "key": "party",
+        "key": "Q012",
         "section": "General",
         "number": "12",
         "type": "option",
@@ -1678,6 +1678,50 @@
     "title": "Artículo 16 –Gestión del riesgo",
     "questions": [
       {
+        "key": "Q094_a",
+        "section": "Article16",
+        "number": "94.1",
+        "type": "option",
+        "title": "¿OVMs para su introducción intencional en el medio ambiente?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Sí"
+          },
+          {
+            "value": "true.some",
+            "title": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q094_b",
+        "section": "Article16",
+        "number": "94.2",
+        "type": "option",
+        "title": "OVM destinados a uso directo como alimento humano o animal o para procesamiento?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Sí"
+          },
+          {
+            "value": "true.some",
+            "title": "Sí, hasta cierto punto"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
         "key": "Q095",
         "section": "Article16",
         "number": "95",
@@ -1760,50 +1804,6 @@
         "type": "text",
         "title": "En este lugar puede proporcionar otros detalles sobre la aplicación del artículo 16 en su país, incluidos detalles respecto a estrategias de gestión del riesgo, también en el caso de que no hubiese certidumbre científica acerca de los posibles efectos adversos de los OVM:",
         "multiple": false
-      },
-      {
-        "key": "Q94_1",
-        "section": "Article16",
-        "number": "94.1",
-        "type": "option",
-        "title": "¿OVMs para su introducción intencional en el medio ambiente?",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Sí"
-          },
-          {
-            "value": "true.some",
-            "title": "Sí, hasta cierto punto"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q94_2",
-        "section": "Article16",
-        "number": "94.2",
-        "type": "option",
-        "title": "OVM destinados a uso directo como alimento humano o animal o para procesamiento?",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Sí"
-          },
-          {
-            "value": "true.some",
-            "title": "Sí, hasta cierto punto"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
       }
     ]
   },

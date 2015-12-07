@@ -4,7 +4,7 @@
     "title": "Party to the Cartagena Protocol on Biosafety",
     "questions": [
       {
-        "key": "party",
+        "key": "Q012_party",
         "section": "General",
         "number": "11",
         "type": "option",
@@ -1451,7 +1451,7 @@
   },
   {
     "key": "Article15_16",
-    "title": "Article 15 & 16 – Risk Assessment and Risk Management",
+    "title": "Articles 15 & 16 – Risk Assessment and Risk Management",
     "questions": [
       {
         "key": "Q077",
@@ -1490,6 +1490,96 @@
           {
             "value": "false",
             "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q079_a",
+        "section": "Article15_16",
+        "number": "79a",
+        "type": "option",
+        "title": "How many people in your country have been trained in risk assessment, monitoring, management and control of LMOs?\r\nRisk assessment:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "None"
+          },
+          {
+            "value": "1+",
+            "title": "One or more"
+          },
+          {
+            "value": "10+",
+            "title": "10 or more"
+          },
+          {
+            "value": "50+",
+            "title": "50 or more"
+          },
+          {
+            "value": "100+",
+            "title": "100 or more"
+          }
+        ]
+      },
+      {
+        "key": "Q079_b",
+        "section": "Article15_16",
+        "number": "79b",
+        "type": "option",
+        "title": "How many people in your country have been trained in risk assessment, monitoring, management and control of LMOs?\r\nManagement / Control:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "None"
+          },
+          {
+            "value": "1+",
+            "title": "One or more"
+          },
+          {
+            "value": "10+",
+            "title": "10 or more"
+          },
+          {
+            "value": "50+",
+            "title": "50 or more"
+          },
+          {
+            "value": "100+",
+            "title": "100 or more"
+          }
+        ]
+      },
+      {
+        "key": "Q079_c",
+        "section": "Article15_16",
+        "number": "79c",
+        "type": "option",
+        "title": "How many people in your country have been trained in risk assessment, monitoring, management and control of LMOs?\r\nMonitoring:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "None"
+          },
+          {
+            "value": "1+",
+            "title": "One or more"
+          },
+          {
+            "value": "10+",
+            "title": "10 or more"
+          },
+          {
+            "value": "50+",
+            "title": "50 or more"
+          },
+          {
+            "value": "100+",
+            "title": "100 or more"
           }
         ]
       },
@@ -1553,6 +1643,114 @@
         "number": "83",
         "type": "option",
         "title": "Are the currently available training materials or technical guidance on risk assessment and/or risk management of LMOs sufficient?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Yes"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084_a",
+        "section": "Article15_16",
+        "number": "84a",
+        "type": "option",
+        "title": "Does your country have the capacity to detect, identify, assess and/or monitor living modified organisms or specific traits that may have adverse effects on the conservation and sustainable use of biological diversity, taking into account risks to human health?\r\nDetect:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Yes"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084_b",
+        "section": "Article15_16",
+        "number": "84b",
+        "type": "option",
+        "title": "Does your country have the capacity to detect, identify, assess and/or monitor living modified organisms or specific traits that may have adverse effects on the conservation and sustainable use of biological diversity, taking into account risks to human health?\r\nIdentify:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Yes"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084_c",
+        "section": "Article15_16",
+        "number": "84c",
+        "type": "option",
+        "title": "Does your country have the capacity to detect, identify, assess and/or monitor living modified organisms or specific traits that may have adverse effects on the conservation and sustainable use of biological diversity, taking into account risks to human health?\r\nAssess:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Yes"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084_d",
+        "section": "Article15_16",
+        "number": "84d",
+        "type": "option",
+        "title": "Does your country have the capacity to detect, identify, assess and/or monitor living modified organisms or specific traits that may have adverse effects on the conservation and sustainable use of biological diversity, taking into account risks to human health?\r\nMonitor:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Yes"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q085_a",
+        "section": "Article15_16",
+        "number": "85a",
+        "type": "option",
+        "title": "Has your country adopted or used any guidance documents for the purpose of conducting risk assessment or risk management, or for evaluating risk assessment reports submitted by notifiers?\r\nRisk assessment:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Yes"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q085_b",
+        "section": "Article15_16",
+        "number": "85b",
+        "type": "option",
+        "title": "Has your country adopted or used any guidance documents for the purpose of conducting risk assessment or risk management, or for evaluating risk assessment reports submitted by notifiers?\r\nRisk management:",
         "multiple": false,
         "options": [
           {
@@ -1814,204 +2012,6 @@
         "type": "text",
         "title": "Here you may provide further details on the implementation of Articles 15 and 16 in your country",
         "multiple": false
-      },
-      {
-        "key": "Q79a",
-        "section": "Article15_16",
-        "number": "79a",
-        "type": "option",
-        "title": "Risk assessment:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "None"
-          },
-          {
-            "value": "1+",
-            "title": "One or more"
-          },
-          {
-            "value": "10+",
-            "title": "10 or more"
-          },
-          {
-            "value": "50+",
-            "title": "50 or more"
-          },
-          {
-            "value": "100+",
-            "title": "100 or more"
-          }
-        ]
-      },
-      {
-        "key": "Q79b",
-        "section": "Article15_16",
-        "number": "79b",
-        "type": "option",
-        "title": "Management / Control:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "None"
-          },
-          {
-            "value": "1+",
-            "title": "One or more"
-          },
-          {
-            "value": "10+",
-            "title": "10 or more"
-          },
-          {
-            "value": "50+",
-            "title": "50 or more"
-          },
-          {
-            "value": "100+",
-            "title": "100 or more"
-          }
-        ]
-      },
-      {
-        "key": "Q79c",
-        "section": "Article15_16",
-        "number": "79c",
-        "type": "option",
-        "title": "Monitoring:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "None"
-          },
-          {
-            "value": "1+",
-            "title": "One or more"
-          },
-          {
-            "value": "10+",
-            "title": "10 or more"
-          },
-          {
-            "value": "50+",
-            "title": "50 or more"
-          },
-          {
-            "value": "100+",
-            "title": "100 or more"
-          }
-        ]
-      },
-      {
-        "key": "Q84a",
-        "section": "Article15_16",
-        "number": "84a",
-        "type": "option",
-        "title": "Detect:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Yes"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q84b",
-        "section": "Article15_16",
-        "number": "84b",
-        "type": "option",
-        "title": "Identify:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Yes"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q84c",
-        "section": "Article15_16",
-        "number": "84c",
-        "type": "option",
-        "title": "Assess:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Yes"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q84d",
-        "section": "Article15_16",
-        "number": "84d",
-        "type": "option",
-        "title": "Monitor:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Yes"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q85a",
-        "section": "Article15_16",
-        "number": "85a",
-        "type": "option",
-        "title": "Risk assessment:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Yes"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q85b",
-        "section": "Article15_16",
-        "number": "85b",
-        "type": "option",
-        "title": "Risk management:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Yes"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
       }
     ]
   },
@@ -2636,11 +2636,11 @@
     "title": "Article 20 – Information Sharing and the Biosafety Clearing-House (BCH)",
     "questions": [
       {
-        "key": "Q126a",
+        "key": "Q126_a",
         "section": "Article20",
         "number": "126a",
         "type": "option",
-        "title": "Existing national legislation, regulations and guidelines for implementing the Protocol, as well as information required by Parties for the advance informed agreement procedure (Article 20, paragraph 3 (a))",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nExisting national legislation, regulations and guidelines for implementing the Protocol, as well as information required by Parties for the advance informed agreement procedure (Article 20, paragraph 3 (a))",
         "multiple": false,
         "options": [
           {
@@ -2662,11 +2662,11 @@
         ]
       },
       {
-        "key": "Q126b",
+        "key": "Q126_b",
         "section": "Article20",
         "number": "126b",
         "type": "option",
-        "title": "National laws, regulations and guidelines applicable to the import of LMOs intended for direct use as food or feed, or for processing (Article 11, paragraph 5)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nNational laws, regulations and guidelines applicable to the import of LMOs intended for direct use as food or feed, or for processing (Article 11, paragraph 5)",
         "multiple": false,
         "options": [
           {
@@ -2688,11 +2688,11 @@
         ]
       },
       {
-        "key": "Q126c",
+        "key": "Q126_c",
         "section": "Article20",
         "number": "126c",
         "type": "option",
-        "title": "Bilateral, multilateral and regional agreements and arrangements (Articles 14, paragraph 2 and 20, paragraph 3 (b))",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nBilateral, multilateral and regional agreements and arrangements (Articles 14, paragraph 2 and 20, paragraph 3 (b))",
         "multiple": false,
         "options": [
           {
@@ -2714,11 +2714,11 @@
         ]
       },
       {
-        "key": "Q126d",
+        "key": "Q126_d",
         "section": "Article20",
         "number": "126d",
         "type": "option",
-        "title": "Contact details for competent national authorities (Article 19, paragraphs 2 and 3), national focal points (Article 19, paragraphs 1 and 3), and emergency contacts (Article 17, paragraph 3 (e))",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nContact details for competent national authorities (Article 19, paragraphs 2 and 3), national focal points (Article 19, paragraphs 1 and 3), and emergency contacts (Article 17, paragraph 3 (e))",
         "multiple": false,
         "options": [
           {
@@ -2740,11 +2740,11 @@
         ]
       },
       {
-        "key": "Q126e",
+        "key": "Q126_e",
         "section": "Article20",
         "number": "126e",
         "type": "option",
-        "title": "Reports submitted by the Parties on the operation of the Protocol (Article 20, paragraph 3 (e))",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nReports submitted by the Parties on the operation of the Protocol (Article 20, paragraph 3 (e))",
         "multiple": false,
         "options": [
           {
@@ -2766,11 +2766,11 @@
         ]
       },
       {
-        "key": "Q126f",
+        "key": "Q126_f",
         "section": "Article20",
         "number": "126f",
         "type": "option",
-        "title": "Decisions by a Party on regulating the transit of specific living modified organisms (LMOs) (Article 6, paragraph 1)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nDecisions by a Party on regulating the transit of specific living modified organisms (LMOs) (Article 6, paragraph 1)",
         "multiple": false,
         "options": [
           {
@@ -2792,11 +2792,11 @@
         ]
       },
       {
-        "key": "Q126g",
+        "key": "Q126_g",
         "section": "Article20",
         "number": "126g",
         "type": "option",
-        "title": "Occurrence of unintentional transboundary movements that are likely to have significant adverse effects on biological diversity (Article 17, paragraph 1)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nOccurrence of unintentional transboundary movements that are likely to have significant adverse effects on biological diversity (Article 17, paragraph 1)",
         "multiple": false,
         "options": [
           {
@@ -2818,11 +2818,11 @@
         ]
       },
       {
-        "key": "Q126h",
+        "key": "Q126_h",
         "section": "Article20",
         "number": "126h",
         "type": "option",
-        "title": "Illegal transboundary movements of LMOs (Article 25, paragraph 3)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nIllegal transboundary movements of LMOs (Article 25, paragraph 3)",
         "multiple": false,
         "options": [
           {
@@ -2844,11 +2844,11 @@
         ]
       },
       {
-        "key": "Q126i",
+        "key": "Q126_i",
         "section": "Article20",
         "number": "126i",
         "type": "option",
-        "title": "Final decisions regarding the importation or release of LMOs (i.e. approval or prohibition, any conditions, requests for further information, extensions granted, reasons for decision) (Articles 10, paragraph 3 and 20, paragraph 3(d))",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nFinal decisions regarding the importation or release of LMOs (i.e. approval or prohibition, any conditions, requests for further information, extensions granted, reasons for decision) (Articles 10, paragraph 3 and 20, paragraph 3(d))",
         "multiple": false,
         "options": [
           {
@@ -2870,11 +2870,11 @@
         ]
       },
       {
-        "key": "Q126j",
+        "key": "Q126_j",
         "section": "Article20",
         "number": "126j",
         "type": "option",
-        "title": "Information on the application of domestic regulations to specific imports of LMOs (Article 14, paragraph 4)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nInformation on the application of domestic regulations to specific imports of LMOs (Article 14, paragraph 4)",
         "multiple": false,
         "options": [
           {
@@ -2896,11 +2896,11 @@
         ]
       },
       {
-        "key": "Q126k",
+        "key": "Q126_k",
         "section": "Article20",
         "number": "126k",
         "type": "option",
-        "title": "Final decisions regarding the domestic use of LMOs that may be subject to transboundary movement for direct use as food or feed, or for processing (Article 11, paragraph 1)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nFinal decisions regarding the domestic use of LMOs that may be subject to transboundary movement for direct use as food or feed, or for processing (Article 11, paragraph 1)",
         "multiple": false,
         "options": [
           {
@@ -2922,11 +2922,11 @@
         ]
       },
       {
-        "key": "Q126l",
+        "key": "Q126_l",
         "section": "Article20",
         "number": "126l",
         "type": "option",
-        "title": "Final decisions regarding the import of LMOs intended for direct use as food or feed, or for processing that are taken under domestic regulatory frameworks (Article 11, paragraph 4) or in accordance with annex III (Article 11, paragraph 6) (requirement of Article 20, paragraph 3(d))",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nFinal decisions regarding the import of LMOs intended for direct use as food or feed, or for processing that are taken under domestic regulatory frameworks (Article 11, paragraph 4) or in accordance with annex III (Article 11, paragraph 6) (requirement of Article 20, paragraph 3(d))",
         "multiple": false,
         "options": [
           {
@@ -2948,11 +2948,11 @@
         ]
       },
       {
-        "key": "Q126m",
+        "key": "Q126_m",
         "section": "Article20",
         "number": "126m",
         "type": "option",
-        "title": "Declarations regarding the framework to be used for LMOs intended for direct use as food or feed, or for processing (Article 11, paragraph 6)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nDeclarations regarding the framework to be used for LMOs intended for direct use as food or feed, or for processing (Article 11, paragraph 6)",
         "multiple": false,
         "options": [
           {
@@ -2974,11 +2974,11 @@
         ]
       },
       {
-        "key": "Q126n",
+        "key": "Q126_n",
         "section": "Article20",
         "number": "126n",
         "type": "option",
-        "title": "Review and change of decisions regarding intentional transboundary movements of LMOs (Article 12, paragraph 1)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nReview and change of decisions regarding intentional transboundary movements of LMOs (Article 12, paragraph 1)",
         "multiple": false,
         "options": [
           {
@@ -3000,11 +3000,11 @@
         ]
       },
       {
-        "key": "Q126o",
+        "key": "Q126_o",
         "section": "Article20",
         "number": "126o",
         "type": "option",
-        "title": "LMOs granted exemption status by each Party (Article 13, paragraph 1)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nLMOs granted exemption status by each Party (Article 13, paragraph 1)",
         "multiple": false,
         "options": [
           {
@@ -3026,11 +3026,11 @@
         ]
       },
       {
-        "key": "Q126p",
+        "key": "Q126_p",
         "section": "Article20",
         "number": "126p",
         "type": "option",
-        "title": "Cases where intentional transboundary movement may take place at the same time as the movement is notified to the Party of import (Article 13, paragraph 1)",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nCases where intentional transboundary movement may take place at the same time as the movement is notified to the Party of import (Article 13, paragraph 1)",
         "multiple": false,
         "options": [
           {
@@ -3052,11 +3052,11 @@
         ]
       },
       {
-        "key": "Q126q",
+        "key": "Q126_q",
         "section": "Article20",
         "number": "126q",
         "type": "option",
-        "title": "Summaries of risk assessments or environmental reviews of LMOs generated by regulatory processes and relevant information regarding products thereof (Article 20, paragraph 3 (c))",
+        "title": "Please provide an overview of the status of the mandatory information provided by your country to the BCH by specifying for each category of information whether it is available and whether it has been submitted to the BCH.\r\nSummaries of risk assessments or environmental reviews of LMOs generated by regulatory processes and relevant information regarding products thereof (Article 20, paragraph 3 (c))",
         "multiple": false,
         "options": [
           {
@@ -4818,11 +4818,11 @@
     "title": "Article 33 – Monitoring and reporting",
     "questions": [
       {
-        "key": "Q204a",
+        "key": "Q204_a",
         "section": "Article33",
         "number": "204a",
         "type": "option",
-        "title": "Monitoring system:",
+        "title": "Does your country have in place a monitoring and/or an enforcement system for the implementation of the Cartagena Protocol?\r\nMonitoring system:",
         "multiple": false,
         "options": [
           {
@@ -4836,11 +4836,11 @@
         ]
       },
       {
-        "key": "Q204b",
+        "key": "Q204_b",
         "section": "Article33",
         "number": "204b",
         "type": "option",
-        "title": "Enforcement system:",
+        "title": "Does your country have in place a monitoring and/or an enforcement system for the implementation of the Cartagena Protocol?\r\nEnforcement system:",
         "multiple": false,
         "options": [
           {

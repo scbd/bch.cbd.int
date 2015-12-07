@@ -4,7 +4,7 @@
     "title": "Parte en el Protocolo de Cartagena sobre Seguridad de la Biotecnología",
     "questions": [
       {
-        "key": "party",
+        "key": "Q012_party",
         "section": "General",
         "number": "11",
         "type": "option",
@@ -1494,6 +1494,96 @@
         ]
       },
       {
+        "key": "Q079_a",
+        "section": "Article15_16",
+        "number": "79a",
+        "type": "option",
+        "title": "¿Cuántas personas de su país han recibido capacitación en evaluación del riesgo, vigilancia, gestión y control de OVM?\r\nEvaluación del riesgo:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "Ninguna"
+          },
+          {
+            "value": "1+",
+            "title": "Uno o más"
+          },
+          {
+            "value": "10+",
+            "title": "10 o más"
+          },
+          {
+            "value": "50+",
+            "title": "50 o más"
+          },
+          {
+            "value": "100+",
+            "title": "100 o más"
+          }
+        ]
+      },
+      {
+        "key": "Q079_b",
+        "section": "Article15_16",
+        "number": "79b",
+        "type": "option",
+        "title": "¿Cuántas personas de su país han recibido capacitación en evaluación del riesgo, vigilancia, gestión y control de OVM?\r\nGestión / Control:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "Ninguna"
+          },
+          {
+            "value": "1+",
+            "title": "Uno o más"
+          },
+          {
+            "value": "10+",
+            "title": "10 o más"
+          },
+          {
+            "value": "50+",
+            "title": "50 o más"
+          },
+          {
+            "value": "100+",
+            "title": "100 o más"
+          }
+        ]
+      },
+      {
+        "key": "Q079_c",
+        "section": "Article15_16",
+        "number": "79c",
+        "type": "option",
+        "title": "¿Cuántas personas de su país han recibido capacitación en evaluación del riesgo, vigilancia, gestión y control de OVM?\r\nVigilancia:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "Ninguna"
+          },
+          {
+            "value": "1+",
+            "title": "Uno o más"
+          },
+          {
+            "value": "10+",
+            "title": "10 o más"
+          },
+          {
+            "value": "50+",
+            "title": "50 o más"
+          },
+          {
+            "value": "100+",
+            "title": "100 o más"
+          }
+        ]
+      },
+      {
         "key": "Q080",
         "section": "Article15_16",
         "number": "80",
@@ -1553,6 +1643,114 @@
         "number": "83",
         "type": "option",
         "title": "¿Son suficientes los materiales de capacitación o la orientación técnica disponibles en la actualidad para la evaluación del riesgo o la gestión del riesgo de los OVM?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Sí"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084_a",
+        "section": "Article15_16",
+        "number": "84a",
+        "type": "option",
+        "title": "¿Tiene su país la capacidad de detectar, identificar, evaluar y/o vigilar organismos vivos modificados o rasgos específicos que pudieran tener efectos adversos en la conservación y utilización sostenible de la diversidad biológica, teniendo en cuenta los riesgos para la salud humana?\r\nDetectar:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Sí"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084_b",
+        "section": "Article15_16",
+        "number": "84b",
+        "type": "option",
+        "title": "¿Tiene su país la capacidad de detectar, identificar, evaluar y/o vigilar organismos vivos modificados o rasgos específicos que pudieran tener efectos adversos en la conservación y utilización sostenible de la diversidad biológica, teniendo en cuenta los riesgos para la salud humana?\r\nIdentificar:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Sí"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084_c",
+        "section": "Article15_16",
+        "number": "84c",
+        "type": "option",
+        "title": "¿Tiene su país la capacidad de detectar, identificar, evaluar y/o vigilar organismos vivos modificados o rasgos específicos que pudieran tener efectos adversos en la conservación y utilización sostenible de la diversidad biológica, teniendo en cuenta los riesgos para la salud humana?\r\nEvaluar:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Sí"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q084_d",
+        "section": "Article15_16",
+        "number": "84d",
+        "type": "option",
+        "title": "¿Tiene su país la capacidad de detectar, identificar, evaluar y/o vigilar organismos vivos modificados o rasgos específicos que pudieran tener efectos adversos en la conservación y utilización sostenible de la diversidad biológica, teniendo en cuenta los riesgos para la salud humana?\r\nVigilar:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Sí"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q085_a",
+        "section": "Article15_16",
+        "number": "85a",
+        "type": "option",
+        "title": "¿Ha adoptado o usado su país algún documento de orientación con el fin de llevar a cabo evaluaciones del riesgo o gestionar el riesgo, o para evaluar informes sobre la evaluación de riesgo presentados por notificadores?\r\nEvaluación del riesgo:",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Sí"
+          },
+          {
+            "value": "false",
+            "title": "No"
+          }
+        ]
+      },
+      {
+        "key": "Q085_b",
+        "section": "Article15_16",
+        "number": "85b",
+        "type": "option",
+        "title": "¿Ha adoptado o usado su país algún documento de orientación con el fin de llevar a cabo evaluaciones del riesgo o gestionar el riesgo, o para evaluar informes sobre la evaluación de riesgo presentados por notificadores?\r\nGestión del riesgo:",
         "multiple": false,
         "options": [
           {
@@ -1814,204 +2012,6 @@
         "type": "text",
         "title": "Aquí se pueden facilitar otros detalles sobre la aplicación de los artículos 15 y 16 en su país",
         "multiple": false
-      },
-      {
-        "key": "Q79a",
-        "section": "Article15_16",
-        "number": "79a",
-        "type": "option",
-        "title": "Evaluación del riesgo:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "Ninguna"
-          },
-          {
-            "value": "1+",
-            "title": "Uno o más"
-          },
-          {
-            "value": "10+",
-            "title": "10 o más"
-          },
-          {
-            "value": "50+",
-            "title": "50 o más"
-          },
-          {
-            "value": "100+",
-            "title": "100 o más"
-          }
-        ]
-      },
-      {
-        "key": "Q79b",
-        "section": "Article15_16",
-        "number": "79b",
-        "type": "option",
-        "title": "Gestión / Control:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "Ninguna"
-          },
-          {
-            "value": "1+",
-            "title": "Uno o más"
-          },
-          {
-            "value": "10+",
-            "title": "10 o más"
-          },
-          {
-            "value": "50+",
-            "title": "50 o más"
-          },
-          {
-            "value": "100+",
-            "title": "100 o más"
-          }
-        ]
-      },
-      {
-        "key": "Q79c",
-        "section": "Article15_16",
-        "number": "79c",
-        "type": "option",
-        "title": "Vigilancia:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "Ninguna"
-          },
-          {
-            "value": "1+",
-            "title": "Uno o más"
-          },
-          {
-            "value": "10+",
-            "title": "10 o más"
-          },
-          {
-            "value": "50+",
-            "title": "50 o más"
-          },
-          {
-            "value": "100+",
-            "title": "100 o más"
-          }
-        ]
-      },
-      {
-        "key": "Q84a",
-        "section": "Article15_16",
-        "number": "84a",
-        "type": "option",
-        "title": "Detectar:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Sí"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q84b",
-        "section": "Article15_16",
-        "number": "84b",
-        "type": "option",
-        "title": "Identificar:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Sí"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q84c",
-        "section": "Article15_16",
-        "number": "84c",
-        "type": "option",
-        "title": "Evaluar:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Sí"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q84d",
-        "section": "Article15_16",
-        "number": "84d",
-        "type": "option",
-        "title": "Vigilar:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Sí"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q85a",
-        "section": "Article15_16",
-        "number": "85a",
-        "type": "option",
-        "title": "Evaluación del riesgo:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Sí"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
-      },
-      {
-        "key": "Q85b",
-        "section": "Article15_16",
-        "number": "85b",
-        "type": "option",
-        "title": "Gestión del riesgo:",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Sí"
-          },
-          {
-            "value": "false",
-            "title": "No"
-          }
-        ]
       }
     ]
   },
@@ -2636,11 +2636,11 @@
     "title": "Artículo 20 – Intercambio de información y el Centro de Intercambio de Información sobre Seguridad de la Biotecnología (CIISB)",
     "questions": [
       {
-        "key": "Q126a",
+        "key": "Q126_a",
         "section": "Article20",
         "number": "126a",
         "type": "option",
-        "title": "Leyes, reglamentos y directrices nacionales existentes para la aplicación del Protocolo, así como la información requerida por las Partes para el procedimiento de acuerdo fundamentado previo (párrafo 3 a] del artículo 20)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nLeyes, reglamentos y directrices nacionales existentes para la aplicación del Protocolo, así como la información requerida por las Partes para el procedimiento de acuerdo fundamentado previo (párrafo 3 a] del artículo 20)",
         "multiple": false,
         "options": [
           {
@@ -2662,11 +2662,11 @@
         ]
       },
       {
-        "key": "Q126b",
+        "key": "Q126_b",
         "section": "Article20",
         "number": "126b",
         "type": "option",
-        "title": "Leyes, reglamentaciones y directrices nacionales aplicables a la importación de OVM destinados para uso directo como alimento humano o animal o para procesamiento (párrafo 5 del artículo 11)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nLeyes, reglamentaciones y directrices nacionales aplicables a la importación de OVM destinados para uso directo como alimento humano o animal o para procesamiento (párrafo 5 del artículo 11)",
         "multiple": false,
         "options": [
           {
@@ -2688,11 +2688,11 @@
         ]
       },
       {
-        "key": "Q126c",
+        "key": "Q126_c",
         "section": "Article20",
         "number": "126c",
         "type": "option",
-        "title": "Acuerdos y arreglos bilaterales, regionales y multilaterales (párrafo 2 del artículo 14 y párrafo 3 b] del artículo 20)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nAcuerdos y arreglos bilaterales, regionales y multilaterales (párrafo 2 del artículo 14 y párrafo 3 b] del artículo 20)",
         "multiple": false,
         "options": [
           {
@@ -2714,11 +2714,11 @@
         ]
       },
       {
-        "key": "Q126d",
+        "key": "Q126_d",
         "section": "Article20",
         "number": "126d",
         "type": "option",
-        "title": "¿Ha establecido su país un mecanismo para fortalecer la capacidad del punto focal nacional correspondiente al CIISB para desempeñar sus funciones administrativas?",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\n¿Ha establecido su país un mecanismo para fortalecer la capacidad del punto focal nacional correspondiente al CIISB para desempeñar sus funciones administrativas?",
         "multiple": false,
         "options": [
           {
@@ -2740,11 +2740,11 @@
         ]
       },
       {
-        "key": "Q126e",
+        "key": "Q126_e",
         "section": "Article20",
         "number": "126e",
         "type": "option",
-        "title": "Informes presentados por las Partes sobre el funcionamiento del Protocolo (artículo 20, párrafo 3 (e))",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nInformes presentados por las Partes sobre el funcionamiento del Protocolo (artículo 20, párrafo 3 (e))",
         "multiple": false,
         "options": [
           {
@@ -2766,11 +2766,11 @@
         ]
       },
       {
-        "key": "Q126f",
+        "key": "Q126_f",
         "section": "Article20",
         "number": "126f",
         "type": "option",
-        "title": "Decisiones adoptadas por una Parte para regular el tránsito de organismos vivos modificados específicos (OVM) (artículo 6, párrafo 1)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nDecisiones adoptadas por una Parte para regular el tránsito de organismos vivos modificados específicos (OVM) (artículo 6, párrafo 1)",
         "multiple": false,
         "options": [
           {
@@ -2792,11 +2792,11 @@
         ]
       },
       {
-        "key": "Q126g",
+        "key": "Q126_g",
         "section": "Article20",
         "number": "126g",
         "type": "option",
-        "title": "Presencia de movimientos transfronterizos involuntarios que puedan tener efectos adversos importantes para la diversidad biológica (artículo 17, párrafo 1)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nPresencia de movimientos transfronterizos involuntarios que puedan tener efectos adversos importantes para la diversidad biológica (artículo 17, párrafo 1)",
         "multiple": false,
         "options": [
           {
@@ -2818,11 +2818,11 @@
         ]
       },
       {
-        "key": "Q126h",
+        "key": "Q126_h",
         "section": "Article20",
         "number": "126h",
         "type": "option",
-        "title": "Movimientos ilegales transfronterizos de OVM (artículo 25, párrafo 3)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nMovimientos ilegales transfronterizos de OVM (artículo 25, párrafo 3)",
         "multiple": false,
         "options": [
           {
@@ -2844,11 +2844,11 @@
         ]
       },
       {
-        "key": "Q126i",
+        "key": "Q126_i",
         "section": "Article20",
         "number": "126i",
         "type": "option",
-        "title": "Decisiones finales relativas a la importación o liberación de OVM (es decir aprobación o prohibición, cualesquiera condiciones, solicitudes de información ulterior, ampliaciones concedidas, motivos de la decisión) (artículos 10, párrafo 3, y 20, párrafo 3 (d))",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nDecisiones finales relativas a la importación o liberación de OVM (es decir aprobación o prohibición, cualesquiera condiciones, solicitudes de información ulterior, ampliaciones concedidas, motivos de la decisión) (artículos 10, párrafo 3, y 20, párrafo 3 (d))",
         "multiple": false,
         "options": [
           {
@@ -2870,11 +2870,11 @@
         ]
       },
       {
-        "key": "Q126j",
+        "key": "Q126_j",
         "section": "Article20",
         "number": "126j",
         "type": "option",
-        "title": "Información sobre la aplicación de la reglamentación nacional para importaciones concretas de OVM (artículo 14, párrafo 4)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nInformación sobre la aplicación de la reglamentación nacional para importaciones concretas de OVM (artículo 14, párrafo 4)",
         "multiple": false,
         "options": [
           {
@@ -2896,11 +2896,11 @@
         ]
       },
       {
-        "key": "Q126k",
+        "key": "Q126_k",
         "section": "Article20",
         "number": "126k",
         "type": "option",
-        "title": "Decisiones definitivas relativas al uso doméstico de los OVM que puedan ser objeto de un movimiento transfronterizo para uso directo como alimento humano o animal o para procesamiento (artículo 11, párrafo 1)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nDecisiones definitivas relativas al uso doméstico de los OVM que puedan ser objeto de un movimiento transfronterizo para uso directo como alimento humano o animal o para procesamiento (artículo 11, párrafo 1)",
         "multiple": false,
         "options": [
           {
@@ -2922,11 +2922,11 @@
         ]
       },
       {
-        "key": "Q126l",
+        "key": "Q126_l",
         "section": "Article20",
         "number": "126l",
         "type": "option",
-        "title": "Decisiones finales relativas a la importación de OMV para su uso directo como alimento humano o animal o para procesamiento, que están incluidas en virtud de marcos normativos nacionales (artículo 11, párrafo 4) o de acuerdo con el anexo III (artículo 11, párrafo 6) (requisito del artículo 20, párrafo 3 (d))",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nDecisiones finales relativas a la importación de OMV para su uso directo como alimento humano o animal o para procesamiento, que están incluidas en virtud de marcos normativos nacionales (artículo 11, párrafo 4) o de acuerdo con el anexo III (artículo 11, párrafo 6) (requisito del artículo 20, párrafo 3 (d))",
         "multiple": false,
         "options": [
           {
@@ -2948,11 +2948,11 @@
         ]
       },
       {
-        "key": "Q126m",
+        "key": "Q126_m",
         "section": "Article20",
         "number": "126m",
         "type": "option",
-        "title": "Declaraciones relativas al marco que se utilizan para OVM destinados a uso directo como alimento humano o animal o para procesamiento (artículo 11, párrafo 6)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nDeclaraciones relativas al marco que se utilizan para OVM destinados a uso directo como alimento humano o animal o para procesamiento (artículo 11, párrafo 6)",
         "multiple": false,
         "options": [
           {
@@ -2974,11 +2974,11 @@
         ]
       },
       {
-        "key": "Q126n",
+        "key": "Q126_n",
         "section": "Article20",
         "number": "126n",
         "type": "option",
-        "title": "Revisión y modificación de las decisiones relativas a los movimientos intencionales transfronterizos de OVM (artículo 12, párrafo 1)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nRevisión y modificación de las decisiones relativas a los movimientos intencionales transfronterizos de OVM (artículo 12, párrafo 1)",
         "multiple": false,
         "options": [
           {
@@ -3000,11 +3000,11 @@
         ]
       },
       {
-        "key": "Q126o",
+        "key": "Q126_o",
         "section": "Article20",
         "number": "126o",
         "type": "option",
-        "title": "Situación de exención concedida de OVM por cada Parte (artículo 13, párrafo 1)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nSituación de exención concedida de OVM por cada Parte (artículo 13, párrafo 1)",
         "multiple": false,
         "options": [
           {
@@ -3026,11 +3026,11 @@
         ]
       },
       {
-        "key": "Q126p",
+        "key": "Q126_p",
         "section": "Article20",
         "number": "126p",
         "type": "option",
-        "title": "Casos en que los movimientos transfronterizos intencionales pueden efectuarse al mismo tiempo que se notifica el movimiento a la Parte  importadora (artículo 13, párrafo 1)",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nCasos en que los movimientos transfronterizos intencionales pueden efectuarse al mismo tiempo que se notifica el movimiento a la Parte  importadora (artículo 13, párrafo 1)",
         "multiple": false,
         "options": [
           {
@@ -3052,11 +3052,11 @@
         ]
       },
       {
-        "key": "Q126q",
+        "key": "Q126_q",
         "section": "Article20",
         "number": "126q",
         "type": "option",
-        "title": "Resúmenes de evaluaciones del riesgo o revisiones ambientales de OVM resultantes de procesos reglamentarios e información acerca de los productos relevantes de los mismos (artículo 20, párrafo 3 (c))",
+        "title": "Proporcione una reseña de la situación de la información obligatoria proporcionada por su país al CIISB especificando para cada categoría de información si está disponible y si ha sido presentada al CIISB .\r\nResúmenes de evaluaciones del riesgo o revisiones ambientales de OVM resultantes de procesos reglamentarios e información acerca de los productos relevantes de los mismos (artículo 20, párrafo 3 (c))",
         "multiple": false,
         "options": [
           {
@@ -4618,7 +4618,7 @@
         "section": "Article26",
         "number": "194",
         "type": "option",
-        "title": " ¿Cuántos materiales evaluados por partes y publicados ha utilizado su país con el fin de planificar o determinar acciones nacionales relacionadas con consideraciones socioeconómicas?",
+        "title": "¿Cuántos materiales evaluados por partes y publicados ha utilizado su país con el fin de planificar o determinar acciones nacionales relacionadas con consideraciones socioeconómicas?",
         "multiple": false,
         "options": [
           {
@@ -4818,11 +4818,11 @@
     "title": "Artículo 33 – Vigilancia y presentación de informes",
     "questions": [
       {
-        "key": "Q204a",
+        "key": "Q204_a",
         "section": "Article33",
         "number": "204a",
         "type": "option",
-        "title": "Sistema de vigilancia:",
+        "title": "¿Cuenta su país con un sistema de vigilancia y/o imposición de la aplicación del Protocolo de Cartagena?\r\nSistema de vigilancia:",
         "multiple": false,
         "options": [
           {
@@ -4836,11 +4836,11 @@
         ]
       },
       {
-        "key": "Q204b",
+        "key": "Q204_b",
         "section": "Article33",
         "number": "204b",
         "type": "option",
-        "title": "Sistema de imposición:",
+        "title": "¿Cuenta su país con un sistema de vigilancia y/o imposición de la aplicación del Protocolo de Cartagena?\r\nSistema de imposición:",
         "multiple": false,
         "options": [
           {

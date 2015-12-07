@@ -4,7 +4,7 @@
     "title": "Partie au Protocole de Cartagena sur la biosécurité ",
     "questions": [
       {
-        "key": "party",
+        "key": "Q012_party",
         "section": "General",
         "number": "11",
         "type": "option",
@@ -44,7 +44,7 @@
         "section": "General",
         "number": "13",
         "type": "text",
-        "title": "Veuillez fournir ici de plus amples détails ",
+        "title": "Veuillez fournir ici de plus amples détails",
         "multiple": false
       }
     ]
@@ -818,7 +818,7 @@
         "section": "Articles7-10",
         "number": "46",
         "type": "text",
-        "title": "Vous pouvez fournir, dans la case suivante, de plus amples détails sur l'application des articles 7 à 10 dans votre pays, y compris des mesures en cas d'absence de certitude scientifique sur les effets nuisibles potentiels des OVM aux fins d'introduction intentionnelle dans l'environnement  ",
+        "title": "Vous pouvez fournir, dans la case suivante, de plus amples détails sur l'application des articles 7 à 10 dans votre pays, y compris des mesures en cas d'absence de certitude scientifique sur les effets nuisibles potentiels des OVM aux fins d'introduction intentionnelle dans l'environnement",
         "multiple": false
       }
     ]
@@ -1494,6 +1494,96 @@
         ]
       },
       {
+        "key": "Q079_a",
+        "section": "Article15_16",
+        "number": "79a",
+        "type": "option",
+        "title": "Combien de personnes ont été formées à l'évaluation, au suivi et à la gestion des risques et au contrôle des OVM dans votre pays ?\r\nÉvaluation des risques :",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "Aucun"
+          },
+          {
+            "value": "1+",
+            "title": "Un ou plus"
+          },
+          {
+            "value": "10+",
+            "title": "10 ou plus"
+          },
+          {
+            "value": "50+",
+            "title": "50 ou plus"
+          },
+          {
+            "value": "100+",
+            "title": "100 ou plus"
+          }
+        ]
+      },
+      {
+        "key": "Q079_b",
+        "section": "Article15_16",
+        "number": "79b",
+        "type": "option",
+        "title": "Combien de personnes ont été formées à l'évaluation, au suivi et à la gestion des risques et au contrôle des OVM dans votre pays ?\r\nGestion / contrôle :",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "Aucun"
+          },
+          {
+            "value": "1+",
+            "title": "Un ou plus"
+          },
+          {
+            "value": "10+",
+            "title": "10 ou plus"
+          },
+          {
+            "value": "50+",
+            "title": "50 ou plus"
+          },
+          {
+            "value": "100+",
+            "title": "100 ou plus"
+          }
+        ]
+      },
+      {
+        "key": "Q079_c",
+        "section": "Article15_16",
+        "number": "79c",
+        "type": "option",
+        "title": "Combien de personnes ont été formées à l'évaluation, au suivi et à la gestion des risques et au contrôle des OVM dans votre pays ?\r\nSuivi :",
+        "multiple": false,
+        "options": [
+          {
+            "value": "0",
+            "title": "Aucun"
+          },
+          {
+            "value": "1+",
+            "title": "Un ou plus"
+          },
+          {
+            "value": "10+",
+            "title": "10 ou plus"
+          },
+          {
+            "value": "50+",
+            "title": "50 ou plus"
+          },
+          {
+            "value": "100+",
+            "title": "100 ou plus"
+          }
+        ]
+      },
+      {
         "key": "Q080",
         "section": "Article15_16",
         "number": "80",
@@ -1553,6 +1643,114 @@
         "number": "83",
         "type": "option",
         "title": "Le matériel de formation ou d'orientation technique sur l'évaluation des risques et/ou la gestion des risques liés aux OVM est-il suffisant ?",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ]
+      },
+      {
+        "key": "Q084_a",
+        "section": "Article15_16",
+        "number": "84a",
+        "type": "option",
+        "title": "Votre pays a-t-il la capacité de détecter, de recenser, d'évaluer et/ou de suivre les organismes vivants modifiés ou des caractéristiques spécifiques pouvant avoir des effets négatifs sur la conservation et l'utilisation durable de la diversité biologique, tout en tenant compte des risques occasionnés pour la santé humaine ?\r\nDétection :",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ]
+      },
+      {
+        "key": "Q084_b",
+        "section": "Article15_16",
+        "number": "84b",
+        "type": "option",
+        "title": "Votre pays a-t-il la capacité de détecter, de recenser, d'évaluer et/ou de suivre les organismes vivants modifiés ou des caractéristiques spécifiques pouvant avoir des effets négatifs sur la conservation et l'utilisation durable de la diversité biologique, tout en tenant compte des risques occasionnés pour la santé humaine ?\r\nIdentification :",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ]
+      },
+      {
+        "key": "Q084_c",
+        "section": "Article15_16",
+        "number": "84c",
+        "type": "option",
+        "title": "Votre pays a-t-il la capacité de détecter, de recenser, d'évaluer et/ou de suivre les organismes vivants modifiés ou des caractéristiques spécifiques pouvant avoir des effets négatifs sur la conservation et l'utilisation durable de la diversité biologique, tout en tenant compte des risques occasionnés pour la santé humaine ?\r\nÉvaluation :",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ]
+      },
+      {
+        "key": "Q084_d",
+        "section": "Article15_16",
+        "number": "84d",
+        "type": "option",
+        "title": "Votre pays a-t-il la capacité de détecter, de recenser, d'évaluer et/ou de suivre les organismes vivants modifiés ou des caractéristiques spécifiques pouvant avoir des effets négatifs sur la conservation et l'utilisation durable de la diversité biologique, tout en tenant compte des risques occasionnés pour la santé humaine ?\r\nSuivi :",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ]
+      },
+      {
+        "key": "Q085_a",
+        "section": "Article15_16",
+        "number": "85a",
+        "type": "option",
+        "title": "Votre pays a-t-il adopté ou utilisé des documents d'orientation aux fins d'évaluation ou de gestion des risques, ou pour l'examen des rapports sur l'évaluation des risques soumis par les auteurs de notifications ?\r\nÉvaluation des risques :",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "Oui"
+          },
+          {
+            "value": "false",
+            "title": "Non"
+          }
+        ]
+      },
+      {
+        "key": "Q085_b",
+        "section": "Article15_16",
+        "number": "85b",
+        "type": "option",
+        "title": "Votre pays a-t-il adopté ou utilisé des documents d'orientation aux fins d'évaluation ou de gestion des risques, ou pour l'examen des rapports sur l'évaluation des risques soumis par les auteurs de notifications ?\r\nGestion des risques :",
         "multiple": false,
         "options": [
           {
@@ -1814,204 +2012,6 @@
         "type": "text",
         "title": "Vous pouvez fournir de plus amples détails sur l'application des articles 15 et 16 dans votre pays, dans la case suivante :",
         "multiple": false
-      },
-      {
-        "key": "Q79a",
-        "section": "Article15_16",
-        "number": "79a",
-        "type": "option",
-        "title": "Évaluation des risques :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "Aucun"
-          },
-          {
-            "value": "1+",
-            "title": "Un ou plus"
-          },
-          {
-            "value": "10+",
-            "title": "10 ou plus"
-          },
-          {
-            "value": "50+",
-            "title": "50 ou plus"
-          },
-          {
-            "value": "100+",
-            "title": "100 ou plus"
-          }
-        ]
-      },
-      {
-        "key": "Q79b",
-        "section": "Article15_16",
-        "number": "79b",
-        "type": "option",
-        "title": "Gestion / contrôle :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "Aucun"
-          },
-          {
-            "value": "1+",
-            "title": "Un ou plus"
-          },
-          {
-            "value": "10+",
-            "title": "10 ou plus"
-          },
-          {
-            "value": "50+",
-            "title": "50 ou plus"
-          },
-          {
-            "value": "100+",
-            "title": "100 ou plus"
-          }
-        ]
-      },
-      {
-        "key": "Q79c",
-        "section": "Article15_16",
-        "number": "79c",
-        "type": "option",
-        "title": "Suivi :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "0",
-            "title": "Aucun"
-          },
-          {
-            "value": "1+",
-            "title": "Un ou plus"
-          },
-          {
-            "value": "10+",
-            "title": "10 ou plus"
-          },
-          {
-            "value": "50+",
-            "title": "50 ou plus"
-          },
-          {
-            "value": "100+",
-            "title": "100 ou plus"
-          }
-        ]
-      },
-      {
-        "key": "Q84a",
-        "section": "Article15_16",
-        "number": "84a",
-        "type": "option",
-        "title": "Détection :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Oui"
-          },
-          {
-            "value": "false",
-            "title": "Non"
-          }
-        ]
-      },
-      {
-        "key": "Q84b",
-        "section": "Article15_16",
-        "number": "84b",
-        "type": "option",
-        "title": "Identification :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Oui"
-          },
-          {
-            "value": "false",
-            "title": "Non"
-          }
-        ]
-      },
-      {
-        "key": "Q84c",
-        "section": "Article15_16",
-        "number": "84c",
-        "type": "option",
-        "title": "Évaluation :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Oui"
-          },
-          {
-            "value": "false",
-            "title": "Non"
-          }
-        ]
-      },
-      {
-        "key": "Q84d",
-        "section": "Article15_16",
-        "number": "84d",
-        "type": "option",
-        "title": "Suivi :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Oui"
-          },
-          {
-            "value": "false",
-            "title": "Non"
-          }
-        ]
-      },
-      {
-        "key": "Q85a",
-        "section": "Article15_16",
-        "number": "85a",
-        "type": "option",
-        "title": "Évaluation des risques :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Oui"
-          },
-          {
-            "value": "false",
-            "title": "Non"
-          }
-        ]
-      },
-      {
-        "key": "Q85b",
-        "section": "Article15_16",
-        "number": "85b",
-        "type": "option",
-        "title": "Gestion des risques :",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "Oui"
-          },
-          {
-            "value": "false",
-            "title": "Non"
-          }
-        ]
       }
     ]
   },
@@ -2636,11 +2636,11 @@
     "title": "Article 20 – Échange d’informations et Centre d’échange pour la prévention des risques biotechnologiques",
     "questions": [
       {
-        "key": "Q126a",
+        "key": "Q126_a",
         "section": "Article20",
         "number": "126a",
         "type": "option",
-        "title": "Toutes les lois, réglementations et directives nationales en vigueur visant l'application du Protocole, ainsi que les informations requises par les Parties dans le cadre de la procédure d'accord préalable (article 20, paragraphe 3 a))",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nToutes les lois, réglementations et directives nationales en vigueur visant l'application du Protocole, ainsi que les informations requises par les Parties dans le cadre de la procédure d'accord préalable (article 20, paragraphe 3 a))",
         "multiple": false,
         "options": [
           {
@@ -2662,11 +2662,11 @@
         ]
       },
       {
-        "key": "Q126b",
+        "key": "Q126_b",
         "section": "Article20",
         "number": "126b",
         "type": "option",
-        "title": "Lois, réglementations et lignes directrices nationales s'appliquant à l'importation d'OVM destinés à être utilisés directement pour l'alimentation humaine ou animale, ou à être transformés (article 11, paragraphe 5)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nLois, réglementations et lignes directrices nationales s'appliquant à l'importation d'OVM destinés à être utilisés directement pour l'alimentation humaine ou animale, ou à être transformés (article 11, paragraphe 5)",
         "multiple": false,
         "options": [
           {
@@ -2688,11 +2688,11 @@
         ]
       },
       {
-        "key": "Q126c",
+        "key": "Q126_c",
         "section": "Article20",
         "number": "126c",
         "type": "option",
-        "title": "Tout accord ou arrangement bilatéral, régional ou multilatéral (article 14, paragraphe 2 et article 20, paragraphe 3 b))",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nTout accord ou arrangement bilatéral, régional ou multilatéral (article 14, paragraphe 2 et article 20, paragraphe 3 b))",
         "multiple": false,
         "options": [
           {
@@ -2714,11 +2714,11 @@
         ]
       },
       {
-        "key": "Q126d",
+        "key": "Q126_d",
         "section": "Article20",
         "number": "126d",
         "type": "option",
-        "title": "Coordonnées des autorités nationales compétentes (article 19, paragraphes 2 et 3), des correspondants nationaux (article 19, paragraphes 1 et 3), et numéros à composer en cas d'urgence (article 17, paragraphe 3 e))",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nCoordonnées des autorités nationales compétentes (article 19, paragraphes 2 et 3), des correspondants nationaux (article 19, paragraphes 1 et 3), et numéros à composer en cas d'urgence (article 17, paragraphe 3 e))",
         "multiple": false,
         "options": [
           {
@@ -2740,11 +2740,11 @@
         ]
       },
       {
-        "key": "Q126e",
+        "key": "Q126_e",
         "section": "Article20",
         "number": "126e",
         "type": "option",
-        "title": "Rapports sur le fonctionnement du Protocole soumis par les Parties (article 20, paragraphe 3 e))",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nRapports sur le fonctionnement du Protocole soumis par les Parties (article 20, paragraphe 3 e))",
         "multiple": false,
         "options": [
           {
@@ -2766,11 +2766,11 @@
         ]
       },
       {
-        "key": "Q126f",
+        "key": "Q126_f",
         "section": "Article20",
         "number": "126f",
         "type": "option",
-        "title": "Décisions d'une Partie sur la réglementation du transit d'organismes vivants modifiés (article 6, paragraphe 1)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nDécisions d'une Partie sur la réglementation du transit d'organismes vivants modifiés (article 6, paragraphe 1)",
         "multiple": false,
         "options": [
           {
@@ -2792,11 +2792,11 @@
         ]
       },
       {
-        "key": "Q126g",
+        "key": "Q126_g",
         "section": "Article20",
         "number": "126g",
         "type": "option",
-        "title": "Occurrence des mouvements transfrontières non intentionnels susceptibles d'avoir des effets défavorables importants sur la diversité biologique (article 17, paragraphe 1)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nOccurrence des mouvements transfrontières non intentionnels susceptibles d'avoir des effets défavorables importants sur la diversité biologique (article 17, paragraphe 1)",
         "multiple": false,
         "options": [
           {
@@ -2818,11 +2818,11 @@
         ]
       },
       {
-        "key": "Q126h",
+        "key": "Q126_h",
         "section": "Article20",
         "number": "126h",
         "type": "option",
-        "title": "Mouvements transfrontières illicites d'OVM (article 25, paragraphe 3)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nMouvements transfrontières illicites d'OVM (article 25, paragraphe 3)",
         "multiple": false,
         "options": [
           {
@@ -2844,11 +2844,11 @@
         ]
       },
       {
-        "key": "Q126i",
+        "key": "Q126_i",
         "section": "Article20",
         "number": "126i",
         "type": "option",
-        "title": "Décisions finales relatives à l'importation ou à la libération d'OVM (c.-à-d. approbation ou interdiction, toutes les conditions, demandes d'informations supplémentaires, prorogations accordées, motifs de la décision) (article 10, paragraphe 3 et article 20, paragraphe 3 d))",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nDécisions finales relatives à l'importation ou à la libération d'OVM (c.-à-d. approbation ou interdiction, toutes les conditions, demandes d'informations supplémentaires, prorogations accordées, motifs de la décision) (article 10, paragraphe 3 et article 20, paragraphe 3 d))",
         "multiple": false,
         "options": [
           {
@@ -2870,11 +2870,11 @@
         ]
       },
       {
-        "key": "Q126j",
+        "key": "Q126_j",
         "section": "Article20",
         "number": "126j",
         "type": "option",
-        "title": "Informations sur l'application de la réglementation nationale à des importations spécifiques particulières d'OVM (article 14, paragraphe 4)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nInformations sur l'application de la réglementation nationale à des importations spécifiques particulières d'OVM (article 14, paragraphe 4)",
         "multiple": false,
         "options": [
           {
@@ -2896,11 +2896,11 @@
         ]
       },
       {
-        "key": "Q126k",
+        "key": "Q126_k",
         "section": "Article20",
         "number": "126k",
         "type": "option",
-        "title": "Décisions finales sur l'utilisation sur le territoire national d'OVM pouvant faire l'objet de mouvements transfrontières et destinés à être utilisés directement pour l'alimentation humaine ou animale, ou à être transformés (article 11, paragraphe 1)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nDécisions finales sur l'utilisation sur le territoire national d'OVM pouvant faire l'objet de mouvements transfrontières et destinés à être utilisés directement pour l'alimentation humaine ou animale, ou à être transformés (article 11, paragraphe 1)",
         "multiple": false,
         "options": [
           {
@@ -2922,11 +2922,11 @@
         ]
       },
       {
-        "key": "Q126l",
+        "key": "Q126_l",
         "section": "Article20",
         "number": "126l",
         "type": "option",
-        "title": "Décisions finales sur l'importation d'OVM destinés à être utilisés directement pour l'alimentation humaine ou animale, ou à être transformés, prises en vertu de cadres de réglementation nationaux (article 11, paragraphe 4) ou conformément à l'annexe III (article 11, paragraphe 6) (exigence de l'article 20, paragraphe 3 d))",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nDécisions finales sur l'importation d'OVM destinés à être utilisés directement pour l'alimentation humaine ou animale, ou à être transformés, prises en vertu de cadres de réglementation nationaux (article 11, paragraphe 4) ou conformément à l'annexe III (article 11, paragraphe 6) (exigence de l'article 20, paragraphe 3 d))",
         "multiple": false,
         "options": [
           {
@@ -2948,11 +2948,11 @@
         ]
       },
       {
-        "key": "Q126m",
+        "key": "Q126_m",
         "section": "Article20",
         "number": "126m",
         "type": "option",
-        "title": "Déclarations relatives au cadre à utiliser pour les OVM destinés à être utilisés directement pour l'alimentation humaine ou animale, ou à transformés (article 11, paragraphe 6)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nDéclarations relatives au cadre à utiliser pour les OVM destinés à être utilisés directement pour l'alimentation humaine ou animale, ou à transformés (article 11, paragraphe 6)",
         "multiple": false,
         "options": [
           {
@@ -2974,11 +2974,11 @@
         ]
       },
       {
-        "key": "Q126n",
+        "key": "Q126_n",
         "section": "Article20",
         "number": "126n",
         "type": "option",
-        "title": "Examen et modification des décisions relatives aux mouvements transfrontières intentionnels d'OVM (article 12, paragraphe 1)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nExamen et modification des décisions relatives aux mouvements transfrontières intentionnels d'OVM (article 12, paragraphe 1)",
         "multiple": false,
         "options": [
           {
@@ -3000,11 +3000,11 @@
         ]
       },
       {
-        "key": "Q126o",
+        "key": "Q126_o",
         "section": "Article20",
         "number": "126o",
         "type": "option",
-        "title": "OVM faisant l'objet d'une dérogation accordée par toutes les Parties (article 13, paragraphe 1)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nOVM faisant l'objet d'une dérogation accordée par toutes les Parties (article 13, paragraphe 1)",
         "multiple": false,
         "options": [
           {
@@ -3026,11 +3026,11 @@
         ]
       },
       {
-        "key": "Q126p",
+        "key": "Q126_p",
         "section": "Article20",
         "number": "126p",
         "type": "option",
-        "title": "Les cas où un mouvement transfrontières intentionnel peut avoir lieu au moment même où le mouvement est notifié à la Partie importatrice (article 13, paragraphe 1)",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nLes cas où un mouvement transfrontières intentionnel peut avoir lieu au moment même où le mouvement est notifié à la Partie importatrice (article 13, paragraphe 1)",
         "multiple": false,
         "options": [
           {
@@ -3052,11 +3052,11 @@
         ]
       },
       {
-        "key": "Q126q",
+        "key": "Q126_q",
         "section": "Article20",
         "number": "126q",
         "type": "option",
-        "title": "Résumés de l'évaluation des risques ou études environnementales des OVM issus des processus réglementaires et informations pertinentes sur les produits de ceux-ci (article 20, paragraphe 3 c))",
+        "title": "Veuillez fournir un aperçu de l'état des informations communiquées par votre pays au Centre d'échange pour la prévention des risques biotechnologiques en précisant pour chaque catégorie d'informations si elle est disponible et si elle a été soumise au Centre d'échange pour la prévention des risques biotechnologiques.\r\nRésumés de l'évaluation des risques ou études environnementales des OVM issus des processus réglementaires et informations pertinentes sur les produits de ceux-ci (article 20, paragraphe 3 c))",
         "multiple": false,
         "options": [
           {
@@ -4818,11 +4818,11 @@
     "title": "Article 33 – Suivi et établissement de rapports",
     "questions": [
       {
-        "key": "Q204a",
+        "key": "Q204_a",
         "section": "Article33",
         "number": "204a",
         "type": "option",
-        "title": "Système de suivi :",
+        "title": "Votre pays a-t-il mis en place un système de suivi et/ou d'application pour la mise en œuvre du Protocole de Cartagena ?\r\nSystème de suivi :",
         "multiple": false,
         "options": [
           {
@@ -4836,11 +4836,11 @@
         ]
       },
       {
-        "key": "Q204b",
+        "key": "Q204_b",
         "section": "Article33",
         "number": "204b",
         "type": "option",
-        "title": "Système d'application :",
+        "title": "Votre pays a-t-il mis en place un système de suivi et/ou d'application pour la mise en œuvre du Protocole de Cartagena ?\r\nSystème d'application :",
         "multiple": false,
         "options": [
           {

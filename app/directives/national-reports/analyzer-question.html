@@ -1,10 +1,10 @@
 <div class="question" style="margin-bottom:10px;" ng-init="expanded={}" ng-class="{ highlight : previousReports }" ng-disabled="!fullSum">
 
-    <a class="pull-right compare" ng-class="{ on : previousReports }" href="#" ng-click="toggleCompare()" ng-if="::previousQuestionsMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with Question {{::cleanupQuestionNumber(previousQuestionsMapping[question.key])}}"></a>
+    <a class="pull-right compare" ng-class="{ on : previousReports }" href="#" ng-click="toggleCompare()" ng-if="::previousQuestionsMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with 2nd National Report Question {{::cleanupQuestionNumber(previousQuestionsMapping[question.key])}}"></a>
 
-    <b>Question {{::question.number}}</b>
+    <b>Question {{::cleanupQuestionNumber(question.number)}}</b>
 
-    <div><b>{{::question.title}}</b></div>
+    <div><b style="white-space:pre-line">{{::question.title}}</b></div>
 
     <table class="table table-hover">
         <tr>

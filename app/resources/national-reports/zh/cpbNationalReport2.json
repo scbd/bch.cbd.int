@@ -4,7 +4,7 @@
     "title": "卡塔赫纳生物安全议定书缔约方",
     "questions": [
       {
-        "key": "party",
+        "key": "Q012",
         "section": "General",
         "number": "12",
         "type": "option",
@@ -1678,6 +1678,50 @@
     "title": "第16条  –  风险管理",
     "questions": [
       {
+        "key": "Q094_a",
+        "section": "Article16",
+        "number": "94.1",
+        "type": "option",
+        "title": "有意引入到环境中的改性活生物体？",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "true.some",
+            "title": "是，在某种程度上"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
+        "key": "Q094_b",
+        "section": "Article16",
+        "number": "94.2",
+        "type": "option",
+        "title": "拟直接用作食品或饲料、或用于加工目的的改性活生物体",
+        "multiple": false,
+        "options": [
+          {
+            "value": "true",
+            "title": "是"
+          },
+          {
+            "value": "true.some",
+            "title": "是，在某种程度上"
+          },
+          {
+            "value": "false",
+            "title": "否"
+          }
+        ]
+      },
+      {
         "key": "Q095",
         "section": "Article16",
         "number": "95",
@@ -1760,50 +1804,6 @@
         "type": "text",
         "title": "贵国可以在此提供有关贵国执行第16条的更多细节，在对改性活生物体的潜在不利影响没有科学上的把握性时，包括关于风险管理占领的详细情况：",
         "multiple": false
-      },
-      {
-        "key": "Q94_1",
-        "section": "Article16",
-        "number": "94.1",
-        "type": "option",
-        "title": "有意引入到环境中的改性活生物体？",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "是"
-          },
-          {
-            "value": "true.some",
-            "title": "是，在某种程度上"
-          },
-          {
-            "value": "false",
-            "title": "否"
-          }
-        ]
-      },
-      {
-        "key": "Q94_2",
-        "section": "Article16",
-        "number": "94.2",
-        "type": "option",
-        "title": "拟直接用作食品或饲料、或用于加工目的的改性活生物体",
-        "multiple": false,
-        "options": [
-          {
-            "value": "true",
-            "title": "是"
-          },
-          {
-            "value": "true.some",
-            "title": "是，在某种程度上"
-          },
-          {
-            "value": "false",
-            "title": "否"
-          }
-        ]
       }
     ]
   },
