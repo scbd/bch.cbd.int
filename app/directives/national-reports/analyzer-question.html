@@ -1,11 +1,8 @@
 <div class="question" style="margin-bottom:10px;" ng-init="expanded={}" ng-class="{ highlight : previousReports }" ng-disabled="!fullSum">
 
+    <a class="pull-right compare" ng-class="{ on : previousReports }" href="#" ng-click="toggleCompare()" ng-if="::previousQuestionsMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with Question {{::cleanupQuestionNumber(previousQuestionsMapping[question.key])}}"></a>
+
     <b>Question {{::question.number}}</b>
-    <i>
-        <a href="#" ng-click="toggleCompare()" ng-if="::previousQuestionsMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with Question {{::cleanupQuestionNumber(previousQuestionsMapping[question.key])}}">
-            <i class="fa fa-exchange"></i>
-        </a>
-    </i>
 
     <div><b>{{::question.title}}</b></div>
 
