@@ -9,7 +9,6 @@
         .nr-analyzer .question table.table tr > td:last-child { border-bottom:none;border-top:none;border-right:none; }
         .nr-analyzer #filterBox.affix     { top:50px;right:10px; max-width:600px; }
         .nr-analyzer #sumTypeButton.affix { top:10px;right:10px }
-        .nr-analyzer #sumTypeButton.affix .btn { background-color: #337ab7; color: white; border-color: #2e6da4}
         .nr-analyzer tr.filter > td.filter > i { color:#777; }
         .nr-analyzer tr.filter.filter-on > td.filter > i { color:#337ab7; }
         .nr-analyzer tr > td.filter:hover > i { color:#337ab7; }
@@ -91,7 +90,7 @@
         </button>
 
         <div id="sumTypeButton" class="btn-group" title="Change how numbers are calculated">
-            <button type="button" class="btn btn-default" ng-click="showSumTypeSelector()">∑
+            <button type="button" class="btn btn-primary" ng-click="showSumTypeSelector()">∑
                 <span ng-switch="sumType">
                     <span ng-switch-when="sum">Count of responses</span>
                     <span ng-switch-when="percentRow">Percentage by row</span>
@@ -99,7 +98,7 @@
                     <span ng-switch-when="percentGlobal">Percentage overall</span>
                 </span>
             </button>
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
             </button>

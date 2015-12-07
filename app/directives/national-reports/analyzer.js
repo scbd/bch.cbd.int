@@ -23,7 +23,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
     //
     //
     //==============================================
-    app.directive('nationalReportAnalyzer', ['$http', '$q', 'locale', '$filter', function($http, $q, locale, $filter) {
+    app.directive('nationalReportAnalyzer', ['$http', '$q', 'locale', '$filter', '$window', function($http, $q, locale, $filter, $window) {
         return {
             restrict : 'E',
             replace : true,
@@ -36,7 +36,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
             },
             link: function ($scope, $element, attr, nrAnalyzer) {
 
-                $element.find("#sumTypeButton").affix({ offset: { top : 300 } });
+                $element.find("#sumTypeButton").affix({ offset: { top : -1 } });
                 $element.find("#filterBox"    ).affix({ offset: { top : 340 } });
 
                 $scope.allRegionsMap = {};
