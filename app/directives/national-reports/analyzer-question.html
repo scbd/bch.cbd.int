@@ -23,7 +23,7 @@
             <th style="width:25px" ng-if="expanded[region.identifier]" ng-repeat="gov in ::region.countries track by gov">
                 <a href="/database/record.shtml?documentid={{::reportsMap[gov].documentId}}" target="_report" data-toggle="tooltip" data-original-title="{{::region.countriesMap[gov].title|lstring}}">{{::(gov|uppercase)}}</a>
             </th>
-            <th ng-repeat-end ng-if="::false"></th>
+            <th ng-repeat-end ng-show="::false"></th>
             <th style="width:10px;background-color:white"></th>
         </tr>
 
@@ -52,7 +52,7 @@
                 <div style="font-size:18px;line-height:inherit" ng-if="::testAnswer(reportsMap[gov][question.key], row.value)">&#x25CF;</div>
                 <div style="font-size:18px;line-height:inherit" ng-if="previousReports && testAnswer(previousReportsMap[gov][previousQuestionsMapping[question.key]], row.value)">&#x25CB;</div>
             </td>
-            <td ng-repeat-end ng-if="::false"></th>
+            <td ng-repeat-end ng-show="::false"></th>
             <td class="bordered" style="padding:0px;background-color:white"></td>
         </tr>
 
@@ -72,7 +72,7 @@
             <td class="text-center text-nowrap country country"ng-if="expanded[region.identifier]" ng-repeat="gov in ::region.countries track by gov">
                 <img ng-if="reportsMap[gov][question.key]" src="/bch/images/nr-document.png" ng-click="showTexts([gov])" style="cursor:pointer">
             </td>
-            <td ng-repeat-end ng-if="::false"></th>
+            <td ng-repeat-end ng-show="::false"></th>
             <td style="padding:0px;background-color:white"></td>
         </tr>
 
