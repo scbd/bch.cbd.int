@@ -1,4 +1,4 @@
-define(['app', 'jquery', 'providers/extended-route'], function(app, $) { 'use strict';
+define(['app', 'lodash', 'providers/extended-route'], function(app, _) { 'use strict';
 
 
 	app.config(['extendedRouteProvider', '$locationProvider', function($routeProvider, $locationProvider) {
@@ -9,11 +9,11 @@ define(['app', 'jquery', 'providers/extended-route'], function(app, $) { 'use st
 		//CONDITIONAL ROUTES
 
         $routeProvider.when('/database/lmo/decisions.shtml', { templateUrl: 'views/lmos/decisions-lmo-id.html', resolveController: true});
-        $routeProvider.when('/database/reports',             { templateUrl: 'views/reports/index.html',         resolveController: true});
+        $routeProvider.when('/database/reports/',            { templateUrl: 'views/reports/index.html',         resolveController: true});
         $routeProvider.when('/database/reports/analyzer',    { templateUrl: 'views/reports/analyzer.html',      resolveController: true});
 
         //FOR DEV TO BE DELETED
-        $routeProvider.when('/database/reportsx',            { templateUrl: 'views/reports/index.html',         resolveController: true});
+        $routeProvider.when('/database/reportsx/',           { templateUrl: 'views/reports/index.html',         resolveController: true});
         $routeProvider.when('/database/reportsx/analyzer',   { templateUrl: 'views/reports/analyzer.html',      resolveController: true});
 
 	}]);
@@ -30,8 +30,8 @@ define(['app', 'jquery', 'providers/extended-route'], function(app, $) { 'use st
 
             if(!forceReload && nextRoute) {
 
-                var nextPath = nextRoute.$$route.originalPath.replace(/\/+$/, ''); //trim ending /
-                var prevPath = prevRoute.$$route.originalPath.replace(/\/+$/, ''); //trim ending /
+                var nextPath = _.trimRight(nextRoute.$$route.originalPath, '/');
+                var prevPath = _.trimRight(prevRoute.$$route.originalPath, '/');
 
                 forceReload = nextPath != prevPath; // Always force reload for BCH
             }

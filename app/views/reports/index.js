@@ -1,4 +1,4 @@
-define(['directives/national-reports/questions-selector'], function() {
+define(['lodash', 'directives/national-reports/questions-selector'], function(_) {
     'use strict';
 
     return ['$scope', '$location', function($scope, $location) {
@@ -17,7 +17,7 @@ define(['directives/national-reports/questions-selector'], function() {
 
             sessionStorage.setItem('nrAnalyzerData', JSON.stringify(data));
 
-            $location.url($location.path() + '/analyzer');
+            $location.url(_.trimRight($location.path(), '/') + '/analyzer');
         };
 
     }];
