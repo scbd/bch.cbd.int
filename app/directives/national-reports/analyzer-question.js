@@ -166,7 +166,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     q = (q||'').toString().replace(/^[Q0]*/, '');
 
                     if(/[a-z]$/.test(q))
-                        q = q.replace(/^(\d*).*?([a-z]*)$/, '$1 $2)');
+                        q = q.replace(/^(\d*).*?([a-z]*)$/, '$1 ($2)');
 
                     return q;
                 };
