@@ -1,4 +1,4 @@
-<div class="question" style="margin-bottom:10px;" ng-init="expanded={}" ng-class="{ highlight : previousReports }" ng-disabled="!fullSum">
+<div class="question" style="margin-bottom:10px;" ng-class="{ highlight : previousReports }" ng-disabled="!fullSum">
 
     <a class="pull-right compare" ng-class="{ on : previousReports }" href="#" ng-click="toggleCompare()" ng-if="::previousQuestionsMapping[question.key]"  data-toggle="popover" data-placement="top" data-content="Compare with 2nd National Report Question {{::cleanupQuestionNumber(previousQuestionsMapping[question.key])}}"></a>
 
@@ -78,7 +78,7 @@
 
     </table>
 
-    <div class="text-right" ng-if="previousReports" style="margin-right:18px;margin-left:18px;margin-top:-18px">
+    <div class="text-right" ng-if="previousReports && expanded" style="margin-right:18px;margin-left:18px;margin-top:-18px">
         <span style="font-size:18px;line-height:inherit">&#x25CF;</span> 3rd NR &nbsp; &nbsp;
         <span style="font-size:18px;line-height:inherit">&#x25CB;</span> 2nd NR
     </div>

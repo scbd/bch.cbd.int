@@ -209,10 +209,15 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //==============================================
                 $scope.toggleRegion = function(region) {
 
+                    if(!$scope.expanded)
+                        $scope.expanded = {};
+
                     $scope.expanded[region.identifier] = !$scope.expanded[region.identifier];
 
-                    $timeout(initTooltips, 250);
+                    if(!_($scope.expanded).values().compact().size())
+                        delete $scope.expanded;
 
+                    $timeout(initTooltips, 250);
                 };
 
                 //==============================================
