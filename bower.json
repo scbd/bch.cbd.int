@@ -5,7 +5,7 @@
     "angular-route": "1.4.7",
     "angular-cookies": "1.4.7",
     "angular-sanitize": "1.4.7",
-    "angular-flex": "git://github.com/scbd/angular-flex.git#1.0.1",
+    "angular-flex": "git://github.com/scbd/angular-flex.git#1.0.2",
     "font-awesome": "4.3.0",
     "requirejs": "2.1.18",
     "requirejs-text": "2.0.14",
