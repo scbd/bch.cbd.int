@@ -23,7 +23,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
     //
     //
     //==============================================
-    app.directive('nationalReportAnalyzer', ['$http', '$q', 'locale', '$filter', '$window', function($http, $q, locale, $filter, $window) {
+    app.directive('nationalReportAnalyzer', ['$http', '$q', 'locale', '$filter', function($http, $q, locale, $filter) {
         return {
             restrict : 'E',
             replace : true,
