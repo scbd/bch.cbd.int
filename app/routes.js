@@ -1,27 +1,45 @@
 define(['app', 'jquery', 'providers/extended-route'], function(app, $) { 'use strict';
 
+
 	app.config(['extendedRouteProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
-		var baseHref = $("base").attr('href').toLowerCase();
-
-		$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode({ enabled : true, requireBase: false });
 		$locationProvider.hashPrefix('!');
 
 		//CONDITIONAL ROUTES
 
-        if(baseHref == '/database/lmo/') {
+        $routeProvider.when('/database/lmo/decisions.shtml', { templateUrl: 'views/lmos/decisions-lmo-id.html', resolveController: true});
+        $routeProvider.when('/database/reports',             { templateUrl: 'views/reports/index.html',         resolveController: true});
+        $routeProvider.when('/database/reports/analyzer',    { templateUrl: 'views/reports/analyzer.html',      resolveController: true});
 
-            $routeProvider.when('/decisions.shtml',  { templateUrl: 'views/lmos/decisions-lmo-id.html', resolveController: true});
+        //FOR DEV TO BE DELETED
+        $routeProvider.when('/database/reportsx',            { templateUrl: 'views/reports/index.html',         resolveController: true});
+        $routeProvider.when('/database/reportsx/analyzer',   { templateUrl: 'views/reports/analyzer.html',      resolveController: true});
 
-		}
-        else if(baseHref == '/database/reportsx/') {
-
-            $routeProvider.when('/',          { templateUrl: 'views/reports/index.html',    resolveController: true});
-            $routeProvider.when('/analyzer',  { templateUrl: 'views/reports/analyzer.html', resolveController: true});
-
-		}
-		else {
-			throw "Unhandled base:" + baseHref;
-		}
 	}]);
+
+    // Reload  page when no target route
+    app.run(['$rootScope', '$window', '$location', function($rootScope, $window, $location) {
+
+        $rootScope.$on('$routeChangeStart', function(evt, nextRoute, prevRoute) {
+
+            if(!prevRoute)
+                return;
+
+            var forceReload = !nextRoute; // Reload when no target route
+
+            if(!forceReload && nextRoute) {
+
+                var nextPath = nextRoute.$$route.originalPath.replace(/\/+$/, ''); //trim ending /
+                var prevPath = prevRoute.$$route.originalPath.replace(/\/+$/, ''); //trim ending /
+
+                forceReload = nextPath != prevPath; // Always force reload for BCH
+            }
+
+            if(forceReload) {
+                $window.location = $location.url();
+                evt.preventDefault();
+            }
+        });
+    }]);
 });

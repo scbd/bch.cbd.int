@@ -17,7 +17,7 @@ define(['directives/national-reports/questions-selector'], function() {
 
             sessionStorage.setItem('nrAnalyzerData', JSON.stringify(data));
 
-            $location.url('/analyzer');
+            $location.url($location.path() + '/analyzer');
         };
 
     }];
