@@ -1,6 +1,5 @@
 define(['app', 'lodash', 'providers/extended-route'], function(app, _) { 'use strict';
 
-
 	app.config(['extendedRouteProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
 		$locationProvider.html5Mode({ enabled : true, requireBase: false });

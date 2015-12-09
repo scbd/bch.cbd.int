@@ -46,20 +46,8 @@ require(['angular', 'app', 'routes'], function(ng, app) {
 // MISC
 
 //==================================================
+// Fix IE Console
 // Protect window.console method calls, e.g. console is not defined on IE
 // unless dev tools are open, and IE doesn't define console.debug
 //==================================================
-(function fixIEConsole() { 'use strict';
-
-    if (!window.console) {
-        window.console = {};
-    }
-
-    var methods = ["log", "info", "warn", "error", "debug", "trace", "dir", "group","groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd", "dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"];
-    var noop    = function() {};
-
-    for(var i = 0; i < methods.length; i++) {
-        if (!window.console[methods[i]])
-            window.console[methods[i]] = noop;
-    }
-})();
+(function(a){a.console||(a.console={});for(var c="log info warn error debug trace dir group groupCollapsed groupEnd time timeEnd profile profileEnd dirxml assert count markTimeline timeStamp clear".split(" "),d=function(){},b=0;b<c.length;b++)a.console[c[b]]||(a.console[c[b]]=d)})(window); //jshint ignore:line

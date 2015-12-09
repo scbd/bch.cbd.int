@@ -23,20 +23,51 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
             link: function ($scope, el, attr, nrAnalyzer) {
 
                 initTooltips();
-
-                $scope.$on('nr.analyzer.filter', analyze);
-
                 analyze();
 
                 //==============================================
                 //
                 //
                 //==============================================
+                $scope.$on('nr.analyzer.filter', analyze);
+
+                //==============================================
+                //
+                //
+                //==============================================
                 $scope.$watch('::previousQuestionsMapping', initTooltips);
-                function initTooltips() {
-                    el.find('[data-toggle="tooltip"]:not([tooltip-init])').tooltip({trigger:'hover focus'}).attr('tooltip-init', '');
-                    el.find('[data-toggle="popover"]:not([popover-init])').popover({trigger:'hover focus'}).attr('popover-init', '');
-                }
+
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.$watch("::regions", function(regions) {
+
+                    $scope.regionsMap = _(regions).reduce(function(regionsMap, region){
+
+                        regionsMap[region.identifier] = region;
+
+                        return regionsMap;
+
+                    },{});
+
+                    $timeout(initTooltips, 250);
+                });
+
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.$watch("::previousReports", function(previousReports) {
+
+                    $scope.previousReportsMap = _(previousReports).reduce(function(previousReportsMap, report){
+
+                        previousReportsMap[report.government] = report;
+
+                        return previousReportsMap;
+
+                    },{});
+                });
 
                 //==============================================
                 //
@@ -85,6 +116,23 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     }).value();
 
                     nrAnalyzer.showTexts(results, $scope.question);
+                };
+
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.toggleRegion = function(region) {
+
+                    if(!$scope.expanded)
+                    $scope.expanded = {};
+
+                    $scope.expanded[region.identifier] = !$scope.expanded[region.identifier];
+
+                    if(!_($scope.expanded).values().compact().size())
+                    delete $scope.expanded;
+
+                    $timeout(initTooltips, 250);
                 };
 
                 //==============================================
@@ -163,6 +211,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //==============================================
                 $scope.cleanupQuestionNumber = function(q) {
+
                     q = (q||'').toString().replace(/^[Q0]*/, '');
 
                     if(/[a-z]$/.test(q))
@@ -175,50 +224,12 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
-                $scope.$watch("::regions", function(regions) {
+                function initTooltips() {
 
-                    $scope.regionsMap = _(regions).reduce(function(regionsMap, region){
+                    el.find('[data-toggle="tooltip"]:not([tooltip-init])').tooltip({trigger:'hover focus'}).attr('tooltip-init', '');
+                    el.find('[data-toggle="popover"]:not([popover-init])').popover({trigger:'hover focus'}).attr('popover-init', '');
 
-                        regionsMap[region.identifier] = region;
-
-                        return regionsMap;
-
-                    },{});
-
-                    $timeout(initTooltips, 250);
-                });
-
-                //==============================================
-                //
-                //
-                //==============================================
-                $scope.$watch("::previousReports", function(previousReports) {
-
-                    $scope.previousReportsMap = _(previousReports).reduce(function(previousReportsMap, report){
-
-                        previousReportsMap[report.government] = report;
-
-                        return previousReportsMap;
-
-                    },{});
-                });
-
-                //==============================================
-                //
-                //
-                //==============================================
-                $scope.toggleRegion = function(region) {
-
-                    if(!$scope.expanded)
-                        $scope.expanded = {};
-
-                    $scope.expanded[region.identifier] = !$scope.expanded[region.identifier];
-
-                    if(!_($scope.expanded).values().compact().size())
-                        delete $scope.expanded;
-
-                    $timeout(initTooltips, 250);
-                };
+                }
 
                 //==============================================
                 //
@@ -333,7 +344,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         if(included)
                             data.reports[report.government] = report;
 
-                        var answers      = getNormalizeAnswers(report, key);
+                        var answers      = getNormalizedAnswers(report, key);
                         var answeredRows = _(answers).map(function(value) { return data.rows[value]; }).compact().value();
 
                         answeredRows.forEach(function(row){
@@ -393,7 +404,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //============================================================
-                function getNormalizeAnswers(report, key) {
+                function getNormalizedAnswers(report, key) {
 
                     key = key || $scope.question.key;
 
@@ -403,7 +414,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         answers = undefined;
 
                     if($scope.question.type=='text' && !!answers)
-                        answers = 'text';
+                    answers = 'text';
 
                     return _([answers]).flatten().compact().value();
                 }

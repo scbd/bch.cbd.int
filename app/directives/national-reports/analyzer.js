@@ -40,17 +40,18 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 $element.find("#filterBox"    ).affix({ offset: { top : 340 } });
 
                 $scope.allRegionsMap = {};
+
                 $scope.filters = [];
                 $scope.filtersCountriesMap = {};
-                $scope.sumType = 'percentGlobal';
+
+                $scope.sumType  = 'percentGlobal';
                 $scope.sumTypes = ['percentGlobal', 'percentColumn', 'percentRow', 'sum' ];
 
+                //====================================
+                //
+                //
+                //====================================
                 var loaded = false;
-
-                //====================================
-                //
-                //
-                //====================================
                 $scope.$watch('selectedRegions',    function() { if(!loaded) load(); });
                 $scope.$watch('selectedQuestions',  function() { if(!loaded) load(); });
                 $scope.$watch('selectedReportType', function() { if(!loaded) load(); });
@@ -75,8 +76,10 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         var reports  = results[2];
                         var previousQuestionsMapping = results[3];
 
-                        var reportsCountriesMap = _(reports).pluck('government').sortBy().map(function(id){
+                        var reportsCountriesMap = _(reports).pluck('government').sortBy().map(function(id) {
+
                             return $scope.allRegionsMap[id];
+
                         }).reduce(mapReduce('identifier'), {});
 
                         regions = _.map(regions, function(region){
@@ -94,9 +97,9 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     }).then(function(){
 
-                        if($scope.sections && $scope.sections.length) {
+                        if($scope.sections && $scope.sections.length)
                             nrAnalyzer.toggleSection($scope.sections[0].key, true);
-                        }
+
                     });
                 }
 
@@ -123,9 +126,13 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         $scope.allRegionsMap = allRegionsMap;
 
                         return _($scope.selectedRegions).map(function(id) {
+
                             return allRegionsMap[id];
+
                         }).sortBy(function(term) {
+
                             return lstring(term.shortTitle) || lstring(term.title);
+
                         }).value();
                     });
                 }
@@ -245,7 +252,6 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         else        sumTypeDialog.modal('hide');
                     }
                 });
-
 
                 //====================================
                 //
