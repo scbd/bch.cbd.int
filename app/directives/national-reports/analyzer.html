@@ -51,9 +51,10 @@
         .nr-analyzer tr.option.percentRow > td.region.first { border-left:   solid 2px #777 !important; }
         .nr-analyzer tr.option.percentRow > td:last-child   { border-left:   solid 2px #777 !important; }
 
-        .nr-analyzer tr.option.percentGlobal .cell-value::after,
-        .nr-analyzer tr.option.percentColumn .cell-value::after,
-        .nr-analyzer tr.option.percentRow    .cell-value::after { content: '%' }
+        .nr-analyzer .question .cell-percent::after,
+        .nr-analyzer .question .option.percentGlobal .cell-value::after,
+        .nr-analyzer .question .option.percentColumn .cell-value::after,
+        .nr-analyzer .question .option.percentRow    .cell-value::after { content: '%' }
 
         .nr-analyzer .cell-delta.inc    { color:#008000;white-space: nowrap;cursor:help}
         .nr-analyzer .cell-delta.dec    { color:#800000;white-space: nowrap;cursor:help}

@@ -36,7 +36,7 @@
             <td>{{::row.title}}</td>
             <td class="text-center" >{{row.sum}}</td>
             <td class="text-center">
-                <span>{{row.percent}}%</span>
+                <span class="cell-percent">{{row.percent}}</span>
                 <div ng-if="row.previous">
                     <span class="cell-delta"  ng-class="{ 'inc' : row.previous.percent.delta>0, 'dec' : row.previous.percent.delta<0, 'stable' : row.previous.percent.delta==0 }">{{row.previous.percent.delta}}</span>
                 </div>
