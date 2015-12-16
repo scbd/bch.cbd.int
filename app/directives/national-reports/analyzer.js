@@ -84,9 +84,15 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                         regions = _.map(regions, function(region){
 
-                            region.htmlTitle    = htmlTitle(region.shortTitle, region.title);
-                            region.countriesMap = _.pick(reportsCountriesMap, [region.identifier].concat(region.expandedNarrowerTerms||region.narrowerTerms||[]));
-                            region.countries    = _.keys(region.countriesMap);
+                            region.htmlTitle = htmlTitle(region.shortTitle, region.title);
+                            region.countries = _([region.identifier])
+                                .union(region.expandedNarrowerTerms || region.narrowerTerms || [])
+                                .sort()
+                                .map(function(id) {
+                                    return reportsCountriesMap[id];
+                                })
+                                .compact()
+                                .value();
 
                             return region;
                         });

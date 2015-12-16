@@ -16,14 +16,13 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
             scope :  {
                 question : '=',
                 reports : '=',
-                regions : '=',
+                regionList : '=regions',
                 sumType : '=',
                 previousQuestionsMapping : '='
             },
             link: function ($scope, el, attr, nrAnalyzer) {
 
                 initTooltips();
-                analyze();
 
                 //==============================================
                 //
@@ -41,17 +40,28 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
-                $scope.$watch("::regions", function(regions) {
+                $scope.$watch("::regionList", function(regions) {
 
-                    $scope.regionsMap = _(regions).reduce(function(regionsMap, region){
+                    $scope.regions = [];
+                    $scope.regionsMap = {};
 
-                        regionsMap[region.identifier] = region;
+                    regions.forEach(function(region){
 
-                        return regionsMap;
+                        region = _.cloneDeep(region);
+                        region.countriesMap = _(region.countries).reduce(function(countriesMap, country){
+                                countriesMap[country.identifier] = country;
+                                return countriesMap;
+                            }, {});
 
-                    },{});
+                        $scope.regions.push(region);
+                        $scope.regionsMap[region.identifier] = region;
+
+                    });
 
                     $timeout(initTooltips, 250);
+
+                    analyze();
+
                 });
 
                 //==============================================
@@ -246,15 +256,37 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     }
 
                     var question = $scope.question;
+                    var regions  = $scope.regions;
                     var reports  = $scope.reports;
                     var previousReports = $scope.previousReports;
                     var questionsMapping = $scope.previousQuestionsMapping;
 
-                    var data = analyzeReports(reports);
+                    var restrictedCountriesMap; // Only allow countries listed in this object-map (if !== undefined)
+
+                    if (previousReports && questionsMapping) { // Inject comparaisons
+                        restrictedCountriesMap = _(_.pluck(reports, 'government')).intersection(_.pluck(previousReports, 'government'))
+                            .reduce(function(restrictedCountriesMap, ctr) {
+                                restrictedCountriesMap[ctr] = true;
+                                return restrictedCountriesMap;
+                            }, {});
+                    }
+
+                    regions.forEach(function(region){
+                        region.countries.forEach(function(country){
+                            country.visible = !restrictedCountriesMap || restrictedCountriesMap[country.identifier];
+                        });
+                    });
+
+                    var data = analyzeReports(reports, {
+                        countriesMap: restrictedCountriesMap
+                    });
 
                     if(previousReports && questionsMapping) { // Inject comparaisons
 
-                        var prevData = analyzeReports(previousReports, questionsMapping[question.key]);
+                        var prevData = analyzeReports(previousReports, {
+                            key: questionsMapping[question.key],
+                            countriesMap: restrictedCountriesMap
+                        });
 
                         _.forEach(data.rows, function(row) {
 
@@ -293,13 +325,14 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //============================================================
-                function analyzeReports(reports, key) {
-
-                    key = key || $scope.question.key;
+                function analyzeReports(reports, options) {
 
                     var question = $scope.question;
                     var regions  = $scope.regions;
                     var filter   = nrAnalyzer.filter();
+
+                    var key = (options||{}).key || question.key;
+                    var countriesMap = (options||{}).countriesMap;
 
                     var data = {
                         sum : 0,
@@ -338,6 +371,9 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     }, {});
 
                     reports.forEach(function(report) {
+
+                        if(countriesMap && !countriesMap[report.government])
+                            return; // exclud this report
 
                         var included = !filter || !!filter.matchingCountriesMap[report.government];
 
