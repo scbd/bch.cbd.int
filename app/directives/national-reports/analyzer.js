@@ -280,13 +280,13 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
             controller : ['$scope', function($scope){
 
-                var _self = this;
+                var nrAnalyzer = this;
 
                 //====================================
                 //
                 //
                 //====================================
-                this.showSumTypeSelector = function(visible) {
+                nrAnalyzer.showSumTypeSelector = function(visible) {
 
                     if(visible===undefined)
                         visible = true;
@@ -298,7 +298,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //
                 //
                 //====================================
-                this.showTexts = function(countriesTexts, question) {
+                nrAnalyzer.showTexts = function(countriesTexts, question) {
 
                     var lstring = $filter('lstring');
 
@@ -315,7 +315,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //
                 //
                 //====================================
-                this.toggleSection = function(sectionName, expanded) {
+                nrAnalyzer.toggleSection = function(sectionName, expanded) {
 
                     var section = _.findWhere($scope.sections||[], { key : sectionName });
 
@@ -335,7 +335,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     }
 
-                    return _self.loadReports({
+                    return nrAnalyzer.loadReports({
 
                         questions : _.pluck(section.questions, 'key').concat(['documentId'])
 
@@ -353,7 +353,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //
                 //
                 //====================================
-                this.filter = function(filter) {
+                nrAnalyzer.filter = function(filter) {
 
                     if(!arguments.length) {
                         return $scope.filter;
@@ -367,7 +367,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //
                 //
                 //====================================
-                this.loadReports = function(options) {
+                nrAnalyzer.loadReports = function(options) {
 
                     options = _.defaults(options||{}, {
                         reportType : $scope.selectedReportType,
@@ -387,25 +387,30 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     };
 
                     return $http.get(collectionUrls[options.reportType], {  params: { q : query, f : fields }, cache : true }).then(function(res) {
-
                         return _.map(res.data, function(report) {
-                            return _.mapValues(report, toRawValue);
+                            report.government = nrAnalyzer.normalizeAnswer(report.government);
+                            return report;
                         });
                     });
-
-                    function toRawValue(v) {
-
-                        if(_.isArray(v))
-                            return _.map(v, toRawValue);
-
-                        v = v.value || v.identifier || v;
-
-                        if(typeof(v)=='boolean')
-                            v = v.toString();
-
-                        return v;
-                    }
                 };
+
+                //==============================================
+                //
+                //
+                //==============================================
+                nrAnalyzer.normalizeAnswer = function (v) {
+
+                    if(_.isArray(v))
+                        return _(v).map(nrAnalyzer.normalizeAnswer).compact().value();
+
+                    v = v && (v.value || v.identifier || v);
+
+                    if(typeof(v)=='boolean')
+                        v = v.toString();
+
+                    return v;
+                };
+
             }]
         };
     }]);

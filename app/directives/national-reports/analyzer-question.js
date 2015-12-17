@@ -85,6 +85,8 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //==============================================
                 $scope.testAnswer = function(answer, value) {
 
+                    answer = nrAnalyzer.normalizeAnswer(answer);
+
                     if(answer === value)     return true;
                     if(answer === undefined) return false;
                     if(_.isArray  (answer))  return answer.indexOf(value)>=0;
@@ -97,7 +99,21 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
+                $scope.showText = function(government, text) {
+
+                    nrAnalyzer.showTexts([{
+                        government : government,
+                        text : text
+                    }], $scope.question);
+                };
+
+                //==============================================
+                //
+                //
+                //==============================================
                 $scope.showTexts = function(governments) {
+
+                    governments = _.map(governments, function(g) { return g.identifier || g; } );
 
                     if(!governments)
                         governments = _.pluck($scope.reports, 'government');
@@ -118,9 +134,13 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     }).map(function(report) {
 
+                        var text = report[$scope.question.key];
+
+                        text = text && (text.details || text);
+
                         return {
                             government : report.government,
-                            text : report[$scope.question.key]
+                            text : text
                         };
 
                     }).value();
@@ -161,7 +181,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     var countriesMap = _($scope.reports).filter(function(report) {
 
-                        var answer = report[question.key];
+                        var answer = nrAnalyzer.normalizeAnswer(report[question.key]);
 
                         return answer && (answer == option.value || answer.indexOf(option.value)>=0);
 
@@ -444,7 +464,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     key = key || $scope.question.key;
 
-                    var answers = report[key];
+                    var answers = nrAnalyzer.normalizeAnswer(report[key]);
 
                     if(_.isEmpty(answers))
                         answers = undefined;

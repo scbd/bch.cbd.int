@@ -54,8 +54,14 @@
             </td>
             <!-- show countries if expanded[region.identifier] -->
             <td class="text-center country"  ng-class="{ 'first': $first, 'last' : $last }" ng-if="expanded[cell.identifier]" ng-repeat="country in regionsMap[cell.identifier].countries|filter:{visible:true} track by country.identifier">
-                <div style="font-size:18px;line-height:inherit" ng-if="::testAnswer(reportsMap[country.identifier][question.key], row.value)">&#x25CF;</div>
-                <div style="font-size:18px;line-height:inherit" ng-if="previousReports && testAnswer(previousReportsMap[country.identifier][previousQuestionsMapping[question.key]], row.value)">&#x25CB;</div>
+                <div style="font-size:18px;line-height:inherit" ng-if="::testAnswer(reportsMap[country.identifier][question.key], row.value)">
+                    &#x25CF;
+                    <img ng-if="::reportsMap[country.identifier][question.key].details" src="/bch/images/nr-document.png" ng-click="showText(country.identifier, reportsMap[country.identifier][question.key].details)" style="cursor:pointer">
+                </div>
+                <div style="font-size:18px;line-height:inherit" ng-if="previousReports && testAnswer(previousReportsMap[country.identifier][previousQuestionsMapping[question.key]], row.value)">
+                    &#x25CB;
+                    <img ng-if="::previousReportsMap[country.identifier][previousQuestionsMapping[question.key]].details" src="/bch/images/nr-document.png" ng-click="showText(country.identifier, previousReportsMap[country.identifier][previousQuestionsMapping[question.key]].details)" style="cursor:pointer">
+                </div>
             </td>
             <td ng-repeat-end ng-show="::false"></th>
             <td class="bordered" style="padding:0px;background-color:white"></td>
@@ -75,7 +81,7 @@
             </td>
             <!-- show countries if expanded[region.identifier] -->
             <td class="text-center text-nowrap country country"ng-if="expanded[region.identifier]" ng-repeat="country in region.countries|filter:{visible:true} track by country.identifier">
-                <img ng-if="reportsMap[country.identifier][question.key]" src="/bch/images/nr-document.png" ng-click="showTexts([country.identifier])" style="cursor:pointer">
+                <img ng-if="reportsMap[country.identifier][question.key]" src="/bch/images/nr-document.png" ng-click="showText(country.identifier, reportsMap[country.identifier][question.key])" style="cursor:pointer">
             </td>
             <td ng-repeat-end ng-show="::false"></th>
             <td style="padding:0px;background-color:white"></td>
