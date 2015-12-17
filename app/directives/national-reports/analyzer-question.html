@@ -89,9 +89,15 @@
 
     </table>
 
-    <div class="text-right" ng-if="previousReports && expanded" style="margin-right:18px;margin-left:18px;margin-top:-18px">
-        <span style="font-size:18px;line-height:inherit">&#x25CF;</span> 3rd NR &nbsp; &nbsp;
-        <span style="font-size:18px;line-height:inherit">&#x25CB;</span> 2nd NR
+    <div ng-if="previousReports" style="margin-top:-15px">
+
+        <div ng-show="expanded" class="pull-right" style="margin-right:18px;margin-left:18px;">
+            <span style="font-size:18px;line-height:inherit">&#x25CF;</span> 3rd NR &nbsp; &nbsp;
+            <span style="font-size:18px;line-height:inherit">&#x25CB;</span> 2nd NR
+        </div>
+
+        <b>Note:</b> The comparison tool only includes those countries that have answered this question in the 3rd and 2nd National Reports. Accordingly, the total counts and percentages may change when applying the comparison tool.
+
     </div>
 
 </div>

@@ -281,15 +281,28 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     var previousReports = $scope.previousReports;
                     var questionsMapping = $scope.previousQuestionsMapping;
 
-                    var restrictedCountriesMap; // Only allow countries listed in this object-map (if !== undefined)
+                    // Only allow countries who answered to this question
+                    var restrictedCountries = _(reports)
+                        .filter(function(r) { return !!r[question.key]; })
+                        .pluck('government')
+                        .value();
 
-                    if (previousReports && questionsMapping) { // Inject comparaisons
-                        restrictedCountriesMap = _(_.pluck(reports, 'government')).intersection(_.pluck(previousReports, 'government'))
-                            .reduce(function(restrictedCountriesMap, ctr) {
-                                restrictedCountriesMap[ctr] = true;
-                                return restrictedCountriesMap;
-                            }, {});
+                    if (previousReports && questionsMapping) {
+
+                        //Only allow countries who answered to this question in both report set
+
+                        var previousCountries = _(previousReports)
+                            .filter(function(pr) { return !!pr[questionsMapping[question.key]]; })
+                            .pluck('government')
+                            .value();
+
+                        restrictedCountries = _.intersection(restrictedCountries, previousCountries);
                     }
+
+                    var restrictedCountriesMap = _(restrictedCountries).reduce(function(restrictedCountriesMap, ctr) {
+                            restrictedCountriesMap[ctr] = true;
+                            return restrictedCountriesMap;
+                        }, {});
 
                     regions.forEach(function(region){
                         region.countries.forEach(function(country){
@@ -392,7 +405,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     reports.forEach(function(report) {
 
-                        if(countriesMap && !countriesMap[report.government])
+                        if(!countriesMap[report.government])
                             return; // exclud this report
 
                         var included = !filter || !!filter.matchingCountriesMap[report.government];
