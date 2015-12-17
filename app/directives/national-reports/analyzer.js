@@ -248,6 +248,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //====================================
                 var sumTypeDialog = $element.find("#sumTypeDialog");
 
+                sumTypeDialog.on("shown.bs.modal",    function() { sumTypeDialog.find('button').focus(); });
                 sumTypeDialog.on("shown.bs.modal",    function() { $scope.$apply(function() { $scope.sumTypeDialogVisible = true;  }); });
                 sumTypeDialog.on("hidden.bs.modal",   function() { $scope.$apply(function() { $scope.sumTypeDialogVisible = false; }); });
                 $scope.$watch('sumTypeDialogVisible', function(visible) {
@@ -266,6 +267,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 var textsDialog = $element.find("#textsDialog");
 
                 textsDialog.on("shown.bs.modal",  function() { textsDialog.find(".modal-body").scrollTop(0); });
+                textsDialog.on("shown.bs.modal",  function() { textsDialog.find('button').focus(); });
                 textsDialog.on("shown.bs.modal",  function() { $scope.$apply(function() { $scope.textsDialogVisible = true;  }); });
                 textsDialog.on("hidden.bs.modal", function() { $scope.$apply(function() { $scope.textsDialogVisible = false; }); });
                 $scope.$watch('textsDialogVisible', function(visible) {
