@@ -30,6 +30,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
             template : templateHtml,
             require : 'nationalReportAnalyzer',
             scope :  {
+                maxDate: '=maxDate',
                 selectedRegions: '=regions',
                 selectedQuestions: '=questions',
                 selectedReportType: '=reportType'
@@ -374,6 +375,7 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     options = _.defaults(options||{}, {
                         reportType : $scope.selectedReportType,
                         regions : $scope.selectedRegions,
+                        maxDate : $scope.maxDate,
                         questions : []
                     });
 
@@ -382,6 +384,10 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                         ret[key] = 1;
                         return ret;
                     }, {});
+
+                    if(options.maxDate) {
+                        query.date = { $lt : { $date :  options.maxDate } };
+                    }
 
                     var collectionUrls = {
                         cpbNationalReport2 : "/api/v2015/national-reports-cpb-2",

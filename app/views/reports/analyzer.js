@@ -7,6 +7,7 @@ define(['directives/national-reports/questions-selector', 'directives/national-r
         delete $scope.selectedReportType;
         delete $scope.selectedQuestions;
         delete $scope.selectedRegions;
+        delete $scope.maxDate;
 
         //========================================
         //
@@ -15,6 +16,11 @@ define(['directives/national-reports/questions-selector', 'directives/national-r
         try {
 
             var data = $location.search();
+
+            if(data.date) {
+                $scope.maxDate = new Date(data.date);
+                $scope.maxDate.setDate($scope.maxDate.getDate()+1);
+            }
 
             if(!data.type)
                 data = JSON.parse(sessionStorage.getItem('nrAnalyzerData') || '{}');
