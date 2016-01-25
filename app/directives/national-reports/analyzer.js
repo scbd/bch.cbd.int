@@ -281,9 +281,14 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 });
             },
 
-            controller : ['$scope', function($scope){
+            controller : ['$scope', '$http', function($scope, $http) {
 
                 var nrAnalyzer = this;
+                var isScbd = false;
+
+                $http.get('/api/v2013/authentication/user').then(function(res){
+                    isScbd = !!~res.data.roles.indexOf('ScbdStaff');
+                });
 
                 //====================================
                 //
@@ -308,6 +313,15 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     countriesTexts = _.sortBy(countriesTexts||[], function(item){
                         return lstring($scope.allRegionsMap[item.government].title);
                     });
+
+                    if(!isScbd) { // drop courtesy translation (locale*) if not SCBD;
+                        countriesTexts = _.map(countriesTexts, function(t) {
+                            t.text = _.omit(t.text, function(v,k) {
+                                return ~k.indexOf('*');
+                            });
+                            return t;
+                        });
+                    }
 
                     $scope.currentQuestion = question;
                     $scope.countriesTexts  = countriesTexts;
