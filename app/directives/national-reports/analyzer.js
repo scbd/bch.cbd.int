@@ -119,11 +119,11 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     var lstring = $filter('lstring');
 
                     var countries = $http.get('/api/v2013/thesaurus/domains/countries/terms', { cache : true }).then(function(res) {
-                        return res.data;
+                        return _.map(res.data, fixEUR);
                     });
 
                     var regions = $http.get('/api/v2013/thesaurus/domains/regions/terms?relations', { cache : true }).then(function(res) {
-                        return res.data;
+                        return _.map(res.data, fixEUR);
                     });
 
                     return $q.all([countries, regions]).then(function(results){
@@ -142,6 +142,16 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                         }).value();
                     });
+                }
+
+                //====================================
+                //
+                //
+                //====================================
+                function fixEUR(term) {
+                    if(term.identifier=="eu")
+                        term.identifier = 'eur';
+                    return term;
                 }
 
                 //====================================

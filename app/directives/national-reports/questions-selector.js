@@ -132,6 +132,7 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                 function getCountries() {
 
                     return $http.get("/api/v2013/thesaurus/domains/countries/terms", { cache : true }).then(function (res) {
+                        res.data = _.map(res.data, fixEUR);
                         mapRegions(res.data);
                         return res.data;
                     });
@@ -146,9 +147,20 @@ define(['text!./questions-selector.html', 'app', 'lodash', 'require', 'directive
                 function getRegions() {
 
                     return $http.get("/api/v2013/thesaurus/domains/regions/terms", { cache : true }).then(function (res) {
+                        res.data = _.map(res.data, fixEUR);
                         mapRegions(res.data);
                         return res.data;
                     });
+                }
+
+                //====================================
+                //
+                //
+                //====================================
+                function fixEUR(term) {
+                    if(term.identifier=="eu")
+                        term.identifier = 'eur';
+                    return term;
                 }
 
                 //====================================
