@@ -66,7 +66,13 @@
         <tr ng-if="section.expanded" ng-repeat="question in ::section.questions">
             <td></td>
             <td><input type="checkbox" ng-model="question.selected" ng-click="questionClicked(question)"></td>
-            <td ng-click="question.selected=!question.selected; questionClicked(question)" class="text-nowrap">Question {{::question.number}}.</td>
+            <td ng-click="question.selected=!question.selected; questionClicked(question)" class="text-nowrap">
+                <span ng-switch="question.key[0]">
+                    <span ng-switch-when="S">Survey Question {{::question.number}}.</span>
+                    <span ng-switch-default>Question {{::question.number}}.</span>
+                </span>
+
+            </td>
             <td ng-click="question.selected=!question.selected; questionClicked(question)">{{::question.title}}</td>
             <td></td>
         </tr>

@@ -1,16 +1,16 @@
 {
   "name": "bch.cbd.int",
   "dependencies": {
-    "angular": "1.4.7",
-    "angular-route": "1.4.7",
-    "angular-cookies": "1.4.7",
-    "angular-sanitize": "1.4.7",
+    "angular": "1.5.0",
+    "angular-route": "1.5.0",
+    "angular-cookies": "1.5.0",
+    "angular-sanitize": "1.5.0",
     "angular-flex": "git://github.com/scbd/angular-flex.git#1.0.2",
-    "font-awesome": "4.3.0",
+    "font-awesome": "4.5.0",
     "requirejs": "2.1.18",
     "requirejs-text": "2.0.14",
     "lodash": "3.10.1",
-    "jquery": "2.1.4",
+    "jquery": "2.2.1",
     "diacritic": "0.0.3"
   }
 }
