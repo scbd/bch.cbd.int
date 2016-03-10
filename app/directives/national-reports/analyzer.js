@@ -119,11 +119,11 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     var lstring = $filter('lstring');
 
                     var countries = $http.get('/api/v2013/thesaurus/domains/countries/terms', { cache : true }).then(function(res) {
-                        return _.map(res.data, fixEUR);
+                        return res.data;
                     });
 
                     var regions = $http.get('/api/v2013/thesaurus/domains/regions/terms?relations', { cache : true }).then(function(res) {
-                        return _.map(res.data, fixEUR);
+                        return res.data;
                     });
 
                     return $q.all([countries, regions]).then(function(results){
@@ -142,16 +142,6 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                         }).value();
                     });
-                }
-
-                //====================================
-                //
-                //
-                //====================================
-                function fixEUR(term) {
-                    if(term.identifier=="eu")
-                        term.identifier = 'eur';
-                    return term;
                 }
 
                 //====================================
@@ -420,6 +410,10 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     return $http.get(collectionUrls[options.reportType], {  params: { q : query, f : fields }, cache : true }).then(function(res) {
                         return _.map(res.data, function(report) {
+
+                            if(report.government.identifier == 'eur') // fix: eur => eu
+                                report.government.identifier = 'eu';
+
                             report.government = nrAnalyzer.normalizeAnswer(report.government);
                             return report;
                         });
