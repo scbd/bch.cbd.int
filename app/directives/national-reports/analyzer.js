@@ -410,10 +410,6 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     return $http.get(collectionUrls[options.reportType], {  params: { q : query, f : fields }, cache : true }).then(function(res) {
                         return _.map(res.data, function(report) {
-
-                            if(report.government.identifier == 'eur') // fix: eur => eu
-                                report.government.identifier = 'eu';
-
                             report.government = nrAnalyzer.normalizeAnswer(report.government);
                             return report;
                         });
