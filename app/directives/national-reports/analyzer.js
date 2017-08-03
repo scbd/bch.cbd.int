@@ -310,15 +310,21 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     var lstring = $filter('lstring');
 
+                    countriesTexts = _.filter(countriesTexts||[], function(item){
+                        return item.text;
+                    });
+
                     countriesTexts = _.sortBy(countriesTexts||[], function(item){
                         return lstring($scope.allRegionsMap[item.government].title);
                     });
 
                     if(!isScbd) { // drop courtesy translation (locale*) if not SCBD;
                         countriesTexts = _.map(countriesTexts, function(t) {
-                            t.text = _.omit(t.text, function(v,k) {
-                                return ~k.indexOf('*');
-                            });
+                            if(typeof(t.text)!="number"){
+                                t.text = _.omit(t.text, function(v,k) {
+                                    return ~k.indexOf('*');
+                                });
+                            }
                             return t;
                         });
                     }
@@ -405,7 +411,8 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
 
                     var collectionUrls = {
                         cpbNationalReport2 : "/api/v2015/national-reports-cpb-2",
-                        cpbNationalReport3 : "/api/v2015/national-reports-cpb-3"
+                        cpbNationalReport3 : "/api/v2015/national-reports-cpb-3",
+                        npNationalReport1  : "http://localhost:8000/api/v2017/national-reports-np-1"
                     };
 
                     return $http.get(collectionUrls[options.reportType], {  params: { q : query, f : fields }, cache : true }).then(function(res) {
@@ -422,8 +429,9 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                 //==============================================
                 nrAnalyzer.normalizeAnswer = function (v) {
 
-                    if(_.isArray(v))
-                        return _(v).map(nrAnalyzer.normalizeAnswer).compact().value();
+                    if(_.isArray(v) || _.isArray(v.options))
+                        return _(v.options||v).map(nrAnalyzer.normalizeAnswer).compact().value();
+                    // console.log($scope.selectedQuestions);
 
                     v = v && (v.value || v.identifier || v);
 
@@ -433,6 +441,22 @@ define(['text!./analyzer.html', 'app', 'lodash', 'require', 'jquery', './analyze
                     return v;
                 };
 
+                // //==============================================
+                // //
+                // //
+                // //==============================================
+                // nrAnalyzer.normalizeAdditionalInfo = function (v) {
+
+                //     if(_.isArray(v))
+                //         return _(v).map(nrAnalyzer.normalizeAnswer).compact().value();
+
+                //     v = v && (v.value || v.identifier || v);
+
+                //     if(typeof(v)=='boolean')
+                //         v = v.toString();
+
+                //     return v;
+                // };
             }]
         };
     }]);

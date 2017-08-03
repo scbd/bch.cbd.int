@@ -3,6 +3,8 @@
 var proxy   = require('http-proxy').createProxyServer({});
 var express = require('express');
 var app     = new express();
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use(require('morgan')('dev'));
 
@@ -11,7 +13,9 @@ app.use(require('morgan')('dev'));
 app.use('/app',   express.static(__dirname + '/app'));
 app.all('/app/*', (req, res) => res.status(404).send());
 app.all('/api/*', (req, res) => proxy.web(req, res, { target: 'https://api.cbd.int:443', secure: false } ));
-
+app.get('/*', function (req, res) {
+   return res.render(__dirname + '/app/index.html');
+});
 // FOR DEV:
 // app.all('/*', function(req, res) { proxy.web(req, res, { target: 'https://bch.cbd.int:443', secure: false } ); } );
 

@@ -1,4 +1,4 @@
-<div class="question" style="margin-bottom:10px;" ng-class="{ highlight : previousReports }" ng-disabled="!fullSum">
+<div class="question" style="margin-bottom:10px;" ng-class="{ highlight : previousReports }" ng-disabled="!fullSum && question.type!='header'">
 
     <span class="pull-right"  ng-if="::previousQuestionsMapping[question.key]">
         <span ng-switch="::previousQuestionsMapping[question.key][0]">
@@ -14,7 +14,7 @@
 
     <div><b style="white-space:pre-line">{{::question.title}}</b></div>
 
-    <table class="table table-hover">
+    <table class="table table-hover" ng-if="::question.type!='header'">
         <tr>
             <th style="width:22px"></th>
             <th class="text-right">&nbsp;</th>
@@ -36,7 +36,7 @@
         </tr>
 
         <!-- OPTIONS + TERMS -->
-        <tr ng-if="::question.type!='text'" class="option {{sumType}}" ng-repeat="row in rows" ng-class="{ 'first': $first, 'last' : $last, 'info': row.filterOn, 'filter-on': row.filterOn, 'filter': filter }">
+        <tr ng-if="::question.type!='text' && question.type!='number'" class="option {{sumType}}" ng-repeat="row in rows" ng-class="{ 'first': $first, 'last' : $last, 'info': row.filterOn, 'filter-on': row.filterOn, 'filter': filter }">
             <td class="filter">
                 <i ng-if="::row.fullSum"  class="fa fa-filter fa-lg" style="cursor:pointer" ng-click="toggleFilter(row)" data-toggle="popover" data-placement="top" data-content="Filter: Include only reports which have this answer selected."></i>
                 <i ng-if="::!row.fullSum" class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i>
@@ -64,11 +64,12 @@
             <td class="text-center country"  ng-class="{ 'first': $first, 'last' : $last }" ng-if="expanded[cell.identifier]" ng-repeat="country in regionsMap[cell.identifier].countries|filter:{visible:true} track by country.identifier">
                 <div style="font-size:18px;line-height:inherit" ng-if="::testAnswer(reportsMap[country.identifier][question.key], row.value)">
                     &#x25CF;
-                    <img ng-if="::reportsMap[country.identifier][question.key].details" src="/bch/images/nr-document.png" ng-click="showText(country.identifier, reportsMap[country.identifier][question.key].details)" style="cursor:pointer">
+                    <img ng-if="::hasCustomText(reportsMap[country.identifier][question.key], row.value)" src="/app/resources/national-reports/nr-document.png" 
+                    ng-click="showCustomText(country.identifier, reportsMap[country.identifier][question.key], row.value)" style="cursor:pointer">
                 </div>
                 <div style="font-size:18px;line-height:inherit" ng-if="previousReports && testAnswer(previousReportsMap[country.identifier][previousQuestionsMapping[question.key]], row.value)">
                     &#x25CB;
-                    <img ng-if="::previousReportsMap[country.identifier][previousQuestionsMapping[question.key]].details" src="/bch/images/nr-document.png" ng-click="showText(country.identifier, previousReportsMap[country.identifier][previousQuestionsMapping[question.key]].details)" style="cursor:pointer">
+                    <img ng-if="::previousReportsMap[country.identifier][previousQuestionsMapping[question.key]].details" src="/app/resources/national-reports/nr-document.png" ng-click="showText(country.identifier, previousReportsMap[country.identifier][previousQuestionsMapping[question.key]].details)" style="cursor:pointer">
                 </div>
             </td>
             <td ng-repeat-end ng-show="::false"></th>
@@ -76,25 +77,51 @@
         </tr>
 
         <!-- FREE TEXT -->
-        <tr ng-if="::question.type=='text'">
+        <tr ng-if="::question.type=='text' || question.type=='number'">
             <td class="filter">
                 <i class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i>
             </td>
-            <td>Free text</td>
+            <td>{{question.subTitle||'Free text'}}</td>
             <td class="text-center">{{question.options[0].sum}}</td>
-            <td class="text-center"><img ng-if="::question.options[0].sum" src="/bch/images/nr-documents.png" ng-click="showTexts()" style="cursor:pointer"></td>
+            <td class="text-center"><img ng-if="::question.options[0].sum" src="/app/resources/national-reports/nr-documents.png" 
+                ng-click="showTexts(null, question.field, question.type)" style="cursor:pointer"></td>
             <td class="text-center text-nowrap region" class="bchCellGroup text-nowrap" ng-repeat-start="region in ::regions track by region.identifier">
                 {{rows[0].cells[region.identifier].sum}}
-                <img ng-if="rows[0].cells[region.identifier].sum"  ng-click="showTexts(region.countries)" src="/bch/images/nr-documents.png" style="cursor:pointer">
+                <img ng-if="rows[0].cells[region.identifier].sum"  ng-click="showTexts(region.countries, question.field)" src="/app/resources/national-reports/nr-documents.png" style="cursor:pointer">
             </td>
             <!-- show countries if expanded[region.identifier] -->
             <td class="text-center text-nowrap country country"ng-if="expanded[region.identifier]" ng-repeat="country in region.countries|filter:{visible:true} track by country.identifier">
-                <img ng-if="reportsMap[country.identifier][question.key]" src="/bch/images/nr-document.png" ng-click="showText(country.identifier, reportsMap[country.identifier][question.key])" style="cursor:pointer">
+                <img ng-if="hasText(country.identifier, reportsMap[country.identifier][question.key], question.field)" src="/app/resources/national-reports/nr-document.png" ng-click="showText(country.identifier, reportsMap[country.identifier][question.key], question.field)" style="cursor:pointer">
             </td>
             <td ng-repeat-end ng-show="::false"></th>
             <td style="padding:0px;background-color:white"></td>
         </tr>
-
+        <tr ng-if="::question.additionalInfo">
+            <td colspan="8"></td>
+        </tr>
+        <tr ng-if="::question.additionalInfo" ng-repeat="info in question.additionalInfo">
+            <td class="filter">
+                <!-- <i class="fa fa-filter fa-lg" disabled title="This filter is disabled"></i> -->
+            </td>
+            <td>{{info.title}}
+            </td>
+            <td class="text-center">{{additionalInfo[info.field+'_sum']}}</td>
+            <td class="text-center"><img ng-if="::additionalInfo[info.field+'_sum']" src="/app/resources/national-reports/nr-documents.png" 
+                ng-click="showTexts(undefined, info.field)" style="cursor:pointer"></td>
+            <td class="text-center text-nowrap region" class="bchCellGroup text-nowrap" ng-repeat-start="region in ::regions track by region.identifier">
+                {{rows[0].cells[region.identifier]['additionalInfo'][info.field+'_sum']}}
+                <img ng-if="rows[0].cells[region.identifier]['additionalInfo'][info.field+'_sum']"  ng-click="showTexts(region.countries, info.field)" 
+                src="/app/resources/national-reports/nr-documents.png" style="cursor:pointer">
+            </td>
+            <!-- show countries if expanded[region.identifier] -->
+            <td class="text-center text-nowrap country country"ng-if="expanded[region.identifier]" 
+                ng-repeat="country in region.countries|filter:{visible:true} track by country.identifier">
+                <img ng-if="reportsMap[country.identifier][question.key][info.field]" src="/app/resources/national-reports/nr-document.png" 
+                ng-click="showText(country.identifier, reportsMap[country.identifier][question.key], info.field)" style="cursor:pointer">
+            </td>
+            <td ng-repeat-end ng-show="::false"></th>
+            <td style="padding:0px;background-color:white"></td>
+        </tr>
     </table>
 
     <div ng-if="previousReports" style="margin-top:-15px">

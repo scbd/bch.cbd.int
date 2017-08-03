@@ -99,11 +99,48 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
-                $scope.showText = function(government, text) {
+                $scope.hasCustomText = function(answer, field) {
+                    
+                    if(answer.details)
+                        return true;
+                    
+                    if(!answer.options)
+                        return false;
 
+                    return (_.find(answer.options, {identifier:field})||{}).customValue
+                };
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.hasText = function(government, text, field) {
+                    if(text && (text.details || text[field]))
+                        text =  (text.details || text[field]);
+                    
+                    if(!field && text)
+                        text = text
+                    else
+                        text = undefined;
+                    
+                    return text!==undefined;
+                };
+
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.showText = function(government, text, field) {
+                    if(text && (text.details || text.number ||text[field]))
+                        text =  (text.details ||text.number || text[field]);
+                    else if(!field && text)
+                        text = text
+                    else
+                        text = undefined;
+                    
                     nrAnalyzer.showTexts([{
                         government : government,
-                        text : text
+                        text : text,
+                        field : field
                     }], $scope.question);
                 };
 
@@ -111,12 +148,13 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                 //
                 //
                 //==============================================
-                $scope.showTexts = function(governments) {
-
-                    governments = _.map(governments, function(g) { return g.identifier || g; } );
-
+                $scope.showTexts = function(governments, field) {
+                    
                     if(!governments)
                         governments = _.pluck($scope.reports, 'government');
+                    
+                    governments = _.map(governments, function(g) { return g.identifier || g; } );
+
 
                     var filter = nrAnalyzer.filter();
 
@@ -136,11 +174,17 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                         var text = report[$scope.question.key];
 
-                        text = text && (text.details || text);
-
+                        if(text && (text.details ||text.number || text[field]))
+                            text =  (text.details ||text.number || text[field]);
+                       else if((!field && text))
+                            text = text
+                        else
+                            text = undefined;
+                        
                         return {
                             government : report.government,
-                            text : text
+                            text : text,
+                            field : field
                         };
 
                     }).value();
@@ -148,6 +192,25 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     nrAnalyzer.showTexts(results, $scope.question);
                 };
 
+                //==============================================
+                //
+                //
+                //==============================================
+                $scope.showCustomText = function(government, answer, field) {
+                    var text;
+
+                    if(answer.details)
+                        text = answer.details;
+                    
+                    if(answer.options)
+                        text = (_.find(answer.options, {identifier:field})||{}).customValue;
+                    
+                    nrAnalyzer.showTexts([{
+                        government : government,
+                        text : text,
+                        field : field
+                    }], $scope.question);
+                };
                 //==============================================
                 //
                 //
@@ -271,8 +334,8 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     if(!$scope.regions) return;
                     if(!$scope.question) return;
 
-                    if($scope.question.type=='text') {
-                        $scope.question.options = [{ value: 'text' }];  // text responses don't have predefine values; Simulate a fake one
+                    if(_.includes(['text', 'number'], $scope.question.type)) {
+                        $scope.question.options = [{ value: $scope.question.type }];  // text responses don't have predefine values; Simulate a fake one
                     }
 
                     var question = $scope.question;
@@ -286,7 +349,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                         .filter(function(r) { return !!r[question.key]; })
                         .pluck('government')
                         .value();
-
+                    console.log(restrictedCountries.length)
                     if (previousReports && questionsMapping) {
 
                         //Only allow countries who answered to this question in both report set
@@ -352,6 +415,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     $scope.reportsMap = data.reports;
                     $scope.fullSum    = data.fullSum;
                     $scope.rows       = _.values(data.rows);
+                    $scope.additionalInfo       = data.additionalInfo;
                 }
 
                 //============================================================
@@ -370,20 +434,26 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     var data = {
                         sum : 0,
                         fullSum : 0,
-                        reports : {}
+                        reports : {},
+                        additionalInfo : {}//sum : 0, fullSum : 0
                     };
 
                     data.columns = _(regions).reduce(function(columns, r){
 
                         columns[r.identifier] = {
                             identifier : r.identifier,
-                            sum : 0
+                            sum : 0,
+                            additionalInfo : {}
                         };
 
                         return columns;
 
                     }, {});
-
+                    var additionalInfo  = question.additionalInfo||[];
+                    _.map(additionalInfo, function(info){
+                        info.value = info.field;
+                    })
+                    // question.options = _.union(question.options, additionalInfo);
                     data.rows = _(question.options).reduce(function (rows, option) {
 
                         rows[option.value] = _.assign({}, option, {
@@ -393,7 +463,8 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                             cells : _(regions).reduce(function(cells, r){
                                 cells[r.identifier] = {
                                     identifier : r.identifier,
-                                    sum : 0
+                                    sum : 0,
+                                    additionalInfo : {}
                                 };
                                 return cells;
                             }, {})
@@ -405,9 +476,10 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
 
                     reports.forEach(function(report) {
 
-                        if(!countriesMap[report.government])
+                        if(!countriesMap[report.government]){
+                            // console.log(report.government)
                             return; // exclud this report
-
+                        }
                         var included = !filter || !!filter.matchingCountriesMap[report.government];
 
                         if(included)
@@ -437,6 +509,35 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                                 }
                             });
                         });
+
+                        var additionalInfo = getNormalizedAdditionalInfo(report, key);
+                        // console.log(additionalInfo)
+                        data.question = key;
+                        if(additionalInfo){
+                            _.each(additionalInfo, function(info, key){
+                                if(info){
+                                    // console.log(additionalInfo[key],info, key);
+                                    if(!data['additionalInfo'][key+'_sum'])
+                                        data['additionalInfo'][key+'_sum'] = 0;
+
+                                    data['additionalInfo'][key+'_sum']++;
+                                    regions.forEach(function(region){
+                                        var column = data.columns[region.identifier];
+                                        var cell   = data.rows[_.first(_.keys(data.rows))].cells  [region.identifier];
+                                        if(region.countriesMap[report.government]){
+                                            //     region.countriesMap[report.government]
+                                            if(!column['additionalInfo'][key+'_sum'])
+                                                column['additionalInfo'][key+'_sum'] = 0
+                                            if(!cell['additionalInfo'][key+'_sum'])
+                                                cell['additionalInfo'][key+'_sum'] = 0
+
+                                            column['additionalInfo'][key+'_sum']++; // column
+                                            cell['additionalInfo'][key+'_sum']++; // column
+                                        }
+                                    });
+                                }
+                            })
+                        }
                     });
 
                     _.forEach(data.columns, function(column, identifier){
@@ -465,7 +566,7 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                             };
                         });
                     });
-
+                    // console.log(data);
                     return data;
                 }
 
@@ -485,7 +586,30 @@ define(['text!./analyzer-question.html', 'app', 'lodash', 'ngSanitize'], functio
                     if($scope.question.type=='text' && !!answers)
                     answers = 'text';
 
+                    if($scope.question.type=='number' && !!answers.number)
+                    answers = 'number';
+
                     return _([answers]).flatten().compact().value();
+                }
+
+                //============================================================
+                //
+                //
+                //============================================================
+                function getNormalizedAdditionalInfo(report, key) {
+
+                    key = key || $scope.question.key;
+
+                    var additionalInfo = $scope.question.additionalInfo;
+
+                    if(_.isEmpty(additionalInfo))
+                        return;
+
+                    var answers = {};
+                    _.each(additionalInfo, function(info){
+                        answers[info.field] = report[key][info.field]; 
+                    });
+                    return answers;
                 }
 
                 //============================================================

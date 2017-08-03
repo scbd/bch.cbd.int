@@ -86,7 +86,19 @@
             margin-right: -7px;
             margin-left: -7px;
         }
-
+        div.km-value{
+            background-color: #f5f5f5;
+            border: 1px solid #c0c0c0;
+            border-radius: 3px;
+            padding: 5px 8px 5px 8px;
+            margin-top: 1px;
+            margin-bottom: 1px;
+            display: block;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
     </style>
 
     <div ng-show="sections" style="margin-bottom:5px">
@@ -219,13 +231,28 @@
                 <div class="modal-body" style="max-height:75vh;overflow-y: auto;">
 
                     <div ng-repeat="item in countriesTexts">
-                        <div class="pull-right">
-                            <span ng-repeat="(locale, text) in ::item.text" class="locale" ng-class="{ selected : (item.text|locale:item.locale)==locale }">
+                        <div class="pull-right" ng-if="::item.field!='documentReferenceIDs' && item.field!='relevantDocuments'">
+                            <span  ng-repeat="(locale, text) in ::item.text" class="locale" ng-class="{ selected : (item.text|locale:item.locale)==locale }">
                                 <a href="#" ng-click="item.locale=locale">{{::locale|uppercase}}</a>
                             </span>
                         </div>
                         <h5>{{::allRegionsMap[item.government].title|lstring}}</h5>
-                        <pre style="white-space:pre-line" ng-style="{ direction : (item.text|direction:item.locale) }">{{item.text|lstring:item.locale}}</pre>
+                        
+                        <pre ng-if="::item.field!='documentReferenceIDs' && item.field!='relevantDocuments' && typeof(item.text)!='number'"
+                            style="white-space:pre-line" ng-style="{ direction : (item.text|direction:item.locale) }">{{item.text|lstring:item.locale}}</pre>
+                        <div class="km-value" ng-style="{ direction : (item.text|direction:item.locale) }" ng-if="item.field=='relevantDocuments'"> 
+                        <span ng-repeat="file in item.text">
+                            <a target="_new" ng-href="{{file.url}}"><i class="fa fa-file"></i> {{file.name||file.url}}</a>
+                            <i ng-show="file.name && file.url.indexOf('/api/v2013/documents/')<0">({{file.url}})</i>
+                        </span>
+                        </div> 
+                        <pre ng-if="::item.field=='documentReferenceIDs' && typeof(item.text)!='number'" style="white-space:pre-line" ng-style="{ direction : (item.text|direction:item.locale) }">
+                            {{item.text|lstring:item.locale}}
+                        </pre>
+                        <pre ng-if="::typeof(item.text)=='number'" style="white-space:pre-line" ng-style="{ direction : (item.text|direction:item.locale) }">
+                            {{item.text}}
+                        </pre>
+                        {{typeof(item.text)}}
                     </div>
 
                 </div>
